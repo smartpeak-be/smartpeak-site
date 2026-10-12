@@ -406,3 +406,12 @@ p { margin: 0 0 1em; }
 .is-reading { background: #fff1b8; box-shadow: 0 0 0 .35rem #fff1b8; border-radius: 2px; }
 @media (forced-colors: active) { .is-reading { outline: 2px solid Highlight; } }
 @media (prefers-reduced-motion: reduce) { .reviews-mount .sp-review-widget__track { scroll-behavior: auto; } }
+
+/* Compact link list (home: merken) */
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.chips a {
+  display: inline-flex; align-items: center; min-height: 2.75rem; padding: .5rem 1.1rem;
+  border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface);
+  color: var(--ink); font-weight: 600; text-decoration: none;
+}
+.chips a:hover { border-color: var(--ink); background: var(--paper); }
