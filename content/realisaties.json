@@ -1,5 +1,16 @@
 [
   {
+    "title": "Zendure SolarFlow 4000 Mix Pro",
+    "text": "Batterij en omvormer in één toestel, met 8 kWh opslag en tot 4 kW vermogen. De 12 zonnepanelen (4,92 kWp) zijn er rechtstreeks op aangesloten.",
+    "image": "/assets/img/site/installatie-zendure-mix-pro.webp",
+    "alt": "Zendure SolarFlow 4000 Mix Pro tegen een houten wand in een garage, met de kabels van de zonnepanelen aan de zijkant aangesloten",
+    "facts": [
+      "Zendure",
+      "8 kWh",
+      "4,92 kWp"
+    ]
+  },
+  {
     "title": "Zendure SolarFlow 2400 AC+ met AB3000L",
     "text": "AC-gekoppelde batterij naast een bestaande zonne-installatie, netjes op een rek gemonteerd. Het verbruik wordt gemeten met CT-klemmen in de zekeringkast.",
     "image": "/assets/img/site/installatie-zendure-solarflow.webp",
