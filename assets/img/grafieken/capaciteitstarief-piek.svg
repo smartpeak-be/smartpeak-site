@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Afname van het net per kwartier, op één avond</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Het hoogste kwartier van de maand bepaalt je maandpiek</text>
+<line x1="150" x2="1530" y1="760.0" y2="760.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="769.0" font-size="25" fill="#4b5661" text-anchor="end">0 kW</text>
+<line x1="150" x2="1530" y1="661.7" y2="661.7" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="670.7" font-size="25" fill="#4b5661" text-anchor="end">2 kW</text>
+<line x1="150" x2="1530" y1="563.3" y2="563.3" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="572.3" font-size="25" fill="#4b5661" text-anchor="end">4 kW</text>
+<line x1="150" x2="1530" y1="465.0" y2="465.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="474.0" font-size="25" fill="#4b5661" text-anchor="end">6 kW</text>
+<line x1="150" x2="1530" y1="366.7" y2="366.7" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="375.7" font-size="25" fill="#4b5661" text-anchor="end">8 kW</text>
+<line x1="150" x2="1530" y1="268.3" y2="268.3" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="277.3" font-size="25" fill="#4b5661" text-anchor="end">10 kW</text>
+<line x1="150" x2="1530" y1="170.0" y2="170.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="179.0" font-size="25" fill="#4b5661" text-anchor="end">12 kW</text>
+<rect x="158.1" y="730.5" width="41.4" height="29.5" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="215.6" y="725.6" width="41.4" height="34.4" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="273.1" y="730.5" width="41.4" height="29.5" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="330.6" y="720.7" width="41.4" height="39.3" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="388.1" y="705.9" width="41.4" height="54.1" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="445.6" y="710.8" width="41.4" height="49.2" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="503.1" y="607.6" width="41.4" height="152.4" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="560.5" y="592.8" width="41.4" height="167.2" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="618.0" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="618.0" y="278.2" width="41.4" height="186.8" rx="4" fill="#1aa5b6"/>
+<rect x="675.5" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="675.5" y="248.7" width="41.4" height="216.3" rx="4" fill="#1aa5b6"/>
+<rect x="733.0" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="733.0" y="263.4" width="41.4" height="201.6" rx="4" fill="#1aa5b6"/>
+<rect x="790.5" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="790.5" y="288.0" width="41.4" height="177.0" rx="4" fill="#1aa5b6"/>
+<rect x="848.0" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="848.0" y="386.3" width="41.4" height="78.7" rx="4" fill="#1aa5b6"/>
+<rect x="905.5" y="465.0" width="41.4" height="295.0" rx="4" fill="#1f272e"/>
+<rect x="905.5" y="396.2" width="41.4" height="68.8" rx="4" fill="#1aa5b6"/>
+<rect x="963.0" y="602.7" width="41.4" height="157.3" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1020.5" y="656.8" width="41.4" height="103.2" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1078.0" y="681.3" width="41.4" height="78.7" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1135.5" y="691.2" width="41.4" height="68.8" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1193.0" y="701.0" width="41.4" height="59.0" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1250.5" y="705.9" width="41.4" height="54.1" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1308.0" y="715.8" width="41.4" height="44.2" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1365.5" y="720.7" width="41.4" height="39.3" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1423.0" y="720.7" width="41.4" height="39.3" rx="4" fill="#1f272e" opacity="1"/>
+<rect x="1480.5" y="725.6" width="41.4" height="34.4" rx="4" fill="#1f272e" opacity="1"/>
+<text x="150.0" y="804" font-size="25" fill="#4b5661">16:00</text>
+<text x="380.0" y="804" font-size="25" fill="#4b5661">17:00</text>
+<text x="610.0" y="804" font-size="25" fill="#4b5661">18:00</text>
+<text x="840.0" y="804" font-size="25" fill="#4b5661">19:00</text>
+<text x="1070.0" y="804" font-size="25" fill="#4b5661">20:00</text>
+<text x="1300.0" y="804" font-size="25" fill="#4b5661">21:00</text>
+<text x="1530.0" y="804" font-size="25" fill="#4b5661" text-anchor="end">22:00</text>
+<line x1="150" x2="1530" y1="465.0" y2="465.0" stroke="#17c15c" stroke-width="5" stroke-dasharray="16 10"/>
+<text x="1530" y="509.0" font-size="23" font-weight="600" fill="#0b7a42" text-anchor="end">Met piekbeperking: maximaal 6 kW van het net</text>
+<line x1="150" x2="1530" y1="637.1" y2="637.1" stroke="#9aa6a3" stroke-width="3" stroke-dasharray="6 8"/>
+<text x="1530" y="623.1" font-size="24" fill="#4b5661" text-anchor="end">Minimum 2,5 kW</text>
+<text x="696.2" y="226.7" font-size="27" font-weight="650" fill="#1f272e" text-anchor="middle">Koken terwijl de auto laadt: piek 10,4 kW</text>
+<text x="523.8" y="574.8" font-size="24" fill="#4b5661" text-anchor="middle">oven</text>
+<rect x="150" y="828" width="28" height="28" rx="5" fill="#1f272e"/><text x="192" y="850" font-size="25" fill="#1f272e">Van het net</text>
+<rect x="410" y="828" width="28" height="28" rx="5" fill="#1aa5b6"/><text x="452" y="850" font-size="25" fill="#1f272e">Uit de batterij in plaats van het net</text>
+<text x="1530" y="850" font-size="22" fill="#4b5661" text-anchor="end">Vereenvoudigd voorbeeld</text>
+</svg>

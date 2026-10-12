@@ -204,7 +204,7 @@ def with_base_path(page):
 
 
 def article(meta, body, kicker=""):
-    image = (f'<img class="article-image" src="{esc(meta["image"])}" alt="" width="1200" height="700">'
+    image = (f'<img class="article-image" src="{esc(meta["image"])}" alt="{esc(meta.get("image_alt"))}" width="1600" height="900">'
              if meta.get("image") else "")
     return f'''<article class="article">
   <header class="article-head wrap-narrow">
@@ -219,8 +219,11 @@ def article(meta, body, kicker=""):
 
 
 def post_page(post, cta):
+    modified = post.get("modified")
+    updated = (f', bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>'
+               if modified and modified != post["date"] else "")
     kicker = (f'<p class="article-meta"><a href="/artikels/">Artikels</a> <span aria-hidden="true">/</span> '
-              f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time></p>')
+              f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}</p>')
     return article(post, post["body"], kicker) + cta
 
 
