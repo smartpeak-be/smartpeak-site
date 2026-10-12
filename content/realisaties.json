@@ -1,23 +1,34 @@
 [
   {
     "title": "Zendure SolarFlow 2400 AC+ met AB3000L",
-    "text": "AC-gekoppelde batterij naast een bestaande zonne-installatie, netjes op een rek gemonteerd en via de P1-meter gestuurd.",
+    "text": "AC-gekoppelde batterij naast een bestaande zonne-installatie, netjes op een rek gemonteerd. Het verbruik wordt gemeten met CT-klemmen in de zekeringkast.",
     "image": "/assets/img/site/installatie-zendure-solarflow.webp",
     "alt": "Zendure SolarFlow 2400 AC+ en AB3000L batterijen op een houten rek tegen een bakstenen muur",
-    "facts": ["Zendure", "AC-gekoppeld"]
+    "facts": [
+      "Zendure",
+      "AC-gekoppeld",
+      "CT-meting"
+    ]
   },
   {
-    "title": "Twee batterijkasten in de berging",
-    "text": "Batterijopslag in een technische ruimte, met degelijke bekabeling en een duidelijke opbouw.",
-    "image": "/assets/img/site/installatie-batterijkasten.webp",
-    "alt": "Twee witte batterijkasten aangesloten met rode en zwarte kabels in een berging",
-    "facts": ["Thuisbatterij"]
+    "title": "Twee Dyness PowerBricks van 16 kWh",
+    "text": "Twee laagvoltbatterijen met LFP-cellen in een garage, elk goed voor 16 kWh, samen zo'n 32 kWh opslag.",
+    "image": "/assets/img/site/dyness-powerbrick-garage.webp",
+    "alt": "Twee Dyness PowerBrick-batterijen van 16 kWh aangesloten in een garage",
+    "facts": [
+      "Dyness",
+      "2 × 16 kWh",
+      "LFP"
+    ]
   },
   {
     "title": "Omvormer koppelen en configureren",
     "text": "Na de plaatsing koppelen we omvormer, batterij en app en testen we alles ter plaatse, met uitleg voor de klant.",
     "image": "/assets/img/site/installatie-solis-omvormer.webp",
     "alt": "Technici configureren een Solis-omvormer met een smartphone naast de zekeringkast",
-    "facts": ["Configuratie", "Oplevering"]
+    "facts": [
+      "Configuratie",
+      "Oplevering"
+    ]
   }
 ]
