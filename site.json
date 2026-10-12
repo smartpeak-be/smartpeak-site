@@ -75,6 +75,10 @@
     {
       "label": "Privacyverklaring",
       "path": "/privacyverklaring/"
+    },
+    {
+      "label": "Toegankelijkheid",
+      "path": "/toegankelijkheid/"
     }
   ],
   "redirects": {

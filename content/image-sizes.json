@@ -1,0 +1,103 @@
+{
+ "/assets/img/grafieken/capaciteitstarief-piek.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/capaciteitstarief-piek-w640.webp"
+ },
+ "/assets/img/grafieken/maandpieken-facturatiepiek.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/maandpieken-facturatiepiek-w640.webp"
+ },
+ "/assets/img/producten/goodwe-et-g2.webp": {
+  "width": 900,
+  "height": 834,
+  "variant": "/assets/img/producten/goodwe-et-g2-w640.webp"
+ },
+ "/assets/img/producten/sigen-ev-ac-charger-v1.webp": {
+  "width": 211,
+  "height": 640
+ },
+ "/assets/img/producten/sigen-gateway.webp": {
+  "width": 416,
+  "height": 619
+ },
+ "/assets/img/producten/sigenstor-dc-lader.webp": {
+  "width": 534,
+  "height": 640
+ },
+ "/assets/img/producten/sigenstor.webp": {
+  "width": 332,
+  "height": 640
+ },
+ "/assets/img/producten/solis-s6-eh1p.webp": {
+  "width": 549,
+  "height": 900
+ },
+ "/assets/img/producten/solis-s6-eh3p.webp": {
+  "width": 900,
+  "height": 813,
+  "variant": "/assets/img/producten/solis-s6-eh3p-w640.webp"
+ },
+ "/assets/img/producten/zendure-solarflow-1600-ac-plus.webp": {
+  "width": 863,
+  "height": 632,
+  "variant": "/assets/img/producten/zendure-solarflow-1600-ac-plus-w640.webp"
+ },
+ "/assets/img/producten/zendure-solarflow-2400-ac-plus.webp": {
+  "width": 606,
+  "height": 824
+ },
+ "/assets/img/site/dyness-powerbrick-garage.webp": {
+  "width": 1291,
+  "height": 1400,
+  "variant": "/assets/img/site/dyness-powerbrick-garage-w640.webp"
+ },
+ "/assets/img/site/installatie-solis-omvormer.webp": {
+  "width": 1173,
+  "height": 1400,
+  "variant": "/assets/img/site/installatie-solis-omvormer-w640.webp"
+ },
+ "/assets/img/site/installatie-zendure-solarflow.webp": {
+  "width": 1400,
+  "height": 1146,
+  "variant": "/assets/img/site/installatie-zendure-solarflow-w640.webp"
+ },
+ "/assets/img/site/logo-mark.png": {
+  "width": 192,
+  "height": 189
+ },
+ "/assets/img/site/logo-mark.webp": {
+  "width": 88,
+  "height": 87
+ },
+ "/assets/img/site/monitoring-grafana.webp": {
+  "width": 1400,
+  "height": 954,
+  "variant": "/assets/img/site/monitoring-grafana-w640.webp"
+ },
+ "/assets/img/wp/7-1.webp": {
+  "width": 1536,
+  "height": 1002,
+  "variant": "/assets/img/wp/7-1-w640.webp"
+ },
+ "/assets/img/wp/aioseo-ai-a-sinewave-with-a-big-num-medium-auto-landscape-20251029-205708.webp": {
+  "width": 1536,
+  "height": 1024,
+  "variant": "/assets/img/wp/aioseo-ai-a-sinewave-with-a-big-num-medium-auto-landscape-20251029-205708-w640.webp"
+ },
+ "/assets/img/wp/bat.webp": {
+  "width": 1536,
+  "height": 864,
+  "variant": "/assets/img/wp/bat-w640.webp"
+ },
+ "/assets/img/wp/cs_1511.webp": {
+  "width": 644,
+  "height": 429
+ },
+ "/assets/img/wp/panels-electricity-order-sunlight.webp": {
+  "width": 1536,
+  "height": 1024,
+  "variant": "/assets/img/wp/panels-electricity-order-sunlight-w640.webp"
+ }
+}
