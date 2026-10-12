@@ -31,4 +31,4 @@ jobs:
           git add content/contact-form-test.log
           git diff --cached --quiet && exit 0
           git commit -m "Contact form test log"
-          git push
+          git pull --rebase origin main && git push

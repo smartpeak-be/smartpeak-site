@@ -28,4 +28,4 @@ jobs:
           git add assets/docs content/product-images-raw content/documents-mirror.log
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Mirror datasheets"
-          git push
+          git pull --rebase origin main && git push

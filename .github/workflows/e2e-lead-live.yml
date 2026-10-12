@@ -31,4 +31,4 @@ jobs:
           git add content/e2e-lead
           git diff --cached --quiet && exit 0
           git commit -m "Live lead wizard test result"
-          git push
+          git pull --rebase origin main && git push

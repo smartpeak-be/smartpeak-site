@@ -24,4 +24,4 @@ jobs:
           git add content/wordpress
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Import WordPress content from smartpeak.be"
-          git push
+          git pull --rebase origin main && git push
