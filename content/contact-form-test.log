@@ -14,8 +14,12 @@ npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and con
 
 [36m[1mi  firestore:[22m[39m Firestore Emulator logging to [1mfirestore-debug.log[22m
 [32m[1m✔  firestore:[22m[39m Firestore Emulator UI websocket is running on 9150.
-[36m[1mi [22m[39m Running script: [1mnode /home/runner/work/smartpeak-site/smartpeak-site/tools/test_contact_lead.mjs[22m
-Contact form OK: lead ZFqIb9q3F7Cqsvbkl3Oa is hot and the notification mail is queued.
+[36m[1mi [22m[39m Running script: [1mnode /home/runner/work/smartpeak-site/smartpeak-site/tools/test_contact_lead.mjs && ROI_DIR=/tmp/roi node /home/runner/work/smartpeak-site/smartpeak-site/tools/test_analysis_lead.mjs[22m
+Contact form OK: lead 6kHFVWUmdoQwbOhBEuvS is hot and the notification mail is queued.
+Product list: 24 configurations (18 Zendure).
+OK full year, all optional fields: lead Z8AH311xe6T7rQvW4WLR, result fields: isRange, configTypes, batteryCapKwh, batteryInverterKw, roiYears, recoveryPctFull, recoveryPctPartial, annualSavingEur, qualifyingDays, partialDays, daysInWindow, isFullYear, configs
+OK 30-day Fluvius test file, defaults: lead 48yOSeQXrChovbDzsONi, result fields: none
+Verbruiksanalyse OK: leads and result mails are accepted by the rules.
 [32m[1m✔ [22m[39m Script exited successfully (code 0)
 [36m[1mi  emulators:[22m[39m Shutting down emulators.
 [36m[1mi  firestore:[22m[39m Stopping Firestore Emulator
