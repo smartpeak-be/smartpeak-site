@@ -1,13 +1,38 @@
 {
+ "/assets/img/grafieken/ac-dc-laden.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/ac-dc-laden-w640.webp"
+ },
+ "/assets/img/grafieken/back-up-opties.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/back-up-opties-w640.webp"
+ },
+ "/assets/img/grafieken/batterijgrootte-vlaanderen.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/batterijgrootte-vlaanderen-w640.webp"
+ },
  "/assets/img/grafieken/capaciteitstarief-piek.webp": {
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/capaciteitstarief-piek-w640.webp"
  },
+ "/assets/img/grafieken/dynamische-prijzen-dag.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/dynamische-prijzen-dag-w640.webp"
+ },
  "/assets/img/grafieken/maandpieken-facturatiepiek.webp": {
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/maandpieken-facturatiepiek-w640.webp"
+ },
+ "/assets/img/grafieken/netspanning-zonnige-dag.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/netspanning-zonnige-dag-w640.webp"
  },
  "/assets/img/producten/goodwe-et-g2.webp": {
   "width": 900,

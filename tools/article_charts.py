@@ -149,6 +149,63 @@ def backup_options():
     return svg(body, "Stroomonderbreking: drie situaties", "Een batterij mag nooit stroom naar het net sturen; wat werkt, hangt af van de installatie")
 
 
+def grid_voltage_day():
+    """Illustrative 10-minute average grid voltage on a sunny day at a crowded street, with trips at 253 V."""
+    import math
+    x0, x1, ytop, ybot = 170, 1530, 190, 740
+    lo, hi = 224, 268
+    x_of = lambda h: x0 + (x1 - x0) * (h - 5) / 17   # 5u .. 22u
+    y_of = lambda v: ybot - (ybot - ytop) * (v - lo) / (hi - lo)
+    body = axes(x0, x1, y_of, [225, 230, 235, 240, 245, 250, 255, 260, 265], " V")
+    # limits
+    for v, label, color, dash in ((253, "253 V: gemiddelde over 10 minuten (230 V + 10%)", RED, "16 10"),
+                                  (264.5, "264,5 V: ogenblikkelijke grens (230 V + 15%)", SOFT, "6 8")):
+        y = y_of(v)
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{color}" stroke-width="4" stroke-dasharray="{dash}"/>\n'
+        body += text(x1, y - 14, label, 23, color, 600, "end")
+    # voltage curve: rises with solar, falls back each time the inverter trips, then climbs again
+    pts, trips = [], []
+    h, tripped_until = 5.0, -1
+    while h <= 22.0001:
+        sun = max(0.0, math.sin(math.pi * (h - 6.5) / 14))
+        v = 231 + 23.5 * sun ** 1.6
+        if tripped_until > h:
+            v -= 7.5
+        elif v >= 253 and 11 <= h <= 15.5:
+            trips.append(h)
+            tripped_until = h + 0.55
+            v = 253.2
+        pts.append(f"{x_of(h):.1f},{y_of(v):.1f}")
+        h += 1 / 6
+    for t in trips:
+        body += f'<rect x="{x_of(t):.1f}" y="{ytop}" width="{x_of(t + 0.55) - x_of(t):.1f}" height="{ybot - ytop}" fill="#fdecea"/>\n'
+    body += f'<polyline points="{" ".join(pts)}" fill="none" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>\n'
+    if trips:
+        mid = (x_of(trips[0]) + x_of(trips[-1] + 0.55)) / 2
+        body += text(mid, y_of(258.5), "omvormer schakelt af", 23, RED, 600, "middle")
+    body += "".join(text(x_of(t), 790, f"{t}u", anchor="middle") for t in range(6, 23, 2))
+    body += text(150, 850, "Voorbeeld met fictieve meetwaarden: netspanning op een zonnige dag in een straat met veel zonnepanelen.", 23)
+    return svg(body, "Te hoge netspanning op een zonnige dag", "Elke keer de spanning de grens raakt, schakelt de omvormer even af")
+
+
+def battery_size_trend():
+    """Average capacity of newly connected home batteries in Flanders (Fluvius open data, via Solar Magazine)."""
+    bars = [("2024", 9.1, "± 9 kWh"), ("2025", 11.5, "± 11,5 kWh"), ("2026*", 22.0, "± 22 kWh")]
+    x0, x1, ytop, ybot = 170, 1530, 190, 740
+    y_of = lambda v: ybot - (ybot - ytop) * v / 25
+    body = axes(x0, x1, y_of, [0, 5, 10, 15, 20, 25], " kWh")
+    slot = (x1 - x0) / len(bars)
+    for i, (label, v, shown) in enumerate(bars):
+        bx = x0 + slot * i + slot * 0.25
+        bw = slot * 0.5
+        color = LEAF if label.startswith("2026") else INK
+        body += f'<rect x="{bx:.1f}" y="{y_of(v):.1f}" width="{bw:.1f}" height="{ybot - y_of(v):.1f}" rx="8" fill="{color}"/>\n'
+        body += text(bx + bw / 2, y_of(v) - 18, shown, 30, INK, 650, "middle")
+        body += text(bx + bw / 2, 790, label, 28, INK, 600, "middle")
+    body += text(150, 850, "* januari tot mei 2026, voorlopig. Gemiddelde van nieuw aangesloten thuisbatterijen, berekend uit open data van Fluvius.", 23)
+    return svg(body, "Nieuwe thuisbatterijen worden groter", "Gemiddelde opslagcapaciteit van nieuw aangesloten thuisbatterijen in Vlaanderen")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -158,3 +215,5 @@ if __name__ == "__main__":
     write("dynamische-prijzen-dag", dynamic_price_day())
     write("ac-dc-laden", ac_dc_charging())
     write("back-up-opties", backup_options())
+    write("netspanning-zonnige-dag", grid_voltage_day())
+    write("batterijgrootte-vlaanderen", battery_size_trend())
