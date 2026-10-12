@@ -291,6 +291,11 @@ p { margin: 0 0 1em; }
 .spec th, .spec td { text-align: left; padding: .7rem .5rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .spec th { width: 38%; font-weight: 600; }
 
+/* Checklist of strengths */
+.checklist { list-style: none; padding: 0; margin: 1rem 0 2rem; display: grid; gap: .9rem; }
+.checklist li { position: relative; padding-left: 2.1rem; margin: 0; }
+.checklist li::before { content: ""; position: absolute; left: 0; top: .3em; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--leaf) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23172129' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 80% no-repeat; }
+
 /* Pros / cons */
 .procon { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem; }
 .procon > div { padding: 1.25rem 1.4rem; border-radius: var(--radius-m); background: var(--paper); }
