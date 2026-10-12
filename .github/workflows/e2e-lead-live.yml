@@ -1,9 +1,15 @@
-name: Live test battery analysis (creates a TEST lead)
-# Manual only. Walks through the live lead wizard once with the Fluvius test file from
-# battery-roi-tool, creates a real lead named "TEST ..." and sends a real result mail.
+name: Live test battery analysis
+# Manual only. Mode "embed-check" (default) checks the analysis embedded on the published
+# site up to the submit button: no lead, no mail. Mode "wizard" walks through lead.html once
+# with the Fluvius test file and creates a real lead named "TEST ..." with a real result mail.
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: "embed-check (no lead) or wizard (creates a TEST lead)"
+        type: choice
+        options: [embed-check, wizard]
+        default: embed-check
       email:
         description: "Address that receives the test result mail"
         default: "kevin@smartpeak.be"
@@ -21,7 +27,11 @@ jobs:
         run: |
           pip install playwright==1.56.0
           python -m playwright install --with-deps chromium
-      - name: Run the wizard
+      - name: Check the embedded analysis (no lead)
+        if: inputs.mode == 'embed-check'
+        run: python tools/e2e_embed_check.py /tmp/roi/e2e/fixtures/test-fluvius.csv
+      - name: Run the wizard (creates a TEST lead)
+        if: inputs.mode == 'wizard'
         run: python tools/e2e_lead_live.py /tmp/roi/e2e/fixtures/test-fluvius.csv "${{ inputs.email }}"
       - name: Store screenshots and log
         if: always()

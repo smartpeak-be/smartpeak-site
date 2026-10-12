@@ -20,6 +20,8 @@ on:
       - "content/contact-form-test.log"
       - "content/e2e-lead/**"
       - "tools/e2e_lead_live.py"
+      - "tools/e2e_embed_check.py"
+      - "tools/test_analysis_lead.mjs"
       - ".github/workflows/e2e-lead-live.yml"
   workflow_dispatch:
 permissions:
