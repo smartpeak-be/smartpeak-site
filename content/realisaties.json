@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Zendure SolarFlow 2400 AC+ met AB3000L",
+    "text": "AC-gekoppelde batterij naast een bestaande zonne-installatie, netjes op een rek gemonteerd en via de P1-meter gestuurd.",
+    "image": "/assets/img/site/installatie-zendure-solarflow.webp",
+    "alt": "Zendure SolarFlow 2400 AC+ en AB3000L batterijen op een houten rek tegen een bakstenen muur",
+    "facts": ["Zendure", "AC-gekoppeld"]
+  },
+  {
+    "title": "Twee batterijkasten in de berging",
+    "text": "Batterijopslag in een technische ruimte, met degelijke bekabeling en een duidelijke opbouw.",
+    "image": "/assets/img/site/installatie-batterijkasten.webp",
+    "alt": "Twee witte batterijkasten aangesloten met rode en zwarte kabels in een berging",
+    "facts": ["Thuisbatterij"]
+  },
+  {
+    "title": "Omvormer koppelen en configureren",
+    "text": "Na de plaatsing koppelen we omvormer, batterij en app en testen we alles ter plaatse, met uitleg voor de klant.",
+    "image": "/assets/img/site/installatie-solis-omvormer.webp",
+    "alt": "Technici configureren een Solis-omvormer met een smartphone naast de zekeringkast",
+    "facts": ["Configuratie", "Oplevering"]
+  }
+]

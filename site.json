@@ -1,0 +1,90 @@
+{
+  "name": "SmartPeak",
+  "tagline": "Slim omgaan met jouw energie",
+  "domain": "https://smartpeak.be",
+  "email": "info@smartpeak.be",
+  "phone": "+32 485 60 68 40",
+  "phone_href": "+32485606840",
+  "hours": "Maandag tot zondag, 9:00 tot 17:00",
+  "analysis_url": "https://smartpeak-be.github.io/battery-roi-tool/lead.html",
+  "reviews_widget_url": "https://smartpeak-be.github.io/battery-roi-tool/assets/js/widgets/reviews.js",
+  "entities": [
+    {
+      "name": "Blox-it BV",
+      "number": "BE 0730.696.050"
+    },
+    {
+      "name": "LED's Repair",
+      "number": "BE 0644.867.975"
+    }
+  ],
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/smartpeak.be/"
+    },
+    {
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@smartpeak.be"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61574953610750"
+    }
+  ],
+  "nav": [
+    {
+      "label": "Werkwijze",
+      "path": "/werkwijze/"
+    },
+    {
+      "label": "Oplossingen",
+      "path": "/oplossingen/"
+    },
+    {
+      "label": "Realisaties",
+      "path": "/realisaties/"
+    },
+    {
+      "label": "Hulp",
+      "path": "/hulp/"
+    },
+    {
+      "label": "Artikels",
+      "path": "/artikels/"
+    },
+    {
+      "label": "Over ons",
+      "path": "/over-ons/"
+    }
+  ],
+  "footer_nav": [
+    {
+      "label": "Batterij, iets voor mij?",
+      "path": "/batterij-iets-voor-mij/"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact/"
+    },
+    {
+      "label": "Algemene voorwaarden",
+      "path": "/algemene-voorwaarden/"
+    },
+    {
+      "label": "Privacyverklaring",
+      "path": "/privacyverklaring/"
+    }
+  ],
+  "redirects": {
+    "/about/": "/over-ons/",
+    "/thuisbatterij-rendabel-berekening/": "/werkwijze/",
+    "/portfolio/": "/realisaties/",
+    "/461-2/": "/batterij-iets-voor-mij/",
+    "/shop/": "/",
+    "/cart/": "/",
+    "/checkout/": "/",
+    "/my-account/": "/",
+    "/blog/": "/artikels/"
+  }
+}

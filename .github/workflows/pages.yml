@@ -1,0 +1,45 @@
+name: Deploy website to GitHub Pages
+# One short job per push to main: build, check links, deploy. Docs-only changes skip it.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "content/wordpress/**"
+      - "tools/import_wordpress.py"
+      - "tools/convert_wordpress.py"
+      - ".github/workflows/import-wordpress.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build site
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 build.py
+      - name: Check links and SEO basics
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 tools/check_site.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
