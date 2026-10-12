@@ -144,7 +144,7 @@ def house(x, y, lit, label, sub, note):
 def backup_options():
     body = house(150, 200, [False, False, False], "Zonder back-up", "alles valt uit, ook", "zonnepanelen en batterij")
     body += house(610, 200, [True, False, False], "Noodstopcontact", "één stopcontact aan het toestel", "voor een paar toestellen")
-    body += house(1070, 200, [True, True, False], "Back-up-schakeling", "gekozen kringen blijven", "werken, los van het net")
+    body += house(1070, 200, [True, True, False], "Back-upschakeling", "gekozen kringen blijven", "werken, los van het net")
     body += text(150, 850, "Vereenvoudigd: wat blijft werken tijdens een stroomonderbreking. Een volledige woning op back-up vraagt meer vermogen.", 23)
     return svg(body, "Stroomonderbreking: drie situaties", "Een batterij mag nooit stroom naar het net sturen; wat werkt, hangt af van de installatie")
 

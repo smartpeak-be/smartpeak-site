@@ -32,7 +32,7 @@
 <text x="1198.0" y="464.0" font-size="24" fill="#1f272e">Verlichting</text>
 <circle cx="1160" cy="540" r="22" fill="#cfd8d5"/>
 <text x="1198.0" y="549.0" font-size="24" fill="#7b8682">Kookplaat</text>
-<text x="1260.0" y="670.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Back-up-schakeling</text>
+<text x="1260.0" y="670.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Back-upschakeling</text>
 <text x="1260.0" y="706.0" font-size="23" fill="#4b5661" text-anchor="middle">gekozen kringen blijven</text>
 <text x="1260.0" y="740.0" font-size="23" fill="#4b5661" text-anchor="middle">werken, los van het net</text>
 <text x="150.0" y="850.0" font-size="23" fill="#4b5661">Vereenvoudigd: wat blijft werken tijdens een stroomonderbreking. Een volledige woning op back-up vraagt meer vermogen.</text>
