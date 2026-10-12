@@ -121,6 +121,19 @@ def analysis_widget():
             f'<script type="module" src="{esc(SITE["analysis_widget_url"])}"></script>')
 
 
+def brand_logos():
+    """Brands we work with, as logo tiles. Put the official logo of a brand in
+    assets/img/merken/<slug>.svg (or .webp/.png); until then the tile shows the name."""
+    tiles = []
+    for brand in SITE["brands"]:
+        logo = next((f"/assets/img/merken/{brand['slug']}{ext}" for ext in (".svg", ".webp", ".png")
+                     if (ROOT / "assets" / "img" / "merken" / f"{brand['slug']}{ext}").exists()), None)
+        inner = (f'<img src="{logo}" alt="{esc(brand["name"])}" loading="lazy" height="40">'
+                 if logo else f'<span>{esc(brand["name"])}</span>')
+        tiles.append(f'<li><a href="{brand["path"]}">{inner}</a></li>')
+    return '<ul class="brand-logos">' + "".join(tiles) + "</ul>"
+
+
 def section_cards(entries):
     cards = []
     for meta in sorted(entries, key=lambda m: (m.get("order", 99), m["title"])):
@@ -136,14 +149,13 @@ def tokens(posts, realisaties, sections):
     return section_tokens | {
         "analysis_url": esc(SITE["analysis_url"]),
         "analysis_widget": analysis_widget(),
+        "brand_logos": brand_logos(),
         "email": esc(SITE["email"]),
         "phone": esc(SITE["phone"]),
         "phone_href": esc(SITE["phone_href"]),
         "hours": esc(SITE["hours"]),
-        "latest_posts": post_cards(posts[:3]),
         "article_list": post_cards(posts, eager_first=True),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
-        "realisaties_preview": realisatie_cards(realisaties[:3]),
         "reviews": reviews_block(9),
         "reviews_short": reviews_block(6),
         "cta": (ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"),

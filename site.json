@@ -91,5 +91,27 @@
     "/checkout/": "/",
     "/my-account/": "/",
     "/blog/": "/artikels/"
-  }
+  },
+  "brands": [
+    {
+      "name": "Sigenergy",
+      "slug": "sigenergy",
+      "path": "/oplossingen/sigenergy-sigenstor/"
+    },
+    {
+      "name": "Zendure",
+      "slug": "zendure",
+      "path": "/oplossingen/zendure-solarflow/"
+    },
+    {
+      "name": "GoodWe",
+      "slug": "goodwe",
+      "path": "/oplossingen/goodwe-solis/"
+    },
+    {
+      "name": "Solis",
+      "slug": "solis",
+      "path": "/oplossingen/goodwe-solis/"
+    }
+  ]
 }

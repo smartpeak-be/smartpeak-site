@@ -43,7 +43,7 @@ Elk inhoudsbestand begint met een meta-blok:
 
 `section` zet een pagina automatisch in het overzicht via `{{list_<section>}}` (bv. `{{list_oplossingen}}`, `{{list_hulp}}`). Artikels hebben `date` en optioneel `image` en `legacy_path` (oude WordPress-URL die doorverwijst).
 
-Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{hours}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{latest_posts}}`, `{{article_list}}`, `{{realisaties}}`, `{{realisaties_preview}}`, `{{reviews}}`, `{{reviews_short}}`.
+Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{hours}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{brand_logos}}`, `{{article_list}}`, `{{realisaties}}`, `{{reviews}}`, `{{reviews_short}}`.
 
 Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het juiste voorvoegsel voor, zodat de site ook werkt op `smartpeak-be.github.io/smartpeak-site/`.
 
@@ -51,6 +51,7 @@ Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het jui
 
 - **Nieuwe of gewijzigde afbeelding?** Draai lokaal `python3 tools/make_image_variants.py` (vraagt Pillow). Dat maakt kleinere `-w640.webp`-versies voor gsm's, deelafbeeldingen voor artikels in `assets/img/og/` en houdt de afmetingen bij in `content/image-sizes.json`. `build.py` zet daarmee zelf `width`/`height` en `srcset` op elke `<img>`.
 - De build zet automatisch: het merk achter de titel als die dan nog onder 60 tekens blijft, `noindex` op de 404-pagina, brede tabellen in een scrollvak dat met het toetsenbord werkt, `lastmod` voor artikels in de sitemap en `preconnect` op pagina's met een widget.
+- **Merklogo's op de startpagina:** zet het officiële logo als `assets/img/merken/<slug>.svg` (of `.webp`/`.png`), met de slugs uit `brands` in `site.json`. Zolang er geen bestand is, toont de tegel de merknaam.
 - **Toegankelijkheid:** we werken naar WCAG 2.2 AA. De verklaring staat in `content/pages/toegankelijkheid.html`; pas de datum en de bekende beperkingen aan na een nieuwe controle. De knop "Lees voor" (in `assets/js/site.js`) gebruikt de spraak van de browser en verschijnt enkel als er een Nederlandse stem is.
 
 ## Koppelingen met de batterijtool
