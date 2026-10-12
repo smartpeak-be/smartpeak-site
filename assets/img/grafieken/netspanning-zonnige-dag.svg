@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Te hoge netspanning op een zonnige dag</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Elke keer de spanning de grens raakt, schakelt de omvormer even af</text>
+<line x1="170" x2="1530" y1="727.5" y2="727.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="736.5" font-size="25" fill="#4b5661" text-anchor="end">225 V</text>
+<line x1="170" x2="1530" y1="665.0" y2="665.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="674.0" font-size="25" fill="#4b5661" text-anchor="end">230 V</text>
+<line x1="170" x2="1530" y1="602.5" y2="602.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="611.5" font-size="25" fill="#4b5661" text-anchor="end">235 V</text>
+<line x1="170" x2="1530" y1="540.0" y2="540.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="549.0" font-size="25" fill="#4b5661" text-anchor="end">240 V</text>
+<line x1="170" x2="1530" y1="477.5" y2="477.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="486.5" font-size="25" fill="#4b5661" text-anchor="end">245 V</text>
+<line x1="170" x2="1530" y1="415.0" y2="415.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="424.0" font-size="25" fill="#4b5661" text-anchor="end">250 V</text>
+<line x1="170" x2="1530" y1="352.5" y2="352.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="361.5" font-size="25" fill="#4b5661" text-anchor="end">255 V</text>
+<line x1="170" x2="1530" y1="290.0" y2="290.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="299.0" font-size="25" fill="#4b5661" text-anchor="end">260 V</text>
+<line x1="170" x2="1530" y1="227.5" y2="227.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="236.5" font-size="25" fill="#4b5661" text-anchor="end">265 V</text>
+<line x1="170" x2="1530" y1="377.5" y2="377.5" stroke="#c2412d" stroke-width="4" stroke-dasharray="16 10"/>
+<text x="1530.0" y="363.5" font-size="23" fill="#c2412d" font-weight="600" text-anchor="end">253 V: gemiddelde over 10 minuten (230 V + 10%)</text>
+<line x1="170" x2="1530" y1="233.8" y2="233.8" stroke="#4b5661" stroke-width="4" stroke-dasharray="6 8"/>
+<text x="1530.0" y="219.8" font-size="23" fill="#4b5661" font-weight="600" text-anchor="end">264,5 V: ogenblikkelijke grens (230 V + 15%)</text>
+<rect x="756.7" y="190" width="44.0" height="550" fill="#fdecea"/>
+<rect x="810.0" y="190" width="44.0" height="550" fill="#fdecea"/>
+<rect x="863.3" y="190" width="44.0" height="550" fill="#fdecea"/>
+<rect x="916.7" y="190" width="44.0" height="550" fill="#fdecea"/>
+<polyline points="170.0,652.5 183.3,652.5 196.7,652.5 210.0,652.5 223.3,652.5 236.7,652.5 250.0,652.5 263.3,652.5 276.7,652.5 290.0,652.5 303.3,651.0 316.7,647.9 330.0,643.7 343.3,638.5 356.7,632.6 370.0,626.0 383.3,618.7 396.7,610.9 410.0,602.6 423.3,593.8 436.7,584.7 450.0,575.3 463.3,565.5 476.7,555.6 490.0,545.5 503.3,535.2 516.7,524.9 530.0,514.6 543.3,504.2 556.7,493.9 570.0,483.8 583.3,473.8 596.7,464.0 610.0,454.4 623.3,445.1 636.7,436.1 650.0,427.4 663.3,419.1 676.7,411.3 690.0,403.9 703.3,397.0 716.7,390.6 730.0,384.7 743.3,379.4 756.7,375.0 770.0,464.2 783.3,460.7 796.7,457.7 810.0,375.0 823.3,453.8 836.7,452.8 850.0,452.5 863.3,375.0 876.7,453.8 890.0,455.4 903.3,457.7 916.7,375.0 930.0,464.2 943.3,468.4 956.7,473.1 970.0,384.7 983.3,390.6 996.7,397.0 1010.0,403.9 1023.3,411.3 1036.7,419.1 1050.0,427.4 1063.3,436.1 1076.7,445.1 1090.0,454.4 1103.3,464.0 1116.7,473.8 1130.0,483.8 1143.3,493.9 1156.7,504.2 1170.0,514.6 1183.3,524.9 1196.7,535.2 1210.0,545.5 1223.3,555.6 1236.7,565.5 1250.0,575.3 1263.3,584.7 1276.7,593.8 1290.0,602.6 1303.3,610.9 1316.7,618.7 1330.0,626.0 1343.3,632.6 1356.7,638.5 1370.0,643.7 1383.3,647.9 1396.7,651.0 1410.0,652.5 1423.3,652.5 1436.7,652.5 1450.0,652.5 1463.3,652.5 1476.7,652.5 1490.0,652.5 1503.3,652.5 1516.7,652.5 1530.0,652.5" fill="none" stroke="#1f272e" stroke-width="5" stroke-linejoin="round"/>
+<text x="858.7" y="308.8" font-size="23" fill="#c2412d" font-weight="600" text-anchor="middle">omvormer schakelt af</text>
+<text x="250.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">6u</text>
+<text x="410.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">8u</text>
+<text x="570.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">10u</text>
+<text x="730.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">12u</text>
+<text x="890.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">14u</text>
+<text x="1050.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">16u</text>
+<text x="1210.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">18u</text>
+<text x="1370.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">20u</text>
+<text x="1530.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">22u</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Voorbeeld met fictieve meetwaarden: netspanning op een zonnige dag in een straat met veel zonnepanelen.</text>
+</svg>
