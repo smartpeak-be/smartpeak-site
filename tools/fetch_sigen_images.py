@@ -1,64 +1,50 @@
-"""Collect product images from the official Sigenergy product pages.
+"""Collect official Sigenergy product images from their public image server.
 
-sigenergy.com loads its product photos with JavaScript, so a plain download finds
-nothing. This opens each page in a real browser, scrolls through it and keeps every
-image of reasonable size it loads. Results go to content/product-images-raw/sigenergy/
-(not published); pick and convert by hand. Run via .github/workflows/fetch-sigen-images.yml.
+sigenergy.com itself blocks automated visits, but its images are served from the
+public CDN wwwstatic.sigenergy.com. The Internet Archive keeps a list of image URLs it
+has seen there; this script asks for that list, keeps the product folders and
+downloads the current files from the CDN into content/product-images-raw/sigenergy/
+(not published). Pick and convert by hand. Run via fetch-sigen-images.yml.
 """
-import hashlib
 import json
+import re
+import urllib.request
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
-
-PAGES = {
-    "sigenstor": "https://www.sigenergy.com/en/products/sigenstor",
-    "gateway": "https://www.sigenergy.com/en/products/gateway",
-    "ac-charger": "https://www.sigenergy.com/en/products/ac-charger",
-    "dc-charger": "https://www.sigenergy.com/en/products/dc-charger",
-}
 OUT = Path(__file__).resolve().parent.parent / "content" / "product-images-raw" / "sigenergy"
+CDX = ("http://web.archive.org/cdx/search/cdx?url=wwwstatic.sigenergy.com/static/images/"
+       "&matchType=prefix&output=json&fl=original&collapse=urlkey&limit=5000")
+KEEP = re.compile(r"/static/images/(product-[^/]+|hry|home[^/]*)/[^/?]+\.(png|jpe?g|webp)$", re.I)
+UA = "Mozilla/5.0 (compatible; SmartPeakSite/1.0; +https://github.com/smartpeak-be/smartpeak-site)"
 MIN_BYTES = 25_000
-EXT = {"image/png": "png", "image/jpeg": "jpg", "image/webp": "webp"}
+
+
+def get(url):
+    request = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(request, timeout=60) as response:
+        return response.read()
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    rows = json.loads(get(CDX))[1:]
+    urls = sorted({re.sub(r"^http://", "https://", r[0].split("?")[0]) for r in rows if KEEP.search(r[0].split("?")[0])})
+    print(f"{len(urls)} candidate image URLs")
     index = []
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        for name, url in PAGES.items():
-            page = browser.new_page(viewport={"width": 1440, "height": 900})
-            found = []
-
-            def keep(response, name=name, found=found):
-                kind = (response.headers.get("content-type") or "").split(";")[0]
-                if kind not in EXT or response.status != 200:
-                    return
-                try:
-                    body = response.body()
-                except Exception:
-                    return
-                if len(body) < MIN_BYTES:
-                    return
-                digest = hashlib.sha1(body).hexdigest()[:10]
-                target = OUT / f"{name}-{digest}.{EXT[kind]}"
-                if not target.exists():
-                    target.write_bytes(body)
-                    found.append({"file": target.name, "url": response.url, "bytes": len(body)})
-
-            page.on("response", keep)
-            page.goto(url, wait_until="networkidle", timeout=60000)
-            for y in range(0, 20000, 700):
-                page.mouse.wheel(0, 700)
-                page.wait_for_timeout(250)
-            page.wait_for_timeout(1500)
-            page.screenshot(path=OUT / f"_{name}-pagina.png", full_page=False)
-            index += found
-            print(f"{name}: {len(found)} images")
-            page.close()
-        browser.close()
+    for url in urls:
+        folder, name = url.split("/static/images/")[1].split("/", 1)
+        target = OUT / f"{folder}__{name}"
+        try:
+            body = get(url)
+        except Exception as error:
+            print("skip", url, error)
+            continue
+        if len(body) < MIN_BYTES:
+            continue
+        target.write_bytes(body)
+        index.append({"file": target.name, "url": url, "bytes": len(body)})
     (OUT / "index.json").write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
+    print(f"saved {len(index)} images")
 
 
 if __name__ == "__main__":
