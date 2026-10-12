@@ -21,8 +21,6 @@ on:
       - "content/e2e-lead/**"
       - "tools/e2e_lead_live.py"
       - ".github/workflows/e2e-lead-live.yml"
-      - ".github/workflows/fetch-sigen-images.yml"
-      - "tools/fetch_sigen_images.py"
   workflow_dispatch:
 permissions:
   contents: read
