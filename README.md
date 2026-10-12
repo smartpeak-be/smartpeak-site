@@ -43,13 +43,14 @@ Elk inhoudsbestand begint met een meta-blok:
 
 `section` zet een pagina automatisch in het overzicht via `{{list_<section>}}` (bv. `{{list_oplossingen}}`, `{{list_hulp}}`). Artikels hebben `date` en optioneel `image` en `legacy_path` (oude WordPress-URL die doorverwijst).
 
-Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{hours}}`, `{{analysis_url}}`, `{{cta}}`, `{{latest_posts}}`, `{{article_list}}`, `{{realisaties}}`, `{{realisaties_preview}}`, `{{reviews}}`, `{{reviews_short}}`.
+Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{hours}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{latest_posts}}`, `{{article_list}}`, `{{realisaties}}`, `{{realisaties_preview}}`, `{{reviews}}`, `{{reviews_short}}`.
 
 Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het juiste voorvoegsel voor, zodat de site ook werkt op `smartpeak-be.github.io/smartpeak-site/`.
 
 ## Koppelingen met de batterijtool
 
-- De verbruiksanalyse linkt naar `lead.html` van [battery-roi-tool](https://github.com/smartpeak-be/battery-roi-tool) (`analysis_url` in `site.json`).
+- De verbruiksanalyse draait in de pagina zelf via `assets/js/widgets/lead-wizard.js` van [battery-roi-tool](https://github.com/smartpeak-be/battery-roi-tool) (`analysis_widget_url` in `site.json`, token `{{analysis_widget}}`). Zelfde berekening, lead en resultaatmail als `lead.html`, zonder keys. De stijl volgt de site via de `--spa-*` variabelen in `assets/css/site.css`. Zonder JavaScript valt ze terug op een link naar `lead.html` (`analysis_url`).
+- Testen: de workflow "Test website forms against lead rules" controleert contactformulier en analyse tegen de Firestore-regels in de emulator (geen echte leads). "Live test battery analysis" in modus `embed-check` controleert de gepubliceerde site tot net voor het verzenden.
 - De reviews komen live uit Firestore via `assets/js/widgets/reviews.js` van dezelfde tool (`reviews_widget_url`). Enkel reviews met status `published` en toestemming voor de website verschijnen. De stijl wordt in `assets/css/site.css` (sectie "Reviews widget") afgestemd op de site.
 
 ## Publiceren
