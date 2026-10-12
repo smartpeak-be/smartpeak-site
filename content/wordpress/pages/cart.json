@@ -1,0 +1,12 @@
+{
+  "id": 194,
+  "slug": "cart",
+  "link": "https://smartpeak.be/cart/",
+  "date": "2025-10-23T11:31:08",
+  "modified": "2025-10-23T12:56:12",
+  "title": "Cart",
+  "excerpt": "",
+  "content": "\n<div class=\"wp-block-woocommerce-cart alignwide is-loading\">\n<div class=\"wp-block-woocommerce-filled-cart-block\">\n<div class=\"wp-block-woocommerce-cart-items-block\">\n<div class=\"wp-block-woocommerce-cart-line-items-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-product-collection\">\n<h2 class=\"wp-block-heading has-text-align-left\" style=\"margin-bottom:1rem\">You may be interested in&hellip;</h2>\n\n\n\n\n\n\n\n\n<h2 style=\"line-height:1.4;margin-bottom:0.75rem;margin-top:0\" class=\"has-text-align-center wp-block-post-title has-medium-font-size\"><a href=\"https://smartpeak.be/cart/\" target=\"_self\" >Cart</a></h2>\n\n\n\n\n</div>\n</div>\n\n\n\n\n<div class=\"wp-block-woocommerce-cart-totals-block\">\n<div class=\"wp-block-woocommerce-cart-order-summary-block\">\n<div class=\"wp-block-woocommerce-cart-order-summary-heading-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-coupon-form-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-subtotal-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-fee-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-discount-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-shipping-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-order-summary-taxes-block\"></div>\n</div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-express-payment-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-proceed-to-checkout-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-cart-accepted-payment-methods-block\"></div>\n</div>\n</div>\n\n\n\n<div class=\"wp-block-woocommerce-empty-cart-block\">\n<h2 class=\"wp-block-heading has-text-align-center with-empty-cart-icon wc-block-cart__empty-cart__title\">Your cart is currently empty!</h2>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity is-style-dots\"/>\n\n\n\n<h2 class=\"wp-block-heading has-text-align-center\">New in store</h2>\n\n\n</div>\n</div>\n",
+  "featured_media": null,
+  "description": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": 195,
+  "slug": "checkout",
+  "link": "https://smartpeak.be/checkout/",
+  "date": "2025-10-23T11:31:08",
+  "modified": "2025-10-23T11:31:08",
+  "title": "Checkout",
+  "excerpt": "",
+  "content": "\n<div class=\"wp-block-woocommerce-checkout alignwide wc-block-checkout is-loading\">\n<div class=\"wp-block-woocommerce-checkout-fields-block\">\n<div class=\"wp-block-woocommerce-checkout-express-payment-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-contact-information-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-shipping-method-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-pickup-options-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-shipping-address-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-billing-address-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-shipping-methods-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-payment-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-additional-information-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-note-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-terms-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-actions-block\"></div>\n</div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-totals-block\">\n<div class=\"wp-block-woocommerce-checkout-order-summary-block\">\n<div class=\"wp-block-woocommerce-checkout-order-summary-cart-items-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-coupon-form-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-subtotal-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-fee-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-discount-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-shipping-block\"></div>\n\n\n\n<div class=\"wp-block-woocommerce-checkout-order-summary-taxes-block\"></div>\n</div>\n</div>\n</div>\n",
+  "featured_media": null,
+  "description": ""
+}
