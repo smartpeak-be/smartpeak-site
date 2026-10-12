@@ -88,6 +88,18 @@ def reviews_block(limit):
             f'<script defer src="{esc(SITE["reviews_widget_url"])}" data-limit="{limit}"></script>')
 
 
+def analysis_widget():
+    """The verbruiksanalyse wizard from battery-roi-tool, embedded in the page (no keys)."""
+    return (f'<div id="smartpeak-analyse" class="analysis-mount"'
+            f' data-help-url="/hulp/p1-poort-activeren/#verbruik-downloaden"'
+            f' data-privacy-url="/privacyverklaring/" data-email="{esc(SITE["email"])}">\n'
+            f'<noscript><p>De analyse heeft JavaScript nodig. Je kan ook '
+            f'<a href="{esc(SITE["analysis_url"])}" rel="noopener">de analyse op een aparte pagina openen</a> '
+            f'of je CSV-bestand mailen naar <a href="mailto:{esc(SITE["email"])}">{esc(SITE["email"])}</a>.</p></noscript>\n'
+            f'</div>\n'
+            f'<script type="module" src="{esc(SITE["analysis_widget_url"])}"></script>')
+
+
 def section_cards(entries):
     cards = []
     for meta in sorted(entries, key=lambda m: (m.get("order", 99), m["title"])):
@@ -102,6 +114,7 @@ def tokens(posts, realisaties, sections):
     section_tokens = {f"list_{name}": section_cards(entries) for name, entries in sections.items()}
     return section_tokens | {
         "analysis_url": esc(SITE["analysis_url"]),
+        "analysis_widget": analysis_widget(),
         "email": esc(SITE["email"]),
         "phone": esc(SITE["phone"]),
         "phone_href": esc(SITE["phone_href"]),
@@ -200,7 +213,7 @@ def with_base_path(page):
     """Prefix root-relative links so the site also works under /<repo>/ on github.io."""
     if not BASE_PATH:
         return page
-    return re.sub(r'((?:href|src|action)=")/(?!/)', rf"\1{BASE_PATH}/", page)
+    return re.sub(r'((?:href|src|action|data-[\w-]+-url)=")/(?!/)', rf"\1{BASE_PATH}/", page)
 
 
 def article(meta, body, kicker=""):

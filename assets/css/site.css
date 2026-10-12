@@ -380,3 +380,11 @@ p { margin: 0 0 1em; }
 .prose h2 { clear: both; }
 @media (max-width: 640px) { .product-shot { float: none; width: auto; max-width: 320px; margin: 1rem auto 1.5rem; } }
 .product-shot + .spec { width: auto; }
+
+/* Verbruiksanalyse (widget from battery-roi-tool, styled with the site tokens) */
+.analysis-mount {
+  --spa-accent: var(--leaf); --spa-accent-deep: var(--leaf-deep); --spa-ink: var(--ink);
+  --spa-soft: var(--ink-soft); --spa-line: var(--line); --spa-paper: var(--paper);
+  --spa-focus: var(--lagoon); --spa-radius: var(--radius-m); --spa-radius-l: var(--radius-l);
+}
+.js .analysis-mount:not(.spa) { min-height: 24rem; margin: 1.5rem 0; border: 1px solid var(--line); border-radius: var(--radius-l); }

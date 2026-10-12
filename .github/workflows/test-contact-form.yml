@@ -1,8 +1,12 @@
-name: Test contact form against lead rules
-# Manual only: checks that the website contact form is accepted by the current
-# Firestore rules of battery-roi-tool, using the emulator (no real leads or mails).
+name: Test website forms against lead rules
+# Manual only: checks that the contact form and the embedded verbruiksanalyse are accepted
+# by the current Firestore rules of battery-roi-tool, using the emulator (no real leads or mails).
 on:
   workflow_dispatch:
+    inputs:
+      roi_ref:
+        description: "battery-roi-tool branch to test against"
+        default: "gh-pages"
 permissions:
   contents: write
 jobs:
@@ -14,15 +18,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Get the lead rules from battery-roi-tool
+      - name: Get the lead rules and code from battery-roi-tool
         run: |
-          git clone --depth 1 https://github.com/smartpeak-be/battery-roi-tool /tmp/roi
+          git clone --depth 1 --branch "${{ inputs.roi_ref }}" https://github.com/smartpeak-be/battery-roi-tool /tmp/roi
           echo '{"firestore":{"rules":"roi/firestore.rules"},"emulators":{"firestore":{"port":8080}}}' > /tmp/firebase.json
-      - name: Run the test in the Firestore emulator
+      - name: Run the tests in the Firestore emulator
         run: |
           set -o pipefail
           cd /tmp && npx -y firebase-tools@13 emulators:exec --only firestore --project demo-smartpeak \
-            "node $GITHUB_WORKSPACE/tools/test_contact_lead.mjs" 2>&1 | tee $GITHUB_WORKSPACE/content/contact-form-test.log
+            "node $GITHUB_WORKSPACE/tools/test_contact_lead.mjs && ROI_DIR=/tmp/roi node $GITHUB_WORKSPACE/tools/test_analysis_lead.mjs" \
+            2>&1 | tee $GITHUB_WORKSPACE/content/contact-form-test.log
       - name: Store the test log
         if: always()
         run: |
@@ -30,5 +35,5 @@ jobs:
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
           git add content/contact-form-test.log
           git diff --cached --quiet && exit 0
-          git commit -m "Contact form test log"
+          git commit -m "Website forms test log"
           git pull --rebase origin main && git push
