@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Stroomonderbreking: drie situaties</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Een batterij mag nooit stroom naar het net sturen; wat werkt, hangt af van de installatie</text>
+<polygon points="150,320 340,200 530,320" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<rect x="180" y="320" width="320" height="300" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<circle cx="240" cy="370" r="22" fill="#cfd8d5"/>
+<text x="278.0" y="379.0" font-size="24" fill="#7b8682">Koelkast</text>
+<circle cx="240" cy="455" r="22" fill="#cfd8d5"/>
+<text x="278.0" y="464.0" font-size="24" fill="#7b8682">Verlichting</text>
+<circle cx="240" cy="540" r="22" fill="#cfd8d5"/>
+<text x="278.0" y="549.0" font-size="24" fill="#7b8682">Kookplaat</text>
+<text x="340.0" y="670.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Zonder back-up</text>
+<text x="340.0" y="706.0" font-size="23" fill="#4b5661" text-anchor="middle">alles valt uit, ook</text>
+<text x="340.0" y="740.0" font-size="23" fill="#4b5661" text-anchor="middle">zonnepanelen en batterij</text>
+<polygon points="610,320 800,200 990,320" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<rect x="640" y="320" width="320" height="300" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<circle cx="700" cy="370" r="22" fill="#17c15c"/>
+<text x="738.0" y="379.0" font-size="24" fill="#1f272e">Koelkast</text>
+<circle cx="700" cy="455" r="22" fill="#cfd8d5"/>
+<text x="738.0" y="464.0" font-size="24" fill="#7b8682">Verlichting</text>
+<circle cx="700" cy="540" r="22" fill="#cfd8d5"/>
+<text x="738.0" y="549.0" font-size="24" fill="#7b8682">Kookplaat</text>
+<text x="800.0" y="670.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Noodstopcontact</text>
+<text x="800.0" y="706.0" font-size="23" fill="#4b5661" text-anchor="middle">één stopcontact aan het toestel</text>
+<text x="800.0" y="740.0" font-size="23" fill="#4b5661" text-anchor="middle">voor een paar toestellen</text>
+<polygon points="1070,320 1260,200 1450,320" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<rect x="1100" y="320" width="320" height="300" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<circle cx="1160" cy="370" r="22" fill="#17c15c"/>
+<text x="1198.0" y="379.0" font-size="24" fill="#1f272e">Koelkast</text>
+<circle cx="1160" cy="455" r="22" fill="#17c15c"/>
+<text x="1198.0" y="464.0" font-size="24" fill="#1f272e">Verlichting</text>
+<circle cx="1160" cy="540" r="22" fill="#cfd8d5"/>
+<text x="1198.0" y="549.0" font-size="24" fill="#7b8682">Kookplaat</text>
+<text x="1260.0" y="670.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Back-up-schakeling</text>
+<text x="1260.0" y="706.0" font-size="23" fill="#4b5661" text-anchor="middle">gekozen kringen blijven</text>
+<text x="1260.0" y="740.0" font-size="23" fill="#4b5661" text-anchor="middle">werken, los van het net</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Vereenvoudigd: wat blijft werken tijdens een stroomonderbreking. Een volledige woning op back-up vraagt meer vermogen.</text>
+</svg>
