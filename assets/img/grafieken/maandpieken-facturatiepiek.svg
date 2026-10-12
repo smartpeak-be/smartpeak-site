@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Twaalf maandpieken, één facturatiepiek</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Bij een jaarafrekening betaal je op het gemiddelde van je maandpieken</text>
+<line x1="150" x2="1530" y1="760.0" y2="760.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="769.0" font-size="25" fill="#4b5661" text-anchor="end">0 kW</text>
+<line x1="150" x2="1530" y1="646.0" y2="646.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="655.0" font-size="25" fill="#4b5661" text-anchor="end">2 kW</text>
+<line x1="150" x2="1530" y1="532.0" y2="532.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="541.0" font-size="25" fill="#4b5661" text-anchor="end">4 kW</text>
+<line x1="150" x2="1530" y1="418.0" y2="418.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="427.0" font-size="25" fill="#4b5661" text-anchor="end">6 kW</text>
+<line x1="150" x2="1530" y1="304.0" y2="304.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="313.0" font-size="25" fill="#4b5661" text-anchor="end">8 kW</text>
+<line x1="150" x2="1530" y1="190.0" y2="190.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="128" y="199.0" font-size="25" fill="#4b5661" text-anchor="end">10 kW</text>
+<rect x="171.8" y="315.4" width="71.3" height="444.6" rx="5" fill="#1f272e"/>
+<text x="207.5" y="303.4" font-size="22" fill="#4b5661" text-anchor="middle">7,8</text>
+<text x="207.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">jan</text>
+<rect x="286.9" y="349.6" width="71.3" height="410.4" rx="5" fill="#1f272e"/>
+<text x="322.5" y="337.6" font-size="22" fill="#4b5661" text-anchor="middle">7,2</text>
+<text x="322.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">feb</text>
+<rect x="401.9" y="412.3" width="71.3" height="347.7" rx="5" fill="#1f272e"/>
+<text x="437.5" y="400.3" font-size="22" fill="#4b5661" text-anchor="middle">6,1</text>
+<text x="437.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">mrt</text>
+<rect x="516.9" y="475.0" width="71.3" height="285.0" rx="5" fill="#1f272e"/>
+<text x="552.5" y="463.0" font-size="22" fill="#4b5661" text-anchor="middle">5,0</text>
+<text x="552.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">apr</text>
+<rect x="631.9" y="509.2" width="71.3" height="250.8" rx="5" fill="#1f272e"/>
+<text x="667.5" y="497.2" font-size="22" fill="#4b5661" text-anchor="middle">4,4</text>
+<text x="667.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">mei</text>
+<rect x="746.9" y="532.0" width="71.3" height="228.0" rx="5" fill="#1f272e"/>
+<text x="782.5" y="520.0" font-size="22" fill="#4b5661" text-anchor="middle">4,0</text>
+<text x="782.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">jun</text>
+<rect x="861.9" y="543.4" width="71.3" height="216.6" rx="5" fill="#1f272e"/>
+<text x="897.5" y="531.4" font-size="22" fill="#4b5661" text-anchor="middle">3,8</text>
+<text x="897.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">jul</text>
+<rect x="976.9" y="526.3" width="71.3" height="233.7" rx="5" fill="#1f272e"/>
+<text x="1012.5" y="514.3" font-size="22" fill="#4b5661" text-anchor="middle">4,1</text>
+<text x="1012.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">aug</text>
+<rect x="1091.8" y="497.8" width="71.3" height="262.2" rx="5" fill="#1f272e"/>
+<text x="1127.5" y="485.8" font-size="22" fill="#4b5661" text-anchor="middle">4,6</text>
+<text x="1127.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">sep</text>
+<rect x="1206.8" y="446.5" width="71.3" height="313.5" rx="5" fill="#1f272e"/>
+<text x="1242.5" y="434.5" font-size="22" fill="#4b5661" text-anchor="middle">5,5</text>
+<text x="1242.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">okt</text>
+<rect x="1321.8" y="372.4" width="71.3" height="387.6" rx="5" fill="#1f272e"/>
+<text x="1357.5" y="360.4" font-size="22" fill="#4b5661" text-anchor="middle">6,8</text>
+<text x="1357.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">nov</text>
+<rect x="1436.8" y="292.6" width="71.3" height="467.4" rx="5" fill="#1f272e"/>
+<text x="1472.5" y="280.6" font-size="22" fill="#4b5661" text-anchor="middle">8,2</text>
+<text x="1472.5" y="804" font-size="25" fill="#4b5661" text-anchor="middle">dec</text>
+<line x1="150" x2="1530" y1="439.4" y2="439.4" stroke="#17c15c" stroke-width="5" stroke-dasharray="16 10"/>
+<rect x="673.2" y="373.4" width="345.0" height="44" rx="8" fill="#ffffff"/>
+<text x="845.8" y="405.4" font-size="26" font-weight="600" fill="#0b7a42" text-anchor="middle">Facturatiepiek: gemiddeld 5,6 kW</text>
+<line x1="150" x2="1530" y1="617.5" y2="617.5" stroke="#9aa6a3" stroke-width="3" stroke-dasharray="6 8"/>
+<rect x="150" y="828" width="28" height="28" rx="5" fill="#1f272e"/><text x="192" y="850" font-size="25" fill="#1f272e">Hoogste kwartier van de maand</text><line x1="590" x2="640" y1="841" y2="841" stroke="#9aa6a3" stroke-width="3" stroke-dasharray="6 8"/><text x="654" y="850" font-size="25" fill="#1f272e">Minimum 2,5 kW</text>
+<text x="1530" y="850" font-size="22" fill="#4b5661" text-anchor="end">Vereenvoudigd voorbeeld</text></svg>
