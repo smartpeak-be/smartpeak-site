@@ -13,6 +13,9 @@ on:
       - "content/documents-mirror.log"
       - ".github/workflows/mirror-documents.yml"
       - ".github/workflows/import-wordpress.yml"
+      - ".github/workflows/test-contact-form.yml"
+      - "tools/test_contact_lead.mjs"
+      - "content/contact-form-test.log"
   workflow_dispatch:
 permissions:
   contents: read

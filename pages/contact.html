@@ -1,39 +1,76 @@
 <!--meta
 {
   "title": "Contact",
-  "description": "Neem contact op met SmartPeak voor advies, een offerte of een afspraak over thuisbatterijen en energiesturing. Mail info@smartpeak.be of bel +32 485 60 68 40.",
+  "description": "Neem contact op met SmartPeak voor advies, een offerte of een afspraak over thuisbatterijen en energiesturing. Via het formulier, info@smartpeak.be of +32 485 60 68 40.",
   "path": "/contact/"
 }
 -->
 <header class="page-head">
   <div class="wrap-narrow">
     <h1>Contacteer ons</h1>
-    <p class="lead">Een vraag, een offerte of een afspraak? Vertel ons kort wat je hebt en wat je wil bereiken. Foto's van je zekeringkast en de plek waar een batterij kan komen, helpen ons meteen op weg.</p>
+    <p class="lead">Een vraag, een offerte of een afspraak? Vertel ons kort wat je hebt en wat je wil bereiken. We nemen zo snel mogelijk contact met je op.</p>
   </div>
 </header>
 
 <section class="section">
-  <div class="wrap contact-grid">
-    <div class="contact-option">
-      <h2>Mail ons</h2>
-      <p>We antwoorden zo snel mogelijk. Kies een onderwerp, dan staat het al in je mail.</p>
-      <a class="big" href="mailto:{{email}}">{{email}}</a>
-      <div class="subject-links" aria-label="Mail met onderwerp">
-        <a class="button button-ghost button-small" href="mailto:{{email}}?subject=Algemene%20vraag">Algemene vraag</a>
-        <a class="button button-ghost button-small" href="mailto:{{email}}?subject=Offerteaanvraag">Offerte</a>
-        <a class="button button-ghost button-small" href="mailto:{{email}}?subject=Afspraak">Afspraak</a>
+  <div class="wrap contact-layout">
+    <form id="contactformulier" class="contact-form" novalidate>
+      <div class="field-row">
+        <div class="field">
+          <label for="cf-name">Naam</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="120">
+        </div>
+        <div class="field">
+          <label for="cf-phone">Telefoon of gsm <span class="optional">(optioneel)</span></label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </div>
       </div>
-    </div>
-    <div class="contact-option">
-      <h2>Bel ons</h2>
-      <p>{{hours}}.</p>
-      <a class="big" href="tel:{{phone_href}}">{{phone}}</a>
-    </div>
-    <div class="contact-option">
-      <h2>Stuur je verbruik in</h2>
-      <p>Laad je verbruiksgegevens van Mijn Fluvius op en ontvang een eerste inschatting. Daarna bespreken we het graag met je.</p>
-      <a class="button button-small" href="/batterij-iets-voor-mij/#analyse">Naar de verbruiksanalyse</a>
-    </div>
+      <div class="field">
+        <label for="cf-email">E-mail</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="254">
+      </div>
+      <div class="field">
+        <label for="cf-subject">Onderwerp</label>
+        <select id="cf-subject" name="subject" required>
+          <option value="Algemene vraag">Algemene vraag</option>
+          <option value="Offerte">Offerte</option>
+          <option value="Afspraak">Afspraak</option>
+          <option value="Bestaande installatie">Vraag over mijn bestaande installatie</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cf-message">Bericht</label>
+        <textarea id="cf-message" name="message" rows="6" required maxlength="1500" placeholder="Bijvoorbeeld: welke omvormer en zonnepanelen je hebt, en wat je plant (laadpaal, warmtepomp, ...)"></textarea>
+      </div>
+      <div class="field field-hidden" aria-hidden="true">
+        <label for="cf-website">Laat dit veld leeg</label>
+        <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="source" value="">
+      <p class="form-note">We gebruiken je gegevens enkel om je vraag te beantwoorden. Meer daarover in onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+      <div class="form-actions">
+        <button class="button" type="submit">Verstuur</button>
+      </div>
+      <div class="form-status" role="status" tabindex="-1" hidden></div>
+      <noscript><p class="form-status form-status-error">Het formulier heeft JavaScript nodig. Mail ons gerust op <a href="mailto:{{email}}">{{email}}</a>.</p></noscript>
+    </form>
+
+    <aside class="contact-aside" aria-label="Andere manieren om ons te bereiken">
+      <div class="contact-option">
+        <h2>Mail ons</h2>
+        <a class="big" href="mailto:{{email}}">{{email}}</a>
+      </div>
+      <div class="contact-option">
+        <h2>Bel ons</h2>
+        <p>{{hours}}.</p>
+        <a class="big" href="tel:{{phone_href}}">{{phone}}</a>
+      </div>
+      <div class="contact-option">
+        <h2>Stuur je verbruik in</h2>
+        <p>Laad je verbruiksgegevens van Mijn Fluvius op en ontvang een eerste inschatting. Daarna bespreken we het graag met je.</p>
+        <a class="button button-small" href="/batterij-iets-voor-mij/#analyse">Naar de verbruiksanalyse</a>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -46,6 +83,7 @@
       <li>foto's van je zekeringkast, je digitale meter en de plek waar de batterij kan komen;</li>
       <li>je plannen: laadpaal, warmtepomp, extra panelen of een dynamisch contract.</li>
     </ul>
-    <p>Hoe we je gegevens gebruiken, lees je in onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+    <p>Foto's kan je na ons eerste contact gewoon per mail doorsturen.</p>
   </div>
 </section>
+<script type="module" src="/assets/js/contact-form.js"></script>
