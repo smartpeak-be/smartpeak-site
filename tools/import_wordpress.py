@@ -8,6 +8,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -20,14 +21,18 @@ PREFERRED_SIZES = ("1536x1536", "large", "full")
 
 def get(url):
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return response.read(), response.headers
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return response.read(), response.headers
+    except urllib.error.HTTPError as error:
+        print(f"HTTP {error.code} for {url}: {error.read()[:300]!r}", file=sys.stderr)
+        raise
 
 
 def get_collection(endpoint, fields):
     items, page, total_pages = [], 1, 1
     while page <= total_pages:
-        query = urllib.parse.urlencode({"per_page": 100, "page": page, "_fields": fields, "status": "publish"})
+        query = urllib.parse.urlencode({"per_page": 100, "page": page, "_fields": fields})
         body, headers = get(f"{SOURCE}/wp-json/wp/v2/{endpoint}?{query}")
         items.extend(json.loads(body))
         total_pages = int(headers.get("X-WP-TotalPages", "1"))

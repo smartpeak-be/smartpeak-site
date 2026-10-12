@@ -1,7 +1,6 @@
 name: Import WordPress content
 # Manual only: pulls posts, pages and images from the current smartpeak.be WordPress
-# into content/wordpress/ and commits them. Run it again if WordPress content changes
-# before the switch to GitHub Pages.
+# into content/wordpress/ and commits them, together with import.log.
 on:
   workflow_dispatch:
 permissions:
@@ -13,8 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download WordPress content
-        run: python3 tools/import_wordpress.py
+        run: |
+          mkdir -p content/wordpress
+          set -o pipefail
+          python3 tools/import_wordpress.py 2>&1 | tee content/wordpress/import.log
       - name: Commit result
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
