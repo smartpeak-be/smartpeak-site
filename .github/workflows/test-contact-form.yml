@@ -17,7 +17,7 @@ jobs:
       - name: Get the lead rules from battery-roi-tool
         run: |
           git clone --depth 1 https://github.com/smartpeak-be/battery-roi-tool /tmp/roi
-          echo '{"firestore":{"rules":"/tmp/roi/firestore.rules"},"emulators":{"firestore":{"port":8080}}}' > /tmp/firebase.json
+          echo '{"firestore":{"rules":"roi/firestore.rules"},"emulators":{"firestore":{"port":8080}}}' > /tmp/firebase.json
       - name: Run the test in the Firestore emulator
         run: |
           set -o pipefail
