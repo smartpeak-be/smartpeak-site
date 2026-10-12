@@ -11,6 +11,8 @@ on:
       - "tools/mirror_documents.py"
       - "content/documents.json"
       - "content/documents-mirror.log"
+      - "content/product-images.json"
+      - "content/product-images-raw/**"
       - ".github/workflows/mirror-documents.yml"
       - ".github/workflows/import-wordpress.yml"
       - ".github/workflows/test-contact-form.yml"

@@ -33,5 +33,15 @@
     "file": "goodwe-es-g2.pdf",
     "title": "Datasheet GoodWe ES G2",
     "url": "https://solarproof.com.au/datasheets/inverter_datasheet_GW_ES%20G2_Datasheet-EN.pdf"
+  },
+  {
+    "file": "solis-s6-eh1p.pdf",
+    "title": "Datasheet Solis S6-EH1P",
+    "url": "https://solisinverters.com/uploads/file/Solis_datasheet_S6-EH1P%283-8%29K-L-PLUS_Global_V2%2C0_202406.pdf"
+  },
+  {
+    "file": "solis-s6-eh3p-h.pdf",
+    "title": "Datasheet Solis S6-EH3P-H",
+    "url": "https://solisinverters.com/uploads/file/Solis_datasheet_S6-EH3P%2812-20%29K-H_NED_V2%2C0_2024_06.pdf"
   }
 ]
