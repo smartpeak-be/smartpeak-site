@@ -112,6 +112,7 @@ def analysis_widget():
     """The verbruiksanalyse wizard from battery-roi-tool, embedded in the page (no keys)."""
     return (f'<div id="smartpeak-analyse" class="analysis-mount"'
             f' data-help-url="/hulp/p1-poort-activeren/#verbruik-downloaden"'
+            f' data-inverter-help-url="/hulp/omvormer-vermogen-vinden/"'
             f' data-privacy-url="/privacyverklaring/" data-email="{esc(SITE["email"])}">\n'
             f'<noscript><p>De analyse heeft JavaScript nodig. Je kan ook '
             f'<a href="{esc(SITE["analysis_url"])}" rel="noopener">de analyse op een aparte pagina openen</a> '

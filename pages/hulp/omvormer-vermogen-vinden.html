@@ -1,0 +1,58 @@
+<!--meta
+{
+  "title": "Vermogen van je omvormer vinden: kW of kVA",
+  "card_title": "Het vermogen van je omvormer vinden",
+  "description": "Waar vind je het AC-vermogen van je omvormer, en waarom is dat iets anders dan het vermogen van je zonnepanelen? Met voorbeelden van typeplaatjes en fiches.",
+  "summary": "Waar het staat, hoe je het herkent en waarom het niet hetzelfde is als het vermogen van je panelen.",
+  "section": "hulp",
+  "order": 2,
+  "path": "/hulp/omvormer-vermogen-vinden/"
+}
+-->
+<header class="page-head">
+  <div class="wrap-narrow">
+    <p class="article-meta"><a href="/hulp/">Hulp</a></p>
+    <h1>Het vermogen van je omvormer vinden</h1>
+    <p class="lead">Voor een verbruiksanalyse of een offerte vragen we vaak het vermogen van je omvormer. Daarmee bedoelen we het AC-vermogen: hoeveel stroom je omvormer maximaal aan je woning en het net kan leveren. Zo vind je het.</p>
+  </div>
+</header>
+
+<div class="prose wrap-narrow">
+  <h2>AC-vermogen is niet hetzelfde als het vermogen van je panelen</h2>
+  <p>Je zonnepanelen hebben een piekvermogen, uitgedrukt in kWp: de som van het vermogen van alle panelen. Je omvormer zet die gelijkstroom om naar wisselstroom voor je woning. Het AC-vermogen van de omvormer is wat er daarna maximaal uit kan komen. Dat getal ligt vaak lager dan het piekvermogen van je panelen. Bijvoorbeeld: 12 panelen van 420 Wp zijn samen 5,04 kWp, op een omvormer van 4,6 kW.</p>
+  <p>Het is ook het getal dat in Vlaanderen meetelt voor het netbeheer. Het prosumententarief werd bijvoorbeeld <a href="https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/prosumententarief" rel="noopener">berekend op het maximale AC-vermogen van de omvormer(s)</a>, omdat dat aangeeft hoe zwaar een installatie het net kan belasten.</p>
+
+  <h2>Waar vind je het?</h2>
+  <ul>
+    <li><strong>Op het typeplaatje van de omvormer.</strong> Dat is het etiket op de zijkant of de onderkant van het toestel. Zoek naar een regel met <em>AC</em> of <em>output</em>, zoals "Rated output power", "Nominal AC power" of "Max. output apparent power".</li>
+    <li><strong>In de app of het webportaal van je omvormer.</strong> Bij de gegevens van het toestel staat meestal het model, soms ook het vermogen.</li>
+    <li><strong>In de papieren van je installatie</strong>, zoals de offerte, de factuur of het eendraadschema van de keuring.</li>
+    <li><strong>In de technische fiche van het model.</strong> Weet je alleen de typenaam, dan staat het vermogen in de fiche van de fabrikant. Vaak zit het vermogen ook in de typenaam zelf, zoals een 5 in de naam van een omvormer van 5 kW.</li>
+  </ul>
+
+  <h2>Zo staat het in een technische fiche</h2>
+  <p>Fabrikanten gebruiken verschillende namen voor hetzelfde. Enkele voorbeelden uit fiches die we zelf bewaren:</p>
+  <table>
+    <thead>
+      <tr><th>Fiche</th><th>Zo heet het daar</th><th>Eenheid</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="/assets/docs/solis-s6-eh1p.pdf">Solis S6-EH1P</a></td><td>Rated output power en Max. apparent output power</td><td>kW en kVA, bijvoorbeeld 5 kW en 5 kVA</td></tr>
+      <tr><td><a href="/assets/docs/goodwe-et-g2.pdf">GoodWe ET G2</a></td><td>Max. Output Apparent Power with Grid</td><td>VA, bijvoorbeeld 10000 VA (10 kVA)</td></tr>
+      <tr><td><a href="/assets/docs/sigen-energy-controller-driefasig.pdf">Sigen Energy Controller</a></td><td>Max. output apparent power</td><td>VA, bijvoorbeeld 11000 VA (11 kVA)</td></tr>
+    </tbody>
+  </table>
+  <p>Het verschil tussen kW en kVA kan je voor deze vraag negeren: bij een omvormer liggen ze dicht bij elkaar of zijn ze gelijk. Staat er VA of W, deel dan door 1.000. 4600 W is 4,6 kW.</p>
+
+  <h2>Meer dan één omvormer?</h2>
+  <p>Heb je twee omvormers, of micro-omvormers onder elk paneel, tel dan het AC-vermogen van alle omvormers op. Tien micro-omvormers van 0,4 kW zijn samen 4 kW.</p>
+
+  <h2>Kom je er niet uit?</h2>
+  <p>Stuur ons gerust een foto van het typeplaatje of de naam van je omvormer. Mail naar <a href="mailto:{{email}}">{{email}}</a> of <a href="/contact/">gebruik het contactformulier</a>. In de <a href="/batterij-iets-voor-mij/#analyse">verbruiksanalyse</a> mag je het veld ook leeg laten: dan rekenen we met een gangbare waarde.</p>
+
+  <h3>Bronnen</h3>
+  <ul>
+    <li><a href="https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/nettarieven/prosumententarief" rel="noopener">Vlaamse Nutsregulator, Prosumententarief</a></li>
+    <li>Technische fiches van <a href="/assets/docs/solis-s6-eh1p.pdf">Solis S6-EH1P</a>, <a href="/assets/docs/goodwe-et-g2.pdf">GoodWe ET G2</a> en <a href="/assets/docs/sigen-energy-controller-driefasig.pdf">Sigen Energy Controller</a></li>
+  </ul>
+</div>
