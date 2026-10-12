@@ -19,7 +19,9 @@
       "Dyness",
       "2 × 16 kWh",
       "LFP"
-    ]
+    ],
+    "link": "/realisaties/klantcase-mattias-dyness-solis/",
+    "link_label": "Lees de klantcase"
   },
   {
     "title": "Omvormer koppelen en configureren",
@@ -29,6 +31,8 @@
     "facts": [
       "Configuratie",
       "Oplevering"
-    ]
+    ],
+    "link": "/realisaties/klantcase-mattias-dyness-solis/",
+    "link_label": "Lees de klantcase"
   }
 ]

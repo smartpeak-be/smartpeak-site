@@ -2,7 +2,7 @@
 
 - assets/img/**/<name>.webp|jpg|png wider than 700 px get a smaller <name>-w640.webp,
   which build.py offers through srcset so phones download less.
-- Article images get a 1200x630 JPEG in assets/img/og/ for link previews
+- Article images (and pages with a "slug" and "image" in their meta) get a 1200x630 JPEG in assets/img/og/ for link previews
   (LinkedIn and some others do not show WebP).
 - The header logo gets a small WebP version.
 - content/image-sizes.json records width and height of every image, so build.py can
@@ -21,10 +21,12 @@ VARIANT_WIDTH = 640
 
 
 def article_images():
-    for path in (ROOT / "content" / "artikels").glob("*.html"):
+    """Articles, and pages with a "slug" and an "image" in their meta (such as a customer case)."""
+    for path in list((ROOT / "content" / "artikels").glob("*.html")) + list((ROOT / "pages").rglob("*.html")):
         meta = json.loads(re.match(r"<!--meta\s*(\{.*?\})\s*-->", path.read_text(encoding="utf-8"), re.S).group(1))
-        if meta.get("image"):
-            yield path.stem, ROOT / meta["image"].lstrip("/")
+        is_article = path.parent.name == "artikels"
+        if meta.get("image") and (is_article or meta.get("slug")):
+            yield (path.stem if is_article else meta["slug"]), ROOT / meta["image"].lstrip("/")
 
 
 def main():

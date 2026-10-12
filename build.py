@@ -92,12 +92,15 @@ def realisatie_cards(items, eager_first=False):
     for i, item in enumerate(items):
         facts = "".join(f"<li>{esc(fact)}</li>" for fact in item.get("facts", []))
         image = img_tag(item["image"], item["alt"], sizes="(max-width: 700px) 100vw, 380px", eager=eager_first and i == 0)
+        link = (f'<a class="realisatie-link" href="{item["link"]}">{esc(item.get("link_label", "Lees meer"))}</a>'
+                if item.get("link") else "")
         cards.append(f'''<figure class="realisatie">
   {image}
   <figcaption>
     <strong>{esc(item["title"])}</strong>
     <span>{esc(item["text"])}</span>
     {f'<ul class="facts">{facts}</ul>' if facts else ""}
+    {link}
   </figcaption>
 </figure>''')
     return '<div class="realisaties">' + "\n".join(cards) + "</div>"
@@ -206,6 +209,17 @@ def structured_data(meta, titles):
             "publisher": {"@type": "Organization", "name": SITE["name"]},
             "mainEntityOfPage": SITE_URL + meta["path"],
         })
+    if meta.get("schema_type") == "Article":
+        article_data = {
+            "@context": "https://schema.org", "@type": "Article", "headline": meta["title"],
+            "description": meta.get("description"), "datePublished": meta.get("published"),
+            "author": {"@type": "Organization", "name": SITE["name"]},
+            "publisher": {"@type": "Organization", "name": SITE["name"]},
+            "mainEntityOfPage": SITE_URL + meta["path"],
+        }
+        if meta.get("image"):
+            article_data["image"] = SITE_URL + meta["image"]
+        data.append(article_data)
     trail = breadcrumbs(meta, titles)
     if trail:
         data.append({
