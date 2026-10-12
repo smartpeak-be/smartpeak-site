@@ -8,6 +8,10 @@ on:
       - "content/wordpress/**"
       - "tools/import_wordpress.py"
       - "tools/convert_wordpress.py"
+      - "tools/mirror_documents.py"
+      - "content/documents.json"
+      - "content/documents-mirror.log"
+      - ".github/workflows/mirror-documents.yml"
       - ".github/workflows/import-wordpress.yml"
   workflow_dispatch:
 permissions:
