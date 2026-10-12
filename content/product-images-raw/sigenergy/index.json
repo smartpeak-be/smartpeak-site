@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "file": "hry__img169.webp",
+    "url": "https://wwwstatic.sigenergy.com/static/images/hry/img169.webp",
+    "bytes": 155040
+  },
+  {
+    "file": "hry__img25.webp",
+    "url": "https://wwwstatic.sigenergy.com/static/images/hry/img25.webp",
+    "bytes": 187888
+  },
+  {
+    "file": "hry__img26.webp",
+    "url": "https://wwwstatic.sigenergy.com/static/images/hry/img26.webp",
+    "bytes": 26216
+  },
+  {
+    "file": "product-CIInverter__img02.webp",
+    "url": "https://wwwstatic.sigenergy.com/static/images/product-CIInverter/img02.webp",
+    "bytes": 2004460
+  },
+  {
+    "file": "product-SigenHybridInverter__img01.webp",
+    "url": "https://wwwstatic.sigenergy.com/static/images/product-SigenHybridInverter/img01.webp",
+    "bytes": 5303672
+  }
+]
