@@ -1,8 +1,13 @@
 [
   {
     "file": "sigen-energy-controller-driefasig.pdf",
-    "title": "Datasheet Sigen Energy Controller driefasig",
+    "title": "Datasheet Sigen Energy Controller driefasig 3×400 V",
     "url": "https://aurinkosahkotukku.fi/wp-content/uploads/2026/08/Sigen-energy-controller.pdf"
+  },
+  {
+    "file": "sigen-energy-controller-driefasig-3x230v.pdf",
+    "title": "Datasheet Sigen Energy Controller driefasig 3×230 V",
+    "url": "https://solarproof.com.au/datasheets/inv_datasheet_Datasheet%20-%20Sigen%20Energy%20Controller%20Three%20Phase%20Low%20Voltage.pdf"
   },
   {
     "file": "sigenstor-energy-controller-eenfasig.pdf",
