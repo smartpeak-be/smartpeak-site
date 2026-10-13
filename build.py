@@ -427,7 +427,13 @@ def main():
         write_page(old, redirect_page(new))
 
     (OUT / ".nojekyll").touch()
-    robots = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n" if IS_LIVE_DOMAIN \
+    # AI crawlers that only collect training data are refused; search and user-triggered AI bots
+    # (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, PerplexityBot ...) stay allowed so the site
+    # can still be cited in AI answers. Google-Extended does not affect Google Search.
+    training_bots = ["GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended",
+                     "meta-externalagent", "CCBot", "Bytespider"]
+    robots = ("".join(f"User-agent: {bot}\n" for bot in training_bots) + "Disallow: /\n\n"
+              f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n") if IS_LIVE_DOMAIN \
         else "User-agent: *\nDisallow: /\n"
     (OUT / "robots.txt").write_text(robots, encoding="utf-8")
     lastmod = {p["path"]: p.get("modified") or p["date"] for p in posts}

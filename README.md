@@ -66,11 +66,13 @@ Elke push naar `main` bouwt, controleert en publiceert via `.github/workflows/pa
 
 Zolang de site niet op `https://smartpeak.be` draait, krijgt elke pagina `noindex` en blokkeert `robots.txt` alles. Zo concurreert de testversie niet met de huidige site in Google. Dat schakelt vanzelf om zodra het domein ingesteld is.
 
+Op het echte domein weigert `robots.txt` de AI-bots die enkel trainingsdata verzamelen (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, meta-externalagent, CCBot, Bytespider). Zoek- en antwoordbots zoals OAI-SearchBot, ChatGPT-User, Claude-SearchBot en PerplexityBot blijven toegelaten, zodat SmartPeak als bron in AI-antwoorden kan verschijnen. Google-Extended blokkeren heeft geen invloed op Google Search. De namen van die bots veranderen soms: kijk de lijst in `build.py` (`training_bots`) een keer per jaar na. robots.txt is een afspraak, geen slot.
+
 ## Omschakelen van WordPress naar GitHub Pages
 
 1. **Pages aanzetten**: Settings → Pages → Source: *GitHub Actions*. GitHub Pages op een private repo vraagt een betalend GitHub-plan voor de organisatie; anders de repo publiek maken (zoals `bloxit-be-site`).
 2. **Testversie nakijken** op `https://smartpeak-be.github.io/smartpeak-site/`.
-3. **Custom domain**: Settings → Pages → Custom domain `smartpeak.be`, daarna *Enforce HTTPS* aanvinken zodra het certificaat klaar is. Het domein eerst verifiëren onder de organisatie-instellingen (Settings → Pages → Verified domains) voorkomt dat iemand anders het claimt.
+3. **Custom domain**: Settings → Pages → Custom domain `smartpeak.be`, daarna *Enforce HTTPS* aanvinken zodra het certificaat klaar is. Start daarna de workflow *Deploy website to GitHub Pages* één keer opnieuw (Actions → Run workflow): pas dan bouwt de site met `https://smartpeak.be` en verdwijnt de `noindex`. Het domein eerst verifiëren onder de organisatie-instellingen (Settings → Pages → Verified domains) voorkomt dat iemand anders het claimt.
 4. **DNS bij de registrar**, enkel deze records aanpassen:
    - `A` voor `smartpeak.be` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `AAAA` (optioneel) → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
