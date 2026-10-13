@@ -21,6 +21,9 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "_site"
 SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
 SITE_URL = os.environ.get("SITE_URL", "http://localhost:8000").rstrip("/")
+# GitHub reports http:// until the HTTPS certificate exists; canonical URLs must still be https.
+if urlparse(SITE_URL).netloc.removeprefix("www.") == urlparse(SITE["domain"]).netloc:
+    SITE_URL = SITE["domain"]
 BASE_PATH = urlparse(SITE_URL).path.rstrip("/")
 IS_LIVE_DOMAIN = SITE_URL in (SITE["domain"], SITE["domain"].replace("://", "://www."))
 IMAGE_SIZES_FILE = ROOT / "content" / "image-sizes.json"
