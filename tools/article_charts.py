@@ -209,7 +209,7 @@ def battery_size_trend():
 def zendure_mode_choice():
     body = markers(INK)
     rows = [("Vast contract", "één prijs, dag en nacht", "Zelfverbruik", "zonnestroom eerst zelf gebruiken, de batterij laadt enkel met zon"),
-            ("Dag- en nachttarief", "goedkoper 's nachts", "Zelfverbruik of TOU", "TOU kan ook in de goedkope uren uit het net laden"),
+            ("Dag- en nachttarief", "goedkoper 's nachts en weekend", "Zelfverbruik of TOU", "TOU kan ook in de goedkope uren uit het net laden"),
             ("Dynamisch contract", "prijs per uur of kwartier", "ZENKI of TOU", "ZENKI plant zelf, bij TOU kies je zelf de prijszones")]
     body += text(150, 192, "Welk contract heb je?", 27, SOFT, 600)
     body += text(640, 192, "Begin met deze modus", 27, SOFT, 600)

@@ -14,7 +14,7 @@
 <text x="1085.0" y="307.5" font-size="22" fill="#0b7a42" text-anchor="middle">zonnestroom eerst zelf gebruiken, de batterij laadt enkel met zon</text>
 <rect x="150" y="380" width="380" height="125" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
 <text x="340.0" y="438.5" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Dag- en nachttarief</text>
-<text x="340.0" y="472.5" font-size="22" fill="#4b5661" text-anchor="middle">goedkoper 's nachts</text>
+<text x="340.0" y="472.5" font-size="22" fill="#4b5661" text-anchor="middle">goedkoper 's nachts en weekend</text>
 <line x1="535" y1="442" x2="628" y2="442" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
 <rect x="640" y="380" width="890" height="125" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
 <text x="1085.0" y="438.5" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">Zelfverbruik of TOU</text>
