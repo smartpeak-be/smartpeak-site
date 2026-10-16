@@ -25,6 +25,7 @@ python3 -m http.server 8000 --directory _site
 | `content/realisaties.json` | de realisaties (titel, tekst, foto, kenmerken) |
 | `content/wordpress/` | archief van de WordPress-import; wordt niet gepubliceerd |
 | `assets/` | css, js, lettertype (Instrument Sans, OFL) en afbeeldingen |
+| `assets/logo/` | het logo als PNG (transparant) en JPG (witte achtergrond), plus het beeldmerk apart. Niet gebruikt op de site, wel online op een vast adres voor de boekhouding en andere tools. Niet hernoemen. |
 
 Elk inhoudsbestand begint met een meta-blok:
 
