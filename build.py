@@ -159,7 +159,6 @@ def tokens(posts, realisaties, sections):
         "email": esc(SITE["email"]),
         "phone": esc(SITE["phone"]),
         "phone_href": esc(SITE["phone_href"]),
-        "hours": esc(SITE["hours"]),
         "article_list": post_cards(posts, eager_first=True),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
         "reviews": reviews_block(9),

@@ -5,7 +5,6 @@
   "email": "info@smartpeak.be",
   "phone": "+32 485 60 68 40",
   "phone_href": "+32485606840",
-  "hours": "Maandag tot zondag, 9:00 tot 17:00",
   "analysis_url": "https://smartpeak-be.github.io/battery-roi-tool/lead.html",
   "analysis_widget_url": "https://smartpeak-be.github.io/battery-roi-tool/assets/js/widgets/lead-wizard.js",
   "reviews_widget_url": "https://smartpeak-be.github.io/battery-roi-tool/assets/js/widgets/reviews.js",
