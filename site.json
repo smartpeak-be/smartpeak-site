@@ -46,16 +46,13 @@
       "path": "/realisaties/"
     },
     {
-      "label": "Hulp",
-      "path": "/hulp/"
-    },
-    {
-      "label": "Artikels",
-      "path": "/artikels/"
-    },
-    {
-      "label": "Fabels",
-      "path": "/fabels-en-feiten/"
+      "label": "Advies",
+      "path": "/advies/",
+      "match": [
+        "/artikels/",
+        "/hulp/",
+        "/fabels-en-feiten/"
+      ]
     },
     {
       "label": "Over ons",
@@ -68,12 +65,20 @@
       "path": "/batterij-iets-voor-mij/"
     },
     {
-      "label": "Contact",
-      "path": "/contact/"
+      "label": "Artikels",
+      "path": "/artikels/"
+    },
+    {
+      "label": "Hulp",
+      "path": "/hulp/"
     },
     {
       "label": "Fabels en feiten",
       "path": "/fabels-en-feiten/"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact/"
     },
     {
       "label": "Algemene voorwaarden",
@@ -120,5 +125,14 @@
       "slug": "solis",
       "path": "/oplossingen/goodwe-solis/"
     }
-  ]
+  ],
+  "authors": {
+    "kevin": {
+      "name": "Kevin",
+      "role": "Technicus bij SmartPeak",
+      "bio": "Kevin is een van de twee technici achter SmartPeak, met een achtergrond in elektriciteit, elektronica, IT en automatisatie. Hij ontwerpt en configureert de installaties en schrijft de artikels en hulpgidsen op deze site.",
+      "url": "/over-ons/"
+    }
+  },
+  "default_author": "kevin"
 }

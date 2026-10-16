@@ -13,6 +13,7 @@ import json
 import os
 import re
 import shutil
+import urllib.request
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
@@ -109,9 +110,86 @@ def realisatie_cards(items, eager_first=False):
     return '<div class="realisaties">' + "\n".join(cards) + "</div>"
 
 
-def reviews_block(limit):
-    return (f'<div id="smartpeak-reviews" class="reviews-mount"></div>\n'
-            f'<script defer src="{esc(SITE["reviews_widget_url"])}" data-limit="{limit}"></script>')
+REVIEWS_QUERY = {"structuredQuery": {
+    "from": [{"collectionId": "reviews"}],
+    "where": {"compositeFilter": {"op": "AND", "filters": [
+        {"fieldFilter": {"field": {"fieldPath": "status"}, "op": "EQUAL", "value": {"stringValue": "published"}}},
+        {"fieldFilter": {"field": {"fieldPath": "consentWebsite"}, "op": "EQUAL", "value": {"booleanValue": True}}},
+    ]}},
+    "limit": 24,
+}}
+
+
+def firestore_value(field):
+    kind, value = next(iter(field.items()), (None, None))
+    if kind == "mapValue":
+        return {k: firestore_value(v) for k, v in (value.get("fields") or {}).items()}
+    if kind == "arrayValue":
+        return [firestore_value(v) for v in value.get("values", [])]
+    if kind in ("integerValue", "doubleValue"):
+        return float(value)
+    return value
+
+
+def load_reviews():
+    """Published reviews, the same query as the reviews widget. They go into the HTML so search
+    engines read them; in the browser the widget swaps in the live list, so a review approved after
+    this build shows up at once. Offline or on an error the page simply gets no static reviews.
+    REVIEWS_FILE=<runQuery JSON> builds from a saved answer instead (for testing)."""
+    try:
+        if os.environ.get("REVIEWS_FILE"):
+            rows = json.loads(Path(os.environ["REVIEWS_FILE"]).read_text(encoding="utf-8"))
+        else:
+            request = urllib.request.Request(
+                "https://firestore.googleapis.com/v1/projects/smartpeak-projects/databases/(default)/documents:runQuery",
+                data=json.dumps(REVIEWS_QUERY).encode(), headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(request, timeout=10) as response:
+                rows = json.load(response)
+    except Exception as error:  # the site must still build without the reviews
+        print(f"Reviews not loaded ({error}); the widget will show them in the browser")
+        return []
+    reviews = []
+    for row in rows:
+        fields = (row.get("document") or {}).get("fields")
+        if not fields:
+            continue
+        review = {key: firestore_value(value) for key, value in fields.items()}
+        if review.get("shortReview"):
+            reviews.append(review)
+    return sorted(reviews, key=lambda r: str(r.get("publishedAt") or r.get("createdAt") or ""), reverse=True)
+
+
+def review_stars(value):
+    n = max(1, min(5, round(float(value or 5))))
+    return "★" * n + "☆" * (5 - n)
+
+
+def review_card(review):
+    summary = review.get("solutionSummary") if isinstance(review.get("solutionSummary"), dict) else {}
+    solution = summary.get("publicLabel") or " · ".join(
+        part for part in (
+            f'geplaatst omvormvermogen {round(summary["inverterPowerW"])} W' if summary.get("inverterPowerW") else "",
+            f'geplaatste opslag {round(summary["storageKwh"], 2):g} kWh' if summary.get("storageKwh") else "",
+        ) if part)
+    rating = round(float(review.get("rating") or 5))
+    return f'''<article class="review-card">
+  <p class="review-stars" role="img" aria-label="{rating} op 5 sterren">{review_stars(rating)}</p>
+  <blockquote><p>{esc(review["shortReview"])}</p></blockquote>
+  {f'<p class="review-solution">{esc(solution)}</p>' if solution else ""}
+  <p class="review-name">{esc(review.get("displayName") or "SmartPeak klant")}</p>
+  {f'<p class="review-meta">{esc(review["publishedLabel"])}</p>' if review.get("publishedLabel") else ""}
+</article>'''
+
+
+def reviews_block(reviews, limit):
+    """Static reviews from the build, with the live widget in a hidden mount next to them.
+    assets/js/site.js shows the widget instead as soon as it has loaded the current list."""
+    widget = f'<script defer src="{esc(SITE["reviews_widget_url"])}" data-limit="{limit}"></script>'
+    if not reviews:
+        return f'<div id="smartpeak-reviews" class="reviews-mount"></div>\n{widget}'
+    cards = "\n".join(review_card(r) for r in reviews[:limit])
+    return (f'<div class="reviews-live">\n<div class="reviews-static">{cards}</div>\n'
+            f'<div id="smartpeak-reviews" class="reviews-mount" hidden></div>\n</div>\n{widget}')
 
 
 def analysis_widget():
@@ -150,7 +228,7 @@ def section_cards(entries):
     return '<ul class="link-cards">' + "\n".join(cards) + "</ul>"
 
 
-def tokens(posts, realisaties, sections):
+def tokens(posts, realisaties, sections, reviews):
     section_tokens = {f"list_{name}": section_cards(entries) for name, entries in sections.items()}
     return section_tokens | {
         "analysis_url": esc(SITE["analysis_url"]),
@@ -160,9 +238,10 @@ def tokens(posts, realisaties, sections):
         "phone": esc(SITE["phone"]),
         "phone_href": esc(SITE["phone_href"]),
         "article_list": post_cards(posts, eager_first=True),
+        "article_list_recent": post_cards(posts[:3]),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
-        "reviews": reviews_block(9),
-        "reviews_short": reviews_block(6),
+        "reviews": reviews_block(reviews, 9),
+        "reviews_short": reviews_block(reviews, 6),
         "cta": (ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"),
     }
 
@@ -180,7 +259,8 @@ def fill(body, values):
 def nav_links(items, current):
     links = []
     for item in items:
-        active = ' aria-current="page"' if item["path"] == current else ""
+        in_section = any(current.startswith(prefix) for prefix in item.get("match", []))
+        active = ' aria-current="page"' if item["path"] == current else (' aria-current="true"' if in_section else "")
         links.append(f'<a href="{item["path"]}"{active}>{esc(item["label"])}</a>')
     return "\n".join(links)
 
@@ -196,11 +276,34 @@ def breadcrumbs(meta, titles):
     return trail if len(trail) > 2 or meta.get("date") else None
 
 
+def author_of(meta):
+    """Articles and guides are signed by a person, which search engines weigh for expert content.
+    The author is set in site.json; an entry can name another one with "author": "<key>"."""
+    return SITE["authors"].get(meta.get("author") or SITE.get("default_author"))
+
+
+def author_schema(meta):
+    author = author_of(meta)
+    if not author:
+        return {"@type": "Organization", "name": SITE["name"]}
+    return {"@type": "Person", "name": author["name"], "jobTitle": author["role"],
+            "url": SITE_URL + author["url"], "worksFor": {"@type": "Organization", "name": SITE["name"]}}
+
+
+def author_box(meta):
+    author = author_of(meta)
+    if not author:
+        return ""
+    return (f'<aside class="author-box wrap-narrow" aria-label="Over de auteur">'
+            f'<p><strong>{esc(author["name"])}</strong>, {esc(author["role"][0].lower() + author["role"][1:])}</p>'
+            f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p></aside>')
+
+
 def structured_data(meta, titles):
     organization = {
         "@context": "https://schema.org", "@type": "LocalBusiness", "name": SITE["name"],
         "url": SITE_URL + "/", "email": SITE["email"], "telephone": SITE["phone_href"],
-        "logo": SITE_URL + "/assets/img/site/logo-mark.png", "areaServed": "Vlaanderen",
+        "logo": SITE_URL + "/assets/img/site/logo-mark.png", "areaServed": [{"@type": "AdministrativeArea", "name": "Oost-Vlaanderen"}, {"@type": "AdministrativeArea", "name": "Vlaanderen"}],
         "sameAs": [s["url"] for s in SITE["social"]],
     }
     data = [organization]
@@ -208,6 +311,7 @@ def structured_data(meta, titles):
         data.append({
             "@context": "https://schema.org", "@type": "BlogPosting", "headline": meta["title"],
             "datePublished": meta["date"], "dateModified": meta.get("modified") or meta["date"],
+            "author": author_schema(meta),
             "publisher": {"@type": "Organization", "name": SITE["name"]},
             "mainEntityOfPage": SITE_URL + meta["path"],
         })
@@ -215,7 +319,7 @@ def structured_data(meta, titles):
         article_data = {
             "@context": "https://schema.org", "@type": "Article", "headline": meta["title"],
             "description": meta.get("description"), "datePublished": meta.get("published"),
-            "author": {"@type": "Organization", "name": SITE["name"]},
+            "author": author_schema(meta),
             "publisher": {"@type": "Organization", "name": SITE["name"]},
             "mainEntityOfPage": SITE_URL + meta["path"],
         }
@@ -351,8 +455,10 @@ def post_page(post, cta):
     updated = (f', bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>'
                if modified and modified != post["date"] else "")
     kicker = (f'<p class="article-meta"><a href="/artikels/">Artikels</a> <span aria-hidden="true">/</span> '
-              f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}</p>')
-    return article(post, post["body"], kicker) + cta
+              f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}'
+              + (f' <span aria-hidden="true">/</span> door {esc(author_of(post)["name"])}' if author_of(post) else "")
+              + '</p>')
+    return article(post, post["body"], kicker) + author_box(post) + cta
 
 
 def redirect_page(target):
@@ -402,12 +508,15 @@ def main():
         if meta.get("section"):
             sections.setdefault(meta["section"], []).append(meta)
     titles = {meta["path"]: meta.get("card_title") or meta["title"] for meta, _ in pages + long_pages}
-    values = tokens(posts, realisaties, sections)
+    values = tokens(posts, realisaties, sections, load_reviews())
     cta = fill((ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"), values)
     paths = []
 
     for meta, body in pages:
-        document = render(meta, fill(body, values), titles)
+        body = fill(body, values)
+        if meta.get("schema_type") == "Article":  # guides: show the author named in the schema
+            body = body.replace(cta, author_box(meta) + cta, 1) if cta in body else body + author_box(meta)
+        document = render(meta, body, titles)
         if meta["path"] == "/404/":
             (OUT / "404.html").write_text(document, encoding="utf-8")
             continue

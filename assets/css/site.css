@@ -107,7 +107,7 @@ p { margin: 0 0 1em; }
   padding: .45rem .6rem; border-radius: var(--radius-s);
 }
 .main-nav a:not(.button):hover { background: var(--paper); }
-.main-nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--leaf); border-radius: 0; }
+.main-nav a[aria-current] { box-shadow: inset 0 -2px 0 var(--leaf); border-radius: 0; }
 .main-nav .button { margin-left: .4rem; white-space: nowrap; }
 .main-nav a.nav-accent { margin-left: .4rem; padding: .45rem .9rem; border-radius: 999px; background: #e3f7ea; color: var(--leaf-deep); font-weight: 600; }
 .main-nav a.nav-accent:hover { background: #cdf0da; }
@@ -256,6 +256,17 @@ p { margin: 0 0 1em; }
 
 /* Reviews widget (loaded from the battery tool) */
 .reviews-mount { min-height: 8rem; }
+.reviews-static { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(270px, 1fr); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 52px 2px 14px; }
+@media (min-width: 900px) { .reviews-static { grid-auto-columns: calc((100% - 32px) / 3); } }
+.review-card { scroll-snap-align: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 20px; display: flex; flex-direction: column; min-height: 210px; }
+.review-card blockquote { margin: 0 0 16px; flex: 1; }
+.review-card blockquote p { margin: 0; white-space: pre-wrap; }
+.review-card blockquote p::before { content: "\201C"; }
+.review-card blockquote p::after { content: "\201D"; }
+.review-stars { color: #b26f00; letter-spacing: 1px; margin: 0 0 10px; font-size: 1.05rem; }
+.review-solution { font-size: .86rem; color: var(--leaf-deep); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; margin: 0 0 12px; width: max-content; max-width: 100%; }
+.review-name { font-weight: 800; margin: 0; }
+.review-meta { font-size: .85rem; color: var(--ink-soft); margin: 2px 0 0; }
 .reviews-mount .sp-review-widget { font-family: var(--font); color: var(--ink); }
 .reviews-mount .sp-review-widget__card { border-radius: var(--radius-m); border-color: var(--line); box-shadow: none; }
 .reviews-mount .sp-review-widget__stars,
@@ -473,3 +484,43 @@ p { margin: 0 0 1em; }
 .fabel-meta { font-size: .9rem; color: var(--ink-soft); }
 .fabels-outro { margin-top: 2rem; }
 @media (max-width: 520px) { .fabel { grid-template-columns: 1fr; gap: .75rem; padding: 1.15rem; } .fabel img { width: 56px; height: 56px; } }
+
+/* Promises on the homepage */
+.promise-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.promise-list li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 1.4rem 1.4rem 1.2rem; }
+.promise-list h3 { font-size: 1.15rem; margin: 0 0 .5rem; }
+.promise-list p { margin: 0; color: var(--ink-soft); }
+@media (max-width: 860px) { .promise-list { grid-template-columns: 1fr; } }
+
+/* Call button that stays in view on phones */
+.call-fab { display: none; }
+@media (max-width: 760px) {
+  .call-fab { display: inline-flex; align-items: center; gap: .5rem; position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 40;
+    padding: .8rem 1.15rem; border-radius: 999px; background: var(--leaf-deep); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 28px rgba(23, 33, 41, .28); }
+  .call-fab:focus-visible { outline: 3px solid var(--lagoon); outline-offset: 3px; }
+  .site-footer { padding-bottom: 5.5rem; }
+  body.page-contact .call-fab { display: none; }
+}
+@media print { .call-fab { display: none; } }
+
+/* Snelle check on /batterij-iets-voor-mij/ */
+html:not(.js) .quick-check-section { display: none; }
+.quick-check-section { padding-bottom: 0; }
+.quick-check { display: grid; gap: 1.1rem; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--paper); }
+.quick-check fieldset { border: 0; margin: 0; padding: 0; }
+.quick-check legend { font-weight: 700; margin-bottom: .45rem; }
+.qc-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+.qc-options label { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .9rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); cursor: pointer; }
+.qc-options label:has(input:checked) { border-color: var(--leaf-deep); box-shadow: inset 0 0 0 1px var(--leaf-deep); }
+.qc-options input { accent-color: var(--leaf-deep); }
+.qc-options input:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 2px; }
+.qc-error { margin: 0; color: #a3311f; font-weight: 600; }
+.qc-result { margin-top: 1.5rem; padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-l); border: 2px solid var(--leaf); background: var(--surface); }
+.qc-result:focus { outline: none; }
+.qc-result h3 { margin-top: 0; }
+.qc-result ul { padding-left: 1.2rem; }
+
+/* Author under articles */
+.author-box { margin-top: 2.5rem; margin-bottom: 2.5rem; padding: 1.25rem 1.4rem; border-left: 4px solid var(--leaf); background: var(--paper); border-radius: 0 var(--radius-m) var(--radius-m) 0; }
+.author-box p { margin: 0; }
+.author-box p + p { margin-top: .4rem; color: var(--ink-soft); }

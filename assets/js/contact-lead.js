@@ -38,6 +38,8 @@ export function buildNotes(form) {
     "Contactformulier website",
     `Onderwerp: ${oneLine(form.subject, 80)}`,
     form.phone ? `Telefoon: ${oneLine(form.phone, 40)}` : null,
+    form.postcode ? `Postcode: ${oneLine(form.postcode, 10)}` : null,
+    form.solar ? `Zonnepanelen: ${oneLine(form.solar, 40)}` : null,
     form.source ? `Vanaf pagina: ${oneLine(form.source, 200)}` : null,
     "",
     String(form.message ?? "").trim(),
@@ -61,6 +63,8 @@ function mailHtml(form, leadId) {
 ${row("Naam", `<strong>${escapeHtml(form.name)}</strong>`)}
 ${row("E-mail", `<a href="mailto:${email}">${email}</a>`)}
 ${row("Telefoon", form.phone ? `<a href="tel:${escapeHtml(form.phone)}">${escapeHtml(form.phone)}</a>` : "")}
+${row("Postcode", escapeHtml(form.postcode))}
+${row("Zonnepanelen", escapeHtml(form.solar))}
 ${row("Onderwerp", escapeHtml(form.subject))}
 ${row("Vanaf pagina", escapeHtml(form.source))}
 </table>

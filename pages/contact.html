@@ -2,13 +2,15 @@
 {
   "title": "Contact: advies en offerte voor je thuisbatterij",
   "description": "Contacteer SmartPeak voor advies, een offerte of een afspraak over je thuisbatterij of energiesturing. Via het formulier, mail of telefoon.",
-  "path": "/contact/"
+  "path": "/contact/",
+  "body_class": "page-contact"
 }
 -->
 <header class="page-head">
   <div class="wrap-narrow">
     <h1>Contacteer ons</h1>
     <p class="lead">Een vraag, een offerte of een afspraak? Vertel ons kort wat je hebt en wat je wil bereiken. We nemen zo snel mogelijk contact met je op.</p>
+    <p>We werken vooral in Oost-Vlaanderen. Woon je daarbuiten? Vraag het gerust.</p>
   </div>
 </header>
 
@@ -28,6 +30,21 @@
       <div class="field">
         <label for="cf-email">E-mail</label>
         <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="254">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cf-postcode">Postcode <span class="optional">(optioneel)</span></label>
+          <input id="cf-postcode" name="postcode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10">
+        </div>
+        <div class="field">
+          <label for="cf-solar">Heb je zonnepanelen? <span class="optional">(optioneel)</span></label>
+          <select id="cf-solar" name="solar">
+            <option value="">Kies…</option>
+            <option value="Ja">Ja</option>
+            <option value="Nee">Nee</option>
+            <option value="Gepland">Nog niet, wel gepland</option>
+          </select>
+        </div>
       </div>
       <div class="field">
         <label for="cf-subject">Onderwerp</label>

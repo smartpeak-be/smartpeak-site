@@ -27,6 +27,10 @@ on:
       - "tools/test_analysis_lead.mjs"
       - ".github/workflows/e2e-lead-live.yml"
   workflow_dispatch:
+  # Lets the review moderation start a rebuild when a review is approved, so the reviews in the
+  # HTML (for search engines) follow. Visitors already see new reviews at once via the widget.
+  repository_dispatch:
+    types: [reviews-updated]
 permissions:
   contents: read
   pages: write

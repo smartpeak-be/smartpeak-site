@@ -25,6 +25,12 @@ function preselectSubject() {
   }
 }
 
+function prefillMessage() {
+  const text = new URLSearchParams(location.search).get("bericht");
+  const field = form.elements.message;
+  if (text && !field.value) field.value = text.slice(0, 1500);
+}
+
 function setStatus(kind, html) {
   const status = form.querySelector(".form-status");
   status.className = `form-status form-status-${kind}`;
@@ -36,6 +42,7 @@ if (form) {
   const openedAt = Date.now();
   form.elements.source.value = sourcePage();
   preselectSubject();
+  prefillMessage();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!synth || typeof SpeechSynthesisUtterance === "undefined" || !heading) return;
 
   const BLOCKS = "h1, h2, h3, h4, p, li, dt, dd, figcaption, th, td, blockquote";
-  const SKIP = ".read-aloud, .spa, .reviews-mount, form, nav, script, noscript, [hidden], [aria-hidden='true'], .table-scroll caption";
+  const SKIP = ".read-aloud, .spa, .reviews-mount, .reviews-static, form, nav, script, noscript, [hidden], [aria-hidden='true'], .table-scroll caption";
   const SPEAKER = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
 
   const bar = document.createElement("div");
@@ -123,4 +123,26 @@ document.addEventListener("DOMContentLoaded", () => {
     play.focus();
   });
   window.addEventListener("pagehide", () => synth.cancel());
+});
+
+// Reviews: the build puts the published reviews in the HTML (for search engines and as a fallback).
+// The widget loads the current list in a hidden mount; once it has, it replaces the static copy,
+// so a review approved after the last build is visible at once. On a load error the copy stays.
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".reviews-live").forEach((box) => {
+    const mount = box.querySelector(".reviews-mount");
+    const copy = box.querySelector(".reviews-static");
+    if (!mount || !copy) return;
+    const swap = () => {
+      const empty = mount.querySelector(".sp-review-widget__empty");
+      const loaded = mount.querySelector(".sp-review-widget__track") || (empty && /^Nog geen/.test(empty.textContent.trim()));
+      if (!loaded) return false;
+      copy.remove();
+      mount.hidden = false;
+      return true;
+    };
+    if (swap()) return;
+    const watch = new MutationObserver(() => { if (swap()) watch.disconnect(); });
+    watch.observe(mount, { childList: true, subtree: true });
+  });
 });

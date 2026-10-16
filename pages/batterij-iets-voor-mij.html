@@ -9,13 +9,30 @@
 <header class="page-head">
   <div class="wrap-narrow">
     <h1>Is een thuisbatterij iets voor mij?</h1>
-    <p class="lead">Kort antwoord: een batterij levert bijna altijd voordeel op. Hoe groot dat voordeel is, verschilt sterk van woning tot woning. Dit zijn de dingen die het verschil maken.</p>
+    <p class="lead">Kort antwoord: in veel woningen met zonnepanelen wel. Maar hoe groot het voordeel is, verschilt sterk van woning tot woning, en soms is iets anders een betere eerste stap. Dit zijn de dingen die het verschil maken.</p>
     <div class="hero-actions">
-      <a class="button" href="#analyse">Laat je verbruik bekijken</a>
-      <a class="button button-ghost" href="/contact/">Contacteer ons</a>
+      <a class="button" href="#snelle-check">Doe de snelle check</a>
+      <a class="button button-ghost" href="#analyse">Laat je verbruik bekijken</a>
     </div>
   </div>
 </header>
+
+<section class="section quick-check-section" id="snelle-check" aria-labelledby="qc-title">
+  <div class="wrap-narrow">
+    <h2 id="qc-title">Snelle check: vijf vragen</h2>
+    <p>Geen bestanden, geen login. Je krijgt meteen een eerste richting, en wil je verder, dan stuur je je antwoorden met één klik naar ons door.</p>
+    <form class="quick-check" novalidate>
+      <fieldset><legend>Heb je zonnepanelen?</legend><div class="qc-options"><label><input type="radio" name="panelen" value="ja" required> Ja</label><label><input type="radio" name="panelen" value="gepland" required> Gepland</label><label><input type="radio" name="panelen" value="nee" required> Nee</label></div></fieldset>
+      <fieldset><legend>Wanneer verbruik je het meest?</legend><div class="qc-options"><label><input type="radio" name="verbruik" value="avond" required> 's Ochtends en 's avonds</label><label><input type="radio" name="verbruik" value="dag" required> Vooral overdag</label><label><input type="radio" name="verbruik" value="weet-niet" required> Weet ik niet</label></div></fieldset>
+      <fieldset><legend>Heb je een elektrische wagen of laadpaal?</legend><div class="qc-options"><label><input type="radio" name="wagen" value="ja" required> Ja</label><label><input type="radio" name="wagen" value="gepland" required> Gepland</label><label><input type="radio" name="wagen" value="nee" required> Nee</label></div></fieldset>
+      <fieldset><legend>Heb je een warmtepomp?</legend><div class="qc-options"><label><input type="radio" name="warmtepomp" value="ja" required> Ja</label><label><input type="radio" name="warmtepomp" value="gepland" required> Gepland</label><label><input type="radio" name="warmtepomp" value="nee" required> Nee</label></div></fieldset>
+      <fieldset><legend>Welk energiecontract heb je?</legend><div class="qc-options"><label><input type="radio" name="contract" value="dynamisch" required> Dynamisch</label><label><input type="radio" name="contract" value="vast-variabel" required> Vast of variabel</label><label><input type="radio" name="contract" value="weet-niet" required> Weet ik niet</label></div></fieldset>
+      <div class="form-actions"><button class="button" type="submit">Toon het resultaat</button></div>
+      <p class="qc-error" role="alert" hidden>Beantwoord eerst alle vijf de vragen.</p>
+    </form>
+    <div class="qc-result" tabindex="-1" hidden aria-live="polite"></div>
+  </div>
+</section>
 
 <div class="prose wrap-narrow">
   <h2>Wanneer een batterij het meest oplevert</h2>
@@ -58,3 +75,4 @@
     <li><a href="https://www.test-aankoop.be/geld/belastingen/dossier/btw-voor-werkzaamheden-aan-de-woning" rel="noopener">Test Aankoop, Welk btw-tarief voor werkzaamheden aan je woning?</a></li>
   </ul>
 </div>
+<script defer src="/assets/js/snelle-check.js"></script>
