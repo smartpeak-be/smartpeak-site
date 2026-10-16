@@ -62,7 +62,11 @@ Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het jui
 
 ## Publiceren
 
-Elke push naar `main` bouwt, controleert en publiceert via `.github/workflows/pages.yml` (één korte job). Wijzigingen aan enkel README of het WordPress-archief starten geen deploy.
+Elke push naar `main` bouwt, controleert en publiceert via `.github/workflows/pages.yml` (één korte job). Wijzigingen aan enkel README, `CLAUDE.md`, `.claude/`, `agent/` of het WordPress-archief starten geen deploy.
+
+## Claude-agent
+
+`CLAUDE.md` en de skills in `.claude/skills/` geven Claude de context en werkwijzen voor deze site. In `agent/` staat hoe je er een agent in de Claude Console van maakt (zie `agent/README.md`).
 
 Zolang de site niet op `https://smartpeak.be` draait, krijgt elke pagina `noindex` en blokkeert `robots.txt` alles. Zo concurreert de testversie niet met de huidige site in Google. Dat schakelt vanzelf om zodra het domein ingesteld is.
 

@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://platform.claude.com/schemas/ant/beta/environment.json
+# Omgeving voor de SmartPeak-website-agent.
+# unrestricted: de agent moet voor onderzoek vrij kunnen zoeken en pagina's lezen (Fluvius, Synergrid,
+# fabrikanten, ...). Met "limited" werken web_search en web_fetch enkel voor sites die je vooraf opsomt.
+# Hou daarom geen andere geheimen in de sessie dan het GitHub-token voor deze repository.
+name: smartpeak-website
+config:
+  type: cloud
+  packages:
+    pip:
+      - pillow
+  networking:
+    type: unrestricted

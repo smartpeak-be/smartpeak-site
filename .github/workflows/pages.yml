@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths-ignore:
       - "README.md"
+      - "CLAUDE.md"
+      - ".claude/**"
+      - "agent/**"
       - "content/wordpress/**"
       - "tools/import_wordpress.py"
       - "tools/convert_wordpress.py"
