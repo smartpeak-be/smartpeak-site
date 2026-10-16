@@ -54,6 +54,10 @@
       "path": "/artikels/"
     },
     {
+      "label": "Fabels",
+      "path": "/fabels-en-feiten/"
+    },
+    {
       "label": "Over ons",
       "path": "/over-ons/"
     }
