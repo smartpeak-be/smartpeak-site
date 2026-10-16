@@ -22,7 +22,8 @@ Lees eerst `README.md`: daar staat waar alles staat, het meta-blok, de tokens en
 
 ## Inhoudelijke regels
 
-- Beloof nooit een terugverdientijd en noem geen prijzen in artikels of hulpgidsen.
+- Beloof nooit een terugverdientijd en noem geen prijzen in artikels of hulpgidsen. Enige uitzondering: de richtprijzen in `content/artikels/wat-kost-een-thuisbatterij.html` (gemiddelden van Kevin, inclusief 21% btw). Pas ze enkel aan met zijn cijfers en zet de datum mee.
+- Het plaatsbezoek is gratis en vrijblijvend.
 - Sigenergy mag prominent aanwezig zijn, maar is nooit "onze voorkeur".
 - Elke feitelijke bewering heeft een bron, liefst officieel (Fluvius, Vlaamse Nutsregulator, Synergrid, Vlaanderen.be, de fabrikant). Wat enkel een derde partij zegt, staat er als "volgens …".
 - Geen stockfoto's. Gebruik infographics, officiële productbeelden met bronvermelding of eigen installatiefoto's met toestemming van de klant.
