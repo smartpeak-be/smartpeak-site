@@ -321,7 +321,7 @@ def sigen_battery_levels():
     y_of = lambda pct: bbot - (bbot - btop) * pct / 100
     body = f'<rect x="{bx}" y="{btop - 1}" width="{bw}" height="{bbot - btop + 2}" rx="26" fill="#f3f7f5" stroke="{INK}" stroke-width="4"/>\n'
     body += f'<rect x="{bx + 95}" y="{btop - 30}" width="70" height="26" rx="6" fill="{INK}"/>\n'
-    zones = [(0, 25, LAGOON, "Back-up-reserve", "blijft over voor een stroompanne; vraagt een Gateway"),
+    zones = [(0, 25, LAGOON, "Back-up-reserve of ontlaadgrens", "met een Gateway: blijft over voor een stroompanne"),
              (25, 95, LEAF, "Dagelijks gebruik", "de werkmodus en piekbeperking gebruiken dit deel"),
              (95, 100, "#cfd8d5", "Boven je laadgrens", "de batterij laadt niet verder dan je laadgrens")]
     for a, b, color, label, sub in zones:
