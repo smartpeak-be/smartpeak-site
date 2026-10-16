@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">TOU-modus: sturen op prijszones</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Jij legt vast wanneer een prijs laag of hoog is; de batterij volgt die regels</text>
+<rect x="170" y="578.2" width="1360" height="161.8" fill="#e9f8ef"/>
+<rect x="170" y="190" width="1360" height="218.4" fill="#e3f4f6"/>
+<line x1="170" x2="1530" y1="707.6" y2="707.6" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="716.6" font-size="25" fill="#4b5661" text-anchor="end">0 €</text>
+<line x1="170" x2="1530" y1="626.8" y2="626.8" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="635.8" font-size="25" fill="#4b5661" text-anchor="end">0,05 €</text>
+<line x1="170" x2="1530" y1="545.9" y2="545.9" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="554.9" font-size="25" fill="#4b5661" text-anchor="end">0,1 €</text>
+<line x1="170" x2="1530" y1="465.0" y2="465.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="474.0" font-size="25" fill="#4b5661" text-anchor="end">0,15 €</text>
+<line x1="170" x2="1530" y1="384.1" y2="384.1" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="393.1" font-size="25" fill="#4b5661" text-anchor="end">0,2 €</text>
+<line x1="170" x2="1530" y1="303.2" y2="303.2" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="312.2" font-size="25" fill="#4b5661" text-anchor="end">0,25 €</text>
+<line x1="170" x2="1530" y1="222.4" y2="222.4" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="231.4" font-size="25" fill="#4b5661" text-anchor="end">0,3 €</text>
+<line x1="170" x2="1530" y1="578.2" y2="578.2" stroke="#0b7a42" stroke-width="3" stroke-dasharray="14 9"/>
+<line x1="170" x2="1530" y1="408.4" y2="408.4" stroke="#0a6a78" stroke-width="3" stroke-dasharray="14 9"/>
+<polyline points="170.0,513.5 226.7,513.5 226.7,529.7 283.3,529.7 283.3,545.9 340.0,545.9 340.0,545.9 396.7,545.9 396.7,529.7 453.3,529.7 453.3,497.4 510.0,497.4 510.0,432.6 566.7,432.6 566.7,367.9 623.3,367.9 623.3,400.3 680.0,400.3 680.0,497.4 736.7,497.4 736.7,594.4 793.3,594.4 793.3,659.1 850.0,659.1 850.0,691.5 906.7,691.5 906.7,707.6 963.3,707.6 963.3,675.3 1020.0,675.3 1020.0,626.8 1076.7,626.8 1076.7,545.9 1133.3,545.9 1133.3,416.5 1190.0,416.5 1190.0,303.2 1246.7,303.2 1246.7,270.9 1303.3,270.9 1303.3,351.8 1360.0,351.8 1360.0,432.6 1416.7,432.6 1416.7,481.2 1473.3,481.2 1473.3,497.4 1530.0,497.4" fill="none" stroke="#1f272e" stroke-width="5" stroke-linejoin="round"/>
+<text x="1514.0" y="230.0" font-size="26" fill="#0a6a78" font-weight="650" text-anchor="end">Hoog: de batterij ontlaadt</text>
+<text x="906.7" y="465.0" font-size="23" fill="#4b5661" font-weight="600" text-anchor="middle">Midden: zoals je instelt,</text>
+<text x="906.7" y="497.0" font-size="23" fill="#4b5661" font-weight="600" text-anchor="middle">bv. een reserve bewaren</text>
+<text x="1514.0" y="718.0" font-size="26" fill="#0b7a42" font-weight="650" text-anchor="end">Laag: de batterij laadt, ook uit het net</text>
+<text x="170.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">0u</text>
+<text x="340.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">3u</text>
+<text x="510.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">6u</text>
+<text x="680.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">9u</text>
+<text x="850.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">12u</text>
+<text x="1020.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">15u</text>
+<text x="1190.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">18u</text>
+<text x="1360.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">21u</text>
+<text x="1530.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">24u</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Voorbeeld met fictieve prijzen per kWh. De grenzen voor laag en hoog kies je zelf in de app.</text>
+</svg>

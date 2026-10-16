@@ -206,6 +206,72 @@ def battery_size_trend():
     return svg(body, "Nieuwe thuisbatterijen worden groter", "Gemiddelde opslagcapaciteit van nieuw aangesloten thuisbatterijen in Vlaanderen")
 
 
+def zendure_mode_choice():
+    body = markers(INK)
+    rows = [("Vast contract", "één prijs, dag en nacht", "Zelfverbruik", "zonnestroom eerst zelf gebruiken, de batterij laadt enkel met zon"),
+            ("Dag- en nachttarief", "goedkoper 's nachts", "Zelfverbruik of TOU", "TOU kan ook in de goedkope uren uit het net laden"),
+            ("Dynamisch contract", "prijs per uur of kwartier", "ZENKI of TOU", "ZENKI plant zelf, bij TOU kies je zelf de prijszones")]
+    body += text(150, 192, "Welk contract heb je?", 27, SOFT, 600)
+    body += text(640, 192, "Begin met deze modus", 27, SOFT, 600)
+    for i, (label, sub, mode, why) in enumerate(rows):
+        y = 215 + i * 165
+        body += box(150, y, 380, 125, label, sub)
+        body += arrow(535, y + 62, 628, y + 62)
+        body += box(640, y, 890, 125, mode, why, "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    y = 720
+    body += box(150, y, 680, 95, "Vaste routine of eigen sturing", "kies Aangepast: je eigen schema")
+    body += box(850, y, 680, 95, "Liever niets instellen", "kies Auto: beslist zelf, geen extra instellingen")
+    body += text(150, 868, "Vereenvoudigd. Zelfverbruik, ZENKI en TOU vragen een gekoppelde meter, zoals een P1-lezer op je digitale meter.", 23)
+    return svg(body, "Welke Zendure-modus past bij jou?", "Je contract bepaalt meestal de beste start; wisselen kan altijd in de app")
+
+
+def zendure_self_consumption():
+    body = markers(LEAF_DEEP, INK)
+    rows = [("Je zonnestroom gaat naar", LEAF_DEEP, [("1. Je huis", "eerst je eigen verbruik"), ("2. De batterij", "het overschot"),
+                                                  ("3. Het net", "als injecteren toegelaten is")]),
+            ("Je verbruik komt van", INK, [("1. De zonnepanelen", "wat ze op dat moment maken"), ("2. De batterij", "zolang ze lading heeft"),
+                                           ("3. Het net", "pas als de rest niet volstaat")])]
+    for r, (title, color, steps) in enumerate(rows):
+        y = 240 + r * 250
+        body += text(150, y - 22, title, 30, INK, 650)
+        for i, (label, sub) in enumerate(steps):
+            x = 150 + i * 470
+            first = i == 0
+            body += box(x, y, 400, 130, label, sub, "#e9f8ef" if first else "#f3f7f5", "#bfe9cf" if first else LINE,
+                        LEAF_DEEP if first else INK)
+            if i < 2:
+                body += arrow(x + 405, y + 65, x + 462, y + 65, color)
+    body += box(150, 690, 1340, 95, "De batterij laadt in deze modus enkel met zonnestroom, nooit uit het net", None, "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    body += text(150, 850, "Volgorde volgens de beschrijving van Zendure bij de modi van HEMS 2.0 (juni 2026).", 23)
+    return svg(body, "Zo verdeelt de modus Zelfverbruik je stroom", "Zonnestroom wordt eerst in huis gebruikt; de batterij vangt het verschil op")
+
+
+def zendure_tou_zones():
+    prices = [0.12, 0.11, 0.10, 0.10, 0.11, 0.13, 0.17, 0.21, 0.19, 0.13, 0.07, 0.03,
+              0.01, 0.00, 0.02, 0.05, 0.10, 0.18, 0.25, 0.27, 0.22, 0.17, 0.14, 0.13]
+    low, high = 0.08, 0.185
+    x0, x1, ytop, ybot = 170, 1530, 190, 740
+    lo, hi = -0.02, 0.32
+    x_of = lambda h: x0 + (x1 - x0) * h / 24
+    y_of = lambda p: ybot - (ybot - ytop) * (p - lo) / (hi - lo)
+    body = f'<rect x="{x0}" y="{y_of(low):.1f}" width="{x1 - x0}" height="{ybot - y_of(low):.1f}" fill="#e9f8ef"/>\n'
+    body += f'<rect x="{x0}" y="{ytop}" width="{x1 - x0}" height="{y_of(high) - ytop:.1f}" fill="#e3f4f6"/>\n'
+    body += axes(x0, x1, y_of, [0, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30], " €")
+    for v, color in ((low, LEAF_DEEP), (high, LAGOON_DEEP)):
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y_of(v):.1f}" y2="{y_of(v):.1f}" stroke="{color}" stroke-width="3" stroke-dasharray="14 9"/>\n'
+    pts = []
+    for h, p in enumerate(prices):
+        pts += [f"{x_of(h):.1f},{y_of(p):.1f}", f"{x_of(h + 1):.1f},{y_of(p):.1f}"]
+    body += f'<polyline points="{" ".join(pts)}" fill="none" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>\n'
+    body += text(x1 - 16, ytop + 40, "Hoog: de batterij ontlaadt", 26, LAGOON_DEEP, 650, "end")
+    body += text(x_of(13), y_of(0.15), "Midden: zoals je instelt,", 23, SOFT, 600, "middle")
+    body += text(x_of(13), y_of(0.15) + 32, "bv. een reserve bewaren", 23, SOFT, 600, "middle")
+    body += text(x1 - 16, ybot - 22, "Laag: de batterij laadt, ook uit het net", 26, LEAF_DEEP, 650, "end")
+    body += hours_axis(x_of, 790)
+    body += text(150, 850, "Voorbeeld met fictieve prijzen per kWh. De grenzen voor laag en hoog kies je zelf in de app.", 23)
+    return svg(body, "TOU-modus: sturen op prijszones", "Jij legt vast wanneer een prijs laag of hoog is; de batterij volgt die regels")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -217,3 +283,6 @@ if __name__ == "__main__":
     write("back-up-opties", backup_options())
     write("netspanning-zonnige-dag", grid_voltage_day())
     write("batterijgrootte-vlaanderen", battery_size_trend())
+    write("zendure-modus-kiezen", zendure_mode_choice())
+    write("zendure-zelfverbruik", zendure_self_consumption())
+    write("zendure-tou-prijszones", zendure_tou_zones())

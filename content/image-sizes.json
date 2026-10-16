@@ -34,6 +34,21 @@
   "height": 900,
   "variant": "/assets/img/grafieken/netspanning-zonnige-dag-w640.webp"
  },
+ "/assets/img/grafieken/zendure-modus-kiezen.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/zendure-modus-kiezen-w640.webp"
+ },
+ "/assets/img/grafieken/zendure-tou-prijszones.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/zendure-tou-prijszones-w640.webp"
+ },
+ "/assets/img/grafieken/zendure-zelfverbruik.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/zendure-zelfverbruik-w640.webp"
+ },
  "/assets/img/producten/goodwe-et-g2.webp": {
   "width": 900,
   "height": 834,

@@ -1,0 +1,139 @@
+<!--meta
+{
+  "title": "Zendure-modi uitgelegd: welke modus kies je?",
+  "card_title": "De modi van de Zendure-app",
+  "description": "Zelfverbruik, Auto, ZENKI, TOU of Aangepast: wat doet elke modus in de Zendure-app, welke past bij jouw contract en waar let je in België op?",
+  "summary": "Wat de vijf modi doen, welke bij je contract past en waar je op let met het capaciteitstarief.",
+  "section": "hulp",
+  "order": 3,
+  "path": "/hulp/zendure-modi-instellen/",
+  "slug": "zendure-modi-instellen",
+  "image": "/assets/img/grafieken/zendure-modus-kiezen.webp",
+  "image_alt": "Keuzeschema: met een vast contract begin je met Zelfverbruik, met een dag- en nachttarief met Zelfverbruik of TOU, met een dynamisch contract met ZENKI of TOU. Voor een vaste routine kies je Aangepast, wie niets wil instellen kiest Auto.",
+  "schema_type": "Article",
+  "published": "2026-10-16"
+}
+-->
+<header class="page-head">
+  <div class="wrap-narrow">
+    <p class="article-meta"><a href="/hulp/">Hulp</a></p>
+    <h1>De modi van de Zendure-app uitgelegd</h1>
+    <p class="lead">Met de modus in de Zendure-app bepaal je wanneer je SolarFlow laadt en ontlaadt. Sinds de update van de zomer van 2026 zijn er vijf. Deze gids legt uit wat elke modus doet en welke bij jouw contract past. Handig als je al een Zendure hebt, maar ook als je nog twijfelt of zo'n batterij iets voor jou is.</p>
+  </div>
+</header>
+
+<div class="prose wrap-narrow">
+  <h2>Voor je begint</h2>
+  <ul>
+    <li><strong>Werk de app en de firmware bij.</strong> De vijf modi kwamen met HEMS 2.0, het energiebeheer van Zendure. Daarvoor heb je <a href="https://thuisbatterijgids.net/zendure-hems-2-0-update/" rel="noopener">app-versie 6.3 of hoger én de nieuwste firmware</a> nodig. Bij sommige toestellen bestaat die firmware uit twee delen: installeer ze allebei. Zie je nog oude namen zoals "Expert" of "Slimme meter", dan is je app of toestel nog niet bijgewerkt.</li>
+    <li><strong>Koppel een meter.</strong> Om je verbruik te volgen, moet de batterij weten hoeveel stroom je huis afneemt of injecteert. Op een Belgische digitale meter gaat dat via de P1-poort, die je eerst <a href="/hulp/p1-poort-activeren/">laat openzetten bij Fluvius</a>.</li>
+    <li><strong>Weet welk contract je hebt.</strong> Vast, met een dag- en nachttarief of dynamisch: dat bepaalt welke modus het meest zinvol is. Lees ook <a href="/artikels/vast-variabel-dynamisch-contract-thuisbatterij/">wat je contract met je batterij te maken heeft</a>.</li>
+  </ul>
+  <p>Deze gids geldt voor de toestellen die met HEMS 2.0 werken, zoals de <a href="/oplossingen/zendure-solarflow/">SolarFlow 2400 AC+ en 1600 AC+</a>, maar ook de 2400 AC, de 2400 Pro en de 800 en 800 Pro.</p>
+
+  <h3>Welke meters werken?</h3>
+  <ul>
+    <li><strong>Zendure Smart Meter P1</strong>: een lezer die je op de P1-poort klikt, met een aparte bridge voor de wifi. Zendure noemt <a href="https://be.zendure.com/en/products/slimme-meter-p1" rel="noopener">als bevestigd</a> de Sagemcom S211, T211, XT211 en XS212 en de Landis+Gyr E360, meters die je in België vaak tegenkomt. De lezer krijgt zijn stroom uit de P1-poort.</li>
+    <li><strong>Zendure Smart Meter 3CT</strong> of <strong>Shelly Pro 3EM</strong>: meten met stroomtangen in je verdeelkast, <a href="https://wiki.zendure.com/en/solarflow-2400-ac-plus/faq" rel="noopener">volgens Zendure</a> compatibel met de SolarFlow 2400 AC+.</li>
+    <li><strong>everHome EcoTracker</strong> en <strong>HomeWizard P1-meter</strong>: worden ook <a href="https://thuisbatterijgids.net/zendure-hems-2-0-update/" rel="noopener">genoemd als ondersteund</a>. Bij de HomeWizard melden gebruikers wisselende ervaringen.</li>
+  </ul>
+
+  <h2>De vijf modi op een rij</h2>
+  <table>
+    <thead>
+      <tr><th>Modus</th><th>Wat doet hij?</th><th>Meter nodig?</th><th>Past bij</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Zelfverbruik</strong></td><td>Gebruikt je zonnestroom eerst in huis, slaat het overschot op en vult 's avonds aan. Laadt enkel met zonnestroom.</td><td>Ja</td><td>Een vast contract</td></tr>
+      <tr><td><strong>Auto</strong></td><td>Beslist zelf, op basis van wat je installatie op dat moment doet. Je tarief invullen kan, maar hoeft niet.</td><td>Nee</td><td>Wie niets wil instellen</td></tr>
+      <tr><td><strong>ZENKI</strong></td><td>Maakt een plan voor de komende 24 uur op basis van je stroomprijs, de weersverwachting en je verbruik.</td><td>Ja, plus locatie en tarief</td><td>Een dynamisch contract</td></tr>
+      <tr><td><strong>TOU</strong></td><td>Laadt in goedkope uren en ontlaadt in dure uren, volgens prijszones die jij instelt.</td><td>Ja, plus tarief</td><td>Dynamisch of dag en nacht, met eigen regels</td></tr>
+      <tr><td><strong>Aangepast</strong></td><td>Volgt enkel je eigen schema: in welke tijdvakken de batterij laadt of ontlaadt, en met hoeveel vermogen.</td><td>Nee</td><td>Een vaste routine of eigen sturing</td></tr>
+    </tbody>
+  </table>
+  <p>De beschrijving per modus volgt <a href="https://flarum-eu.zendure.tech/d/27885" rel="noopener">de aankondiging van Zendure</a> bij de update. De namen in de Nederlandstalige app zijn Zelfverbruik, Auto, ZENKI, TOU en Aangepast. Je wisselt van modus in de app onder <strong>Energieplan</strong>, op elk moment.</p>
+
+  <figure>
+    <a href="/assets/img/grafieken/zendure-modus-kiezen.webp" class="figure-zoom"><img src="/assets/img/grafieken/zendure-modus-kiezen.webp" alt="Keuzeschema: met een vast contract begin je met Zelfverbruik, met een dag- en nachttarief met Zelfverbruik of TOU, met een dynamisch contract met ZENKI of TOU. Voor een vaste routine kies je Aangepast, wie niets wil instellen kiest Auto." loading="lazy" decoding="async"></a>
+    <figcaption>Je contract bepaalt meestal de beste start. Wisselen kan altijd.</figcaption>
+  </figure>
+
+  <h2>Zelfverbruik</h2>
+  <p>De meest eenvoudige modus, en voor een vast contract met zonnepanelen meestal de beste. De batterij probeert zo weinig mogelijk stroom van het net te halen én zo weinig mogelijk te injecteren. Zendure legt de volgorde zo vast:</p>
+  <ul>
+    <li>Zonnestroom gaat eerst naar je huis, daarna naar de batterij en pas dan naar het net.</li>
+    <li>Je verbruik komt eerst van je zonnepanelen, daarna uit de batterij en pas dan van het net.</li>
+    <li>De batterij laadt alleen met zonnestroom.</li>
+  </ul>
+  <figure>
+    <a href="/assets/img/grafieken/zendure-zelfverbruik.webp" class="figure-zoom"><img src="/assets/img/grafieken/zendure-zelfverbruik.webp" alt="Schema van de modus Zelfverbruik. Zonnestroom gaat eerst naar je huis, dan naar de batterij, dan naar het net. Je verbruik komt eerst van de zonnepanelen, dan uit de batterij, dan van het net. De batterij laadt enkel met zonnestroom." loading="lazy" decoding="async"></a>
+    <figcaption>In Zelfverbruik vangt de batterij het verschil op tussen wat je panelen maken en wat je huis verbruikt.</figcaption>
+  </figure>
+  <p><strong>Om te weten:</strong> in de winter is er vaak weinig of geen overschot. Blijft je batterij dan dagenlang bijna leeg, dan is dat normaal in deze modus, geen defect.</p>
+
+  <h2>Auto</h2>
+  <p>Auto vraagt geen instellingen: de batterij beslist zelf, op basis van wat je productie, je verbruik en je batterij op dat moment doen. Je kan je tarief opgeven (vast, dag en nacht of dynamisch), zodat Auto daar rekening mee houdt. Een goede start als je de app nog niet kent. Zodra je meer controle wil, kies je beter een van de andere modi.</p>
+
+  <h2>ZENKI</h2>
+  <p>ZENKI is de slimme planner van Zendure. Op basis van je stroomprijzen, de weersverwachting voor je locatie en je verbruiksgewoonten maakt hij een plan: wanneer laden, wanneer ontladen en wanneer wachten. In de app zie je dat plan en waarom de batterij iets doet. Die modus is vooral zinvol met een <strong>dynamisch contract</strong>, waarbij de prijs per uur of per kwartier verandert. Zie ook <a href="/artikels/vast-variabel-dynamisch-contract-thuisbatterij/">hoe een dynamisch contract werkt</a>.</p>
+  <ul>
+    <li><strong>Koppel je tarief.</strong> Zendure zegt <a href="https://zendure.com/pages/hems" rel="noopener">samen te werken met meer dan 840 leveranciers in 32 Europese markten</a>. Kijk bij het instellen of je eigen leverancier in de lijst staat.</li>
+    <li><strong>Geef hem tijd.</strong> ZENKI moet je verbruik eerst leren kennen. <a href="https://thuisbatterijgids.net/zendure-instellen/" rel="noopener">Reken op een à twee weken</a> voor je beoordeelt of hij goed werkt.</li>
+    <li><strong>Hij kan uit het net laden.</strong> Is stroom 's nachts of op een zonnige middag goedkoop, dan kan ZENKI ook uit het net bijladen. Lees hieronder wat dat betekent voor het capaciteitstarief.</li>
+  </ul>
+
+  <h2>TOU</h2>
+  <p>TOU staat voor <em>time of use</em>. Ook hier stuurt de prijs de batterij, maar met regels die jij bepaalt. Je stelt in vanaf welke prijs een uur "laag" en "hoog" is. In lage uren laadt de batterij, in hoge uren ontlaadt ze. Voor de uren daartussen kies je een minimale lading, zodat er een reserve overblijft voor de dure uren. TOU werkt met een dynamisch contract, maar ook met een dag- en nachttarief.</p>
+  <figure>
+    <a href="/assets/img/grafieken/zendure-tou-prijszones.webp" class="figure-zoom"><img src="/assets/img/grafieken/zendure-tou-prijszones.webp" alt="Grafiek van stroomprijzen over een dag met drie zones. Boven de hoge grens ontlaadt de batterij, onder de lage grens laadt ze, ook uit het net. Daartussen volgt de batterij je instelling, bijvoorbeeld een reserve bewaren." loading="lazy" decoding="async"></a>
+    <figcaption>Voorbeeld met fictieve prijzen. De grenzen voor laag en hoog kies je zelf.</figcaption>
+  </figure>
+  <ul>
+    <li><strong>Laat genoeg verschil tussen laden en ontladen.</strong> Bij laden en ontladen gaat altijd een deel van de energie verloren. Laad je aan een prijs die maar weinig lager is dan die waarbij je ontlaadt, dan win je niets.</li>
+    <li><strong>Dag- en nachttarief:</strong> of 's nachts bijladen loont, hangt af van het verschil tussen je dag- en nachtprijs. Met zonnepanelen en een vast dag- en nachttarief is Zelfverbruik vaak even goed en eenvoudiger.</li>
+    <li>TOU is voorspelbaarder dan ZENKI: je weet precies waarom de batterij iets doet. Dat kiezen mensen die graag zelf de regels bepalen.</li>
+  </ul>
+
+  <h2>Aangepast</h2>
+  <p>In Aangepast doet de batterij enkel wat je in je schema zet: tijdvakken waarin ze laadt of ontlaadt, en met welk vermogen. Buiten die tijdvakken <a href="https://batterijgarant.nl/kennisbank/zendure-modus-kiezen" rel="noopener">staat het vermogen standaard op 0 watt</a>. Je kan dat gebruiken voor een vaste routine, bijvoorbeeld 's avonds ontladen terwijl je kookt. Stuur je de batterij zelf aan, bijvoorbeeld met Home Assistant, laat dan niet tegelijk een modus in de app sturen. Twee systemen die tegelijk sturen, werken elkaar tegen.</p>
+
+  <h2>Belgisch aandachtspunt: het capaciteitstarief</h2>
+  <p>In Vlaanderen betaal je een deel van je nettarieven op basis van je <a href="/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop/">hoogste kwartierpiek van elke maand</a>. Geen van de vijf modi heeft een instelling die specifiek je maandpiek bewaakt. Toch heeft de modus die je kiest invloed op je piek:</p>
+  <ul>
+    <li><strong>Zelfverbruik verhoogt je piek nooit.</strong> De batterij laadt er alleen met zonnestroom. Ze kan je piek wel wat verlagen als ze ontlaadt terwijl je veel verbruikt, maar maximaal met haar eigen vermogen. Dat is tot 2.400 W bij een SolarFlow 2400 AC+ <a href="/oplossingen/zendure-solarflow/">op een eigen kring</a>, en 800 W op een gewoon stopcontact.</li>
+    <li><strong>Laden uit het net telt mee in je afname.</strong> In ZENKI en TOU kan de batterij uit het net laden wanneer stroom goedkoop is. Laadt ze met vol vermogen terwijl je kookt, je wagen laadt of je warmtepomp draait, dan kan je maandpiek daardoor stijgen.</li>
+    <li><strong>Kijk het na.</strong> Laat je de batterij uit het net laden, kijk dan na een paar weken in <a href="https://mijn.fluvius.be" rel="noopener">Mijn Fluvius</a> of je maandpiek gestegen is. In Aangepast kies je zelf het laadvermogen per tijdvak, en dus ook hoeveel extra afname het laden geeft.</li>
+  </ul>
+  <p>Wil je je piek sterk verlagen, bijvoorbeeld door een warmtepomp of laadpaal, dan is een eenfasige batterij met beperkt vermogen daar minder geschikt voor. Lees ook <a href="/artikels/piekverbruik-uitleg/">wat piekverbruik is</a>.</p>
+
+  <h2>Laadgrenzen en kalibratie</h2>
+  <p>In de instellingen van je toestel kies je tot hoeveel procent de batterij maximaal laadt en hoe ver ze ontlaadt. Hoe hoger je ondergrens, hoe minder van je batterij je dagelijks gebruikt. Klopt het percentage in de app niet met wat de batterij doet, laad haar dan een keer volledig leeg en weer vol. Zendure raadt <a href="https://batterijgarant.nl/kennisbank/zendure-modus-kiezen" rel="noopener">twee tot drie zulke volledige cycli</a> aan als het percentage blijft afwijken.</p>
+
+  <h2>Werkt het niet zoals verwacht?</h2>
+  <table>
+    <thead>
+      <tr><th>Wat je ziet</th><th>Kijk dit na</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>De modus vraagt een meter of vindt er geen</td><td>Staat de meter online in de app? Is de <a href="/hulp/p1-poort-activeren/">P1-poort open</a>: zie je een driehoekje boven P1 op je meter?</td></tr>
+      <tr><td>De batterij laadt niet in Zelfverbruik</td><td>Is er wel overschot? Op grijze dagen en in de winter vaak niet. Is de bovengrens bereikt?</td></tr>
+      <tr><td>ZENKI of TOU doet niets met de prijzen</td><td>Is je tarief of leverancier gekoppeld, en is je locatie ingevuld?</td></tr>
+      <tr><td>De batterij ontlaadt niet 's avonds</td><td>Is de ondergrens bereikt? In Aangepast: valt het uur buiten je tijdvakken?</td></tr>
+      <tr><td>Na een update blijft de batterij in stand-by</td><td>Zijn zowel de app als alle delen van de firmware bijgewerkt? Herstart het toestel.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Plaatsen wij je Zendure?</h2>
+  <p>Dan koppelen we de meter, kiezen we samen de modus die bij je contract en je verbruik past, en tonen we je hoe je de app gebruikt. Verandert je contract later, dan helpen we je de instelling aan te passen. Twijfel je nog of een Zendure bij jou past, <a href="/batterij-iets-voor-mij/#analyse">laat je verbruik dan vrijblijvend bekijken</a> of <a href="/contact/">neem contact met ons op</a>.</p>
+
+  <h3>Bronnen</h3>
+  <ul>
+    <li><a href="https://flarum-eu.zendure.tech/d/27885" rel="noopener">Zendure Community, aankondiging over de update van de HEMS-modi (juni 2026)</a></li>
+    <li><a href="https://zendure.com/pages/hems" rel="noopener">Zendure, HEMS</a></li>
+    <li><a href="https://wiki.zendure.com/en/solarflow-2400-ac-plus/faq" rel="noopener">Zendure, FAQ SolarFlow 2400 AC+</a></li>
+    <li><a href="https://be.zendure.com/en/products/slimme-meter-p1" rel="noopener">Zendure, Smart Meter P1</a></li>
+    <li><a href="https://thuisbatterijgids.net/zendure-hems-2-0-update/" rel="noopener">ThuisbatterijGids, Zendure HEMS 2.0 beschikbaar</a></li>
+    <li><a href="https://thuisbatterijgids.net/zendure-instellen/" rel="noopener">ThuisbatterijGids, Zendure instellen: welke modus past bij jou</a></li>
+    <li><a href="https://batterijgarant.nl/kennisbank/zendure-modus-kiezen" rel="noopener">Batterijgarant, Zendure TOU-modus of ZENKI?</a></li>
+  </ul>
+</div>

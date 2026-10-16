@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Zo verdeelt de modus Zelfverbruik je stroom</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Zonnestroom wordt eerst in huis gebruikt; de batterij vangt het verschil op</text>
+<defs><marker id="arrow-0b7a42" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0b7a42"/></marker><marker id="arrow-1f272e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f272e"/></marker></defs>
+<text x="150.0" y="218.0" font-size="30" fill="#1f272e" font-weight="650">Je zonnestroom gaat naar</text>
+<rect x="150" y="240" width="400" height="130" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="350.0" y="301.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">1. Je huis</text>
+<text x="350.0" y="335.0" font-size="22" fill="#0b7a42" text-anchor="middle">eerst je eigen verbruik</text>
+<line x1="555" y1="305" x2="612" y2="305" stroke="#0b7a42" stroke-width="5" marker-end="url(#arrow-0b7a42)"/>
+<rect x="620" y="240" width="400" height="130" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="820.0" y="301.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">2. De batterij</text>
+<text x="820.0" y="335.0" font-size="22" fill="#4b5661" text-anchor="middle">het overschot</text>
+<line x1="1025" y1="305" x2="1082" y2="305" stroke="#0b7a42" stroke-width="5" marker-end="url(#arrow-0b7a42)"/>
+<rect x="1090" y="240" width="400" height="130" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1290.0" y="301.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">3. Het net</text>
+<text x="1290.0" y="335.0" font-size="22" fill="#4b5661" text-anchor="middle">als injecteren toegelaten is</text>
+<text x="150.0" y="468.0" font-size="30" fill="#1f272e" font-weight="650">Je verbruik komt van</text>
+<rect x="150" y="490" width="400" height="130" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="350.0" y="551.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">1. De zonnepanelen</text>
+<text x="350.0" y="585.0" font-size="22" fill="#0b7a42" text-anchor="middle">wat ze op dat moment maken</text>
+<line x1="555" y1="555" x2="612" y2="555" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="620" y="490" width="400" height="130" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="820.0" y="551.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">2. De batterij</text>
+<text x="820.0" y="585.0" font-size="22" fill="#4b5661" text-anchor="middle">zolang ze lading heeft</text>
+<line x1="1025" y1="555" x2="1082" y2="555" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="1090" y="490" width="400" height="130" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1290.0" y="551.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">3. Het net</text>
+<text x="1290.0" y="585.0" font-size="22" fill="#4b5661" text-anchor="middle">pas als de rest niet volstaat</text>
+<rect x="150" y="690" width="1340" height="95" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="820.0" y="746.5" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">De batterij laadt in deze modus enkel met zonnestroom, nooit uit het net</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Volgorde volgens de beschrijving van Zendure bij de modi van HEMS 2.0 (juni 2026).</text>
+</svg>
