@@ -68,6 +68,10 @@
       "path": "/contact/"
     },
     {
+      "label": "Fabels en feiten",
+      "path": "/fabels-en-feiten/"
+    },
+    {
       "label": "Algemene voorwaarden",
       "path": "/algemene-voorwaarden/"
     },

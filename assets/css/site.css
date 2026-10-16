@@ -459,3 +459,17 @@ p { margin: 0 0 1em; }
 .case-teaser-text .case-teaser-more { color: var(--lagoon-deep); font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
 .case-teaser:hover { border-color: var(--ink); }
 @media (max-width: 760px) { .case-teaser { grid-template-columns: 1fr; } .case-teaser img { min-height: 0; aspect-ratio: 16 / 10; height: auto; } }
+
+/* Fabels en feiten */
+.fabels { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.25rem; }
+.fabel { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 1.25rem; align-items: start; padding: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); scroll-margin-top: 6rem; }
+.fabel:target { border-color: var(--leaf-deep); box-shadow: 0 0 0 3px #bfe9cf; }
+.fabel img { width: 96px; height: 96px; }
+.fabel h2 { font-size: 1.2rem; line-height: 1.3; margin: .35rem 0 .6rem; }
+.fabel p { margin: 0 0 .6rem; }
+.fabel p:last-child { margin-bottom: 0; }
+.fabel-label { display: inline-block; padding: .1rem .55rem; border-radius: 999px; background: #fdecea; color: #9f2f1f; font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.fabel strong { color: var(--leaf-deep); }
+.fabel-meta { font-size: .9rem; color: var(--ink-soft); }
+.fabels-outro { margin-top: 2rem; }
+@media (max-width: 520px) { .fabel { grid-template-columns: 1fr; gap: .75rem; padding: 1.15rem; } .fabel img { width: 56px; height: 56px; } }
