@@ -34,6 +34,21 @@
   "height": 900,
   "variant": "/assets/img/grafieken/netspanning-zonnige-dag-w640.webp"
  },
+ "/assets/img/grafieken/sigen-instellingen.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/sigen-instellingen-w640.webp"
+ },
+ "/assets/img/grafieken/sigen-laadniveaus.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/sigen-laadniveaus-w640.webp"
+ },
+ "/assets/img/grafieken/sigen-piekbeperking.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/sigen-piekbeperking-w640.webp"
+ },
  "/assets/img/grafieken/zendure-modus-kiezen.webp": {
   "width": 1600,
   "height": 900,

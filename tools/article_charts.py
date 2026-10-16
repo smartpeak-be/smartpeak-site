@@ -272,6 +272,76 @@ def zendure_tou_zones():
     return svg(body, "TOU-modus: sturen op prijszones", "Jij legt vast wanneer een prijs laag of hoog is; de batterij volgt die regels")
 
 
+def sigen_settings_layers():
+    body = text(150, 200, "1. Kies één werkmodus", 30, INK, 650)
+    modes = [("Sigen AI", "plant op prijs en weer"), ("Zelfverbruik", "eigen zonnestroom eerst"),
+             ("Tijdsturing", "jouw laad- en ontlaaduren"), ("Volledig injecteren", "zoveel mogelijk naar het net")]
+    for i, (label, sub) in enumerate(modes):
+        body += box(150 + i * 345, 225, 320, 120, label, sub, "#e9f8ef" if i < 3 else "#f3f7f5",
+                    "#bfe9cf" if i < 3 else LINE, LEAF_DEEP if i < 3 else INK)
+    body += text(150, 440, "2. Stel daarnaast in, los van de modus", 30, INK, 650)
+    extra = [("Piekbeperking", "maximum dat je van het net haalt"), ("Back-up-reserve", "lading voor een stroompanne"),
+             ("Injectielimiet", "maximum naar het net"), ("Je wagen laden", "snel of met zonne-overschot"),
+             ("Slimme verbruikers", "toestellen op overschot")]
+    for i, (label, sub) in enumerate(extra):
+        x = 150 + (i % 3) * 460
+        y = 465 + (i // 3) * 150
+        body += box(x, y, 420, 120, label, sub, "#e3f4f6", "#b6e0e6", LAGOON_DEEP)
+    body += text(150, 868, "Vereenvoudigd overzicht van de mySigen-app. Back-up vraagt een Sigen Energy Gateway.", 23)
+    return svg(body, "Zo zit de mySigen-app in elkaar", "Eén modus bepaalt het dagelijkse gedrag; extra functies leggen grenzen en voorrang vast")
+
+
+def sigen_peak_shaving():
+    demand = [0.6, 0.7, 0.9, 1.4, 1.2, 2.6, 5.8, 6.2, 3.4, 1.8, 4.8, 4.6, 1.6, 1.1, 0.8, 0.7]  # per half hour, 16u-24u
+    cap = 2.5
+    x0, x1, ytop, ybot = 170, 1530, 190, 740
+    lo, hi = 0, 7
+    n = len(demand)
+    x_of = lambda i: x0 + (x1 - x0) * i / n
+    y_of = lambda v: ybot - (ybot - ytop) * (v - lo) / (hi - lo)
+    body = axes(x0, x1, y_of, [0, 1, 2, 3, 4, 5, 6, 7], " kW")
+    for i, v in enumerate(demand):
+        grid = min(v, cap)
+        body += f'<rect x="{x_of(i) + 4:.1f}" y="{y_of(grid):.1f}" width="{x_of(1) - x0 - 8:.1f}" height="{ybot - y_of(grid):.1f}" fill="{INK}"/>\n'
+        if v > cap:
+            body += f'<rect x="{x_of(i) + 4:.1f}" y="{y_of(v):.1f}" width="{x_of(1) - x0 - 8:.1f}" height="{y_of(cap) - y_of(v):.1f}" fill="{LAGOON}"/>\n'
+    body += f'<line x1="{x0}" x2="{x1}" y1="{y_of(cap):.1f}" y2="{y_of(cap):.1f}" stroke="{RED}" stroke-width="4" stroke-dasharray="16 10"/>\n'
+    body += text(x0 + 12, y_of(cap) - 14, "ingestelde maximale piek: 2,5 kW", 24, RED, 650)
+    body += f'<rect x="170" y="200" width="26" height="26" fill="{LAGOON}"/>\n' + text(208, 222, "uit de batterij", 24, INK)
+    body += f'<rect x="420" y="200" width="26" height="26" fill="{INK}"/>\n' + text(458, 222, "van het net", 24, INK)
+    body += text(x_of(6.9), y_of(6.2) - 16, "koken", 23, SOFT, 600, "middle")
+    body += text(x_of(10.9), y_of(4.8) - 16, "vaatwas en droogkast", 23, SOFT, 600, "middle")
+    body += "".join(text(x_of(i), 790, f"{16 + i // 2}u", anchor="middle") for i in range(0, n + 1, 2))
+    body += text(150, 850, "Voorbeeld met fictieve waarden voor één avond. Werkt zolang de batterij genoeg lading en vermogen heeft.", 23)
+    return svg(body, "Piekbeperking: de batterij neemt de pieken over", "Wat boven je ingestelde maximum uitkomt, levert de batterij in plaats van het net")
+
+
+def sigen_battery_levels():
+    bx, bw, btop, bbot = 440, 260, 200, 780
+    y_of = lambda pct: bbot - (bbot - btop) * pct / 100
+    body = f'<rect x="{bx}" y="{btop - 1}" width="{bw}" height="{bbot - btop + 2}" rx="26" fill="#f3f7f5" stroke="{INK}" stroke-width="4"/>\n'
+    body += f'<rect x="{bx + 95}" y="{btop - 30}" width="70" height="26" rx="6" fill="{INK}"/>\n'
+    zones = [(0, 25, LAGOON, "Back-up-reserve", "blijft over voor een stroompanne; vraagt een Gateway"),
+             (25, 95, LEAF, "Dagelijks gebruik", "de werkmodus en piekbeperking gebruiken dit deel"),
+             (95, 100, "#cfd8d5", "Boven je laadgrens", "de batterij laadt niet verder dan je laadgrens")]
+    for a, b, color, label, sub in zones:
+        body += f'<rect x="{bx + 14}" y="{y_of(b) + 3:.1f}" width="{bw - 28}" height="{y_of(a) - y_of(b) - 6:.1f}" rx="12" fill="{color}"/>\n'
+        mid = (y_of(a) + y_of(b)) / 2
+        ty = mid if b - a > 10 else y_of(b) - 2
+        body += f'<line x1="{bx + bw + 10}" x2="{bx + bw + 70}" y1="{ty:.1f}" y2="{ty:.1f}" stroke="{SOFT}" stroke-width="2"/>\n'
+        body += text(bx + bw + 90, ty - 6, label, 28, INK, 650)
+        body += text(bx + bw + 90, ty + 28, sub, 23, SOFT)
+    py = y_of(60)
+    body += f'<line x1="{bx - 40}" x2="{bx + bw}" y1="{py:.1f}" y2="{py:.1f}" stroke="{RED}" stroke-width="4" stroke-dasharray="14 9"/>\n'
+    body += text(bx - 50, py - 10, "piekbeperking:", 23, RED, 650, "end")
+    body += text(bx - 50, py + 20, "laadt in de daluren", 23, RED, None, "end")
+    body += text(bx - 50, py + 48, "tot dit niveau", 23, RED, None, "end")
+    for pct in (0, 25, 95):
+        body += text(bx + bw / 2, y_of(pct) - 10 if pct else y_of(pct) - 14, f"{pct}%", 22, "#ffffff" if pct != 95 else INK, 650, "middle")
+    body += text(150, 850, "Voorbeeldwaarden. Welke grenzen bij jou passen, hangt af van je verbruik en hoe vaak de stroom uitvalt.", 23)
+    return svg(body, "Hoe de laadniveaus van je SigenStor samenwerken", "Je batterij is opgedeeld in zones; elke instelling legt een grens vast")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -286,3 +356,6 @@ if __name__ == "__main__":
     write("zendure-modus-kiezen", zendure_mode_choice())
     write("zendure-zelfverbruik", zendure_self_consumption())
     write("zendure-tou-prijszones", zendure_tou_zones())
+    write("sigen-instellingen", sigen_settings_layers())
+    write("sigen-piekbeperking", sigen_peak_shaving())
+    write("sigen-laadniveaus", sigen_battery_levels())

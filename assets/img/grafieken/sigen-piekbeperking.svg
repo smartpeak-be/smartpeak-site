@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Piekbeperking: de batterij neemt de pieken over</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Wat boven je ingestelde maximum uitkomt, levert de batterij in plaats van het net</text>
+<line x1="170" x2="1530" y1="740.0" y2="740.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="749.0" font-size="25" fill="#4b5661" text-anchor="end">0 kW</text>
+<line x1="170" x2="1530" y1="661.4" y2="661.4" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="670.4" font-size="25" fill="#4b5661" text-anchor="end">1 kW</text>
+<line x1="170" x2="1530" y1="582.9" y2="582.9" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="591.9" font-size="25" fill="#4b5661" text-anchor="end">2 kW</text>
+<line x1="170" x2="1530" y1="504.3" y2="504.3" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="513.3" font-size="25" fill="#4b5661" text-anchor="end">3 kW</text>
+<line x1="170" x2="1530" y1="425.7" y2="425.7" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="434.7" font-size="25" fill="#4b5661" text-anchor="end">4 kW</text>
+<line x1="170" x2="1530" y1="347.1" y2="347.1" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="356.1" font-size="25" fill="#4b5661" text-anchor="end">5 kW</text>
+<line x1="170" x2="1530" y1="268.6" y2="268.6" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="277.6" font-size="25" fill="#4b5661" text-anchor="end">6 kW</text>
+<line x1="170" x2="1530" y1="190.0" y2="190.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="199.0" font-size="25" fill="#4b5661" text-anchor="end">7 kW</text>
+<rect x="174.0" y="692.9" width="77.0" height="47.1" fill="#1f272e"/>
+<rect x="259.0" y="685.0" width="77.0" height="55.0" fill="#1f272e"/>
+<rect x="344.0" y="669.3" width="77.0" height="70.7" fill="#1f272e"/>
+<rect x="429.0" y="630.0" width="77.0" height="110.0" fill="#1f272e"/>
+<rect x="514.0" y="645.7" width="77.0" height="94.3" fill="#1f272e"/>
+<rect x="599.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="599.0" y="535.7" width="77.0" height="7.9" fill="#1aa5b6"/>
+<rect x="684.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="684.0" y="284.3" width="77.0" height="259.3" fill="#1aa5b6"/>
+<rect x="769.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="769.0" y="252.9" width="77.0" height="290.7" fill="#1aa5b6"/>
+<rect x="854.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="854.0" y="472.9" width="77.0" height="70.7" fill="#1aa5b6"/>
+<rect x="939.0" y="598.6" width="77.0" height="141.4" fill="#1f272e"/>
+<rect x="1024.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="1024.0" y="362.9" width="77.0" height="180.7" fill="#1aa5b6"/>
+<rect x="1109.0" y="543.6" width="77.0" height="196.4" fill="#1f272e"/>
+<rect x="1109.0" y="378.6" width="77.0" height="165.0" fill="#1aa5b6"/>
+<rect x="1194.0" y="614.3" width="77.0" height="125.7" fill="#1f272e"/>
+<rect x="1279.0" y="653.6" width="77.0" height="86.4" fill="#1f272e"/>
+<rect x="1364.0" y="677.1" width="77.0" height="62.9" fill="#1f272e"/>
+<rect x="1449.0" y="685.0" width="77.0" height="55.0" fill="#1f272e"/>
+<line x1="170" x2="1530" y1="543.6" y2="543.6" stroke="#c2412d" stroke-width="4" stroke-dasharray="16 10"/>
+<text x="182.0" y="529.6" font-size="24" fill="#c2412d" font-weight="650">ingestelde maximale piek: 2,5 kW</text>
+<rect x="170" y="200" width="26" height="26" fill="#1aa5b6"/>
+<text x="208.0" y="222.0" font-size="24" fill="#1f272e">uit de batterij</text>
+<rect x="420" y="200" width="26" height="26" fill="#1f272e"/>
+<text x="458.0" y="222.0" font-size="24" fill="#1f272e">van het net</text>
+<text x="756.5" y="236.9" font-size="23" fill="#4b5661" font-weight="600" text-anchor="middle">koken</text>
+<text x="1096.5" y="346.9" font-size="23" fill="#4b5661" font-weight="600" text-anchor="middle">vaatwas en droogkast</text>
+<text x="170.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">16u</text>
+<text x="340.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">17u</text>
+<text x="510.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">18u</text>
+<text x="680.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">19u</text>
+<text x="850.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">20u</text>
+<text x="1020.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">21u</text>
+<text x="1190.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">22u</text>
+<text x="1360.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">23u</text>
+<text x="1530.0" y="790.0" font-size="25" fill="#4b5661" text-anchor="middle">24u</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Voorbeeld met fictieve waarden voor één avond. Werkt zolang de batterij genoeg lading en vermogen heeft.</text>
+</svg>

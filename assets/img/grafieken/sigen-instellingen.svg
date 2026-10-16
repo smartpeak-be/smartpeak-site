@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Zo zit de mySigen-app in elkaar</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Eén modus bepaalt het dagelijkse gedrag; extra functies leggen grenzen en voorrang vast</text>
+<text x="150.0" y="200.0" font-size="30" fill="#1f272e" font-weight="650">1. Kies één werkmodus</text>
+<rect x="150" y="225" width="320" height="120" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="310.0" y="281.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">Sigen AI</text>
+<text x="310.0" y="315.0" font-size="22" fill="#0b7a42" text-anchor="middle">plant op prijs en weer</text>
+<rect x="495" y="225" width="320" height="120" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="655.0" y="281.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">Zelfverbruik</text>
+<text x="655.0" y="315.0" font-size="22" fill="#0b7a42" text-anchor="middle">eigen zonnestroom eerst</text>
+<rect x="840" y="225" width="320" height="120" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="1000.0" y="281.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">Tijdsturing</text>
+<text x="1000.0" y="315.0" font-size="22" fill="#0b7a42" text-anchor="middle">jouw laad- en ontlaaduren</text>
+<rect x="1185" y="225" width="320" height="120" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1345.0" y="281.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Volledig injecteren</text>
+<text x="1345.0" y="315.0" font-size="22" fill="#4b5661" text-anchor="middle">zoveel mogelijk naar het net</text>
+<text x="150.0" y="440.0" font-size="30" fill="#1f272e" font-weight="650">2. Stel daarnaast in, los van de modus</text>
+<rect x="150" y="465" width="420" height="120" rx="18" fill="#e3f4f6" stroke="#b6e0e6" stroke-width="3"/>
+<text x="360.0" y="521.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Piekbeperking</text>
+<text x="360.0" y="555.0" font-size="22" fill="#0a6a78" text-anchor="middle">maximum dat je van het net haalt</text>
+<rect x="610" y="465" width="420" height="120" rx="18" fill="#e3f4f6" stroke="#b6e0e6" stroke-width="3"/>
+<text x="820.0" y="521.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Back-up-reserve</text>
+<text x="820.0" y="555.0" font-size="22" fill="#0a6a78" text-anchor="middle">lading voor een stroompanne</text>
+<rect x="1070" y="465" width="420" height="120" rx="18" fill="#e3f4f6" stroke="#b6e0e6" stroke-width="3"/>
+<text x="1280.0" y="521.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Injectielimiet</text>
+<text x="1280.0" y="555.0" font-size="22" fill="#0a6a78" text-anchor="middle">maximum naar het net</text>
+<rect x="150" y="615" width="420" height="120" rx="18" fill="#e3f4f6" stroke="#b6e0e6" stroke-width="3"/>
+<text x="360.0" y="671.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Je wagen laden</text>
+<text x="360.0" y="705.0" font-size="22" fill="#0a6a78" text-anchor="middle">snel of met zonne-overschot</text>
+<rect x="610" y="615" width="420" height="120" rx="18" fill="#e3f4f6" stroke="#b6e0e6" stroke-width="3"/>
+<text x="820.0" y="671.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Slimme verbruikers</text>
+<text x="820.0" y="705.0" font-size="22" fill="#0a6a78" text-anchor="middle">toestellen op overschot</text>
+<text x="150.0" y="868.0" font-size="23" fill="#4b5661">Vereenvoudigd overzicht van de mySigen-app. Back-up vraagt een Sigen Energy Gateway.</text>
+</svg>

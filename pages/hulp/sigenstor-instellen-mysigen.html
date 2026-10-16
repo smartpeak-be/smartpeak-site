@@ -1,0 +1,120 @@
+<!--meta
+{
+  "title": "SigenStor instellen: werkmodi en piekbeperking",
+  "card_title": "Je SigenStor instellen in mySigen",
+  "description": "Welke werkmodus kies je in de mySigen-app, hoe stel je piekbeperking in voor het capaciteitstarief en hoe werken back-up-reserve en laadgrenzen samen?",
+  "summary": "De werkmodi, piekbeperking voor het capaciteitstarief, back-up-reserve en het laden van je wagen.",
+  "section": "hulp",
+  "order": 4,
+  "path": "/hulp/sigenstor-instellen-mysigen/",
+  "slug": "sigenstor-instellen-mysigen",
+  "image": "/assets/img/grafieken/sigen-piekbeperking.webp",
+  "image_alt": "Staafgrafiek van één avond: wat boven de ingestelde maximale piek van 2,5 kW uitkomt, zoals bij het koken en bij vaatwas en droogkast, levert de batterij. Van het net komt nooit meer dan 2,5 kW.",
+  "schema_type": "Article",
+  "published": "2026-10-16"
+}
+-->
+<header class="page-head">
+  <div class="wrap-narrow">
+    <p class="article-meta"><a href="/hulp/">Hulp</a></p>
+    <h1>Je SigenStor instellen in de mySigen-app</h1>
+    <p class="lead">In de mySigen-app bepaal je hoe je SigenStor met je zonnestroom, je batterij en het net omgaat. Deze gids legt uit welke werkmodus bij jou past, hoe je met piekbeperking je capaciteitstarief in de hand houdt en hoe back-up en laadgrenzen samenwerken. Voor wie al een SigenStor heeft, en voor wie wil weten wat het systeem kan.</p>
+  </div>
+</header>
+
+<div class="prose wrap-narrow">
+  <h2>Hoe de app in elkaar zit</h2>
+  <p>Je kiest één werkmodus die het dagelijkse gedrag van je batterij bepaalt. Daarnaast leg je, los van die modus, grenzen en voorrang vast: hoeveel je maximaal van het net haalt, hoeveel lading je bewaart voor een stroompanne, hoe je wagen laadt.</p>
+  <figure>
+    <a href="/assets/img/grafieken/sigen-instellingen.webp" class="figure-zoom"><img src="/assets/img/grafieken/sigen-instellingen.webp" alt="Overzicht van de mySigen-app. Eerst kies je één werkmodus: Sigen AI, Zelfverbruik, Tijdsturing of Volledig injecteren. Daarnaast stel je los van de modus in: piekbeperking, back-up-reserve, injectielimiet, het laden van je wagen en slimme verbruikers." loading="lazy" decoding="async"></a>
+  </figure>
+  <p>Hou de app up-to-date: nieuwe functies vragen vaak ook nieuwe software op je SigenStor. De versie zie je in de app onder <strong>Instellingen → Over</strong>. De namen hieronder zijn de Nederlandse uitleg; in de app heten de modi, afhankelijk van je taal, Sigen AI Mode, Self-Consumption, Time-based Control en Fully Feed-in to Grid. Je vindt ze bij het energiebeheer, onder <em>Operational mode</em>.</p>
+
+  <h2>De werkmodi</h2>
+  <h3>Sigen AI</h3>
+  <p>De app maakt zelf een plan op basis van je stroomprijzen, de weersverwachting en je verbruiksgewoonten. Daarvoor moet je <strong>tarief</strong> in de app staan (bij de netinstellingen, onder <em>Tariff Plan</em>): een vaste prijs, een dag- en nachtprijs of een dynamisch tarief, met extra kosten en belastingen erbij. Hoe juister dat tarief, hoe beter het plan. Het meeste haal je eruit als de prijs over de dag verandert, zoals met een <a href="/artikels/vast-variabel-dynamisch-contract-thuisbatterij/">dynamisch contract</a>.</p>
+
+  <h3>Zelfverbruik</h3>
+  <p>Zonnestroom gaat eerst naar je huis, het overschot naar de batterij en pas wat dan nog overblijft naar het net. 's Avonds en bij weinig zon vult de batterij aan. Een eenvoudige en voorspelbare keuze met een vast contract. In sommige landen kan je hier ook <strong>Negative Price Protection</strong> aanzetten: bij negatieve prijzen stuurt de batterij dan niets naar het net en ontlaadt ze vooraf, zodat er plaats is voor de zonnestroom van die uren. Of die optie bij jou verschijnt, zie je in de app.</p>
+
+  <h3>Tijdsturing</h3>
+  <p>Je legt zelf tot 24 periodes per dag vast waarin de batterij laadt, ontlaadt of op zelfverbruik werkt. Per periode kies je het vermogen, of de batterij uit het net mag laden en tot welk niveau, en hoeveel ze naar het net mag sturen. Let op: <a href="https://www.brighten-gen.com/uploads/product/files/product_datasheet_1777373448_1829.pdf" rel="noopener">buiten je periodes ontlaadt de batterij niet</a>, en zonder periodes staat ze stil. Handig voor wie een vaste routine heeft of een dag- en nachttarief precies wil benutten.</p>
+
+  <h3>Volledig injecteren</h3>
+  <p>Deze modus stuurt zoveel mogelijk stroom naar het net, en gebruikt de batterij om de omvormer op vol vermogen te houden. In Vlaanderen levert injecteren weinig op, dus voor een woning is dat zelden zinvol. Lees ook <a href="/artikels/wat-gebeurt-overtollige-zonne-energie/">wat er met je overtollige zonnestroom gebeurt</a>.</p>
+
+  <h3>Even zelf ingrijpen</h3>
+  <p>Met <strong>Manual Control</strong> dwing je de batterij een tijdje te laden, te ontladen of stil te staan, bijvoorbeeld om ze vol te hebben voor een aangekondigde onderbreking. Dat gaat voor op je werkmodus. In de lijst zie je soms ook modi als VPP, Remote EMS of Load Shedding. Die zijn voor deelname aan een virtuele centrale, sturing door een externe partij of specifieke landen. Kies ze niet zonder overleg met je installateur.</p>
+
+  <h2>Piekbeperking voor het capaciteitstarief</h2>
+  <p>In Vlaanderen betaal je een deel van je nettarieven op basis van je <a href="/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop/">hoogste kwartierpiek van elke maand</a>. Met piekbeperking stel je in hoeveel vermogen je huis maximaal van het net mag halen. Wat je verbruikt boven die grens, levert de batterij. Die functie werkt <a href="https://www.brighten-gen.com/uploads/product/files/product_datasheet_1777373448_1829.pdf" rel="noopener">samen met elke werkmodus</a>.</p>
+  <figure>
+    <a href="/assets/img/grafieken/sigen-piekbeperking.webp" class="figure-zoom"><img src="/assets/img/grafieken/sigen-piekbeperking.webp" alt="Staafgrafiek van één avond: wat boven de ingestelde maximale piek van 2,5 kW uitkomt, zoals bij het koken en bij vaatwas en droogkast, levert de batterij. Van het net komt nooit meer dan 2,5 kW." loading="lazy" decoding="async"></a>
+  </figure>
+  <p>Je stelt drie dingen in, bij de netinstellingen onder <em>Peak Shaving</em>:</p>
+  <ul>
+    <li><strong>Maximale piek</strong> (<em>Maximum Peak Power</em>): het maximum dat je van het net haalt, voor je verbruik én voor het laden van de batterij.</li>
+    <li><strong>Periodes</strong>: tot 24 tijdvakken waarin de grens geldt.</li>
+    <li><strong>Reserve voor piekbeperking</strong> (<em>Peak shaving SOC</em>): tot welk niveau de batterij in de daluren bijlaadt, zodat er lading klaarstaat voor je pieken. Hoe hoger, hoe meer pieken ze kan opvangen.</li>
+  </ul>
+  <p><strong>Zo kies je een goede grens:</strong></p>
+  <ul>
+    <li>Ga niet onder <strong>2,5 kW</strong>. Het capaciteitstarief rekent met <a href="https://stad.gent/nl/huisplus/renoveren/het-capaciteitstarief-hoe-zit-dat" rel="noopener">minstens 2,5 kW</a>, dus een lagere piek levert niets extra op en kost je wel batterijlading.</li>
+    <li>Kijk in <a href="https://mijn.fluvius.be" rel="noopener">Mijn Fluvius</a> wat je pieken nu zijn. Een grens net onder je gebruikelijke maandpiek is een goed begin.</li>
+    <li>Piekbeperking werkt zolang de batterij genoeg lading en vermogen heeft. Een lange zware verbruiker, zoals je wagen urenlang aan een AC-laadpaal, kan de batterij leegtrekken. Dan komt de rest toch van het net.</li>
+  </ul>
+
+  <h2>Back-up-reserve en laadgrenzen</h2>
+  <figure>
+    <a href="/assets/img/grafieken/sigen-laadniveaus.webp" class="figure-zoom"><img src="/assets/img/grafieken/sigen-laadniveaus.webp" alt="Batterij opgedeeld in zones. Onderaan de back-up-reserve, die overblijft voor een stroompanne en een Gateway vraagt. Daarboven het deel voor dagelijks gebruik door de werkmodus en de piekbeperking. Bovenaan het deel boven je laadgrens. Een stippellijn toont tot waar de batterij in de daluren bijlaadt voor de piekbeperking." loading="lazy" decoding="async"></a>
+  </figure>
+  <ul>
+    <li><strong>Back-up-reserve</strong> (<em>Backup Reserve</em>): enkel met een <a href="/oplossingen/sigen-energy-gateway/">Sigen Energy Gateway</a>. Zolang het net er is, stopt de batterij met ontladen op dat niveau; de rest blijft voor een stroompanne. Kies hoeveel op basis van hoe vaak en hoe lang de stroom bij jou uitvalt. Sigenergy raadt af om ze op 0% te zetten. Lees ook <a href="/artikels/thuisbatterij-stroomonderbreking-back-up/">wat je batterij doet bij een stroomonderbreking</a>.</li>
+    <li><strong>Ontlaadgrens</strong> (<em>Discharge Cut-off SOC</em>): Sigenergy raadt 0% aan. Met back-up gaat de back-up-reserve voor.</li>
+    <li><strong>Laadgrens</strong> (<em>Charge Cut-off SOC</em>): tot waar de batterij laadt.</li>
+  </ul>
+  <p>Hoe hoger je reserves, hoe minder van je batterij je dagelijks gebruikt. Wie zelden een stroompanne heeft, houdt de back-up-reserve dus best bescheiden.</p>
+
+  <h2>Injectie beperken</h2>
+  <p>Hoeveel je SigenStor maximaal naar het net stuurt, stelt je installateur in volgens de regels van de netbeheerder (<em>Grid Export Power Limit</em>). Pas dat niet zelf aan. Met een dynamisch contract kan je de productie van je panelen ook beperken bij negatieve prijzen, zodat je niet betaalt om te injecteren.</p>
+
+  <h2>Je wagen laden</h2>
+  <p>Heb je een <a href="/oplossingen/sigen-laden/">DC-laadmodule of Sigen EV AC-laadpaal</a>, dan kies je in de app hoe je wagen laadt:</p>
+  <ul>
+    <li><strong>Snel laden</strong> (<em>Fast Charging</em>): zo snel mogelijk, ook met netstroom.</li>
+    <li><strong>Laden met zonne-overschot</strong> (<em>PV Surplus Charging</em>): enkel met wat je panelen over hebben. Bij de AC-laadpaal stel je ook in hoeveel netstroom er maximaal bij mag.</li>
+    <li><strong>Sigen AI</strong> (AC-laadpaal): je geeft op tegen wanneer de wagen klaar moet zijn, de app kiest de goedkoopste uren.</li>
+  </ul>
+  <p>Met de DC-laadmodule blijft het laden met zon en batterij aan de gelijkstroomkant, zodat het je piek niet verhoogt. Bij een AC-laadpaal zorgt dynamisch lastbeheer met een stroomsensor dat je aansluiting niet overbelast raakt.</p>
+
+  <h2>Slimme verbruikers</h2>
+  <p>Je kan tot 20 toestellen koppelen via slimme schakelaars van Shelly, de Gateway of een uitgang van je SigenStor. Een boiler of zwembadpomp zet je dan bijvoorbeeld enkel aan op zonne-overschot, of pas vanaf een bepaald batterijniveau.</p>
+
+  <h2>De assistent in de app</h2>
+  <p>Sinds versie 4.0, uitgerold vanaf juni 2026, zit er een assistent in de app: <a href="https://eu-store.sigenergy.com/en/pages/mysigen-app-4-0" rel="noopener">SigenAgent</a>. Je beschrijft in gewone taal wat je wil, bijvoorbeeld "hou mijn piek onder 4 kW". De assistent stelt dan een modus en instellingen voor, legt uit waarom en past ze pas toe als je bevestigt. Hij kan ook uitleggen waarom je batterij op een bepaald moment laadt of ontlaadt.</p>
+
+  <h2>Werkt het niet zoals verwacht?</h2>
+  <table>
+    <thead>
+      <tr><th>Wat je ziet</th><th>Kijk dit na</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>De batterij ontlaadt niet in Tijdsturing</td><td>Valt het uur in een ontlaadperiode? Buiten je periodes ontlaadt de batterij niet.</td></tr>
+      <tr><td>Je piek is toch gestegen</td><td>Was de batterij leeg of te zwak voor het verbruik? Verhoog de reserve voor piekbeperking of plan zware verbruikers anders.</td></tr>
+      <tr><td>Sigen AI lijkt weinig te doen</td><td>Staat je tarief juist in de app, met extra kosten en belastingen? Met één vaste prijs valt er weinig te plannen.</td></tr>
+      <tr><td>De batterij stopt ruim boven 0%</td><td>Dat is je back-up-reserve of ontlaadgrens. Kijk of die nog past bij wat je wil.</td></tr>
+      <tr><td>Een nieuwe functie ontbreekt</td><td>Werk de app bij en vraag ons of de software op je SigenStor bijgewerkt moet worden.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Plaatsen wij je SigenStor?</h2>
+  <p>Dan stellen we bij de installatie de werkmodus, het tarief, de piekbeperking en de back-up samen met jou in, en tonen we je hoe je de app gebruikt. Verandert je contract of komt er een wagen of warmtepomp bij, dan passen we de instellingen mee aan. Benieuwd wat een SigenStor bij jou kan doen? Lees meer over <a href="/oplossingen/sigenergy-sigenstor/">de SigenStor</a>, <a href="/batterij-iets-voor-mij/#analyse">laat je verbruik vrijblijvend bekijken</a> of <a href="/contact/">neem contact met ons op</a>.</p>
+
+  <h3>Bronnen</h3>
+  <ul>
+    <li><a href="https://www.brighten-gen.com/uploads/product/files/product_datasheet_1777373448_1829.pdf" rel="noopener">Sigenergy, mySigen App User Manual, versie 13 (april 2026)</a></li>
+    <li><a href="https://eu-store.sigenergy.com/en/pages/mysigen-app-4-0" rel="noopener">Sigenergy, mySigen App 4.0</a></li>
+    <li><a href="https://itwire.com/guest-articles/company-news/how-sigenergys-sigenagent-brings-ai-energy-management-to-storage-dynamic-tariffs-and-virtual-power-plant-participation" rel="noopener">iTWire, SigenAgent in mySigen 4.0 (juni 2026)</a></li>
+    <li><a href="https://stad.gent/nl/huisplus/renoveren/het-capaciteitstarief-hoe-zit-dat" rel="noopener">Stad Gent, Het capaciteitstarief: hoe zit dat?</a></li>
+  </ul>
+</div>

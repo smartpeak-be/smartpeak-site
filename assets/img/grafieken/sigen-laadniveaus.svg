@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Hoe de laadniveaus van je SigenStor samenwerken</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Je batterij is opgedeeld in zones; elke instelling legt een grens vast</text>
+<rect x="440" y="199" width="260" height="582" rx="26" fill="#f3f7f5" stroke="#1f272e" stroke-width="4"/>
+<rect x="535" y="170" width="70" height="26" rx="6" fill="#1f272e"/>
+<rect x="454" y="638.0" width="232" height="139.0" rx="12" fill="#1aa5b6"/>
+<line x1="710" x2="770" y1="707.5" y2="707.5" stroke="#4b5661" stroke-width="2"/>
+<text x="790.0" y="701.5" font-size="28" fill="#1f272e" font-weight="650">Back-up-reserve</text>
+<text x="790.0" y="735.5" font-size="23" fill="#4b5661">blijft over voor een stroompanne; vraagt een Gateway</text>
+<rect x="454" y="232.0" width="232" height="400.0" rx="12" fill="#17c15c"/>
+<line x1="710" x2="770" y1="432.0" y2="432.0" stroke="#4b5661" stroke-width="2"/>
+<text x="790.0" y="426.0" font-size="28" fill="#1f272e" font-weight="650">Dagelijks gebruik</text>
+<text x="790.0" y="460.0" font-size="23" fill="#4b5661">de werkmodus en piekbeperking gebruiken dit deel</text>
+<rect x="454" y="203.0" width="232" height="23.0" rx="12" fill="#cfd8d5"/>
+<line x1="710" x2="770" y1="198.0" y2="198.0" stroke="#4b5661" stroke-width="2"/>
+<text x="790.0" y="192.0" font-size="28" fill="#1f272e" font-weight="650">Boven je laadgrens</text>
+<text x="790.0" y="226.0" font-size="23" fill="#4b5661">de batterij laadt niet verder dan je laadgrens</text>
+<line x1="400" x2="700" y1="432.0" y2="432.0" stroke="#c2412d" stroke-width="4" stroke-dasharray="14 9"/>
+<text x="390.0" y="422.0" font-size="23" fill="#c2412d" font-weight="650" text-anchor="end">piekbeperking:</text>
+<text x="390.0" y="452.0" font-size="23" fill="#c2412d" text-anchor="end">laadt in de daluren</text>
+<text x="390.0" y="480.0" font-size="23" fill="#c2412d" text-anchor="end">tot dit niveau</text>
+<text x="570.0" y="766.0" font-size="22" fill="#ffffff" font-weight="650" text-anchor="middle">0%</text>
+<text x="570.0" y="625.0" font-size="22" fill="#ffffff" font-weight="650" text-anchor="middle">25%</text>
+<text x="570.0" y="219.0" font-size="22" fill="#1f272e" font-weight="650" text-anchor="middle">95%</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Voorbeeldwaarden. Welke grenzen bij jou passen, hangt af van je verbruik en hoe vaak de stroom uitvalt.</text>
+</svg>
