@@ -469,6 +469,8 @@ p { margin: 0 0 1em; }
 .case-teaser-text span { color: var(--ink-soft); }
 .case-teaser-text .case-teaser-more { color: var(--lagoon-deep); font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
 .case-teaser:hover { border-color: var(--ink); }
+.case-teaser + .case-teaser { margin-top: 1.25rem; }
+.case-teaser img.case-teaser-chart { object-fit: contain; background: #fff; padding: 1rem; }
 @media (max-width: 760px) { .case-teaser { grid-template-columns: 1fr; } .case-teaser img { min-height: 0; aspect-ratio: 16 / 10; height: auto; } }
 
 /* Fabels en feiten */

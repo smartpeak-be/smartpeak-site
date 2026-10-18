@@ -342,6 +342,63 @@ def sigen_battery_levels():
     return svg(body, "Hoe de laadniveaus van je SigenStor samenwerken", "Je batterij is opgedeeld in zones; elke instelling legt een grens vast")
 
 
+# Praktijkvoorbeeld: 10 kWh bijgeplaatst bij een bestaande hybride omvormer (echte meetwaarden, anoniem).
+CASE_MONTHS = [  # maand, opgewekt, verbruik, waarvan uit eigen zonnestroom (kWh, afgelezen en afgerond)
+    ("juni*", 280, 230, 140), ("juli", 850, 550, 550), ("augustus", 620, 540, 460),
+    ("september", 410, 540, 390), ("oktober*", 190, 340, 190)]
+CASE_NOTE = "Meetwaarden van één woning uit de monitoringapp van de installatie, van de plaatsing in juni tot 18 oktober 2026."
+
+
+def case_split():
+    """Where the solar energy went and where the consumption came from, since the battery was added."""
+    x0, x1 = 150, 1450
+    rows = [(215, "Opgewekt door de zonnepanelen", "2.360 kWh",
+             [(75, "zelf gebruikt", "1.760 kWh", LEAF, "#ffffff"), (25, "naar het net", "598 kWh", "#cfd8d5", INK)]),
+            (535, "Verbruikt in de woning", "2.210 kWh",
+             [(79, "uit eigen zonnestroom", "1.740 kWh", LEAF, "#ffffff"), (21, "van het net", "470 kWh", INK, "#ffffff")])]
+    body = ""
+    for y, label, total, parts in rows:
+        body += text(x0, y, label, 30, INK, 650)
+        body += text(x1, y, total, 30, INK, 650, "end")
+        bx, top, h = x0, y + 28, 190
+        for pct, name, kwh, fill, color in parts:
+            w = (x1 - x0) * pct / 100
+            body += f'<rect x="{bx:.1f}" y="{top}" width="{w:.1f}" height="{h}" fill="{fill}"/>\n'
+            cx = bx + w / 2
+            body += text(cx, top + 92, f"{pct}%", 60, color, 650, "middle")
+            body += text(cx, top + 140, f"{kwh} {name}", 25, color, None, "middle")
+            bx += w
+    body += text(150, 850, CASE_NOTE + " Afgerond.", 23)
+    return svg(body, "Na het bijplaatsen van 10 kWh opslag", "Waar de zonnestroom naartoe ging en waar het verbruik vandaan kwam")
+
+
+def case_months():
+    """Per month: solar production next to consumption, split into own solar energy and grid."""
+    x0, x1, ytop, ybot = 170, 1530, 250, 740
+    hi = 900
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = axes(x0, x1, y_of, [0, 200, 400, 600, 800], " kWh")
+    legend = [("#bfe9cf", "opgewekt"), (LEAF, "verbruik uit eigen zonnestroom"), (INK, "verbruik van het net")]
+    for lx, (color, label) in zip((170, 350, 790), legend):
+        body += f'<rect x="{lx}" y="178" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 200, label, 24, INK)
+    slot = (x1 - x0) / len(CASE_MONTHS)
+    bw = 92
+    for i, (month, made, used, own) in enumerate(CASE_MONTHS):
+        cx = x0 + slot * i + slot / 2
+        px, ux = cx - bw - 8, cx + 8
+        body += f'<rect x="{px:.1f}" y="{y_of(made):.1f}" width="{bw}" height="{ybot - y_of(made):.1f}" rx="6" fill="#bfe9cf"/>\n'
+        body += f'<rect x="{ux:.1f}" y="{y_of(own):.1f}" width="{bw}" height="{ybot - y_of(own):.1f}" fill="{LEAF}"/>\n'
+        if used > own:
+            body += f'<rect x="{ux:.1f}" y="{y_of(used):.1f}" width="{bw}" height="{y_of(own) - y_of(used):.1f}" fill="{INK}"/>\n'
+        share = round(own / used * 100)
+        shown = "± 100%" if share >= 99 else f"{share}%"
+        body += text(ux + bw / 2, y_of(used) - 16, shown, 27, LEAF_DEEP, 650, "middle")
+        body += text(cx, 790, month, 27, INK, 600, "middle")
+    body += text(150, 850, "Het percentage is het deel van het verbruik uit eigen zonnestroom. * juni vanaf de plaatsing, oktober tot en met 18 oktober.", 23)
+    body += text(150, 880, "Meetwaarden van één woning, maandwaarden afgelezen uit de monitoringapp en afgerond op 10 kWh.", 23)
+    return svg(body, "Per maand: zonnestroom en verbruik", "In de zomer zo goed als zelfvoorzienend, richting herfst stijgt het aandeel van het net")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -359,3 +416,5 @@ if __name__ == "__main__":
     write("sigen-instellingen", sigen_settings_layers())
     write("sigen-piekbeperking", sigen_peak_shaving())
     write("sigen-laadniveaus", sigen_battery_levels())
+    write("thuisbatterij-bijplaatsen-verdeling", case_split())
+    write("thuisbatterij-bijplaatsen-per-maand", case_months())

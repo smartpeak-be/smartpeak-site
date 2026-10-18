@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Na het bijplaatsen van 10 kWh opslag</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Waar de zonnestroom naartoe ging en waar het verbruik vandaan kwam</text>
+<text x="150.0" y="215.0" font-size="30" fill="#1f272e" font-weight="650">Opgewekt door de zonnepanelen</text>
+<text x="1450.0" y="215.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="end">2.360 kWh</text>
+<rect x="150.0" y="243" width="975.0" height="190" fill="#17c15c"/>
+<text x="637.5" y="335.0" font-size="60" fill="#ffffff" font-weight="650" text-anchor="middle">75%</text>
+<text x="637.5" y="383.0" font-size="25" fill="#ffffff" text-anchor="middle">1.760 kWh zelf gebruikt</text>
+<rect x="1125.0" y="243" width="325.0" height="190" fill="#cfd8d5"/>
+<text x="1287.5" y="335.0" font-size="60" fill="#1f272e" font-weight="650" text-anchor="middle">25%</text>
+<text x="1287.5" y="383.0" font-size="25" fill="#1f272e" text-anchor="middle">598 kWh naar het net</text>
+<text x="150.0" y="535.0" font-size="30" fill="#1f272e" font-weight="650">Verbruikt in de woning</text>
+<text x="1450.0" y="535.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="end">2.210 kWh</text>
+<rect x="150.0" y="563" width="1027.0" height="190" fill="#17c15c"/>
+<text x="663.5" y="655.0" font-size="60" fill="#ffffff" font-weight="650" text-anchor="middle">79%</text>
+<text x="663.5" y="703.0" font-size="25" fill="#ffffff" text-anchor="middle">1.740 kWh uit eigen zonnestroom</text>
+<rect x="1177.0" y="563" width="273.0" height="190" fill="#1f272e"/>
+<text x="1313.5" y="655.0" font-size="60" fill="#ffffff" font-weight="650" text-anchor="middle">21%</text>
+<text x="1313.5" y="703.0" font-size="25" fill="#ffffff" text-anchor="middle">470 kWh van het net</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Meetwaarden van één woning uit de monitoringapp van de installatie, van de plaatsing in juni tot 18 oktober 2026. Afgerond.</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Per maand: zonnestroom en verbruik</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">In de zomer zo goed als zelfvoorzienend, richting herfst stijgt het aandeel van het net</text>
+<line x1="170" x2="1530" y1="740.0" y2="740.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="749.0" font-size="25" fill="#4b5661" text-anchor="end">0 kWh</text>
+<line x1="170" x2="1530" y1="631.1" y2="631.1" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="640.1" font-size="25" fill="#4b5661" text-anchor="end">200 kWh</text>
+<line x1="170" x2="1530" y1="522.2" y2="522.2" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="531.2" font-size="25" fill="#4b5661" text-anchor="end">400 kWh</text>
+<line x1="170" x2="1530" y1="413.3" y2="413.3" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="422.3" font-size="25" fill="#4b5661" text-anchor="end">600 kWh</text>
+<line x1="170" x2="1530" y1="304.4" y2="304.4" stroke="#e3ebe8" stroke-width="2"/>
+<text x="148.0" y="313.4" font-size="25" fill="#4b5661" text-anchor="end">800 kWh</text>
+<rect x="170" y="178" width="26" height="26" rx="4" fill="#bfe9cf"/>
+<text x="208.0" y="200.0" font-size="24" fill="#1f272e">opgewekt</text>
+<rect x="350" y="178" width="26" height="26" rx="4" fill="#17c15c"/>
+<text x="388.0" y="200.0" font-size="24" fill="#1f272e">verbruik uit eigen zonnestroom</text>
+<rect x="790" y="178" width="26" height="26" rx="4" fill="#1f272e"/>
+<text x="828.0" y="200.0" font-size="24" fill="#1f272e">verbruik van het net</text>
+<rect x="206.0" y="587.6" width="92" height="152.4" rx="6" fill="#bfe9cf"/>
+<rect x="314.0" y="663.8" width="92" height="76.2" fill="#17c15c"/>
+<rect x="314.0" y="614.8" width="92" height="49.0" fill="#1f272e"/>
+<text x="360.0" y="598.8" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">61%</text>
+<text x="306.0" y="790.0" font-size="27" fill="#1f272e" font-weight="600" text-anchor="middle">juni*</text>
+<rect x="478.0" y="277.2" width="92" height="462.8" rx="6" fill="#bfe9cf"/>
+<rect x="586.0" y="440.6" width="92" height="299.4" fill="#17c15c"/>
+<text x="632.0" y="424.6" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">± 100%</text>
+<text x="578.0" y="790.0" font-size="27" fill="#1f272e" font-weight="600" text-anchor="middle">juli</text>
+<rect x="750.0" y="402.4" width="92" height="337.6" rx="6" fill="#bfe9cf"/>
+<rect x="858.0" y="489.6" width="92" height="250.4" fill="#17c15c"/>
+<rect x="858.0" y="446.0" width="92" height="43.6" fill="#1f272e"/>
+<text x="904.0" y="430.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">85%</text>
+<text x="850.0" y="790.0" font-size="27" fill="#1f272e" font-weight="600" text-anchor="middle">augustus</text>
+<rect x="1022.0" y="516.8" width="92" height="223.2" rx="6" fill="#bfe9cf"/>
+<rect x="1130.0" y="527.7" width="92" height="212.3" fill="#17c15c"/>
+<rect x="1130.0" y="446.0" width="92" height="81.7" fill="#1f272e"/>
+<text x="1176.0" y="430.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">72%</text>
+<text x="1122.0" y="790.0" font-size="27" fill="#1f272e" font-weight="600" text-anchor="middle">september</text>
+<rect x="1294.0" y="636.6" width="92" height="103.4" rx="6" fill="#bfe9cf"/>
+<rect x="1402.0" y="636.6" width="92" height="103.4" fill="#17c15c"/>
+<rect x="1402.0" y="554.9" width="92" height="81.7" fill="#1f272e"/>
+<text x="1448.0" y="538.9" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">56%</text>
+<text x="1394.0" y="790.0" font-size="27" fill="#1f272e" font-weight="600" text-anchor="middle">oktober*</text>
+<text x="150.0" y="850.0" font-size="23" fill="#4b5661">Het percentage is het deel van het verbruik uit eigen zonnestroom. * juni vanaf de plaatsing, oktober tot en met 18 oktober.</text>
+<text x="150.0" y="880.0" font-size="23" fill="#4b5661">Meetwaarden van één woning, maandwaarden afgelezen uit de monitoringapp en afgerond op 10 kWh.</text>
+</svg>
