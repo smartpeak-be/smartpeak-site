@@ -49,6 +49,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/sigen-piekbeperking-w640.webp"
  },
+ "/assets/img/grafieken/thuisbatterij-bijplaatsen-overzicht.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/thuisbatterij-bijplaatsen-overzicht-w640.webp"
+ },
  "/assets/img/grafieken/thuisbatterij-bijplaatsen-per-maand.webp": {
   "width": 1600,
   "height": 900,
@@ -58,6 +63,16 @@
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/thuisbatterij-bijplaatsen-verdeling-w640.webp"
+ },
+ "/assets/img/grafieken/thuisbatterij-bijplaatsen-woning-2.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/thuisbatterij-bijplaatsen-woning-2-w640.webp"
+ },
+ "/assets/img/grafieken/thuisbatterij-bijplaatsen-woning-3.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/thuisbatterij-bijplaatsen-woning-3-w640.webp"
  },
  "/assets/img/grafieken/zendure-modus-kiezen.webp": {
   "width": 1600,

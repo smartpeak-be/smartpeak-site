@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
 <rect width="100%" height="100%" fill="#ffffff"/>
-<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Per maand: zonnestroom en verbruik</text>
-<text x="150" y="128" font-size="27" fill="#4b5661">In de zomer zo goed als zelfvoorzienend, richting herfst stijgt het aandeel van het net</text>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Woning 1 per maand: zonnestroom en verbruik</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">In juli vrijwel volledig uit eigen zonnestroom, richting herfst stijgt het aandeel van het net</text>
 <line x1="170" x2="1530" y1="740.0" y2="740.0" stroke="#e3ebe8" stroke-width="2"/>
 <text x="148.0" y="749.0" font-size="25" fill="#4b5661" text-anchor="end">0 kWh</text>
 <line x1="170" x2="1530" y1="631.1" y2="631.1" stroke="#e3ebe8" stroke-width="2"/>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Wat de batterij deed tussen de plaatsing en half oktober 2026</text>
+<rect x="150" y="190" width="420" height="600" rx="22" fill="#e9f8ef"/>
+<text x="360.0" y="260.0" font-size="34" fill="#1f272e" font-weight="650" text-anchor="middle">Woning 1</text>
+<text x="360.0" y="298.0" font-size="22" fill="#4b5661" text-anchor="middle">op de bestaande hybride omvormer</text>
+<text x="360.0" y="450.0" font-size="110" fill="#0b7a42" font-weight="650" text-anchor="middle">79%</text>
+<text x="360.0" y="510.0" font-size="25" fill="#1f272e" text-anchor="middle">van het totale verbruik</text>
+<text x="360.0" y="544.0" font-size="25" fill="#1f272e" text-anchor="middle">uit eigen zonnestroom</text>
+<line x1="190" x2="530" y1="600" y2="600" stroke="#e3ebe8" stroke-width="3"/>
+<text x="360.0" y="660.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="middle">470 kWh van het net</text>
+<text x="360.0" y="700.0" font-size="23" fill="#4b5661" text-anchor="middle">juni tot 18 oktober</text>
+<rect x="620" y="190" width="420" height="600" rx="22" fill="#e3f4f6"/>
+<text x="830.0" y="260.0" font-size="34" fill="#1f272e" font-weight="650" text-anchor="middle">Woning 2</text>
+<text x="830.0" y="298.0" font-size="22" fill="#4b5661" text-anchor="middle">AC-gekoppelde batterij, gezin van vier</text>
+<text x="830.0" y="450.0" font-size="110" fill="#0a6a78" font-weight="650" text-anchor="middle">89%</text>
+<text x="830.0" y="510.0" font-size="25" fill="#1f272e" text-anchor="middle">van het verbruik buiten de zon</text>
+<text x="830.0" y="544.0" font-size="25" fill="#1f272e" text-anchor="middle">uit de batterij</text>
+<line x1="660" x2="1000" y1="600" y2="600" stroke="#e3ebe8" stroke-width="3"/>
+<text x="830.0" y="660.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="middle">104 kWh van het net</text>
+<text x="830.0" y="700.0" font-size="23" fill="#4b5661" text-anchor="middle">23 mei tot 18 oktober</text>
+<rect x="1090" y="190" width="420" height="600" rx="22" fill="#e3f4f6"/>
+<text x="1300.0" y="260.0" font-size="34" fill="#1f272e" font-weight="650" text-anchor="middle">Woning 3</text>
+<text x="1300.0" y="298.0" font-size="22" fill="#4b5661" text-anchor="middle">AC-gekoppelde batterij</text>
+<text x="1300.0" y="450.0" font-size="110" fill="#0a6a78" font-weight="650" text-anchor="middle">95%</text>
+<text x="1300.0" y="510.0" font-size="25" fill="#1f272e" text-anchor="middle">van het verbruik buiten de zon</text>
+<text x="1300.0" y="544.0" font-size="25" fill="#1f272e" text-anchor="middle">uit de batterij</text>
+<line x1="1130" x2="1470" y1="600" y2="600" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1300.0" y="660.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="middle">38 kWh van het net</text>
+<text x="1300.0" y="700.0" font-size="23" fill="#4b5661" text-anchor="middle">11 mei tot 18 oktober</text>
+<text x="150.0" y="850.0" font-size="22" fill="#4b5661">Meetwaarden van drie woningen uit de monitoringapps, 2026. Bij woning 2 en 3 telt de rechtstreeks gebruikte zonnestroom</text>
+<text x="150.0" y="880.0" font-size="22" fill="#4b5661">niet mee. Daarom zijn de percentages niet onderling vergelijkbaar.</text>
+</svg>

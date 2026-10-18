@@ -369,7 +369,7 @@ def case_split():
             body += text(cx, top + 140, f"{kwh} {name}", 25, color, None, "middle")
             bx += w
     body += text(150, 850, CASE_NOTE + " Afgerond.", 23)
-    return svg(body, "Na het bijplaatsen van 10 kWh opslag", "Waar de zonnestroom naartoe ging en waar het verbruik vandaan kwam")
+    return svg(body, "Woning 1: na het bijplaatsen van 10 kWh opslag", "Waar de zonnestroom naartoe ging en waar het verbruik vandaan kwam")
 
 
 def case_months():
@@ -396,7 +396,66 @@ def case_months():
         body += text(cx, 790, month, 27, INK, 600, "middle")
     body += text(150, 850, "Het percentage is het deel van het verbruik uit eigen zonnestroom. * juni vanaf de plaatsing, oktober tot en met 18 oktober.", 23)
     body += text(150, 880, "Meetwaarden van één woning, maandwaarden afgelezen uit de monitoringapp en afgerond op 10 kWh.", 23)
-    return svg(body, "Per maand: zonnestroom en verbruik", "In de zomer zo goed als zelfvoorzienend, richting herfst stijgt het aandeel van het net")
+    return svg(body, "Woning 1 per maand: zonnestroom en verbruik", "In juli vrijwel volledig uit eigen zonnestroom, richting herfst stijgt het aandeel van het net")
+
+
+CASE2_MONTHS = [  # woning 2: maand, uit de batterij, van het net (kWh, uit de monitoringapp)
+    ("mei*", 42.81, 0.02), ("juni", 156.90, 6.15), ("juli", 172.73, 12.72),
+    ("augustus", 154.25, 17.37), ("september", 187.86, 33.07), ("oktober*", 107.77, 34.22)]
+CASE3_MONTHS = [  # woning 3
+    ("mei*", 80.85, 0.86), ("juni", 145.62, 0.28), ("juli", 166.22, 1.20),
+    ("augustus", 146.75, 5.70), ("september", 133.51, 1.40), ("oktober*", 75.18, 28.91)]
+
+
+def ac_case_months(title, months, start_note):
+    """AC-coupled home: consumption not covered directly by solar, from battery or grid, per month."""
+    x0, x1, ytop, ybot = 170, 1530, 250, 740
+    hi = 250
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = axes(x0, x1, y_of, [0, 50, 100, 150, 200, 250], " kWh")
+    for lx, (color, label) in zip((170, 420), [(LAGOON, "uit de batterij"), (INK, "van het net")]):
+        body += f'<rect x="{lx}" y="178" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 200, label, 24, INK)
+    slot = (x1 - x0) / len(months)
+    bw = 120
+    for i, (month, bat, grid) in enumerate(months):
+        cx = x0 + slot * i + slot / 2
+        bx = cx - bw / 2
+        body += f'<rect x="{bx:.1f}" y="{y_of(bat):.1f}" width="{bw}" height="{ybot - y_of(bat):.1f}" fill="{LAGOON}"/>\n'
+        body += f'<rect x="{bx:.1f}" y="{y_of(bat + grid):.1f}" width="{bw}" height="{y_of(bat) - y_of(bat + grid):.1f}" fill="{INK}"/>\n'
+        share = bat / (bat + grid) * 100
+        shown = "± 100%" if share >= 99.5 else f"{share:.0f}%"
+        body += text(cx, y_of(bat + grid) - 46, shown, 27, LAGOON_DEEP, 650, "middle")
+        grid_shown = "< 0,1" if grid < 0.1 else (f"{grid:.1f}" if grid < 10 else f"{grid:.0f}").replace(".", ",")
+        body += text(cx, y_of(bat + grid) - 16, f"net: {grid_shown} kWh", 22, SOFT, None, "middle")
+        body += text(cx, 790, month, 27, INK, 600, "middle")
+    body += text(150, 850, "De app van deze installatie ziet de bestaande zonnepanelen niet: rechtstreeks gebruikte zonnestroom zit er niet in.", 23)
+    body += text(150, 880, f"Het percentage is het deel uit de batterij. * mei vanaf de plaatsing op {start_note}, oktober tot en met 18 oktober 2026.", 23)
+    return svg(body, title, "Per maand: hoeveel daarvan uit de batterij kwam en hoeveel van het net")
+
+
+def case_overview():
+    """Hero: the three homes side by side, each with its own headline figure."""
+    cards = [("Woning 1", "op de bestaande hybride omvormer", "79%", "van het totale verbruik", "uit eigen zonnestroom", "470 kWh van het net", "juni tot 18 oktober"),
+             ("Woning 2", "AC-gekoppelde batterij, gezin van vier", "89%", "van het verbruik buiten de zon", "uit de batterij", "104 kWh van het net", "23 mei tot 18 oktober"),
+             ("Woning 3", "AC-gekoppelde batterij", "95%", "van het verbruik buiten de zon", "uit de batterij", "38 kWh van het net", "11 mei tot 18 oktober")]
+    body = ""
+    w, gap, top, h = 420, 50, 190, 600
+    for i, (name, kind, big, l1, l2, grid, period) in enumerate(cards):
+        x = 150 + i * (w + gap)
+        fill, deep = ("#e9f8ef", LEAF_DEEP) if i == 0 else ("#e3f4f6", LAGOON_DEEP)
+        body += f'<rect x="{x}" y="{top}" width="{w}" height="{h}" rx="22" fill="{fill}"/>\n'
+        cx = x + w / 2
+        body += text(cx, top + 70, name, 34, INK, 650, "middle")
+        body += text(cx, top + 108, kind, 22, SOFT, None, "middle")
+        body += text(cx, top + 260, big, 110, deep, 650, "middle")
+        body += text(cx, top + 320, l1, 25, INK, None, "middle")
+        body += text(cx, top + 354, l2, 25, INK, None, "middle")
+        body += f'<line x1="{x + 40}" x2="{x + w - 40}" y1="{top + 410}" y2="{top + 410}" stroke="{LINE}" stroke-width="3"/>\n'
+        body += text(cx, top + 470, grid, 30, INK, 650, "middle")
+        body += text(cx, top + 510, period, 23, SOFT, None, "middle")
+    body += text(150, 850, "Meetwaarden van drie woningen uit de monitoringapps, 2026. Bij woning 2 en 3 telt de rechtstreeks gebruikte zonnestroom", 22)
+    body += text(150, 880, "niet mee. Daarom zijn de percentages niet onderling vergelijkbaar.", 22)
+    return svg(body, "Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst", "Wat de batterij deed tussen de plaatsing en half oktober 2026")
 
 
 def write(name, content):
@@ -418,3 +477,6 @@ if __name__ == "__main__":
     write("sigen-laadniveaus", sigen_battery_levels())
     write("thuisbatterij-bijplaatsen-verdeling", case_split())
     write("thuisbatterij-bijplaatsen-per-maand", case_months())
+    write("thuisbatterij-bijplaatsen-woning-2", ac_case_months("Woning 2: verbruik dat de zon niet rechtstreeks dekte", CASE2_MONTHS, "23 mei"))
+    write("thuisbatterij-bijplaatsen-woning-3", ac_case_months("Woning 3: verbruik dat de zon niet rechtstreeks dekte", CASE3_MONTHS, "11 mei"))
+    write("thuisbatterij-bijplaatsen-overzicht", case_overview())
