@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=https://platform.claude.com/schemas/ant/beta/environment.json
-# Omgeving voor de SmartPeak-website-agent.
+# Omgeving voor het SmartPeak-websiteteam. Playwright rendert de infographics en maakt schermafbeeldingen;
+# de eerste keer installeert een agent Chromium met: python3 -m playwright install chromium
 # unrestricted: de agent moet voor onderzoek vrij kunnen zoeken en pagina's lezen (Fluvius, Synergrid,
 # fabrikanten, ...). Met "limited" werken web_search en web_fetch enkel voor sites die je vooraf opsomt.
 # Hou daarom geen andere geheimen in de sessie dan het GitHub-token voor deze repository.
@@ -9,5 +10,6 @@ config:
   packages:
     pip:
       - pillow
+      - playwright
   networking:
     type: unrestricted
