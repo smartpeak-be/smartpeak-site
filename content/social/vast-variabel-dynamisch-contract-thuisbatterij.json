@@ -1,0 +1,55 @@
+{
+  "page": "/artikels/vast-variabel-dynamisch-contract-thuisbatterij/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Energiecontract",
+      "title": "Vast, variabel of dynamisch bij een thuisbatterij?",
+      "sub": "Het antwoord hangt af van hoe je installatie gestuurd wordt en hoeveel je zelf wil opvolgen."
+    },
+    {
+      "type": "list",
+      "title": "Drie soorten contracten",
+      "items": [
+        "Vast: je prijs per kWh ligt vast voor de looptijd van je contract.",
+        "Variabel: je prijs volgt de markt, meestal per maand of per kwartaal.",
+        "Dynamisch: je betaalt de werkelijke uurprijzen van de groothandelsmarkt."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Wat verandert bij dynamisch?",
+      "body": "Enkel het energiedeel van je factuur. Nettarieven, capaciteitstarief en heffingen blijven dezelfde. Goedkope uren zijn dus nooit helemaal gratis."
+    },
+    {
+      "type": "stat",
+      "title": "Cent per kWh: gemiddelde injectievergoeding met een dynamisch contract in 2025",
+      "value": "1,92",
+      "sub": "Tegelijk betaalden klanten met een dynamisch contract dat jaar gemiddeld het minst in totaal.",
+      "source": "Bron: Vlaamse Nutsregulator, prijzenrapport (cijfers 2025)."
+    },
+    {
+      "type": "list",
+      "title": "Dynamisch: wat een slimme batterij kan",
+      "items": [
+        "Laden wanneer de prijs laag of negatief is, uit je panelen of zelfs van het net.",
+        "Ontladen tijdens de duurste uren, vaak 's ochtends en 's avonds.",
+        "Injectie vermijden wanneer de injectieprijs negatief is."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "De sturing maakt het verschil",
+      "body": "Bij vast of variabel kan de sturing eenvoudig blijven. Bij dynamisch haal je zonder goede sturing weinig extra uit je batterij, en met slechte sturing kan je zelfs meer betalen."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, waar je op moet letten en wat een thuisbatterij met elk contract doet.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Vast, variabel of dynamisch: welk energiecontract past bij een thuisbatterij?\n\nHet antwoord hangt af van hoe je installatie gestuurd wordt en hoeveel je zelf wil opvolgen. Bij vast ligt je prijs per kWh vast, bij variabel volgt hij de markt en bij dynamisch betaal je de werkelijke uurprijzen van de groothandelsmarkt.\n\nVast of variabel: de batterij slaat je overschot overdag op en geeft het 's avonds en 's nachts weer af. De sturing kan eenvoudig blijven.\n\nDynamisch: dan kan de batterij meer, maar enkel met goede sturing. Volgens de Vlaamse Nutsregulator kregen klanten met een dynamisch contract in 2025 gemiddeld 1,92 cent per kWh voor hun injectie, en betaalden naar schatting bijna 29.000 Vlaamse gezinnen minstens één maand voor hun teruglevering. Tegelijk betaalden klanten met een dynamisch contract dat jaar gemiddeld het minst in totaal.\n\nEr is geen contract dat voor iedereen het beste is.\n\nLees meer: https://smartpeak.be/artikels/vast-variabel-dynamisch-contract-thuisbatterij/",
+  "instagram": "Vast, variabel of dynamisch: welk energiecontract past bij een thuisbatterij?\n\nHet hangt af van hoe je installatie gestuurd wordt en hoeveel je zelf wil opvolgen. In de slides: de drie soorten contracten, wat een dynamisch contract verandert en wat een batterij daarmee kan.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #dynamischcontract #energiecontract #zonnepanelen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/vast-variabel-dynamisch-contract-thuisbatterij/"
+}

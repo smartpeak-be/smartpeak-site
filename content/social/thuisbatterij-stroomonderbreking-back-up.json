@@ -1,0 +1,47 @@
+{
+  "page": "/artikels/thuisbatterij-stroomonderbreking-back-up/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Stroomonderbreking",
+      "title": "Werkt je thuisbatterij als de stroom uitvalt?",
+      "sub": "Het eerlijke antwoord: dat hangt af van je installatie."
+    },
+    {
+      "type": "text",
+      "title": "Waarom alles afschakelt",
+      "body": "Een omvormer op het net moet zich bij een onderbreking automatisch loskoppelen, voor de veiligheid van wie aan het net werkt. Zonder extra voorzieningen vallen je zonnepanelen en je batterij dus ook stil."
+    },
+    {
+      "type": "list",
+      "title": "Drie situaties",
+      "items": [
+        "Geen back-up: alles valt uit tot het net terug is.",
+        "Noodstopcontact: een paar toestellen via een verlengkabel.",
+        "Back-upschakeling: gekozen kringen of je hele woning blijven werken."
+      ],
+      "source": "Bron: Synergrid, netvoorschrift C10/11."
+    },
+    {
+      "type": "stat",
+      "title": "Gemiddeld zonder stroom per klant in 2024",
+      "value": "26 min",
+      "sub": "Aangekondigde werken niet meegerekend. Valt het net in je straat uit, dan duurt het gemiddeld zo'n drie uur.",
+      "source": "Bron: Vlaamse Nutsregulator."
+    },
+    {
+      "type": "text",
+      "title": "Wat raden wij aan?",
+      "body": "Bepaal eerst wat je wil blijven gebruiken. Een paar toestellen? Dan kan een noodstopcontact volstaan. Wil je dat verlichting, koelkast, internet en verwarming gewoon doorwerken? Voorzie dan een back-upschakeling, best meteen bij de installatie."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met wat een back-upinstallatie vraagt in je verdeelkast.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Als de stroom uitvalt, heb je toch nog je batterij?\n\nHet is een van de vragen die we het vaakst krijgen. Het eerlijke antwoord: dat hangt af van je installatie. Een gewone thuisbatterij schakelt bij een stroomonderbreking net zoals je zonnepanelen af.\n\nWil je stroom blijven hebben, dan heb je een noodstopcontact of een back-upschakeling nodig. Welke past, hangt af van wat je wil blijven gebruiken.\n\nGoed om te weten: volgens de Vlaamse Nutsregulator zat een gemiddelde klant in 2024 zo'n 26 minuten zonder stroom, aangekondigde werken niet meegerekend.\n\nLees meer: https://smartpeak.be/artikels/thuisbatterij-stroomonderbreking-back-up/",
+  "instagram": "Werkt je thuisbatterij als de stroom uitvalt?\n\nNiet vanzelf. In de slides: waarom alles afschakelt, de drie mogelijke situaties en wat wij aanraden.\n\nHet volledige artikel: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #stroomonderbreking #backup #zonnepanelen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/thuisbatterij-stroomonderbreking-back-up/"
+}

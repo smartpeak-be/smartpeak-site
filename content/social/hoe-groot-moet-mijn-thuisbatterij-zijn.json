@@ -1,0 +1,50 @@
+{
+  "page": "/artikels/hoe-groot-moet-mijn-thuisbatterij-zijn/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Thuisbatterij",
+      "title": "5, 10 of 20 kWh: hoe groot moet ze zijn?",
+      "sub": "De grootste batterij is niet automatisch de beste keuze."
+    },
+    {
+      "type": "list",
+      "title": "Capaciteit en vermogen",
+      "items": [
+        "Capaciteit (kWh): hoeveel energie de batterij kan opslaan.",
+        "Vermogen (kW): hoeveel ze tegelijk kan leveren of opnemen.",
+        "Wat ze niet kan leveren, komt alsnog van het net."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Waar het echt om draait",
+      "items": [
+        "Hoeveel zonnestroom je overdag over hebt.",
+        "Wanneer je verbruikt: overdag of vooral 's avonds.",
+        "Wat je met de batterij wil doen, nu en later."
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Vuistregel per kWp zonnepanelen",
+      "value": "1–1,5 kWh",
+      "sub": "Bij 8 kWp kom je zo op ongeveer 8 tot 12 kWh. Een vertrekpunt, geen eindantwoord.",
+      "source": "Bron: Vlaanderen.be, Thuisbatterij."
+    },
+    {
+      "type": "text",
+      "title": "Groter is niet altijd beter",
+      "body": "Je kan alleen opslaan wat je panelen over hebben. Wie op een zonnige dag 5 à 6 kWh injecteert, heeft niet automatisch voordeel bij een batterij van 15 kWh. Een batterij die regelmatig vol en weer leeg gaat, is meestal zinvoller."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met wat pieken, dynamische tarieven en back-up vragen van je batterij.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "5, 10 of 20 kWh: hoe groot moet je thuisbatterij zijn?\n\nDe grootste batterij kiezen lijkt veilig, maar is lang niet altijd de beste keuze. Ook Vlaanderen.be waarschuwt dat capaciteit die je zelden gebruikt, niets oplevert.\n\nBelangrijker dan je jaarverbruik: hoeveel zonnestroom je overdag over hebt, wanneer je verbruikt en wat je met de batterij wil doen. Als vuistregel noemt Vlaanderen.be 1 tot 1,5 kWh batterij per kWp zonnepanelen, maar dat is een vertrekpunt.\n\nWij kijken daarom naar je eigen verbruiksgegevens uit Mijn Fluvius.\n\nLees meer: https://smartpeak.be/artikels/hoe-groot-moet-mijn-thuisbatterij-zijn/",
+  "instagram": "5, 10 of 20 kWh: hoe groot moet je thuisbatterij zijn?\n\nDe grootste is niet automatisch de beste. In de slides: capaciteit tegenover vermogen, waar het echt om draait en de vuistregel van Vlaanderen.be.\n\nHet volledige artikel: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #zonnepanelen #batterijopslag #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/hoe-groot-moet-mijn-thuisbatterij-zijn/"
+}

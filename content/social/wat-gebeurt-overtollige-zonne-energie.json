@@ -1,0 +1,55 @@
+{
+  "page": "/artikels/wat-gebeurt-overtollige-zonne-energie/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Zonnepanelen",
+      "title": "Waar gaat je overtollige zonnestroom naartoe?",
+      "sub": "Voor bijna iedereen is de terugdraaiende teller verleden tijd."
+    },
+    {
+      "type": "text",
+      "title": "Wat gebeurt er met je overschot?",
+      "body": "Een digitale meter registreert afname en injectie apart. Je overschot gaat meestal nog het net op, en je krijgt een vergoeding van je leverancier, volgens de voorwaarden van je contract."
+    },
+    {
+      "type": "stat",
+      "title": "Uren in 2025 met een groothandelsprijs onder nul",
+      "value": "520+",
+      "sub": "Dat is zo'n 6% van alle uren. Bij een dynamisch contract betaal je dan voor de stroom die je op het net zet.",
+      "source": "Bron: Vlaamse Nutsregulator, Prijzenrapport 2025 (RAPP-2026-07)."
+    },
+    {
+      "type": "stat",
+      "title": "Cent per kWh: gemiddelde injectievergoeding in mei 2026, enkelvoudig tarief",
+      "value": "3 à 4",
+      "sub": "Voor afgenomen stroom betaal je ook nettarieven, heffingen en btw. Voor geïnjecteerde stroom krijg je een deel van de marktwaarde.",
+      "source": "Volgens Test Aankoop, 28 mei 2026."
+    },
+    {
+      "type": "stat",
+      "title": "Zelfverbruik met zonnepanelen en thuisbatterij: ongeveer",
+      "value": "68%",
+      "sub": "Zonder batterij is dat gemiddeld 28%. Hoeveel het bij jou wordt, hangt af van je batterij, installatie en verbruik.",
+      "source": "Bron: Vlaanderen.be, Thuisbatterij."
+    },
+    {
+      "type": "list",
+      "title": "Zo gebruik je meer eigen zonnestroom",
+      "items": [
+        "Laat wasmachine, droogkast en vaatwasser rond de middag draaien.",
+        "Laad je elektrische wagen overdag, als hij thuis staat.",
+        "Sla je overschot op in een thuisbatterij voor de avond en de nacht."
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, wat injectie oplevert of kost en welke opties je hebt om meer zelf te gebruiken.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Waar gaat je overtollige zonnestroom naartoe?\n\nVoor bijna iedereen is de terugdraaiende teller verleden tijd. Een digitale meter registreert afname en injectie apart, en voor wat je op het net zet krijg je een vergoeding van je leverancier, volgens de voorwaarden van je contract.\n\nVolgens Test Aankoop kreeg je in mei 2026 gemiddeld zo'n 3 à 4 cent per kWh voor je injectie. Voor afgenomen stroom betaal je ook nettarieven, heffingen en btw.\n\nInjectie kan zelfs geld kosten. Volgens de Vlaamse Nutsregulator zakten de groothandelsprijzen in 2025 gedurende meer dan 520 uur onder nul. Kijk dus goed naar de injectievoorwaarden van je contract.\n\nMeer zelf gebruiken kan met slim plannen of met een thuisbatterij. Vlaanderen.be gaat uit van een jaarlijks zelfverbruik van gemiddeld 28% zonder batterij. Met zonnepanelen en een thuisbatterij kan dat stijgen tot ongeveer 68%.\n\nLees meer: https://smartpeak.be/artikels/wat-gebeurt-overtollige-zonne-energie/",
+  "instagram": "Waar gaat je overtollige zonnestroom naartoe?\n\nDe terugdraaiende teller is voor bijna iedereen verleden tijd. In de slides: wat er vandaag met je overschot gebeurt, wat injectie oplevert of kost en hoe je meer van je eigen zonnestroom gebruikt.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #zonnepanelen #zelfverbruik #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/wat-gebeurt-overtollige-zonne-energie/"
+}

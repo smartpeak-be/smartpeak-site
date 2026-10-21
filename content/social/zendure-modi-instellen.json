@@ -1,0 +1,66 @@
+{
+  "page": "/hulp/zendure-modi-instellen/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Bewaar dit",
+      "title": "Welke Zendure-modus kies je?",
+      "sub": "Vijf modi in de app. Je contract bepaalt meestal de beste start."
+    },
+    {
+      "type": "list",
+      "title": "Welke modus bij welk contract?",
+      "items": [
+        "Vast contract: begin met Zelfverbruik.",
+        "Dag- en nachttarief: Zelfverbruik of TOU.",
+        "Dynamisch contract: ZENKI of TOU.",
+        "Vaste routine: Aangepast. Niets willen instellen: Auto."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "De vijf modi in één zin",
+      "items": [
+        "Zelfverbruik: zo weinig mogelijk van en naar het net.",
+        "Auto: de batterij beslist zelf.",
+        "ZENKI: slimme planner, vooral zinvol met een dynamisch contract.",
+        "TOU: jij bepaalt vanaf welke prijs ze laadt of ontlaadt.",
+        "Aangepast: enkel wat in je schema staat."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Voor je begint",
+      "items": [
+        "Werk de app en firmware bij: app-versie 6.3 of hoger en de nieuwste firmware.",
+        "Koppel een meter voor Zelfverbruik, ZENKI en TOU, via de P1-poort.",
+        "Weet welk contract je hebt: vast, dag- en nachttarief of dynamisch."
+      ],
+      "source": "Bron: ThuisbatterijGids, Zendure HEMS 2.0 beschikbaar."
+    },
+    {
+      "type": "text",
+      "title": "Let op met het capaciteitstarief",
+      "body": "Voor zover wij weten, bewaakt geen van de vijf modi specifiek je maandpiek. In ZENKI en TOU kan de batterij uit het net laden. Laadt ze met vol vermogen terwijl je kookt, dan kan je maandpiek stijgen. Kijk het na in Mijn Fluvius."
+    },
+    {
+      "type": "list",
+      "title": "Werkt het niet zoals verwacht?",
+      "items": [
+        "Geen meter gevonden? Staat de P1-poort open?",
+        "Laadt niet in Zelfverbruik? Is er wel overschot?",
+        "ZENKI of TOU doet niets? Is je tarief gekoppeld en je locatie ingevuld?",
+        "Stand-by na een update? Zijn app en alle delen van de firmware bijgewerkt?"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Lees de hele gids",
+      "sub": "Met per modus wat je nodig hebt, en wat de laadgrenzen doen.",
+      "url": "smartpeak.be/hulp"
+    }
+  ],
+  "facebook": "Welke modus kies je in de Zendure-app? Sinds de update van juni 2026 zijn er vijf: Zelfverbruik, Auto, ZENKI, TOU en Aangepast.\n\nJe contract bepaalt meestal de beste start. Met een vast contract begin je met Zelfverbruik, met een dynamisch contract met ZENKI of TOU. Wil je niets instellen, dan kies je Auto.\n\nIn Vlaanderen is er een aandachtspunt: in ZENKI en TOU kan de batterij ook uit het net laden. Laadt ze met vol vermogen terwijl je kookt of je wagen laadt, dan kan je maandpiek stijgen.\n\nHeb je al een Zendure, of twijfel je nog? Bewaar de carrousel.\n\nLees meer: https://smartpeak.be/hulp/zendure-modi-instellen/",
+  "instagram": "Zendure-app: welke modus kies je?\n\nIn de slides: welke modus bij welk contract past, de vijf modi in één zin, wat je nodig hebt voor je begint en waar je op let met het capaciteitstarief. Bewaar dit voor later.\n\nDe volledige gids: link in bio (smartpeak.be/hulp).\n\n#thuisbatterij #Zendure #capaciteitstarief #dynamischcontract",
+  "first_comment": "Lees meer: https://smartpeak.be/hulp/zendure-modi-instellen/"
+}

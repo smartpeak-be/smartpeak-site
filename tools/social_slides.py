@@ -1,11 +1,13 @@
 """Social media images (Instagram/Facebook carousel, 1080 x 1350, 4:5) in the SmartPeak house style.
 
-Each set is described in content/social/<slug>.json:
-  {"slides": [
+Each set is described in content/social/<slug>.json (texts for the posts sit in the same file,
+see .claude/skills/smartpeak-social/SKILL.md):
+  {"page": "/artikels/<slug>/", "slides": [
      {"type": "cover", "kicker": "...", "title": "...", "sub": "..."},
      {"type": "stat", "value": "51%", "title": "...", "sub": "...", "source": "..."},
      {"type": "list", "title": "...", "items": ["...", "..."], "source": "..."},
      {"type": "text", "title": "...", "body": "...", "source": "..."},
+     {"type": "review", "rating": 5, "quote": "...", "name": "...", "label": "..."},
      {"type": "cta", "title": "...", "sub": "...", "url": "smartpeak.be/..."}
   ]}
 
@@ -45,6 +47,11 @@ ol {{ list-style: none; padding: 0; counter-reset: n; }}
 li {{ counter-increment: n; font-size: 44px; line-height: 1.32; padding: 26px 0 26px 104px; position: relative; border-top: 3px solid #e3ebe8; }}
 li::before {{ content: counter(n); position: absolute; left: 0; top: 22px; width: 70px; height: 70px; border-radius: 50%;
   background: #17c15c; color: #fff; font-weight: 700; font-size: 38px; display: grid; place-items: center; }}
+.stars {{ font-size: 64px; color: #17c15c; letter-spacing: 6px; margin-bottom: 40px; }}
+.quote {{ font-size: 52px; line-height: 1.32; font-weight: 600; }}
+.quote::before {{ content: "“"; display: block; font-size: 140px; line-height: .6; color: #17c15c; }}
+.who {{ font-size: 36px; font-weight: 650; margin-top: 48px; }}
+.who span {{ display: block; font-weight: 400; color: #4b5661; font-size: 30px; margin-top: 8px; }}
 .url {{ display: inline-block; margin-top: 56px; font-size: 40px; font-weight: 650; background: #fff; color: #0b7a42; padding: 22px 34px; border-radius: 999px; }}
 .main {{ flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 40px; }}
 .source {{ font-size: 24px; line-height: 1.35; color: #4b5661; margin-bottom: 22px; }}
@@ -73,6 +80,10 @@ def slide_html(s, n, total):
         inner = f'<h2>{e(s["title"])}</h2><ol>{items}</ol>'
     elif t == "text":
         inner = f'<h2>{e(s["title"])}</h2><p class="body">{e(s["body"])}</p>'
+    elif t == "review":
+        stars = "★" * int(s.get("rating", 5)) + "☆" * (5 - int(s.get("rating", 5)))
+        inner = (f'<div class="stars" aria-label="{e(str(s.get("rating", 5)))} op 5">{stars}</div>'
+                 f'<p class="quote">{e(s["quote"])}</p><p class="who">{e(s["name"])}<span>{e(s.get("label"))}</span></p>')
     elif t == "cta":
         inner = f'<h1>{e(s["title"])}</h1><p class="sub">{e(s.get("sub"))}</p><div><span class="url">{e(s["url"])}</span></div>'
     else:

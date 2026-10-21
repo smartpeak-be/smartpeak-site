@@ -1,10 +1,42 @@
 {
-  "article": "/artikels/energiecontract-vergelijken-besparen/",
+  "page": "/artikels/energiecontract-vergelijken-besparen/",
   "slides": [
-    {"type": "cover", "kicker": "Energiefactuur", "title": "Betaal jij te veel voor je stroom en gas?", "sub": "Volgens de CREG kunnen zo'n 2 miljoen Belgische gezinnen besparen met een ander contract."},
-    {"type": "stat", "title": "Gezinnen bij de 10 duurste elektriciteits­producten", "value": "51%", "sub": "Bij de 10 goedkoopste is dat amper 9%. Bij aardgas: 64% tegenover 10%.", "source": "Bron: CREG, studie F3188 (maart 2026), contracten op 30 september 2025."},
-    {"type": "list", "title": "Je contract checken in 3 stappen", "items": ["CREG Scan: hoe scoort je huidig contract? Groen, oranje of rood.", "V-test: vergelijk met je eigen verbruik uit Mijn Fluvius.", "Overstappen: gratis, op elk moment, je nieuwe leverancier regelt de opzeg."], "source": "Bronnen: CREG en Vlaamse Nutsregulator."},
-    {"type": "text", "title": "En met een thuisbatterij?", "body": "Een batterij zorgt dat je minder stroom aankoopt. Je contract bepaalt wat je nog betaalt en wat je krijgt voor injectie. Met een goed gestuurde batterij kan ook een dynamisch tarief interessant worden."},
-    {"type": "cta", "title": "Lees het hele artikel", "sub": "Met de bronnen, wat een ander contract wel en niet verandert, en wanneer je opnieuw vergelijkt.", "url": "smartpeak.be/artikels"}
-  ]
+    {
+      "type": "cover",
+      "kicker": "Energiefactuur",
+      "title": "Betaal jij te veel voor je stroom en gas?",
+      "sub": "Volgens de CREG kunnen zo'n 2 miljoen Belgische gezinnen besparen met een ander contract."
+    },
+    {
+      "type": "stat",
+      "title": "Gezinnen bij de 10 duurste elektriciteits­producten",
+      "value": "51%",
+      "sub": "Bij de 10 goedkoopste is dat amper 9%. Bij aardgas: 64% tegenover 10%.",
+      "source": "Bron: CREG, studie F3188 (maart 2026), contracten op 30 september 2025."
+    },
+    {
+      "type": "list",
+      "title": "Je contract checken in 3 stappen",
+      "items": [
+        "CREG Scan: hoe scoort je huidig contract? Groen, oranje of rood.",
+        "V-test: vergelijk met je eigen verbruik uit Mijn Fluvius.",
+        "Overstappen: gratis, op elk moment, je nieuwe leverancier regelt de opzeg."
+      ],
+      "source": "Bronnen: CREG en Vlaamse Nutsregulator."
+    },
+    {
+      "type": "text",
+      "title": "En met een thuisbatterij?",
+      "body": "Een batterij zorgt dat je minder stroom aankoopt. Je contract bepaalt wat je nog betaalt en wat je krijgt voor injectie. Met een goed gestuurde batterij kan ook een dynamisch tarief interessant worden."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, wat een ander contract wel en niet verandert, en wanneer je opnieuw vergelijkt.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Betaal jij te veel voor je stroom en gas?\n\nVolgens een studie van de CREG kunnen zo'n 2 miljoen Belgische gezinnen gemiddeld tot 300 euro per jaar besparen door een voordeliger energiecontract te kiezen. De helft zit bij een van de tien duurste elektriciteitsproducten.\n\nJe contract nakijken kost een paar minuten: met de CREG Scan zie je hoe je huidig contract scoort, met de V-test vergelijk je met je eigen verbruik uit Mijn Fluvius. Overstappen is gratis en je nieuwe leverancier regelt de opzeg.\n\nHeb je een thuisbatterij of denk je eraan? Dan telt je contract nog meer mee, zeker als een dynamisch tarief in beeld komt.\n\nLees meer: https://smartpeak.be/artikels/energiecontract-vergelijken-besparen/",
+  "instagram": "Betaal jij te veel voor je stroom en gas?\n\nVolgens de CREG kunnen zo'n 2 miljoen Belgische gezinnen besparen met een ander energiecontract. In de slides: de cijfers, hoe je je contract in 3 stappen checkt en wat een thuisbatterij daaraan verandert.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #energiecontract #energiefactuur #zonnepanelen #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/energiecontract-vergelijken-besparen/"
 }

@@ -1,0 +1,69 @@
+{
+  "page": "/hulp/sigenstor-instellen-mysigen/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Bewaar dit",
+      "title": "Je SigenStor instellen in mySigen",
+      "sub": "Werkmodi, piekbeperking en back-up in één overzicht."
+    },
+    {
+      "type": "list",
+      "title": "De vier werkmodi",
+      "items": [
+        "Sigen AI: de app maakt een plan op basis van prijzen, weer en gewoontes.",
+        "Zelfverbruik: zonnestroom eerst naar je huis, dan de batterij, dan het net.",
+        "Tijdsturing: je legt tot 24 periodes zelf vast.",
+        "Volledig injecteren: voor een woning zelden zinvol."
+      ],
+      "source": "Bron: Sigenergy, mySigen App User Manual, versie 13 (april 2026)."
+    },
+    {
+      "type": "list",
+      "title": "Piekbeperking: 3 instellingen",
+      "items": [
+        "Maximale piek: het maximum dat je van het net haalt, ook om de batterij te laden.",
+        "Periodes: tot 24 tijdvakken waarin de grens geldt.",
+        "Reserve voor piekbeperking: tot welk niveau de batterij in de daluren bijlaadt."
+      ],
+      "source": "Bron: Sigenergy, mySigen App User Manual, versie 13 (april 2026)."
+    },
+    {
+      "type": "stat",
+      "title": "Ga met je piekgrens niet lager dan",
+      "value": "2,5 kW",
+      "sub": "Het capaciteitstarief rekent met minstens 2,5 kW. Een lagere piek levert niets extra op en kost je wel batterijlading.",
+      "source": "Bron: Stad Gent, Het capaciteitstarief: hoe zit dat?"
+    },
+    {
+      "type": "list",
+      "title": "Back-up en laadgrenzen",
+      "items": [
+        "Back-up-reserve: enkel met een Gateway. Die lading blijft voor een stroompanne.",
+        "Ontlaadgrens: Sigenergy raadt 0% aan.",
+        "Laadgrens: tot waar de batterij laadt.",
+        "Hoe hoger je reserves, hoe minder je dagelijks gebruikt."
+      ],
+      "source": "Bron: Sigenergy, mySigen App User Manual, versie 13 (april 2026)."
+    },
+    {
+      "type": "list",
+      "title": "Werkt het niet zoals verwacht?",
+      "items": [
+        "Ontlaadt niet in Tijdsturing? Buiten je periodes ontlaadt de batterij niet.",
+        "Piek toch gestegen? Was de batterij leeg? Verhoog de reserve voor piekbeperking.",
+        "Sigen AI doet weinig? Check of je tarief juist in de app staat.",
+        "Stopt ruim boven 0%? Dat is je back-up-reserve of ontlaadgrens."
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Lees de hele gids",
+      "sub": "Met ook injectie beperken, je wagen laden en slimme verbruikers.",
+      "url": "smartpeak.be/hulp"
+    }
+  ],
+  "facebook": "Heb je een SigenStor en weet je niet welke werkmodus bij je past? Of wil je weten wat het systeem kan?\n\nIn de mySigen-app kies je één werkmodus: Sigen AI, Zelfverbruik, Tijdsturing of Volledig injecteren. Daarnaast leg je los van die modus grenzen vast, zoals hoeveel je maximaal van het net haalt en hoeveel lading je bewaart voor een stroompanne.\n\nMet piekbeperking stel je in hoeveel vermogen je huis maximaal van het net mag halen. Wat je boven die grens verbruikt, levert de batterij. Ga niet onder 2,5 kW: het capaciteitstarief rekent met minstens 2,5 kW.\n\nBewaar de carrousel voor de volgende keer dat je in de app zit.\n\nLees meer: https://smartpeak.be/hulp/sigenstor-instellen-mysigen/",
+  "instagram": "SigenStor en de mySigen-app: welke werkmodus kies je?\n\nIn de slides: de vier werkmodi, de drie instellingen van piekbeperking, back-up en laadgrenzen, en wat je nakijkt als het niet werkt zoals verwacht. Bewaar dit voor later.\n\nDe volledige gids: link in bio (smartpeak.be/hulp).\n\n#thuisbatterij #SigenStor #capaciteitstarief #mySigen",
+  "first_comment": "Lees meer: https://smartpeak.be/hulp/sigenstor-instellen-mysigen/"
+}

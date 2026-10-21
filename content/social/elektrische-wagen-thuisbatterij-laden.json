@@ -1,0 +1,52 @@
+{
+  "page": "/artikels/elektrische-wagen-thuisbatterij-laden/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Elektrische wagen",
+      "title": "Kan je thuisbatterij je wagen laden?",
+      "sub": "Dat hangt af van hoe je laadt: met wisselstroom, met gelijkstroom of in de toekomst in twee richtingen."
+    },
+    {
+      "type": "stat",
+      "title": "Gemiddelde maandpiek met slim laden, tegenover 15,1 kW zonder",
+      "value": "4,1 kW",
+      "sub": "Berekening van de VREG (nu de Vlaamse Nutsregulator) voor een gezin met een elektrische wagen. Het gaat om een berekening uit 2021.",
+      "source": "Bron: Vlaamse Nutsregulator, Capaciteitstarief en energiebeheer (presentatie, 2021)."
+    },
+    {
+      "type": "text",
+      "title": "Met een gewone laadpaal (AC)",
+      "body": "De batterij kan meehelpen, maar enkel tot het vermogen van de omvormer. Vraagt de wagen meer, dan komt de rest van het net en telt die mee voor je piek."
+    },
+    {
+      "type": "text",
+      "title": "Met DC-laden uit het batterijsysteem",
+      "body": "Panelen, batterij en wagen werken op gelijkstroom, dus de energie gaat rechtstreeks naar de wagen. Je piek blijft laag zolang panelen en batterij genoeg leveren."
+    },
+    {
+      "type": "list",
+      "title": "Bidirectioneel laden: nog een vroege fase",
+      "items": [
+        "V2L: je voedt toestellen via de wagen. Zit al in heel wat wagens.",
+        "V2H: de wagen werkt als thuisbatterij. In België nog in een vroege fase.",
+        "V2G: de wagen stuurt energie terug naar het net. In België nog in een vroege fase."
+      ],
+      "source": "Bron: KBC Autolease, Bidirectioneel laden in België: waar staan we in 2026?"
+    },
+    {
+      "type": "text",
+      "title": "Wat betekent dit voor jou?",
+      "body": "Laad je vooral overdag, dan haal je met slim laden op zonne-energie al veel winst. Laad je vaak 's avonds, dan is DC-laden vanuit het batterijsysteem het bekijken waard."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, wat bidirectioneel laden nog afremt en welke regels eraan komen.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Kan je thuisbatterij je elektrische wagen laden?\n\nEen elektrische wagen is in veel woningen de grootste verbruiker. Hoe je hem met eigen stroom laadt, hangt af van hoe je laadt: met een gewone laadpaal (AC), rechtstreeks met gelijkstroom uit het batterijsysteem (DC), of in de toekomst ook in twee richtingen.\n\nBij een AC-laadpaal kan de batterij meehelpen, maar enkel tot het vermogen van de omvormer. Een volle wagen laden met enkel de thuisbatterij lukt meestal niet.\n\nBij DC-laden gaat de energie rechtstreeks naar de wagen. Je piek blijft dan laag zolang panelen en batterij genoeg leveren.\n\nBidirectioneel laden (V2H en V2G) is in België nog in een vroege fase, volgens KBC Autolease.\n\nLees meer: https://smartpeak.be/artikels/elektrische-wagen-thuisbatterij-laden/",
+  "instagram": "Kan je thuisbatterij je elektrische wagen laden?\n\nDat hangt af van hoe je laadt. In de slides: laden met een gewone laadpaal, DC-laden uit het batterijsysteem en waar bidirectioneel laden vandaag staat.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #elektrischewagen #laadpaal #zonnepanelen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/elektrische-wagen-thuisbatterij-laden/"
+}

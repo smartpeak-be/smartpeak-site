@@ -1,0 +1,57 @@
+{
+  "page": "/artikels/waarom-thuisbatterijen-groter-worden/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Thuisbatterijen",
+      "title": "Waarom worden thuisbatterijen groter?",
+      "sub": "En betekent dat ook dat jij een grotere batterij nodig hebt?"
+    },
+    {
+      "type": "stat",
+      "title": "Nieuwe thuisbatterijen in 2026: gemiddeld ruim",
+      "value": "22 kWh",
+      "sub": "Dat is de capaciteit in de eerste vijf maanden van 2026, tegenover net geen 11 kWh in dezelfde periode van 2025. De recente cijfers zijn voorlopig.",
+      "source": "Bron: Solar Magazine, op basis van open data van Fluvius."
+    },
+    {
+      "type": "stat",
+      "title": "Thuisbatterijen in Vlaanderen op 15 september 2026",
+      "value": "189.100",
+      "sub": "Eind 2021 waren het er 23.325.",
+      "source": "Bronnen: Fluvius (open data) en Solar Magazine, september 2026."
+    },
+    {
+      "type": "list",
+      "title": "Waarom ze groter worden",
+      "items": [
+        "Batterijpakketten worden goedkoper, dus extra kWh's kosten minder dan vroeger.",
+        "Injecteren levert weinig of niets meer op.",
+        "Een wagen of warmtepomp doet je verbruik flink stijgen.",
+        "Een batterij kan ook je maandpiek afvlakken of inspelen op dynamische prijzen."
+      ],
+      "source": "Bronnen: BloombergNEF, Vlaamse Nutsregulator en Vlaanderen.be."
+    },
+    {
+      "type": "stat",
+      "title": "kWh per kWp zonnepanelen: de vuistregel van Vlaanderen.be",
+      "value": "1–1,5",
+      "sub": "Een grotere batterij is financieel gezien niet automatisch de beste keuze.",
+      "source": "Bron: Vlaanderen.be, Thuisbatterij."
+    },
+    {
+      "type": "text",
+      "title": "Hoe bepalen wij de juiste grootte?",
+      "body": "We vertrekken niet van een gemiddelde, maar van jouw verbruiksgegevens. Een modulair systeem dat je later kan uitbreiden, is vaak verstandiger dan vandaag te groot kiezen."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen en wanneer een grotere batterij wel of niet zinvol is.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Thuisbatterijen worden groter. Heb jij dan ook een grotere batterij nodig?\n\nOp 15 september 2026 telde Vlaanderen 189.100 thuisbatterijen, tegenover 23.325 eind 2021. Uit de open data van Fluvius berekende Solar Magazine dat nieuwe batterijen in de eerste vijf maanden van 2026 gemiddeld ruim 22 kWh groot waren, tegenover net geen 11 kWh in dezelfde periode van 2025. De cijfers voor de recentste maanden zijn voorlopig.\n\nWaarom? Batterijpakketten worden goedkoper, injecteren levert weinig of niets meer op, een wagen of warmtepomp doet je verbruik stijgen en een batterij kan meer dan zonne-energie naar de avond verschuiven.\n\nGroter is niet automatisch beter. Als vuistregel noemt Vlaanderen.be 1 tot 1,5 kWh per kWp zonnepanelen.\n\nWij vertrekken van jouw verbruiksgegevens, niet van een gemiddelde.\n\nLees meer: https://smartpeak.be/artikels/waarom-thuisbatterijen-groter-worden/",
+  "instagram": "Thuisbatterijen worden groter. Heb jij dan ook een grotere batterij nodig?\n\nVolgens Solar Magazine, op basis van open data van Fluvius, hadden nieuwe thuisbatterijen in de eerste vijf maanden van 2026 gemiddeld ruim 22 kWh. In de slides: waarom ze groter worden en waarom groter niet automatisch beter is.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #zonnepanelen #Fluvius #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/waarom-thuisbatterijen-groter-worden/"
+}
