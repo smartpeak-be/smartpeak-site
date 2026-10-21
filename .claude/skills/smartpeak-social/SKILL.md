@@ -50,7 +50,8 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 **TikTok** (test sinds december 2026)
 - Op TikTok werkt video het best. Zolang er geen video is, posten we een fotoreeks: dezelfde slides, staand 9:16, met `python3 tools/social_slides.py --tiktok <slug>` naar `assets/img/social/tiktok/<slug>-<n>.jpg`. De inhoud blijft buiten de zones die TikTok bedekt (boven, de knoppen rechts, het onderschrift onderaan).
 - Tekst in het veld `tiktok` van het pakket: haak, twee à drie zinnen met de kern, "Meer uitleg op smartpeak.be." (links zijn niet klikbaar) en drie tot vijf hashtags.
-- In Metricool: `tiktokData` met `privacyOption` `PUBLIC_TO_EVERYONE` en `commercialContentOwnBrand: true` (we promoten ons eigen bedrijf, TikTok vraagt die melding). Geen automatische muziek, tenzij Kevin het vraagt.
+- Een titel is verplicht (veld `tiktok_title`, kort, meestal de haak van slide 1).
+- In Metricool: `tiktokData` met `title`, `privacyOption` `PUBLIC_TO_EVERYONE` en `commercialContentOwnBrand: true` (we promoten ons eigen bedrijf, TikTok vraagt die melding). Geen automatische muziek, tenzij Kevin het vraagt.
 - Kijk na een maand naar het bereik voor we meer onderwerpen naar TikTok brengen.
 
 **Voor allemaal**
