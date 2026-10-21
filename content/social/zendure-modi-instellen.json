@@ -33,10 +33,10 @@
       "title": "Voor je begint",
       "items": [
         "Werk de app en firmware bij: app-versie 6.3 of hoger en de nieuwste firmware.",
-        "Koppel een meter voor Zelfverbruik, ZENKI en TOU, via de P1-poort.",
+        "Koppel een meter voor Zelfverbruik, ZENKI en TOU, bijvoorbeeld via de P1-poort van je digitale meter.",
         "Weet welk contract je hebt: vast, dag- en nachttarief of dynamisch."
       ],
-      "source": "Bron: ThuisbatterijGids, Zendure HEMS 2.0 beschikbaar."
+      "source": "Bronnen: ThuisbatterijGids (app en firmware) en Zendure (meters)."
     },
     {
       "type": "text",

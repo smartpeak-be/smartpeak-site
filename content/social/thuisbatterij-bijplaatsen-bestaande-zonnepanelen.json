@@ -11,7 +11,7 @@
       "type": "list",
       "title": "Twee manieren om bij te plaatsen",
       "items": [
-        "Op een hybride omvormer: de batterij wordt er vaak rechtstreeks op aangesloten.",
+        "Op een hybride omvormer: de batterij kan er vaak rechtstreeks op aangesloten worden.",
         "AC-gekoppeld: de batterij krijgt een eigen omvormer en werkt naast je bestaande omvormer."
       ]
     },
@@ -24,7 +24,7 @@
     },
     {
       "type": "list",
-      "title": "Woning 2 en 3: batterij erbij gekoppeld",
+      "title": "Woning 2 en 3: een AC-gekoppelde batterij",
       "items": [
         "Mei tot september: per maand hoogstens enkele tientallen kWh van het net.",
         "Oktober: tot ongeveer 30 kWh in de eerste helft van de maand.",
@@ -35,7 +35,7 @@
     {
       "type": "text",
       "title": "Wat de drie woningen gemeen hebben",
-      "body": "In de zomer kwam er nauwelijks stroom van het net. Richting herfst stijgt het aandeel van het net in alle drie de woningen. Een batterij die op zonnestroom laadt, kan enkel bewaren wat er over is."
+      "body": "In de zomer kwam er weinig stroom van het net, in juli bij woning 1 zo goed als niets. Richting herfst stijgt het aandeel van het net in alle drie de woningen. Een batterij die op zonnestroom laadt, kan enkel bewaren wat er over is."
     },
     {
       "type": "list",
@@ -54,7 +54,7 @@
       "url": "smartpeak.be/artikels"
     }
   ],
-  "facebook": "Heb je al zonnepanelen en overweeg je een thuisbatterij erbij? Wat doet die in de praktijk?\n\nWe tonen de meetwaarden van drie woningen waar we ongeveer 10 kWh opslag bijplaatsten: één keer op de bestaande hybride omvormer, twee keer als AC-gekoppelde batterij. Anoniem, uit de monitoringapps.\n\nIn alle drie de woningen kwam er in de zomer nog maar heel weinig stroom van het net. Richting herfst stijgt dat aandeel, want de panelen wekken minder op en een batterij kan enkel bewaren wat er over is.\n\nWe zeggen er ook bij wat de cijfers niet zeggen: de woningen zijn niet onderling te vergelijken, er zit nog geen winter in en er staat geen bedrag in euro bij.\n\nLees meer: https://smartpeak.be/artikels/thuisbatterij-bijplaatsen-bestaande-zonnepanelen/",
+  "facebook": "Heb je al zonnepanelen en overweeg je een thuisbatterij erbij? Wat doet die in de praktijk?\n\nWe tonen de meetwaarden van drie woningen waar we ongeveer 10 kWh opslag bijplaatsten: één keer op de bestaande hybride omvormer, twee keer als AC-gekoppelde batterij. Anoniem, uit de monitoringapps.\n\nIn de zomer kwam er weinig stroom van het net, in juli bij de eerste woning zo goed als niets. Richting herfst stijgt dat aandeel, want de panelen wekken minder op en een batterij kan enkel bewaren wat er over is.\n\nWe zeggen er ook bij wat de cijfers niet zeggen: de woningen zijn niet onderling te vergelijken, er zit nog geen winter in en er staat geen bedrag in euro bij.\n\nLees meer: https://smartpeak.be/artikels/thuisbatterij-bijplaatsen-bestaande-zonnepanelen/",
   "instagram": "Zonnepanelen en een thuisbatterij erbij: wat doet die in de praktijk?\n\nDrie woningen, elk ongeveer 10 kWh opslag erbij, op een hybride omvormer of AC-gekoppeld. In de slides: de meetwaarden, wat ze gemeen hebben en wat de cijfers niet zeggen.\n\nHet volledige artikel: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #zonnepanelen #zelfverbruik #OostVlaanderen",
   "first_comment": "Lees meer: https://smartpeak.be/artikels/thuisbatterij-bijplaatsen-bestaande-zonnepanelen/"
 }

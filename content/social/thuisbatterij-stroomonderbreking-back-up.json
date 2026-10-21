@@ -10,7 +10,8 @@
     {
       "type": "text",
       "title": "Waarom alles afschakelt",
-      "body": "Een omvormer op het net moet zich bij een onderbreking automatisch loskoppelen, voor de veiligheid van wie aan het net werkt. Zonder extra voorzieningen vallen je zonnepanelen en je batterij dus ook stil."
+      "body": "Een omvormer op het net moet zich bij een onderbreking automatisch loskoppelen, voor de veiligheid van wie aan het net werkt. Zonder extra voorzieningen vallen je zonnepanelen en je batterij dus ook stil.",
+      "source": "Bron: Synergrid, netvoorschrift C10/11."
     },
     {
       "type": "list",
@@ -20,14 +21,14 @@
         "Noodstopcontact: een paar toestellen via een verlengkabel.",
         "Back-upschakeling: gekozen kringen of je hele woning blijven werken."
       ],
-      "source": "Bron: Synergrid, netvoorschrift C10/11."
+      "source": "Bronnen: Synergrid (FAQ C10/11), Zendure en SMA."
     },
     {
       "type": "stat",
       "title": "Gemiddeld zonder stroom per klant in 2024",
       "value": "26 min",
       "sub": "Aangekondigde werken niet meegerekend. Valt het net in je straat uit, dan duurt het gemiddeld zo'n drie uur.",
-      "source": "Bron: Vlaamse Nutsregulator."
+      "source": "Bron: Vlaamse Nutsregulator, Kwaliteit van de dienstverlening elektriciteit 2024."
     },
     {
       "type": "text",
