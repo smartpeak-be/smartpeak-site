@@ -1,0 +1,10 @@
+{
+  "article": "/artikels/energiecontract-vergelijken-besparen/",
+  "slides": [
+    {"type": "cover", "kicker": "Energiefactuur", "title": "Betaal jij te veel voor je stroom en gas?", "sub": "Volgens de CREG kunnen zo'n 2 miljoen Belgische gezinnen besparen met een ander contract."},
+    {"type": "stat", "title": "Gezinnen bij de 10 duurste elektriciteits­producten", "value": "51%", "sub": "Bij de 10 goedkoopste is dat amper 9%. Bij aardgas: 64% tegenover 10%.", "source": "Bron: CREG, studie F3188 (maart 2026), contracten op 30 september 2025."},
+    {"type": "list", "title": "Je contract checken in 3 stappen", "items": ["CREG Scan: hoe scoort je huidig contract? Groen, oranje of rood.", "V-test: vergelijk met je eigen verbruik uit Mijn Fluvius.", "Overstappen: gratis, op elk moment, je nieuwe leverancier regelt de opzeg."], "source": "Bronnen: CREG en Vlaamse Nutsregulator."},
+    {"type": "text", "title": "En met een thuisbatterij?", "body": "Een batterij zorgt dat je minder stroom aankoopt. Je contract bepaalt wat je nog betaalt en wat je krijgt voor injectie. Met een goed gestuurde batterij kan ook een dynamisch tarief interessant worden."},
+    {"type": "cta", "title": "Lees het hele artikel", "sub": "Met de bronnen, wat een ander contract wel en niet verandert, en wanneer je opnieuw vergelijkt.", "url": "smartpeak.be/artikels"}
+  ]
+}

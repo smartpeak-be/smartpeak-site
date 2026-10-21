@@ -2,8 +2,9 @@
 
 The prompts live in agent/rollen/<slug>.md. The settings per role (model, effort, tools, skills) live in ROLES below.
 This script writes:
-  agent/console/<slug>.md     for Claude Managed Agents (ant apply agent/console/smartpeak-website.md)
-  .claude/agents/<slug>.md    subagents for Claude Code (the main session is the coordinator there)
+  agent/console/<slug>.md     for Claude Managed Agents (ant apply agent/console/<coordinator>.md)
+  .claude/agents/<slug>.md    subagents for Claude Code. There the main session coordinates the website;
+                              the social coordinator is also written as a subagent, since it has a separate job.
 
 Run: python3 tools/build_agents.py            (write the files)
      python3 tools/build_agents.py --check    (exit 1 if a generated file is out of date)
@@ -20,6 +21,7 @@ READ_ONLY_WEB = ["Read", "Glob", "Grep", "WebSearch", "WebFetch"]
 
 # Why these models: writing, coordinating and independent fact-checking need the strongest judgement (Opus).
 # Research and chart work are broad but routine (Sonnet). The technical check is mechanical (Haiku).
+# Publishing under the SmartPeak name on social media needs the strongest judgement too (Opus).
 ROLES = [
     {
         "slug": "smartpeak-website",
@@ -27,6 +29,20 @@ ROLES = [
         "description": "Verantwoordelijke voor smartpeak.be: plant, schrijft, verdeelt werk over het team en levert een pull request af.",
         "model": "claude-opus-5-5", "effort": "high",
         "coordinator": True,
+        "team": ["smartpeak-onderzoeker", "smartpeak-feitencontroleur", "smartpeak-grafisch", "smartpeak-kwaliteit"],
+        "mcp": [("github", "https://api.githubcopilot.com/mcp/")],
+        "skills": ["pdf"],
+    },
+    {
+        "slug": "smartpeak-social",
+        "name": "SmartPeak social",
+        "description": "Verantwoordelijke voor de sociale media van SmartPeak (Facebook en Instagram via Metricool): maakt posts en carrousels uit de inhoud van smartpeak.be en plant ze in.",
+        "model": "claude-opus-5-5", "effort": "high",
+        "coordinator": True,
+        "team": ["smartpeak-feitencontroleur", "smartpeak-grafisch"],
+        "mcp": [("github", "https://api.githubcopilot.com/mcp/"), ("metricool", "https://ai.metricool.com/mcp")],
+        "skills": [],
+        "code_skills": ["smartpeak-social"],
     },
     {
         "slug": "smartpeak-onderzoeker",
@@ -79,13 +95,14 @@ def model_yaml(role):
 def console_file(role, body):
     head = f"---\n{note(role)}name: {role['name']}\ndescription: {q(role['description'])}\n{model_yaml(role)}"
     if role.get("coordinator"):
-        subs = [r for r in ROLES if not r.get("coordinator")]
-        head += ("mcp_servers:\n  - type: url\n    name: github\n    url: https://api.githubcopilot.com/mcp/\n"
-                 "tools:\n  - type: agent_toolset_20260401\n  - type: mcp_toolset\n    mcp_server_name: github\n"
-                 "skills:\n  - type: anthropic\n    skill_id: pdf\n"
-                 "multiagent:\n  type: multiagent_20261001\n  subagents:\n    type: enabled\n"
+        head += "mcp_servers:\n" + "".join(f"  - type: url\n    name: {n}\n    url: {u}\n" for n, u in role["mcp"])
+        head += "tools:\n  - type: agent_toolset_20260401\n" + "".join(
+            f"  - type: mcp_toolset\n    mcp_server_name: {n}\n" for n, _ in role["mcp"])
+        if role["skills"]:
+            head += "skills:\n" + "".join(f"  - type: anthropic\n    skill_id: {k}\n" for k in role["skills"])
+        head += ("multiagent:\n  type: multiagent_20261001\n  subagents:\n    type: enabled\n"
                  "    inline_agents:\n      type: disabled\n    predefined_agents:\n")
-        head += "".join(f"      - ./{r['slug']}.md\n" for r in subs)
+        head += "".join(f"      - ./{t}.md\n" for t in role["team"])
         head += "  workflows:\n    type: disabled\n"
     else:
         head += "tools:\n  - type: agent_toolset_20260401\n"
@@ -94,7 +111,9 @@ def console_file(role, body):
 
 def code_file(role, body):
     head = f"---\n{note(role)}name: {role['slug']}\ndescription: {q(role['description'])}\n"
-    head += f"tools: {', '.join(role['code_tools'])}\nmodel: {role['model']}\n"
+    if role.get("code_tools"):
+        head += f"tools: {', '.join(role['code_tools'])}\n"
+    head += f"model: {role['model']}\n"
     if role["effort"]:
         head += f"effort: {role['effort']}\n"
     if role.get("code_skills"):
@@ -106,7 +125,7 @@ def outputs():
     for role in ROLES:
         body = (SRC / f"{role['slug']}.md").read_text(encoding="utf-8")
         yield CONSOLE / f"{role['slug']}.md", console_file(role, body)
-        if not role.get("coordinator"):
+        if role["slug"] != "smartpeak-website":
             yield CODE / f"{role['slug']}.md", code_file(role, body)
 
 
