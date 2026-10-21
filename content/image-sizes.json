@@ -24,6 +24,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/dynamische-prijzen-dag-w640.webp"
  },
+ "/assets/img/grafieken/energiecontracten-prijsgroep.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontracten-prijsgroep-w640.webp"
+ },
  "/assets/img/grafieken/maandpieken-facturatiepiek.webp": {
   "width": 1600,
   "height": 900,

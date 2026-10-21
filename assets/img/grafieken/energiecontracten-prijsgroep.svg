@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">De meeste gezinnen zitten bij een duur product</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Aandeel van de energiecontracten van gezinnen per prijsgroep, België</text>
+<text x="150.0" y="320.0" font-size="30" fill="#1f272e" font-weight="650">Elektriciteit</text>
+<rect x="360.0" y="250" width="596.7" height="120" fill="#c2412d"/>
+<text x="658.4" y="312.0" font-size="34" fill="#ffffff" font-weight="700" text-anchor="middle">51%</text>
+<text x="658.4" y="346.0" font-size="22" fill="#ffffff" text-anchor="middle">bij de 10 duurste</text>
+<rect x="956.7" y="250" width="468.0" height="120" fill="#dfe6e3"/>
+<text x="1190.7" y="312.0" font-size="34" fill="#1f272e" font-weight="700" text-anchor="middle">40%</text>
+<text x="1190.7" y="346.0" font-size="22" fill="#1f272e" text-anchor="middle">de rest van de markt</text>
+<rect x="1424.7" y="250" width="105.3" height="120" fill="#17c15c"/>
+<text x="1477.3" y="324.0" font-size="34" fill="#ffffff" font-weight="700" text-anchor="middle">9%</text>
+<text x="1530.0" y="410.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="end">9% bij de 10 goedkoopste producten</text>
+<text x="150.0" y="570.0" font-size="30" fill="#1f272e" font-weight="650">Aardgas</text>
+<rect x="360.0" y="500" width="748.8" height="120" fill="#c2412d"/>
+<text x="734.4" y="562.0" font-size="34" fill="#ffffff" font-weight="700" text-anchor="middle">64%</text>
+<text x="734.4" y="596.0" font-size="22" fill="#ffffff" text-anchor="middle">bij de 10 duurste</text>
+<rect x="1108.8" y="500" width="304.2" height="120" fill="#dfe6e3"/>
+<text x="1260.9" y="562.0" font-size="34" fill="#1f272e" font-weight="700" text-anchor="middle">26%</text>
+<text x="1260.9" y="596.0" font-size="22" fill="#1f272e" text-anchor="middle">de rest van de markt</text>
+<rect x="1413.0" y="500" width="117.0" height="120" fill="#17c15c"/>
+<text x="1471.5" y="574.0" font-size="34" fill="#ffffff" font-weight="700" text-anchor="middle">10%</text>
+<text x="1530.0" y="660.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="end">10% bij de 10 goedkoopste producten</text>
+<text x="150.0" y="850.0" font-size="22" fill="#4b5661">Bron: CREG, studie F3188 (12 maart 2026), lopende contracten van Belgische gezinnen op 30 september 2025.</text>
+<text x="150.0" y="880.0" font-size="22" fill="#4b5661">De rest van de markt is het verschil met 100%.</text>
+</svg>

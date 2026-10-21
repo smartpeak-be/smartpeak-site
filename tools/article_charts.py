@@ -458,6 +458,31 @@ def case_overview():
     return svg(body, "Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst", "Wat de batterij deed tussen de plaatsing en half oktober 2026")
 
 
+def contract_shares_creg():
+    """Share of Belgian household contracts by price group (CREG study F3188, contracts on 30 September 2025)."""
+    rows = [("Elektriciteit", 51, 9), ("Aardgas", 64, 10)]
+    x0, x1 = 360, 1530
+    body = ""
+    for i, (label, dear, cheap) in enumerate(rows):
+        y = 250 + i * 250
+        mid = 100 - dear - cheap
+        x_of = lambda p: x0 + (x1 - x0) * p / 100
+        body += text(150, y + 70, label, 30, INK, 650)
+        segs = [(0, dear, RED, "#ffffff", f"{dear}%", "bij de 10 duurste"),
+                (dear, dear + mid, "#dfe6e3", INK, f"{mid}%", "de rest van de markt"),
+                (dear + mid, 100, LEAF, "#ffffff", f"{cheap}%", "")]
+        for a, b, fill, ink, big, small in segs:
+            body += f'<rect x="{x_of(a):.1f}" y="{y}" width="{x_of(b) - x_of(a):.1f}" height="120" fill="{fill}"/>\n'
+            cx = (x_of(a) + x_of(b)) / 2
+            body += text(cx, y + 62 if small else y + 74, big, 34, ink, 700, "middle")
+            if small:
+                body += text(cx, y + 96, small, 22, ink, None, "middle")
+        body += text(x_of(100), y + 160, f"{cheap}% bij de 10 goedkoopste producten", 23, LEAF_DEEP, 600, "end")
+    body += text(150, 850, "Bron: CREG, studie F3188 (12 maart 2026), lopende contracten van Belgische gezinnen op 30 september 2025.", 22)
+    body += text(150, 880, "De rest van de markt is het verschil met 100%.", 22)
+    return svg(body, "De meeste gezinnen zitten bij een duur product", "Aandeel van de energiecontracten van gezinnen per prijsgroep, België")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -480,3 +505,4 @@ if __name__ == "__main__":
     write("thuisbatterij-bijplaatsen-woning-2", ac_case_months("Woning 2: verbruik dat de zon niet rechtstreeks dekte", CASE2_MONTHS, "23 mei"))
     write("thuisbatterij-bijplaatsen-woning-3", ac_case_months("Woning 3: verbruik dat de zon niet rechtstreeks dekte", CASE3_MONTHS, "11 mei"))
     write("thuisbatterij-bijplaatsen-overzicht", case_overview())
+    write("energiecontracten-prijsgroep", contract_shares_creg())
