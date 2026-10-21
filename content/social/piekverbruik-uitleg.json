@@ -15,7 +15,7 @@
     },
     {
       "type": "stat",
-      "title": "Gemiddeld ongeveer, 1 kW per jaar in 2026",
+      "title": "Wat 1 kW piek in 2026 gemiddeld per jaar kost",
       "value": "€ 53,39",
       "sub": "Excl. btw, of zo'n € 4,45 per maand. Iedereen betaalt minstens voor 2,5 kW.",
       "source": "Bron: Vlaamse Nutsregulator, capaciteitstarief. Het exacte bedrag verschilt per netbeheerder."
@@ -41,7 +41,7 @@
     {
       "type": "text",
       "title": "En een thuisbatterij?",
-      "body": "Een batterij kan bijspringen als je veel stroom van het net vraagt. Dan moet ze op dat moment nog energie en voldoende ontlaadvermogen hebben. Een batterij die om 19 uur leeg is, vangt de piek van 19:30 niet meer op.",
+      "body": "Een batterij kan bijspringen als je veel stroom van het net vraagt. Daarvoor moet ze op dat moment nog energie en voldoende ontlaadvermogen hebben. Een batterij die om 19 uur leeg is, vangt de piek van 19:30 niet meer op.",
       "source": "Bron: Vlaanderen.be, Thuisbatterij."
     },
     {
@@ -51,7 +51,7 @@
       "url": "smartpeak.be/artikels"
     }
   ],
-  "facebook": "Betaal jij niet alleen voor hoeveel stroom je verbruikt, maar ook voor hoeveel tegelijk?\n\nDat klopt: sinds 1 januari 2023 hangt in Vlaanderen een deel van je nettarieven af van je piekvermogen, het capaciteitstarief. Je digitale meter meet je afname per kwartier. Het kwartier met het hoogste gemiddelde vermogen in een maand is je maandpiek.\n\nVolgens de Vlaamse Nutsregulator kost 1 kW in 2026 gemiddeld ongeveer € 53,39 per jaar (excl. btw). Iedereen betaalt minstens voor 2,5 kW.\n\nJe pieken beperk je met gewone gewoontes: zware toestellen niet tegelijk laten draaien, wasmachine en vaatwasser buiten je piekmoment plannen, je wagen niet laden terwijl je kookt.\n\nEen thuisbatterij kan ook helpen, op voorwaarde dat ze op het moment van de piek nog genoeg energie en vermogen heeft.\n\nLees meer: https://smartpeak.be/artikels/piekverbruik-uitleg/",
+  "facebook": "Wist je dat je niet alleen betaalt voor hoeveel stroom je verbruikt, maar ook voor hoeveel tegelijk?\n\nSinds 1 januari 2023 hangt in Vlaanderen een deel van je nettarieven af van je piekvermogen, het capaciteitstarief. Je digitale meter meet je afname per kwartier. Het kwartier met het hoogste gemiddelde vermogen in een maand is je maandpiek.\n\nVolgens de Vlaamse Nutsregulator kost 1 kW in 2026 gemiddeld ongeveer € 53,39 per jaar (excl. btw). Iedereen betaalt minstens voor 2,5 kW.\n\nJe pieken beperk je met gewone gewoontes: zware toestellen niet tegelijk laten draaien, wasmachine en vaatwasser buiten je piekmoment plannen, je wagen niet laden terwijl je kookt.\n\nEen thuisbatterij kan ook helpen, op voorwaarde dat ze op het moment van de piek nog genoeg energie en vermogen heeft.\n\nLees meer: https://smartpeak.be/artikels/piekverbruik-uitleg/",
   "instagram": "Betaal jij ook voor hoeveel stroom je tegelijk verbruikt?\n\nIn Vlaanderen hangt een deel van je nettarieven af van je maandpiek: het capaciteitstarief. In de slides: wat een maandpiek is, wat 1 kW gemiddeld kost volgens de Vlaamse Nutsregulator en hoe je pieken beperkt.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #capaciteitstarief #piekverbruik #Fluvius",
   "first_comment": "Lees meer: https://smartpeak.be/artikels/piekverbruik-uitleg/"
 }

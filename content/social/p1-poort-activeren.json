@@ -29,7 +29,7 @@
     },
     {
       "type": "stat",
-      "title": "Hoe lang duurt het activeren?",
+      "title": "Maximale duur van het activeren",
       "value": "72 uur",
       "sub": "Tot 72 uur, meestal op afstand. Is je meter net geplaatst? Wacht enkele dagen: activeren kan pas 72 uur na de plaatsing.",
       "source": "Bron: Fluvius, gebruikerspoorten activeren of desactiveren, en presentatie workshop digitale meter."
@@ -46,7 +46,7 @@
       "url": "smartpeak.be/hulp"
     }
   ],
-  "facebook": "Moet je thuisbatterij of energiebeheersysteem weten hoeveel stroom je afneemt? Dan moet de P1-poort van je digitale meter openstaan.\n\nStandaard staat die poort dicht: je laat ze zelf openzetten bij Fluvius, via mijn.fluvius.be/poortbeheer. Je hebt je eID met kaartlezer of de itsme-app nodig, een recente elektriciteitsfactuur en je rijksregisternummer.\n\nFluvius activeert de poort meestal op afstand, wat tot 72 uur kan duren. Je ziet dat ze openstaat aan een klein driehoekje boven P1 op het scherm van je meter.\n\nBewaar de carrousel voor als je eraan begint.\n\nLees meer: https://smartpeak.be/hulp/p1-poort-activeren/",
-  "instagram": "De P1-poort van je digitale meter staat standaard dicht.\n\nWil je dat een thuisbatterij of energiebeheersysteem je verbruik kan volgen, dan laat je ze openzetten bij Fluvius. In de slides: wat je nodig hebt, de 4 stappen en hoe je ziet dat ze openstaat. Bewaar dit voor later.\n\nDe volledige gids: link in bio (smartpeak.be/hulp).\n\n#thuisbatterij #P1poort #digitalemeter #Fluvius",
+  "facebook": "Gebruikt je thuisbatterij of energiebeheersysteem de P1-poort van je digitale meter om je verbruik te volgen? Dan moet die poort openstaan.\n\nStandaard staat die poort dicht: je laat ze zelf openzetten bij Fluvius, via mijn.fluvius.be/poortbeheer. Je hebt je eID met kaartlezer of de itsme-app nodig, een recente elektriciteitsfactuur en je rijksregisternummer.\n\nFluvius activeert de poort meestal op afstand, wat tot 72 uur kan duren. Je ziet dat ze openstaat aan een klein driehoekje boven P1 op het scherm van je meter.\n\nBewaar de carrousel voor als je eraan begint.\n\nLees meer: https://smartpeak.be/hulp/p1-poort-activeren/",
+  "instagram": "De P1-poort van je digitale meter staat standaard dicht.\n\nVolgt je thuisbatterij of energiebeheersysteem je verbruik via de P1-poort, dan laat je die openzetten bij Fluvius. In de slides: wat je nodig hebt, de 4 stappen en hoe je ziet dat ze openstaat. Bewaar dit voor later.\n\nDe volledige gids: link in bio (smartpeak.be/hulp).\n\n#thuisbatterij #P1poort #digitalemeter #Fluvius",
   "first_comment": "Lees meer: https://smartpeak.be/hulp/p1-poort-activeren/"
 }
