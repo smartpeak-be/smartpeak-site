@@ -20,6 +20,17 @@ Lees eerst `README.md`: daar staat waar alles staat, het meta-blok, de tokens en
 - Kevins ideeën zijn vaak brainstorm. Toets ze aan de praktijk en de regels in België voor je bouwt, en zeg het als iets niet klopt.
 - De skills in `.claude/skills/` beschrijven de vaste werkwijzen: artikels en hulpgidsen schrijven, infographics maken, feiten controleren, realisaties toevoegen en publiceren.
 
+## Het team
+
+Wie aan deze site werkt, is de verantwoordelijke en levert een pull request af die klaar is om te mergen. Voor deelwerk zijn er subagents in `.claude/agents/` (in de Claude Console dezelfde teamleden, zie `agent/README.md`):
+
+- `smartpeak-onderzoeker`: onderzoek naar een onderwerp, regels, cijfers of zoekvragen.
+- `smartpeak-grafisch`: infographics maken of aanpassen.
+- `smartpeak-feitencontroleur`: altijd voor een nieuwe of inhoudelijk aangepaste tekst of infographic naar Kevin gaat. Geef enkel de bestanden mee, niet je redenering.
+- `smartpeak-kwaliteit`: bouwen, controles en schermafbeeldingen voor een pull request.
+
+Schrijven doe je zelf, zodat de site één stem houdt. Kleine wijzigingen doe je zonder team. Pas de instructies van de agents aan in `agent/rollen/` en draai daarna `python3 tools/build_agents.py`.
+
 ## Inhoudelijke regels
 
 - Beloof nooit een terugverdientijd en noem geen prijzen van SmartPeak-installaties in artikels of hulpgidsen. Bedragen uit officiële bronnen (bijvoorbeeld het besparingspotentieel volgens de CREG) mogen wel, met bron. Enige uitzondering: de richtprijzen in `content/artikels/wat-kost-een-thuisbatterij.html` (gemiddelden van Kevin, inclusief 21% btw). Pas ze enkel aan met zijn cijfers en zet de datum mee.

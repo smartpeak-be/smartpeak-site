@@ -5,7 +5,7 @@ description: "Bouw, controleer en publiceer wijzigingen aan smartpeak.be via een
 
 # Publiceren
 
-Een push naar `main` publiceert de site meteen via `.github/workflows/pages.yml`. Elke run kost GitHub Actions-minuten van Kevin. Werk dus op een branch, bundel je wijzigingen, en laat Kevin `main` bijwerken door een pull request te mergen.
+Een push naar `main` publiceert de site meteen via `.github/workflows/pages.yml`. Elke run kost GitHub Actions-minuten van Kevin. Werk dus op een branch, bundel je wijzigingen, en laat Kevin `main` bijwerken door een pull request te mergen, of merge zelf als hij daar uitdrukkelijk om vraagt.
 
 ## 1. Branch
 
@@ -47,7 +47,7 @@ Neem schermafbeeldingen, bekijk ze en los op wat er misloopt. Bouw daarna opnieu
 
 - Push je branch: `git push -u origin <branch>`. Lukt dat niet met git, gebruik dan de GitHub-tools (branch, bestanden, pull request).
 - Open een pull request naar `main`. Zet erin wat er verandert, de link naar de pagina zoals ze live zal staan, en wat Kevin zelf moet nakijken.
-- Merge niet zelf en force-push nooit naar `main`. Kevin merget; dat start één deploy.
+- Merge enkel zelf als Kevin daar uitdrukkelijk om vraagt, en force-push nooit naar `main`. Elke merge start één deploy.
 - Wijzigingen enkel aan `README.md`, `CLAUDE.md`, `.claude/` of `agent/` starten geen deploy.
 
 ## 5. Na de merge

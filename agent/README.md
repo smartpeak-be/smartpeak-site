@@ -1,17 +1,42 @@
-# De SmartPeak-website-agent in de Claude Console
+# Het SmartPeak-websiteteam
 
-Deze map bevat alles om een agent in de Claude Console (Claude Managed Agents) te maken die aan smartpeak.be werkt.
+Eén agent is verantwoordelijk voor smartpeak.be, van de vraag van Kevin tot een pull request die klaar is om te mergen. Hij werkt met een klein team van gespecialiseerde agents. Hetzelfde team bestaat voor de Claude Console (Claude Managed Agents) en voor Claude Code.
 
-| Bestand | Wat |
+| Agent | Model | Taak |
+|---|---|---|
+| `smartpeak-website` | Opus 5.5, effort high | De verantwoordelijke: plant, schrijft, verdeelt werk, controleert en opent de pull request |
+| `smartpeak-onderzoeker` | Sonnet 5.5, effort medium | Onderzoekt een onderwerp in officiële Belgische bronnen en levert een nota met bronnen |
+| `smartpeak-feitencontroleur` | Opus 5.5, effort high | Controleert onafhankelijk elke bewering voor publicatie |
+| `smartpeak-grafisch` | Sonnet 5.5, effort high | Maakt infographics in de huisstijl en rendert ze |
+| `smartpeak-kwaliteit` | Haiku 5.5 | Bouwt, draait de controles en bekijkt de pagina's op gsm en computer |
+
+Waarom deze modellen: schrijven, coördineren en de onafhankelijke feitencontrole vragen het beste oordeel, dus Opus. Onderzoek en grafisch werk zijn breed maar routineus, dus Sonnet. De technische controle is mechanisch werk, dus Haiku, het goedkoopst. Een model aanpassen doe je op één plaats (zie hieronder).
+
+## Waar staat wat
+
+| Pad | Wat |
 |---|---|
-| `smartpeak-website-agent.md` | De agent: model, systeemprompt, tools, GitHub-koppeling en skills |
-| `environment.yaml` | De omgeving waarin de agent draait |
-| `../CLAUDE.md` | Context over de site, die de agent bij elke start leest |
-| `../.claude/skills/` | De vaste werkwijzen. Ze worden automatisch geladen als de repository aan een sessie gekoppeld is |
+| `agent/rollen/<agent>.md` | De instructies van elke agent. **Pas ze hier aan.** |
+| `tools/build_agents.py` | Model, effort, tools en skills per agent. Schrijft de bestanden hieronder. |
+| `agent/console/*.md` | De agents voor de Claude Console (gegenereerd) |
+| `.claude/agents/*.md` | De subagents voor Claude Code (gegenereerd) |
+| `agent/environment.yaml` | De omgeving waarin de Console-agents draaien |
+| `../CLAUDE.md` en `../.claude/skills/` | Context en vaste werkwijzen, voor alle agents |
 
-De skills staan in de repository zelf. Pas je er een aan en merge je die wijziging, dan gebruikt de volgende sessie meteen de nieuwe versie. Je hoeft niets opnieuw op te laden.
+Na een wijziging in `agent/rollen/` of in `tools/build_agents.py`:
 
-## Eenmalig instellen
+```bash
+python3 tools/build_agents.py           # schrijft agent/console/ en .claude/agents/
+python3 tools/build_agents.py --check   # controleert of alles bijgewerkt is
+```
+
+Voor de Console voer je daarna `ant apply` opnieuw uit (zie stap 3). Claude Code gebruikt de nieuwe versie zodra de wijziging gemerged is.
+
+## In Claude Code
+
+Niets te installeren. Open de repository in Claude Code of in een sessie van de Claude-app: de hoofdsessie is de verantwoordelijke (via `CLAUDE.md`) en roept de subagents uit `.claude/agents/` zelf op. Je kan er ook één uitdrukkelijk vragen, bijvoorbeeld "laat de feitencontroleur dit artikel nakijken". Dit loopt via je Claude-abonnement.
+
+## In de Claude Console: eenmalig instellen
 
 ### 1. Een GitHub-token maken
 
@@ -26,47 +51,43 @@ Bewaar het token in je wachtwoordbeheerder. Zet het nergens in de repository.
 
 ### 2. De omgeving maken
 
-Console → **Managed Agents → Environments → New environment**:
+```bash
+ant apply agent/environment.yaml
+```
 
-- **Name:** `smartpeak-website`
-- **Type:** Cloud
-- **Networking:** *Unrestricted*. De agent moet vrij kunnen zoeken voor zijn onderzoek. Met *Limited* werken zoeken en pagina's lezen enkel voor sites die je vooraf opgeeft.
-- **Packages → pip:** `pillow`
+Of in de Console: **Managed Agents → Environments → New environment**, naam `smartpeak-website`, type *Cloud*, networking *Unrestricted*, pip-pakketten `pillow` en `playwright`.
 
-### 3. De agent maken
+### 3. Het team maken
 
-Console → **Managed Agents → Agents → New agent**:
+```bash
+ant apply agent/console/smartpeak-website.md
+```
 
-- **Name:** `SmartPeak website`
-- **Model:** Claude Opus 5.5, effort *high*
-- **System prompt:** kopieer alles onder de tweede `---` uit `smartpeak-website-agent.md`
-- **Tools:** de standaard agent-toolset (bash, bestanden, web search, web fetch)
-- **MCP server:** GitHub, `https://api.githubcopilot.com/mcp/`. Koppel je GitHub-account wanneer de Console daarom vraagt. Daarmee kan de agent pull requests openen.
-- **Skills:** de Anthropic-skill *pdf*, om pdf's te lezen die je doorstuurt (klantcases, datasheets)
+`ant apply` maakt of werkt de vier teamleden bij waarnaar de verantwoordelijke verwijst en koppelt ze aan hem. Doe je het liever met de hand in de Console, maak dan eerst de vier teamleden aan (model en systeemprompt uit hun bestand in `agent/console/`, standaard agent-toolset). Maak daarna de verantwoordelijke aan met de GitHub-MCP-server (`https://api.githubcopilot.com/mcp/`), de Anthropic-skill *pdf* en onder *Multiagent* de vier teamleden. Koppel je GitHub-account wanneer de Console daarom vraagt.
 
-Werk je liever met de `ant`-CLI, dan maakt `ant apply agent/smartpeak-website-agent.md` en `ant apply agent/environment.yaml` hetzelfde aan.
+Een teamlid kan zelf geen teamleden hebben: er is maar één niveau. Alle agents delen dezelfde werkplek, maar elk heeft een eigen gesprek.
 
-## Een sessie starten
+## Een sessie starten in de Console
 
-Start een sessie met de agent en de omgeving, en koppel de repository als **GitHub repository**:
+Start een sessie met **SmartPeak website** en de omgeving `smartpeak-website`, en koppel de repository als **GitHub repository**:
 
 - **URL:** `https://github.com/smartpeak-be/smartpeak-site`
 - **Mount path:** `/workspace/smartpeak-site`
 - **Token:** het token uit stap 1
 - **Branch:** `main`
 
-Geef daarna je opdracht, bijvoorbeeld:
+De skills in `.claude/skills/` worden bij de start van de sessie automatisch geladen. Geef daarna je opdracht, bijvoorbeeld:
 
 - "Schrijf een hulpgids over het koppelen van de HomeWizard P1-meter aan een Zendure."
 - "Hier zijn drie foto's en het dossier van een installatie bij Joeri. Voeg ze toe aan de realisaties."
 - "Zoek welke onderwerpen rond thuisbatterijen nu veel gezocht worden en stel vijf artikels voor."
 
-De agent werkt op een branch en opent een pull request. Jij bekijkt die op GitHub en klikt **Merge**. Pas dan gaat de wijziging online.
+De agent werkt op een branch en opent een pull request. Jij bekijkt die op GitHub en klikt **Merge**, of je vraagt hem uitdrukkelijk om te mergen. Pas dan gaat de wijziging online.
 
 ## Goed om te weten
 
-- **Kosten:** sessies lopen via je API-account in de Console. Ze worden apart van een Claude-abonnement aangerekend, per gebruik.
-- **Veiligheid:** de agent kan alles wat het token toelaat. Daarom heeft het token enkel toegang tot deze repository, en gaat er niets online zonder dat jij de pull request merget.
-- **Beta:** Managed Agents is nog in beta. Menu's en namen in de Console kunnen nog veranderen.
+- **Kosten:** in de Console lopen sessies via je API-account, per gebruik en apart van een Claude-abonnement. Elk teamlid dat aan het werk gaat, kost ook tokens; het goedkopere model voor onderzoek en controle houdt dat beperkt.
+- **Veiligheid:** de agents kunnen alles wat het token toelaat. Daarom heeft het token enkel toegang tot deze repository, en gaat er niets online zonder merge. Wie in deze repository kan committen, kan ook de skills en instructies van de agents aanpassen.
+- **Beta:** Managed Agents en multiagent zijn in beta. Menu's en namen in de Console kunnen nog veranderen.
 
-Meer uitleg: [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview), [Build in Console](https://platform.claude.com/docs/en/managed-agents/onboarding), [GitHub koppelen](https://platform.claude.com/docs/en/managed-agents/github), [Skills](https://platform.claude.com/docs/en/managed-agents/skills).
+Meer uitleg: [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview), [Multiagent](https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration), [Agent definiëren](https://platform.claude.com/docs/en/managed-agents/agent-setup), [Skills](https://platform.claude.com/docs/en/managed-agents/skills), [Subagents in Claude Code](https://code.claude.com/docs/en/sub-agents).

@@ -67,7 +67,7 @@ Elke push naar `main` bouwt, controleert en publiceert via `.github/workflows/pa
 
 ## Claude-agent
 
-`CLAUDE.md` en de skills in `.claude/skills/` geven Claude de context en werkwijzen voor deze site. In `agent/` staat hoe je er een agent in de Claude Console van maakt (zie `agent/README.md`).
+`CLAUDE.md` en de skills in `.claude/skills/` geven Claude de context en werkwijzen voor deze site. Een verantwoordelijke agent werkt met een team van subagents (onderzoek, infographics, feitencontrole, kwaliteit), in Claude Code via `.claude/agents/` en in de Claude Console via `agent/console/`. Zie `agent/README.md`.
 
 Zolang de site niet op `https://smartpeak.be` draait, krijgt elke pagina `noindex` en blokkeert `robots.txt` alles. Zo concurreert de testversie niet met de huidige site in Google. Dat schakelt vanzelf om zodra het domein ingesteld is.
 
