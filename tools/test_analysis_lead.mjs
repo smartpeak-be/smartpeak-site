@@ -70,37 +70,36 @@ for (const { label, input, expectResult } of cases) {
   assert.equal(lead.csvDailyCompact.mapValue.fields.afname.arrayValue.values.length > 0, true);
   if (expectResult) assert.ok(lead.result.mapValue, "lead has a result");
 
-  const mail = await read(`mail/lead_result_${leadId}`);
-  assert.equal(mail.to.stringValue, input.email);
-  assert.equal(mail.message.mapValue.fields.subject.stringValue, "Je batterij-analyse is klaar SmartPeak");
-  assert.ok(mail.message.mapValue.fields.html.stringValue.includes(resultUrl), "mail links the result page");
+  assert.ok(resultUrl.endsWith(`?r=${leadId}`), "result url points to the lead");
   const result = lead.result.mapValue ? Object.keys(lead.result.mapValue.fields).join(", ") : "none";
   console.log(`OK ${label}: lead ${leadId}, result fields: ${result}`);
 }
 
-// A result mail to another address than the lead's must still be refused.
+// The rules must refuse a lead with a hand-picked ID (IDs end up in the dashboard HTML)
+// and any mail written by a client (the server queues the result mail).
 const root = "projects/demo-smartpeak/databases/(default)/documents";
 const commit = (writes) => fetch(`${baseUrl}:commit`, {
   method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ writes }),
 });
 const now = { fieldPath: "createdAt", setToServerValue: "REQUEST_TIME" };
-const created = await commit([{
-  update: { name: `${root}/leads/negatieftest`, fields: {
+const leadWithId = (id) => commit([{
+  update: { name: `${root}/leads/${id}`, fields: {
     customerName: { stringValue: "Test Fout" }, email: { stringValue: "fout@example.com" },
     status: { stringValue: "cold_lead" }, hotLeadAt: { nullValue: null }, deletedAt: { nullValue: null },
     resultExpiresAt: { timestampValue: new Date(Date.now() + 86400000).toISOString() },
   } },
   updateTransforms: [now], currentDocument: { exists: false },
 }]);
-assert.equal(created.status, 200, "plain lead accepted");
-const mailTo = (to) => commit([{
-  update: { name: `${root}/mail/lead_result_negatieftest`, fields: {
-    kind: { stringValue: "lead_result" }, leadId: { stringValue: "negatieftest" }, to: { stringValue: to },
+assert.equal((await leadWithId('x"><img src=x onerror=alert(1)>')).status, 403, "rules reject a lead ID with markup");
+const okId = "Negatieftest01234567";
+assert.equal((await leadWithId(okId)).status, 200, "plain lead with a 20-character ID accepted");
+const clientMail = await commit([{
+  update: { name: `${root}/mail/lead_result_${okId}`, fields: {
+    kind: { stringValue: "lead_result" }, leadId: { stringValue: okId }, to: { stringValue: "fout@example.com" },
     message: { mapValue: { fields: { subject: { stringValue: "Je batterij-analyse is klaar SmartPeak" }, html: { stringValue: "x" } } } },
   } },
   updateTransforms: [now], currentDocument: { exists: false },
 }]);
-assert.equal((await mailTo("ander@example.com")).status, 403, "rules reject a result mail to another address");
-assert.equal((await mailTo("fout@example.com")).status, 200, "the same mail to the lead's own address is accepted");
+assert.equal(clientMail.status, 403, "rules reject mails written by a client");
 
-console.log("Verbruiksanalyse OK: leads and result mails are accepted by the rules.");
+console.log("Verbruiksanalyse OK: leads are accepted, client mails and crafted lead IDs are refused.");

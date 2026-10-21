@@ -30,11 +30,14 @@ assert.ok(lead.createdAt.timestampValue, "createdAt set");
 assert.match(lead.notes.stringValue, /Onderwerp: Offerte/);
 assert.match(lead.notes.stringValue, /Vanaf pagina: \/oplossingen\/sigenergy-sigenstor\//);
 
-const mail = await read(`mail/lead_contact_${leadId}`);
-assert.deepEqual(mail.to.arrayValue.values.map((v) => v.stringValue), ["kevin@smartpeak.be", "ruben@smartpeak.be"]);
-const html = mail.message.mapValue.fields.html.stringValue;
-assert.ok(!html.includes("<b>geen html</b>"), "message is escaped");
-assert.match(mail.message.mapValue.fields.subject.stringValue, /^Nieuwe contactaanvraag: Test Klant \(Offerte\)$/);
+// The notification mail is queued by a Cloud Function (not in this emulator run);
+// a client may never write to `mail` itself.
+const clientMail = await fetch(`${baseUrl}/mail?documentId=lead_contact_${leadId}`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ fields: { kind: { stringValue: "lead_contact" }, leadId: { stringValue: leadId } } }),
+});
+assert.equal(clientMail.status, 403, "rules reject mails written by a client");
 
 // The rules must still refuse what they are meant to refuse.
 const rejected = await fetch(`${baseUrl}/leads`, {
@@ -44,4 +47,4 @@ const rejected = await fetch(`${baseUrl}/leads`, {
 });
 assert.equal(rejected.status, 403, "rules reject unknown fields");
 
-console.log(`Contact form OK: lead ${leadId} is hot and the notification mail is queued.`);
+console.log(`Contact form OK: lead ${leadId} is hot; clients cannot write mails.`);
