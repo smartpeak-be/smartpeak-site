@@ -48,6 +48,7 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 - Schrijf natuurlijke zinnen met de woorden waarop mensen zoeken (thuisbatterij, capaciteitstarief, Fluvius).
 
 **Voor allebei**
+- De tekst zegt zelf iets. Beschrijf nooit de post ("In de slides: …", "Bewaar de carrousel", "Swipe"): geef de kern in gewone zinnen, met de belangrijkste feiten uit de slides.
 - Dezelfde regels als op de site: geen prijzen van installaties, geen terugverdientijd, geen beloftes van besparing, Sigenergy nooit "onze voorkeur", elke bewering met bron.
 - Een post zegt niets wat de pagina niet zegt.
 - Reviews enkel als ze echt zijn en de klant toestemming gaf voor sociale media. Toon niet enkel de beste reviews als je de indruk wekt dat het alle reviews zijn ([FOD Economie, 2023](https://news.economie.fgov.be/231090-online-reviews-voor-een-5-sterren-betrouwbaarheid/)).
@@ -78,7 +79,8 @@ GET https://firestore.googleapis.com/v1/projects/smartpeak-projects/databases/(d
 5. `createScheduledPost` per kanaal, minstens 24 uur vooruit, met `autoPublish: true`:
    - Facebook: `facebookData.type` `POST`, de beelden in `media`, `firstCommentText` met de link.
    - Instagram: `instagramData.type` `POST` (een carrousel is een POST met meerdere beelden), `isAiGenerated: false`.
-6. Meld Kevin per post: kanaal, dag en uur, en de `plannerUrl`. Hij kan in Metricool nog alles aanpassen of schrappen.
+6. **Redactie na het inplannen.** Laat de agent `smartpeak-social-redactie` de ingeplande posts nalezen in Metricool, los van wie ze schreef. Verwerk de opmerkingen met `updateScheduledPost` (een update geeft de post een nieuwe `id`, de `uuid` blijft) en in het JSON-bestand, en laat opnieuw nalezen tot alles in orde is.
+7. Meld Kevin per post: kanaal, dag en uur, en de `plannerUrl`, en wat de redactie aanpaste. Hij kan in Metricool nog alles aanpassen of schrappen.
 
 Publiceer nooit meteen, tenzij Kevin dat uitdrukkelijk vraagt voor een bepaalde post.
 

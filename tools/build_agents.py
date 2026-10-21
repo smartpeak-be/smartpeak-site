@@ -39,7 +39,7 @@ ROLES = [
         "description": "Verantwoordelijke voor de sociale media van SmartPeak (Facebook en Instagram via Metricool): maakt posts en carrousels uit de inhoud van smartpeak.be en plant ze in.",
         "model": "claude-opus-5-5", "effort": "high",
         "coordinator": True,
-        "team": ["smartpeak-feitencontroleur", "smartpeak-grafisch"],
+        "team": ["smartpeak-feitencontroleur", "smartpeak-grafisch", "smartpeak-social-redactie"],
         "mcp": [("github", "https://api.githubcopilot.com/mcp/"), ("metricool", "https://ai.metricool.com/mcp")],
         "skills": [],
         "code_skills": ["smartpeak-social"],
@@ -75,6 +75,14 @@ ROLES = [
         "code_tools": ["Read", "Glob", "Grep", "Bash"],
         "code_skills": ["smartpeak-publiceren"],
     },
+    {
+        "slug": "smartpeak-social-redactie",
+        "name": "SmartPeak social-redactie",
+        "description": "Leest ingeplande posts in Metricool na zoals een volger ze ziet: taal, inhoud, links en techniek. Gebruik na elke inplanning, voor je Kevin meldt dat het klaar is.",
+        "model": "claude-sonnet-5-5", "effort": "high",
+        "mcp": [("metricool", "https://ai.metricool.com/mcp")],
+        "code_skills": ["smartpeak-social"],
+    },
 ]
 
 
@@ -105,7 +113,10 @@ def console_file(role, body):
         head += "".join(f"      - ./{t}.md\n" for t in role["team"])
         head += "  workflows:\n    type: disabled\n"
     else:
-        head += "tools:\n  - type: agent_toolset_20260401\n"
+        if role.get("mcp"):
+            head += "mcp_servers:\n" + "".join(f"  - type: url\n    name: {n}\n    url: {u}\n" for n, u in role["mcp"])
+        head += "tools:\n  - type: agent_toolset_20260401\n" + "".join(
+            f"  - type: mcp_toolset\n    mcp_server_name: {n}\n" for n, _ in role.get("mcp", []))
     return head + "---\n\n" + body
 
 
