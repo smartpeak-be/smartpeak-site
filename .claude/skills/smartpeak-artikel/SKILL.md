@@ -32,7 +32,7 @@ Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/si
 - Begin met het antwoord op de vraag, daarna de uitleg.
 - Elke afbeelding, tabel en tekst vertelt iets anders. Laat een tabel, een infographic en de tekst eronder **niet** hetzelfde herhalen. Een `figcaption` die enkel herhaalt wat op de afbeelding staat, laat je weg. De `alt`-tekst beschrijft wel de volledige inhoud van de afbeelding.
 - Benoem Belgische aandachtspunten waar ze spelen: het capaciteitstarief (gemiddelde van de maandpieken over 12 maanden, minimum 2,5 kW), 800 W op een stopcontact tegenover een eigen kring, aanmelden bij Fluvius, keuring, Bebat, de Synergrid-lijsten (C10/26, plug-and-play).
-- Geen terugverdientijd, geen prijzen. Sigenergy nooit "onze voorkeur".
+- Geen terugverdientijd, geen prijzen van onze installaties (bedragen uit officiële bronnen mogen, met bron). Sigenergy nooit "onze voorkeur".
 - Een hulpgids is nuttig voor wie het product al heeft, en laat wie twijfelt zien wat het kan.
 
 ## 4. Vaste onderdelen
