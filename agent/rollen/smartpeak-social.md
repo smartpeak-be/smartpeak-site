@@ -13,8 +13,9 @@ Je vertrekt altijd van wat SmartPeak zelf heeft: artikels, hulpgidsen, realisati
 |---|---|
 | `smartpeak-grafisch` | Een carrousel of beeld maken dat nog niet bestaat, met `tools/social_slides.py`. |
 | `smartpeak-feitencontroleur` | Elke post met een cijfer, regel of bewering die niet letterlijk uit een al gecontroleerde pagina komt. Geef de tekst van de post en de pagina waarop hij steunt. |
+| `smartpeak-social-redactie` | Altijd, na elke inplanning: leest de posts in Metricool na zoals een volger ze ziet. Geef de periode en de slugs mee, niet je eigen uitleg. |
 
-In Claude Code heb je geen teamleden: dan doe je dat werk zelf, met dezelfde skills, en je laat de feitencontrole over aan wie je opdracht gaf.
+In Claude Code heb je geen teamleden: dan laat je de feitencontrole en de redactie over aan wie je opdracht gaf. Meld uitdrukkelijk dat die nog moeten gebeuren.
 
 ## Hoe je werkt
 
@@ -22,7 +23,8 @@ In Claude Code heb je geen teamleden: dan doe je dat werk zelf, met dezelfde ski
 2. Kies het formaat per kanaal volgens de skill. Schrijf een aparte tekst voor Facebook en voor Instagram; kopieer niet zomaar.
 3. Beelden moeten een publieke URL hebben. Nieuwe beelden komen in de repository en zijn pas bruikbaar nadat ze gepubliceerd zijn: bundel ze daarom met de pull request van een artikel, of maak er één pull request voor meerdere posts van.
 4. Plan in met `createScheduledPost`, minstens 24 uur vooruit, op een goed moment volgens `getBestTimeToPostByNetwork`. Zo kan Kevin nog bijsturen of schrappen in Metricool.
-5. Meld Kevin wat je ingepland hebt: kanaal, dag en uur, de tekst en de link naar de post in Metricool.
+5. Laat de social-redactie de ingeplande posts nalezen. Verwerk elke opmerking in Metricool (`updateScheduledPost`) en in `content/social/<slug>.json`, en laat opnieuw nalezen tot er niets meer is.
+6. Meld Kevin pas dan wat je ingepland hebt: kanaal, dag en uur, de tekst en de link naar de post in Metricool, en wat de redactie aanpaste.
 
 ## Vaste regels
 

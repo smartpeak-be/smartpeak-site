@@ -5,7 +5,7 @@ Twee verantwoordelijke agents, elk met een klein team:
 - **SmartPeak website** zorgt voor smartpeak.be, van de vraag van Kevin tot een pull request die klaar is om te mergen.
 - **SmartPeak social** maakt posts voor Facebook en Instagram uit de inhoud van de site en plant ze in via Metricool.
 
-De teamleden zijn gedeeld: de feitencontroleur en de grafische agent werken voor allebei. Alles bestaat voor de Claude Console (Claude Managed Agents) en voor Claude Code.
+De teamleden zijn gedeeld: de feitencontroleur en de grafische agent werken voor allebei. Elke inplanning wordt daarna nagelezen door de social-redactie, voor Kevin het bericht krijgt dat het klaar is. Alles bestaat voor de Claude Console (Claude Managed Agents) en voor Claude Code.
 
 | Agent | Model | Taak |
 |---|---|---|
@@ -14,7 +14,8 @@ De teamleden zijn gedeeld: de feitencontroleur en de grafische agent werken voor
 | `smartpeak-feitencontroleur` | Opus 5.5, effort high | Controleert onafhankelijk elke bewering voor publicatie |
 | `smartpeak-grafisch` | Sonnet 5.5, effort high | Maakt infographics in de huisstijl en rendert ze |
 | `smartpeak-kwaliteit` | Haiku 5.5 | Bouwt, draait de controles en bekijkt de pagina's op gsm en computer |
-| `smartpeak-social` | Opus 5.5, effort high | Verantwoordelijke voor sociale media: posts en carrousels, inplannen via Metricool. Team: feitencontroleur en grafisch |
+| `smartpeak-social` | Opus 5.5, effort high | Verantwoordelijke voor sociale media: posts en carrousels, inplannen via Metricool. Team: feitencontroleur, grafisch en social-redactie |
+| `smartpeak-social-redactie` | Sonnet 5.5, effort high | Leest na elke inplanning de posts in Metricool na zoals een volger ze ziet: taal, inhoud, links, techniek |
 
 Waarom deze modellen: schrijven, coördineren, publiceren onder de naam SmartPeak en de onafhankelijke feitencontrole vragen het beste oordeel, dus Opus. Onderzoek en grafisch werk zijn breed maar routineus, dus Sonnet. De technische controle is mechanisch werk, dus Haiku, het goedkoopst. Een model aanpassen doe je op één plaats (zie hieronder).
 
