@@ -5,7 +5,7 @@ description: "Maak een social-pakket (carrousel, tekst voor Facebook en Instagra
 
 # Sociale media voor SmartPeak
 
-SmartPeak post op een Facebook-pagina en een Instagram-account (`smartpeak.be`), via het merk SmartPeak in Metricool. LinkedIn en TikTok komen later.
+SmartPeak post op een Facebook-pagina, een Instagram-account en een TikTok-account (allebei `smartpeak.be`), via het merk SmartPeak in Metricool. YouTube is gekoppeld, maar daar gaan enkel video's naartoe: pas als Kevin video aanlevert. LinkedIn komt later.
 
 ## 1. Het social-pakket
 
@@ -47,7 +47,13 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 - Drie tot vijf gerichte hashtags, nooit meer dan vijf ([Social Media Today, dec 2025](https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/)). Bijvoorbeeld `#thuisbatterij #capaciteitstarief #zonnepanelen #OostVlaanderen`.
 - Schrijf natuurlijke zinnen met de woorden waarop mensen zoeken (thuisbatterij, capaciteitstarief, Fluvius).
 
-**Voor allebei**
+**TikTok** (test sinds december 2026)
+- Op TikTok werkt video het best. Zolang er geen video is, posten we een fotoreeks: dezelfde slides, staand 9:16, met `python3 tools/social_slides.py --tiktok <slug>` naar `assets/img/social/tiktok/<slug>-<n>.jpg`. De inhoud blijft buiten de zones die TikTok bedekt (boven, de knoppen rechts, het onderschrift onderaan).
+- Tekst in het veld `tiktok` van het pakket: haak, twee à drie zinnen met de kern, "Meer uitleg op smartpeak.be." (links zijn niet klikbaar) en drie tot vijf hashtags.
+- In Metricool: `tiktokData` met `privacyOption` `PUBLIC_TO_EVERYONE` en `commercialContentOwnBrand: true` (we promoten ons eigen bedrijf, TikTok vraagt die melding). Geen automatische muziek, tenzij Kevin het vraagt.
+- Kijk na een maand naar het bereik voor we meer onderwerpen naar TikTok brengen.
+
+**Voor allemaal**
 - De tekst zegt zelf iets. Beschrijf nooit de post ("In de slides: …", "Bewaar de carrousel", "Swipe"): geef de kern in gewone zinnen, met de belangrijkste feiten uit de slides.
 - Dezelfde regels als op de site: geen prijzen van installaties, geen terugverdientijd, geen beloftes van besparing, Sigenergy nooit "onze voorkeur", elke bewering met bron.
 - Een post zegt niets wat de pagina niet zegt.
