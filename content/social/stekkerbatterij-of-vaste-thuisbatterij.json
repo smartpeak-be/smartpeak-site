@@ -1,0 +1,48 @@
+{
+  "page": "/artikels/stekkerbatterij-of-vaste-thuisbatterij/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Stekkerbatterij",
+      "title": "Stekkerbatterij of vaste thuisbatterij?",
+      "sub": "Sinds april 2025 mag een goedgekeurde stekkerbatterij ook in België."
+    },
+    {
+      "type": "text",
+      "title": "Wat is een stekkerbatterij?",
+      "body": "Een batterij met een ingebouwde omvormer die je via een gewoon stopcontact aansluit. Een vaste thuisbatterij wordt door een installateur vast aangesloten in je verdeelkast.",
+      "source": "Bronnen: Synergrid en Vlaanderen.be."
+    },
+    {
+      "type": "stat",
+      "title": "Aanmelden bij Fluvius in Vlaanderen",
+      "value": "800 W",
+      "sub": "Vanaf 800 W meld je altijd, binnen 30 dagen. Onder 800 W ook, als je een analoge meter hebt. Met een digitale meter detecteert Fluvius het toestel en bevestig je het in Mijn Fluvius.",
+      "source": "Bron: Vlaanderen.be, Stekkerzonnepanelen en stekkerbatterijen in Vlaanderen."
+    },
+    {
+      "type": "list",
+      "title": "Het verschil in de praktijk",
+      "items": [
+        "Stekkerbatterij: via het stopcontact, liefst op een aparte kring. Geen keuring voor het toestel zelf.",
+        "Vaste thuisbatterij: door een installateur aangesloten in je verdeelkast, met keuring.",
+        "Een stekkerbatterij heeft meestal een kleinere capaciteit en een beperkter vermogen."
+      ],
+      "source": "Bronnen: Vlaanderen.be (Thuisbatterij; Stekkerzonnepanelen en stekkerbatterijen) en Synergrid."
+    },
+    {
+      "type": "text",
+      "title": "Wat past bij jou?",
+      "body": "Een stekkerbatterij kan een goede, eenvoudige start zijn voor een kleinere installatie. Wil je meer vermogen of later uitbreiden, dan is een vaste installatie de betere keuze."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, wat je moet melden, wat gekeurd moet worden en wat Bebat daarmee te maken heeft.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Stekkerbatterij of vaste thuisbatterij: wat mag in Vlaanderen en wat is het verschil?\n\nSinds 17 april 2025 mogen goedgekeurde plug-and-play-toestellen aangesloten worden op een elektrische installatie. Staat je toestel niet op de lijst van Synergrid, dan mag je het niet aansluiten.\n\nVanaf 800 W meld je het toestel altijd binnen 30 dagen aan bij Fluvius. Onder 800 W meld je enkel met een analoge meter; met een digitale meter detecteert Fluvius het toestel en bevestig je het in Mijn Fluvius.\n\nEen vaste thuisbatterij wordt door een installateur vast aangesloten in je verdeelkast en vraagt een keuring. Een stekkerbatterij heeft volgens Vlaanderen.be meestal een kleinere opslagcapaciteit en een beperkter vermogen.\n\nVoor allebei geldt: de batterij moet bij Bebat geregistreerd zijn.\n\nLees meer: https://smartpeak.be/artikels/stekkerbatterij-of-vaste-thuisbatterij/",
+  "instagram": "Stekkerbatterij of vaste thuisbatterij?\n\nSinds april 2025 mag een goedgekeurde stekkerbatterij ook in België. In de slides: wat mag, wanneer je aanmeldt bij Fluvius en wat het verschil is met een vaste thuisbatterij.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #stekkerbatterij #Fluvius #zonnepanelen #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/stekkerbatterij-of-vaste-thuisbatterij/"
+}

@@ -26,9 +26,10 @@ Een gewone opdracht verloopt zo:
 2. Laat onderzoeken wat je niet zeker weet.
 3. Schrijf of pas aan volgens de skill.
 4. Laat de infographic maken als die iets toont wat de tekst niet zegt.
-5. Laat de feiten controleren. Verwerk de opmerkingen, of leg uit waarom niet.
-6. Bouw en laat de kwaliteit controleren.
-7. Commit op een branch en open een pull request.
+5. Maak het social-pakket volgens de skill `smartpeak-social`: korte teksten voor Facebook en Instagram en een carrousel, met een link naar de pagina. Inplannen doet de social-agent na de merge.
+6. Laat de feiten controleren, ook die van het social-pakket. Verwerk de opmerkingen, of leg uit waarom niet.
+7. Bouw en laat de kwaliteit controleren.
+8. Commit op een branch en open een pull request.
 
 ## Zo werk je met Kevin
 

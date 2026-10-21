@@ -1,0 +1,58 @@
+{
+  "page": "/artikels/omvormer-valt-uit-zonnige-dagen/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Zonnepanelen",
+      "title": "Je omvormer valt uit bij veel zon?",
+      "sub": "Meestal ligt het niet aan je panelen, maar aan de spanning op het net in je straat."
+    },
+    {
+      "type": "stat",
+      "title": "Boven deze netspanning schakelt je omvormer af",
+      "value": "253 V",
+      "sub": "Gemiddeld over 10 minuten. Stijgt ze ogenblikkelijk boven 264,5 V, dan moet hij binnen 0,2 seconden afschakelen.",
+      "source": "Bron: Synergrid, technisch voorschrift C10/11."
+    },
+    {
+      "type": "list",
+      "title": "Zo herken je het",
+      "items": [
+        "Het gebeurt vooral rond de middag op zonnige dagen.",
+        "Je app of omvormer toont een netfout, zoals te hoge netspanning.",
+        "De productiecurve toont onderbrekingen of een afgevlakte top."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Dit kan je doen",
+      "items": [
+        "Laat eerst je eigen installatie nakijken door je installateur.",
+        "Blijft het terugkomen? Contacteer Fluvius via 078 35 35 00.",
+        "Verbruik je opgewekte stroom zelf meteen, zoals Fluvius aanraadt."
+      ],
+      "source": "Bron: Fluvius, Wat met uitvallende omvormers?"
+    },
+    {
+      "type": "text",
+      "title": "Zelf de instellingen aanpassen?",
+      "body": "Nee. De beveiligingsinstellingen liggen vast in het netvoorschrift C10/11. Afwijken kan enkel met schriftelijke toestemming van de netbeheerder. De grens verhogen is dus geen oplossing.",
+      "source": "Bron: Synergrid, technisch voorschrift C10/11."
+    },
+    {
+      "type": "text",
+      "title": "En met een thuisbatterij?",
+      "body": "Een batterij die overdag laadt, vangt een deel van je overschot op. Is ze vol, dan gaat het overschot weer naar het net. Volgens Test-Aankoop is een batterij daarom maar een gedeeltelijke oplossing. Hoeveel ze helpt, hangt af van de sturing.",
+      "source": "Bron: Test-Aankoop, Alternatieven voor een thuisbatterij bij uitval van de omvormer."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de bronnen, hoe je het meldt bij Fluvius en wat je zelf kan doen.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Schijnt de zon volop, maar produceert je omvormer niets of valt hij telkens even uit?\n\nMeestal ligt het niet aan je panelen of je omvormer, maar aan de spanning op het net in je straat. Wanneer veel zonnepanelen tegelijk stroom op het net zetten, stijgt die spanning. Je omvormer is dan verplicht zich af te schakelen.\n\nHet verschijnsel treedt vooral op in de lente en de zomer, rond de middag. Blijft het terugkomen, dan meld je het bij Fluvius. De beveiligingsinstellingen van je omvormer pas je niet zelf aan: die liggen vast in het netvoorschrift C10/11.\n\nEen thuisbatterij vangt een deel van je overschot op, maar is volgens Test-Aankoop maar een gedeeltelijke oplossing. Hoeveel ze helpt, hangt af van de sturing.\n\nLees meer: https://smartpeak.be/artikels/omvormer-valt-uit-zonnige-dagen/",
+  "instagram": "Schijnt de zon volop, maar valt je omvormer uit?\n\nMeestal ligt het aan de spanning op het net in je straat, niet aan je panelen. In de slides: waarom je omvormer afschakelt, hoe je het herkent en wat je kan doen.\n\nHet volledige artikel met alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #omvormer #zonnepanelen #Fluvius",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/omvormer-valt-uit-zonnige-dagen/"
+}

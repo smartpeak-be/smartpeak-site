@@ -53,5 +53,6 @@ Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/si
 
 1. Infographics maken: skill `smartpeak-infographic`.
 2. Feiten laten controleren: skill `smartpeak-feitencheck`. Verwerk de opmerkingen.
-3. Publiceren: skill `smartpeak-publiceren`.
-4. Meld Kevin wat hij zelf moet nakijken (bijvoorbeeld namen in een app die je niet kon zien).
+3. Social-pakket: skill `smartpeak-social`, in dezelfde pull request (korte teksten en carrousel, niet zichtbaar op de site, met een link naar de pagina). Laat het mee controleren door de feitencontrole.
+4. Publiceren: skill `smartpeak-publiceren`.
+5. Meld Kevin wat hij zelf moet nakijken (bijvoorbeeld namen in een app die je niet kon zien).
