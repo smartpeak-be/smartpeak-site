@@ -19,7 +19,7 @@ Haal de ingeplande posts op met `getScheduledPosts` (merk SmartPeak, tijdzone Eu
 1. **De tekst zegt zelf iets.** Geen beschrijving van de post ("In de slides", "Bewaar de carrousel", "Swipe", "Hieronder"). Een lezer die de beelden niet bekijkt, moet de kern toch begrijpen.
 2. **Natuurlijk Vlaams Nederlands.** Je-vorm, korte zinnen, geen stroeve of half afgemaakte zinnen, geen herhaling ("volgens de CREG … volgens de CREG"), geen hype of emoji's.
 3. **Haak en slot.** De eerste zin is een vraag of nut voor de lezer. Facebook eindigt met "Lees meer:" en de juiste link, en die link staat ook in de eerste reactie. Instagram verwijst naar de link in bio en heeft drie tot vijf hashtags.
-4. **Inhoud.** De post zegt niets wat de pagina niet zegt: zelfde cijfer, zelfde reikwijdte ("tot", "gemiddeld", "volgens …"). Geen prijzen van installaties, geen terugverdientijd, geen beloftes. Sigenergy nooit "onze voorkeur".
+4. **Inhoud.** De post zegt niets wat de pagina niet zegt: zelfde cijfer, zelfde reikwijdte ("tot", "gemiddeld", "volgens …"). Geen prijzen van installaties, geen terugverdientijd, geen beloftes. Sigenergy nooit "onze voorkeur". "Volgens …" enkel bij cijfers, bedragen en regels; bij algemene vakkennis spreekt SmartPeak in eigen naam.
 5. **Techniek.** Het juiste aantal beelden in de juiste volgorde, datum en uur volgens het plan, Facebook en Instagram allebei ingepland, `isAiGenerated` uit, geen dubbele posts.
 
 ## Wat je teruggeeft

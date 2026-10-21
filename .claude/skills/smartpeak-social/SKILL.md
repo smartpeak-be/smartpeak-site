@@ -51,6 +51,7 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 - De tekst zegt zelf iets. Beschrijf nooit de post ("In de slides: …", "Bewaar de carrousel", "Swipe"): geef de kern in gewone zinnen, met de belangrijkste feiten uit de slides.
 - Dezelfde regels als op de site: geen prijzen van installaties, geen terugverdientijd, geen beloftes van besparing, Sigenergy nooit "onze voorkeur", elke bewering met bron.
 - Een post zegt niets wat de pagina niet zegt.
+- Bron in de post enkel bij cijfers, bedragen en regels ("Volgens de Vlaamse Nutsregulator kost 1 kW …"). Algemene vakkennis schrijf je in eigen naam, zonder "volgens …" ("Bidirectioneel laden staat in België nog in een vroege fase."): de bron staat in het artikel. Anders lijkt het alsof SmartPeak het zelf niet weet.
 - Reviews enkel als ze echt zijn en de klant toestemming gaf voor sociale media. Toon niet enkel de beste reviews als je de indruk wekt dat het alle reviews zijn ([FOD Economie, 2023](https://news.economie.fgov.be/231090-online-reviews-voor-een-5-sterren-betrouwbaarheid/)).
 - Betaalt een fabrikant voor een post of krijgt SmartPeak er iets voor, dan is het label "betaald partnerschap" nodig.
 
