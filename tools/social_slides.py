@@ -12,6 +12,8 @@ see .claude/skills/smartpeak-social/SKILL.md):
   ]}
 
 Run: python3 tools/social_slides.py <slug>   → assets/img/social/<slug>-1.jpg, -2.jpg, ...
+     python3 tools/social_slides.py --tiktok <slug>   → assets/img/social/tiktok/<slug>-N.jpg (1080 x 1920, 9:16),
+     with the content inside TikTok's safe zone (top bar, buttons on the right, caption at the bottom).
 Published on the site, the images get a public URL that Metricool can use.
 """
 import base64
@@ -28,6 +30,13 @@ OUT = ROOT / "assets" / "img" / "social"
 FONT = "data:font/woff2;base64," + base64.b64encode((ROOT / "assets" / "fonts" / "instrument-sans.woff2").read_bytes()).decode()
 MARK = "data:image/png;base64," + base64.b64encode((ROOT / "assets" / "logo" / "smartpeak-logo-mark.png").read_bytes()).decode()
 W, H = 1080, 1350
+TIKTOK_H = 1920
+# TikTok covers the top ~200 px, the right ~150 px (buttons) and the bottom ~380 px (caption).
+TIKTOK_CSS = f"""
+body, .slide {{ height: {TIKTOK_H}px; }}
+.slide {{ padding: 230px 170px 380px 88px; }}
+h1 {{ font-size: 96px; }}
+"""
 
 CSS = f"""
 @font-face {{ font-family: "Instrument Sans"; src: url("{FONT}") format("woff2"); font-weight: 400 700; }}
@@ -68,7 +77,7 @@ def e(s):
     return html.escape(s or "")
 
 
-def slide_html(s, n, total):
+def slide_html(s, n, total, extra_css=""):
     t = s["type"]
     dark = t in ("cover", "cta")
     if t == "cover":
@@ -91,29 +100,33 @@ def slide_html(s, n, total):
     source = f'<p class="source">{e(s["source"])}</p>' if s.get("source") else ""
     foot = (f'<div class="foot"><img src="{MARK}" alt="">SmartPeak'
             f'<span class="count">{n}/{total}</span></div>')
-    return (f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
+    return (f'<html><head><meta charset="utf-8"><style>{CSS}{extra_css}</style></head><body>'
             f'<div class="slide{" dark" if dark else ""}"><div class="main">{inner}</div>{source}{foot}</div></body></html>')
 
 
-def render(slug):
+def render(slug, tiktok=False):
     spec = json.loads((SPECS / f"{slug}.json").read_text(encoding="utf-8"))
     slides = spec["slides"]
-    OUT.mkdir(parents=True, exist_ok=True)
+    h, extra, out_dir = (TIKTOK_H, TIKTOK_CSS, OUT / "tiktok") if tiktok else (H, "", OUT)
+    out_dir.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": W, "height": H})
+        page = browser.new_page(viewport={"width": W, "height": h})
         for i, s in enumerate(slides, 1):
-            page.set_content(slide_html(s, i, len(slides)))
+            page.set_content(slide_html(s, i, len(slides), extra))
             page.evaluate("document.fonts.ready")
-            overflow = page.evaluate("document.querySelector('.slide').scrollHeight > %d" % H)
-            out = OUT / f"{slug}-{i}.jpg"
-            page.screenshot(path=str(out), type="jpeg", quality=90, clip={"x": 0, "y": 0, "width": W, "height": H})
+            overflow = page.evaluate("document.querySelector('.slide').scrollHeight > %d" % h)
+            out = out_dir / f"{slug}-{i}.jpg"
+            page.screenshot(path=str(out), type="jpeg", quality=90, clip={"x": 0, "y": 0, "width": W, "height": h})
             print("rendered", out.relative_to(ROOT), "(TE VEEL TEKST: inkorten)" if overflow else "")
         browser.close()
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        sys.exit("usage: python3 tools/social_slides.py <slug> [<slug> ...]")
-    for slug in sys.argv[1:]:
-        render(slug)
+    args = sys.argv[1:]
+    tiktok = "--tiktok" in args
+    slugs = [a for a in args if a != "--tiktok"]
+    if not slugs:
+        sys.exit("usage: python3 tools/social_slides.py [--tiktok] <slug> [<slug> ...]")
+    for slug in slugs:
+        render(slug, tiktok)
