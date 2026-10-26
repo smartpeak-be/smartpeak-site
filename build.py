@@ -27,6 +27,12 @@ if urlparse(SITE_URL).netloc.removeprefix("www.") == urlparse(SITE["domain"]).ne
     SITE_URL = SITE["domain"]
 BASE_PATH = urlparse(SITE_URL).path.rstrip("/")
 IS_LIVE_DOMAIN = SITE_URL in (SITE["domain"], SITE["domain"].replace("://", "://www."))
+# Google Analytics 4 with a consent banner (assets/js/consent.js), only on the real domain so the
+# test site on github.io never sends visits. Empty id: no banner, no script, nothing loads.
+GA4_ID = SITE.get("analytics", {}).get("ga4_id", "").strip()
+if GA4_ID and not re.fullmatch(r"G-[A-Z0-9]{4,16}", GA4_ID):
+    raise SystemExit(f"site.json analytics.ga4_id is geen GA4-meet-ID (G-…): {GA4_ID!r}")
+ANALYTICS_ON = bool(GA4_ID) and IS_LIVE_DOMAIN
 IMAGE_SIZES_FILE = ROOT / "content" / "image-sizes.json"
 IMAGE_SIZES = json.loads(IMAGE_SIZES_FILE.read_text(encoding="utf-8")) if IMAGE_SIZES_FILE.exists() else {}
 TITLE_MAX = 60  # longer titles get cut off in search results
@@ -395,6 +401,18 @@ def enhance_images(body):
     return re.sub(r"<img\b[^>]*>", fix, body)
 
 
+def analytics_head():
+    if not ANALYTICS_ON:
+        return ""
+    return f'<script defer src="/assets/js/consent.js" data-ga="{esc(GA4_ID)}" data-policy="/cookies/"></script>'
+
+
+def cookie_settings_button():
+    if not ANALYTICS_ON:
+        return ""
+    return '<button type="button" class="link-button" data-cookie-settings hidden>Cookie-instellingen</button>'
+
+
 def render(meta, body, titles):
     layout = (ROOT / "templates" / "layout.html").read_text(encoding="utf-8")
     title = page_title(meta)
@@ -408,7 +426,8 @@ def render(meta, body, titles):
         "og_image": esc(SITE_URL + image),
         "og_image_alt": esc(image_alt),
         "site_name": esc(SITE["name"]),
-        "head_extra": preconnects(body),
+        "head_extra": preconnects(body) + analytics_head(),
+        "cookie_settings": cookie_settings_button(),
         "og_type": "article" if meta.get("date") else "website",
         "robots": "noindex, nofollow" if noindex else "index, follow",
         "structured_data": structured_data(meta, titles),

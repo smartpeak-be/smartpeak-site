@@ -526,3 +526,16 @@ html:not(.js) .quick-check-section { display: none; }
 .author-box { margin-top: 2.5rem; margin-bottom: 2.5rem; padding: 1.25rem 1.4rem; border-left: 4px solid var(--leaf); background: var(--paper); border-radius: 0 var(--radius-m) var(--radius-m) 0; }
 .author-box p { margin: 0; }
 .author-box p + p { margin-top: .4rem; color: var(--ink-soft); }
+
+/* Cookie banner (assets/js/consent.js): not modal, both choices equally prominent (GBA) */
+.cookie-banner { position: fixed; left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 50;
+  max-width: 640px; margin: 0 auto; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-m);
+  background: var(--surface); color: var(--ink); box-shadow: 0 12px 36px rgba(23, 33, 41, .22); }
+.cookie-banner p { margin: 0 0 .75rem; font-size: .95rem; }
+.cookie-banner .cookie-banner-title { margin-bottom: .35rem; font-size: 1.05rem; font-weight: 700; }
+.cookie-banner a { color: var(--lagoon-deep); }
+.cookie-banner-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.cookie-banner-actions .button { flex: 1 1 9rem; min-height: 2.75rem; }
+body.has-cookie-banner .call-fab { display: none; }
+.link-button { padding: .5rem 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; min-height: 44px; }
+@media print { .cookie-banner { display: none; } }
