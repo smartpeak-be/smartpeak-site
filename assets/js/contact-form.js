@@ -61,6 +61,7 @@ if (form) {
       form.querySelectorAll(".field, .form-actions, .form-note").forEach((el) => { el.hidden = true; });
       setStatus("ok", `<strong>Bedankt, ${data.name.split(" ")[0].replace(/[<>&]/g, "")}.</strong> We hebben je bericht goed ontvangen en nemen zo snel mogelijk contact met je op.`);
       form.querySelector(".form-status").focus();
+      document.dispatchEvent(new CustomEvent("sp:lead", { detail: { bron: "contactformulier" } }));
     } catch (error) {
       console.warn("Contactformulier versturen mislukt", error);
       const mail = encodeURIComponent(data.subject);
