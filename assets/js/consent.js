@@ -42,6 +42,7 @@
 
   let loaded = false;
   const startAnalytics = () => {
+    window[`ga-disable-${id}`] = false;
     gtag("consent", "update", { analytics_storage: "granted" });
     if (loaded) return;
     loaded = true;
@@ -68,6 +69,8 @@
   };
   const stopAnalytics = () => {
     gtag("consent", "update", { analytics_storage: "denied" });
+    // gtag.js may already be loaded on this page: also stop it sending cookieless pings.
+    window[`ga-disable-${id}`] = true;
     removeAnalyticsCookies();
   };
 
