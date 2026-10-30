@@ -147,6 +147,13 @@
     document.addEventListener("sp:lead", (event) => {
       track("generate_lead", { lead_source: (event.detail && event.detail.bron) || "onbekend" });
     });
+    // Verbruiksanalyse (widget from battery-roi-tool): how often it is used, never the data itself.
+    // Separate event names, so they show up in the Events report without custom dimensions.
+    document.addEventListener("sp:analysis", (event) => {
+      const detail = event.detail || {};
+      if (detail.stap === "bestand") track("verbruiksanalyse_bestand");
+      else if (detail.stap === "resultaat") track(detail.met_grootte ? "verbruiksanalyse_resultaat" : "verbruiksanalyse_geen_grootte");
+    });
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
