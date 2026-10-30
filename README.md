@@ -66,7 +66,7 @@ Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het jui
 - De meet-ID staat in `site.json` onder `analytics.ga4_id` (`G-…`). Leeg betekent: geen banner, geen script, niets wordt geladen. De build weigert een ID die niet op `G-` en hoofdletters/cijfers lijkt.
 - Enkel op het echte domein: de testversie op github.io stuurt nooit bezoeken door.
 - `assets/js/consent.js` vraagt toestemming (Weigeren en Aanvaarden even groot, niet modaal) en laadt Google pas na "Aanvaarden" (basis-Consent Mode v2; advertenties altijd geweigerd). De keuze staat in `localStorage` (`sp-cookiekeuze`), zes maanden geldig. De knop "Cookie-instellingen" onderaan elke pagina laat de keuze wijzigen; intrekken wist de `_ga`-cookies.
-- Gemeten bovenop de standaard paginaweergaven: `telefoon_klik`, `mail_klik` en `generate_lead` (contactformulier, via het event `sp:lead`).
+- Gemeten bovenop de standaard paginaweergaven: `telefoon_klik`, `mail_klik`, `generate_lead` (contactformulier en contactaanvraag na de verbruiksanalyse, via het event `sp:lead`, met `lead_source`) en het gebruik van de verbruiksanalyse via het event `sp:analysis`: `verbruiksanalyse_bestand` (CSV opgeladen), `verbruiksanalyse_resultaat` (resultaat met batterijgrootte) en `verbruiksanalyse_geen_grootte`. Nooit verbruiksgegevens of bedragen.
 - In Google Analytics zelf in te stellen (anders klopt `content/pages/cookies.html` niet meer): gegevensbewaring 14 maanden, Google Signals uit, geen koppeling met Google Ads. Markeer `generate_lead` als belangrijke gebeurtenis en koppel Search Console.
 - Verandert er iets aan de cookies of instellingen, pas dan `content/pages/cookies.html` en de privacyverklaring mee aan, en verhoog `VERSION` in `consent.js` als iedereen opnieuw moet kiezen.
 
