@@ -34,7 +34,7 @@ Schrijven doe je zelf, zodat de site één stem houdt. Kleine wijzigingen doe je
 ## Inhoudelijke regels
 
 - Beloof nooit een terugverdientijd en noem geen prijzen van SmartPeak-installaties in artikels of hulpgidsen. Bedragen uit officiële bronnen (bijvoorbeeld het besparingspotentieel volgens de CREG) mogen wel, met bron. Enige uitzondering: de richtprijzen in `content/artikels/wat-kost-een-thuisbatterij.html` (gemiddelden van Kevin, inclusief 21% btw). Pas ze enkel aan met zijn cijfers en zet de datum mee.
-- Het plaatsbezoek is gratis en vrijblijvend.
+- Zet het plaatsbezoek niet in de verf: geen "gratis plaatsbezoek" in oproepen, knoppen of telkens opnieuw in teksten. We komen langs wanneer een plaatsing concreet wordt, en dat beoordelen we zelf. Dat we langskomen voor we een offerte maken, mag je wel uitleggen waar het over de werkwijze gaat.
 - Sigenergy mag prominent aanwezig zijn, maar is nooit "onze voorkeur".
 - Elke feitelijke bewering heeft een bron, liefst officieel (Fluvius, Vlaamse Nutsregulator, Synergrid, Vlaanderen.be, de fabrikant). Wat enkel een derde partij zegt, staat er als "volgens …".
 - Geen stockfoto's. Gebruik infographics, officiële productbeelden met bronvermelding of eigen installatiefoto's met toestemming van de klant.
