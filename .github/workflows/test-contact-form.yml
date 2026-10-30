@@ -36,4 +36,5 @@ jobs:
           git add content/contact-form-test.log
           git diff --cached --quiet && exit 0
           git commit -m "Website forms test log"
-          git pull --rebase origin main && git push
+          # Store the log on the branch the test ran for (main or a feature branch).
+          git pull --rebase origin "${{ github.ref_name }}" && git push origin "HEAD:${{ github.ref_name }}"

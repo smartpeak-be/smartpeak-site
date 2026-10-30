@@ -1,7 +1,8 @@
 """Check the embedded verbruiksanalyse on the published site without creating a lead.
 
-Loads /batterij-iets-voor-mij/, waits for the widget, loads the Fluvius test file, fills in
-step 2 and stops before submitting. Also checks that the product list loads from Firestore.
+Loads /batterij-iets-voor-mij/, waits for the widget, loads the Fluvius test file, shows the
+result (calculated in the browser), fills in the contact form and stops before submitting.
+Also checks that the product list loads from Firestore once a result is shown.
 Run via .github/workflows/e2e-lead-live.yml (mode embed-check).
 """
 import sys
@@ -30,19 +31,20 @@ def main():
             page.wait_for_selector("#smartpeak-analyse.spa", timeout=15000)
             mount = page.locator("#smartpeak-analyse")
             mount.screenshot(path=OUT / "embed-1-start.png")
+            page.set_input_files("#smartpeak-analyse [data-file]", CSV)
+            page.wait_for_selector("#smartpeak-analyse [data-calc]:not([disabled])", timeout=15000)
+            page.fill("#smartpeak-analyse [data-price]", "0,39")
+            mount.screenshot(path=OUT / "embed-2-geladen.png")
             with page.expect_response(lambda r: "config/products" in r.url, timeout=15000) as products:
-                page.set_input_files("#smartpeak-analyse [data-file]", CSV)
-            page.wait_for_selector('#smartpeak-analyse [data-next="2"]:not([disabled])', timeout=15000)
+                page.click("#smartpeak-analyse [data-calc]")
+            page.wait_for_selector('#smartpeak-analyse [data-step="2"]:not([hidden])', timeout=15000)
             assert products.value.ok, f"config/products returned {products.value.status}"
             page.wait_for_timeout(3000)  # let the product sheet load too
-            mount.screenshot(path=OUT / "embed-2-geladen.png")
-            page.click('#smartpeak-analyse [data-next="2"]')
+            mount.screenshot(path=OUT / "embed-3-resultaat.png")
             page.fill("#smartpeak-analyse [data-name]", "Controle zonder verzenden")
             page.fill("#smartpeak-analyse [data-email]", "controle@example.com")
-            page.click('#smartpeak-analyse [data-next="3"]')
-            page.wait_for_selector('#smartpeak-analyse [data-step="3"]:not([hidden])')
-            mount.screenshot(path=OUT / "embed-3-optioneel.png")
-            log.append("RESULT: widget works up to the submit button (nothing was sent)")
+            page.check("#smartpeak-analyse [data-consent]")
+            log.append("RESULT: widget shows a result and works up to the contact button (nothing was sent)")
             ok = True
         except Exception as error:
             log.append(f"RESULT: FAILED: {error}")

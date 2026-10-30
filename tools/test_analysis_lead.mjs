@@ -78,6 +78,23 @@ for (const { label, input, expectResult } of cases) {
   console.log(`OK ${label}: lead ${leadId}, result fields: ${result}`);
 }
 
+// A visitor who asks for contact after the analysis: hot lead and a notification to Kevin and Ruben.
+{
+  const { leadId } = await submitLeadAnalysis(
+    { csvText: syntheticYearCsv(), name: "Test Contact", email: "contact@example.com", phone: "0470 12 34 56",
+      pricePerKwh: 0.39, requestContact: true, source: "smartpeak.be/batterij-iets-voor-mij/" },
+    { baseUrl, configs, resultPageUrl },
+  );
+  const lead = await read(`leads/${leadId}`);
+  assert.equal(lead.status.stringValue, "hot_lead");
+  assert.ok(lead.hotLeadAt.timestampValue, "hotLeadAt set");
+  assert.match(lead.notes.stringValue, /Telefoon: 0470 12 34 56/);
+  const contact = await read(`mail/lead_contact_${leadId}`);
+  assert.deepEqual(contact.to.arrayValue.values.map((v) => v.stringValue), ["kevin@smartpeak.be", "ruben@smartpeak.be"]);
+  assert.equal((await read(`mail/lead_result_${leadId}`)).to.stringValue, "contact@example.com");
+  console.log(`OK contact request: lead ${leadId} is hot, contact and result mail queued`);
+}
+
 // A result mail to another address than the lead's must still be refused.
 const root = "projects/demo-smartpeak/databases/(default)/documents";
 const commit = (writes) => fetch(`${baseUrl}:commit`, {
