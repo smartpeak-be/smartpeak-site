@@ -9,6 +9,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/back-up-opties-w640.webp"
  },
+ "/assets/img/grafieken/batterij-capaciteit-vermogen.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/batterij-capaciteit-vermogen-w640.webp"
+ },
  "/assets/img/grafieken/batterijgrootte-vlaanderen.webp": {
   "width": 1600,
   "height": 900,
@@ -29,6 +34,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/energiecontracten-prijsgroep-w640.webp"
  },
+ "/assets/img/grafieken/frequentie-50-hz.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/frequentie-50-hz-w640.webp"
+ },
  "/assets/img/grafieken/groenestroomcertificaten-looptijd.webp": {
   "width": 1600,
   "height": 900,
@@ -48,6 +58,11 @@
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/netspanning-zonnige-dag-w640.webp"
+ },
+ "/assets/img/grafieken/omvormer-zonnige-dag.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/omvormer-zonnige-dag-w640.webp"
  },
  "/assets/img/grafieken/panelen-omvormer-levensduur.webp": {
   "width": 1600,
@@ -93,6 +108,11 @@
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/thuisbatterij-bijplaatsen-woning-3-w640.webp"
+ },
+ "/assets/img/grafieken/zelfverbruik-of-injectie.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/zelfverbruik-of-injectie-w640.webp"
  },
  "/assets/img/grafieken/zendure-modus-kiezen.webp": {
   "width": 1600,

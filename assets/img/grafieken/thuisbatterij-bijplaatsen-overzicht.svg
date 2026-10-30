@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst</text>
-<text x="150" y="128" font-size="27" fill="#4b5661">Wat de batterij deed tussen de plaatsing en half oktober 2026</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Wat de batterij deed tussen de plaatsing en 18 oktober 2026</text>
 <rect x="150" y="190" width="420" height="600" rx="22" fill="#e9f8ef"/>
 <text x="360.0" y="260.0" font-size="34" fill="#1f272e" font-weight="650" text-anchor="middle">Woning 1</text>
 <text x="360.0" y="298.0" font-size="22" fill="#4b5661" text-anchor="middle">op de bestaande hybride omvormer</text>

@@ -27,6 +27,6 @@
 <text x="185.0" y="780.0" font-size="22" fill="#4b5661">extra panelen enkel op een aparte omvormer, als nieuwe installatie</text>
 <rect x="1150" y="722" width="270" height="52" rx="26" fill="#ffffff" stroke="#c2412d" stroke-width="3"/>
 <text x="1285.0" y="757.0" font-size="24" fill="#c2412d" font-weight="650" text-anchor="middle">niet</text>
-<text x="150.0" y="850.0" font-size="21" fill="#4b5661">Bron: Fluvius, aanpassingen aan je installatie zonnepanelen en toelichting PV-installatie (versie 2.0); AC-gekoppelde</text>
-<text x="150.0" y="878.0" font-size="21" fill="#4b5661">batterij: Elektriciteitshuis (de regels van Fluvius zeggen daar niets over). Elke wijziging meld je in Mijn Fluvius.</text>
+<text x="150.0" y="850.0" font-size="21" fill="#4b5661">Bron: Fluvius, aanpassingen aan je installatie zonnepanelen en toelichting PV-installatie (versie 2.0). De regels van Fluvius</text>
+<text x="150.0" y="878.0" font-size="21" fill="#4b5661">zeggen niets specifieks over een AC-gekoppelde batterij. Elke wijziging meld je in Mijn Fluvius.</text>
 </svg>
