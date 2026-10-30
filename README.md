@@ -44,7 +44,7 @@ Elk inhoudsbestand begint met een meta-blok:
 
 `section` zet een pagina automatisch in het overzicht via `{{list_<section>}}` (bv. `{{list_oplossingen}}`, `{{list_hulp}}`). Artikels hebben `date` en optioneel `image` en `legacy_path` (oude WordPress-URL die doorverwijst).
 
-Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{brand_logos}}`, `{{article_list}}`, `{{realisaties}}`, `{{reviews}}`, `{{reviews_short}}`.
+Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{brand_logos}}`, `{{article_list}}`, `{{realisaties}}`, `{{realisaties_<merk>}}` (blok "Uit onze realisaties" onderaan een productpagina, bv. `{{realisaties_sigenergy}}`), `{{reviews}}`, `{{reviews_short}}`.
 
 Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het juiste voorvoegsel voor, zodat de site ook werkt op `smartpeak-be.github.io/smartpeak-site/`.
 
