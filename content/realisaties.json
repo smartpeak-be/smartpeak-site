@@ -1,5 +1,32 @@
 [
   {
+    "title": "Sigenergy SigenStor, eenfasig",
+    "text": "Energy Controller 4.6 SP met twee batterijmodules BAT 10.0, samen ruim 17,5 kWh bruikbare opslag. De controller levert 4,6 kW en tot 5 kVA, het standaard toegelaten maximum op een eenfasige aansluiting.",
+    "image": "/assets/img/site/installatie-sigenergy-sigenstor.webp",
+    "alt": "Witte Sigenergy SigenStor-stack in een garage: de Energy Controller bovenaan met daaronder twee batterijmodules, op verstelbare voetjes",
+    "facts": [
+      "Sigenergy",
+      "17,5 kWh bruikbaar",
+      "Eenfasig, 5 kVA"
+    ],
+    "link": "/oplossingen/sigenergy-sigenstor/",
+    "link_label": "Meer over SigenStor"
+  },
+  {
+    "title": "Drie Zendure SolarFlow 2400 AC+ naast elkaar",
+    "text": "Drie stacks, elk een SolarFlow 2400 AC+ met een AB3000L-batterij, één per fase op een driefasige aansluiting met nulgeleider (3×400 V). Samen zo'n 16 kWh opslag en 7,2 kW vermogen.",
+    "image": "/assets/img/site/installatie-zendure-2400-ac-plus-drie-stacks.webp",
+    "alt": "Drie Zendure SolarFlow 2400 AC+-toestellen met elk een AB3000L-batterij eronder, op de vloer tegen een witgeschilderde bakstenen muur",
+    "facts": [
+      "Zendure",
+      "ca. 16 kWh",
+      "7,2 kW"
+    ],
+    "wide": true,
+    "link": "/oplossingen/zendure-solarflow/",
+    "link_label": "Meer over SolarFlow AC+"
+  },
+  {
     "title": "Zendure SolarFlow 4000 Mix Pro",
     "text": "Batterij en omvormer in één toestel, met 8 kWh opslag en tot 4 kW vermogen. De 12 zonnepanelen (4,92 kWp) zijn er rechtstreeks op aangesloten.",
     "image": "/assets/img/site/installatie-zendure-mix-pro.webp",

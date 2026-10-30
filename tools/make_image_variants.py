@@ -34,7 +34,7 @@ def main():
     for path in sorted(IMG.rglob("*")):
         if path.suffix.lower() not in {".webp", ".jpg", ".jpeg", ".png"} or path.name in SKIP:
             continue
-        if path.stem.endswith(f"-w{VARIANT_WIDTH}") or path.parent.name in ("og", "social"):
+        if path.stem.endswith(f"-w{VARIANT_WIDTH}") or {"og", "social"} & set(path.relative_to(IMG).parts[:-1]):
             continue
         with Image.open(path) as im:
             width, height = im.size
