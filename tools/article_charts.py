@@ -483,6 +483,127 @@ def contract_shares_creg():
     return svg(body, "De meeste gezinnen zitten bij een duur product", "Aandeel van de energiecontracten van gezinnen per prijsgroep, België")
 
 
+def gsc_what_is_allowed():
+    """What you may change while the installation still receives groenestroomcertificaten (Fluvius rules)."""
+    ok_fill, ok_line = "#e9f8ef", "#bfe9cf"
+    cond_fill, cond_line = "#e7f5f7", "#b5dde3"
+    no_fill, no_line = "#fdecea", "#f3c7c0"
+    rows = [
+        ("Thuisbatterij AC-gekoppeld", "mag", "batterij met eigen omvormer, niet tussen omvormer en groenestroomteller", ok_fill, ok_line, LEAF_DEEP),
+        ("Hybride omvormer + batterij", "mag", "met bidirectionele groenestroomteller en nieuwe AREI-keuring", ok_fill, ok_line, LEAF_DEEP),
+        ("Omvormer vervangen, zonder batterij", "enkel bij defect", "nieuwe omvormer op de C10/26-lijst, max. 5 kVA (1-fase) of 10 kVA (3-fase)", cond_fill, cond_line, LAGOON_DEEP),
+        ("Defecte panelen vervangen", "onder voorwaarden", "één op één, gelijkaardig paneel, met bewijs van het defect", cond_fill, cond_line, LAGOON_DEEP),
+        ("Panelen bijleggen", "niet", "extra panelen enkel op een aparte omvormer, als nieuwe installatie", no_fill, no_line, RED),
+    ]
+    body = ""
+    y = 180
+    for label, verdict, note, fill, line, color in rows:
+        body += f'<rect x="150" y="{y}" width="1300" height="112" rx="18" fill="{fill}" stroke="{line}" stroke-width="3"/>\n'
+        body += text(185, y + 48, label, 29, INK, 650)
+        body += text(185, y + 88, note, 22, SOFT)
+        body += f'<rect x="1150" y="{y + 30}" width="270" height="52" rx="26" fill="#ffffff" stroke="{color}" stroke-width="3"/>\n'
+        body += text(1285, y + 65, verdict, 24, color, 650, "middle")
+        y += 128
+    body += text(150, 850, "Bron: Fluvius, aanpassingen aan je installatie zonnepanelen en toelichting PV-installatie (versie 2.0); AC-gekoppelde", 21)
+    body += text(150, 878, "batterij: Elektriciteitshuis (de regels van Fluvius zeggen daar niets over). Elke wijziging meld je in Mijn Fluvius.", 21)
+    return svg(body, "Groenestroomcertificaten: wat mag je veranderen?", "Wat er mag aan een installatie die nog groenestroomcertificaten krijgt")
+
+
+def gsc_end_years():
+    """Until when certificates run, per period of commissioning (Vlaanderen.be)."""
+    groups = [
+        ("2006 tot juli 2012", "20 jaar", 2006, 2012.58, 20),
+        ("augustus tot december 2012", "10 jaar", 2012.58, 2013, 10),
+        ("2013 tot maart 2018", "15 jaar", 2013, 2018.25, 15),
+        ("april 2018 tot 2020", "10 jaar", 2018.25, 2020.99, 10),
+        ("januari tot 16 juli 2021", "max. 12 jaar", 2021, 2021.54, 12),
+    ]
+    x0, x1, start, end = 560, 1500, 2022, 2034
+    x_of = lambda yr: x0 + (x1 - x0) * (yr - start) / (end - start)
+    body = ""
+    for yr in range(start, end + 1, 2):
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="190" y2="760" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x, 795, str(yr), 23, SOFT, None, "middle")
+    now = x_of(2026.83)
+    body += f'<line x1="{now:.1f}" x2="{now:.1f}" y1="180" y2="760" stroke="{RED}" stroke-width="3" stroke-dasharray="10 8"/>\n'
+    body += text(now, 172, "nu", 22, RED, 650, "middle")
+    y = 215
+    for label, dur, a, b, years in groups:
+        ea, eb = a + years, b + years
+        xa, xb = max(x_of(ea), x0), x_of(eb)
+        ended = eb <= 2026.83
+        color = "#c9d5d1" if ended else ("#b5dde3" if a >= 2013 else LEAF)
+        body += text(150, y + 30, label, 25, INK, 650)
+        ended = (b + years) <= 2026.83
+        big_only = a >= 2013
+        span = f"{int(a + years)} tot {int(b + years)}" if int(a + years) != int(b + years) else f"{int(b + years)}"
+        status = "al afgelopen" if ended else (f"tot {int(b + years)}, enkel nog boven 10 kW" if big_only else f"loopt af {span}")
+        body += text(150, y + 62, f"steun {dur}: {status}", 21, SOFT if ended or big_only else LEAF_DEEP, 600)
+        if xb > x0:
+            body += f'<rect x="{xa:.1f}" y="{y + 12}" width="{max(xb - xa, 8):.1f}" height="44" rx="10" fill="{color}"/>\n'
+        y += 108
+    body += text(150, 836, "Installaties tot 10 kW (de meeste woningen) van na 2012 krijgen vandaag geen certificaten: de bandingfactor is sinds 1 augustus 2022 nul,", 21)
+    body += text(150, 862, "en na 1 juli 2015 is er geen categorie meer. Installaties van na 16 juli 2021 krijgen geen certificaten.", 21)
+    body += text(150, 888, "Bron: Vlaanderen.be, groenestroomcertificaten voor zonnepanelen en overzicht bandingfactor zonnepanelen.", 21)
+    return svg(body, "Tot wanneer krijg je groenestroomcertificaten?", "Looptijd van de steun volgens de datum waarop je installatie in dienst kwam")
+
+
+def panel_degradation():
+    """Remaining power of crystalline panels by age: NREL median 0,5 %/jaar, spread 0,4 to 0,9 %/jaar."""
+    x0, x1, ytop, ybot = 200, 1520, 190, 740
+    years = 30
+    x_of = lambda a: x0 + (x1 - x0) * a / years
+    y_of = lambda pct: ybot - (ybot - ytop) * (pct - 70) / 30
+    body = axes(x0, x1, y_of, [70, 75, 80, 85, 90, 95, 100], "%")
+    for a in range(0, years + 1, 5):
+        body += text(x_of(a), 785, f"{a} jaar", 23, SOFT, None, "middle")
+    hi = [(a, 100 * (1 - 0.004) ** a) for a in range(years + 1)]
+    lo = [(a, 100 * (1 - 0.009) ** a) for a in range(years + 1)]
+    band = " ".join(f"{x_of(a):.1f},{y_of(v):.1f}" for a, v in hi) + " " + " ".join(f"{x_of(a):.1f},{y_of(v):.1f}" for a, v in reversed(lo))
+    body += f'<polygon points="{band}" fill="{LEAF}" fill-opacity="0.18"/>\n'
+    mid = " ".join(f"{x_of(a):.1f},{y_of(100 * (1 - 0.005) ** a):.1f}" for a in range(years + 1))
+    body += f'<polyline points="{mid}" fill="none" stroke="{LEAF_DEEP}" stroke-width="5"/>\n'
+    a = 16
+    v = 100 * (1 - 0.005) ** a
+    body += f'<circle cx="{x_of(a):.1f}" cy="{y_of(v):.1f}" r="10" fill="{LEAF_DEEP}"/>\n'
+    body += text(x_of(a) + 20, y_of(v) - 22, "paneel uit 2010: ± 92%", 25, INK, 650)
+    body += text(x_of(22), y_of(100 * (1 - 0.009) ** 22) + 50, "sneller of trager dan de mediaan", 22, LEAF_DEEP, 600, "middle")
+    body += text(150, 850, "Lijn: mediaan van 0,5% verlies per jaar. Band: 0,4 tot 0,9% per jaar. Een individueel paneel kan daarbuiten vallen, bijvoorbeeld door een defect.", 21)
+    body += text(150, 878, "Bron: NREL, Jordan en Kurtz (mediaan 0,5%) en Jordan e.a. 2016 (gemiddelde 0,8 tot 0,9%); ondergrens 0,4%: garantie JinkoSolar Tiger Neo.", 21)
+    return svg(body, "Hoeveel vermogen heeft een zonnepaneel nog?", "Resterend vermogen van kristallijne zonnepanelen naargelang hun leeftijd")
+
+
+def panels_vs_inverter():
+    """Typical life of panels versus string inverters."""
+    x0, x1 = 420, 1500
+    x_of = lambda yr: x0 + (x1 - x0) * yr / 30
+    body = ""
+    for yr in range(0, 31, 5):
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="210" y2="640" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x, 680, f"{yr} jaar", 23, SOFT, None, "middle")
+    rows = [
+        ("Zonnepanelen", "gaan volgens pv magazine 25 tot 30 jaar of langer mee", 25, 30, LEAF, (0, 25)),
+        ("Omvormer", "gaat volgens pv magazine meestal 10 tot 15 jaar mee", 10, 15, LAGOON, (0, 10)),
+    ]
+    y = 250
+    for label, sub, a, b, color, solid in rows:
+        body += text(150, y + 40, label, 30, INK, 650)
+        body += text(150, y + 76, "", 21)
+        if solid:
+            body += f'<rect x="{x_of(solid[0]):.1f}" y="{y}" width="{x_of(solid[1]) - x_of(solid[0]):.1f}" height="60" rx="12" fill="{color}"/>\n'
+            body += f'<rect x="{x_of(a):.1f}" y="{y}" width="{x_of(b) - x_of(a):.1f}" height="60" rx="12" fill="{color}" fill-opacity="0.35"/>\n'
+        else:
+            body += f'<rect x="{x_of(a):.1f}" y="{y}" width="{x_of(b) - x_of(a):.1f}" height="60" rx="12" fill="{color}"/>\n'
+        body += text(x_of(0) + 20, y + 106, sub, 23, INK, 600)
+        y += 200
+    body += text(150, 760, "Tijdens het leven van je panelen vervang je de omvormer vaak minstens één keer:", 25, INK, 600)
+    body += text(150, 796, "een goed moment om aan een batterij te denken.", 25, INK, 600)
+    body += text(150, 868, "Bron: pv magazine (6 augustus 2025), met cijfers van EnergySage voor string-omvormers.", 21)
+    return svg(body, "Panelen gaan langer mee dan de omvormer", "Typische levensduur van de onderdelen van een zonne-installatie")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -506,3 +627,7 @@ if __name__ == "__main__":
     write("thuisbatterij-bijplaatsen-woning-3", ac_case_months("Woning 3: verbruik dat de zon niet rechtstreeks dekte", CASE3_MONTHS, "11 mei"))
     write("thuisbatterij-bijplaatsen-overzicht", case_overview())
     write("energiecontracten-prijsgroep", contract_shares_creg())
+    write("groenestroomcertificaten-wat-mag", gsc_what_is_allowed())
+    write("groenestroomcertificaten-looptijd", gsc_end_years())
+    write("zonnepanelen-vermogen-leeftijd", panel_degradation())
+    write("panelen-omvormer-levensduur", panels_vs_inverter())

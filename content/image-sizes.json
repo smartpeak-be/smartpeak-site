@@ -29,6 +29,16 @@
   "height": 900,
   "variant": "/assets/img/grafieken/energiecontracten-prijsgroep-w640.webp"
  },
+ "/assets/img/grafieken/groenestroomcertificaten-looptijd.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/groenestroomcertificaten-looptijd-w640.webp"
+ },
+ "/assets/img/grafieken/groenestroomcertificaten-wat-mag.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/groenestroomcertificaten-wat-mag-w640.webp"
+ },
  "/assets/img/grafieken/maandpieken-facturatiepiek.webp": {
   "width": 1600,
   "height": 900,
@@ -38,6 +48,11 @@
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/netspanning-zonnige-dag-w640.webp"
+ },
+ "/assets/img/grafieken/panelen-omvormer-levensduur.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/panelen-omvormer-levensduur-w640.webp"
  },
  "/assets/img/grafieken/sigen-instellingen.webp": {
   "width": 1600,
@@ -93,6 +108,11 @@
   "width": 1600,
   "height": 900,
   "variant": "/assets/img/grafieken/zendure-zelfverbruik-w640.webp"
+ },
+ "/assets/img/grafieken/zonnepanelen-vermogen-leeftijd.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/zonnepanelen-vermogen-leeftijd-w640.webp"
  },
  "/assets/img/producten/goodwe-et-g2.webp": {
   "width": 900,

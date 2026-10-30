@@ -1,0 +1,75 @@
+<!--meta
+{
+  "title": "Zijn mijn zonnepanelen versleten?",
+  "description": "Zonnepanelen verliezen typisch zo'n 0,5% vermogen per jaar. Reken uit hoeveel jouw panelen nog leveren en wanneer vervangen wel zinvol is.",
+  "date": "2026-10-30",
+  "image": "/assets/img/grafieken/zonnepanelen-vermogen-leeftijd.webp",
+  "image_alt": "Grafiek van het resterende vermogen van kristallijne zonnepanelen naargelang hun leeftijd. De lijn toont het mediane verlies van 0,5% per jaar, een band toont 0,4 tot 0,9% per jaar. Een paneel uit 2010 heeft na 16 jaar nog ongeveer 92% van zijn vermogen. Na 30 jaar ligt de band tussen ongeveer 76% en 89%."
+}
+-->
+<p>Liggen je zonnepanelen er al sinds 2010 of 2012, dan vraag je je misschien af of ze nog genoeg opbrengen. Meestal wel. Zonnepanelen slijten wel, maar traag: volgens NREL verliest de helft van de panelen minder dan een half procent vermogen per jaar. Een paneel uit 2010 levert vandaag dus typisch nog zo'n 92% van wat het nieuw deed. Vervangen omdat ze "oud" zijn, is daarom zelden nodig. Defecten zijn een ander verhaal.</p>
+
+<h2>Hoeveel vermogen verliezen zonnepanelen per jaar?</h2>
+<p>Het Amerikaanse onderzoekslabo NREL bundelde bijna 2.000 degradatiecijfers uit 40 jaar praktijk: de <a href="https://research-hub.nrel.gov/en/publications/photovoltaic-degradation-rates-an-analytical-review-2/" rel="noopener">mediaan ligt op 0,5% verlies per jaar</a>. In een latere, grotere studie met meer dan 11.000 cijfers lag de mediaan voor kristallijne panelen op 0,5 tot 0,6% en het gemiddelde op <a href="https://www.osti.gov/biblio/1259256" rel="noopener">0,8 tot 0,9% per jaar</a>, omdat een kleine groep panelen veel sneller achteruitgaat. Fabrikanten beloven voor recente panelen minder verlies: JinkoSolar garandeert voor zijn Tiger Neo-panelen <a href="https://www.jinkosolar.com/2023/PDF/0323.pdf" rel="noopener">hoogstens 1% verlies in het eerste jaar en 0,4% per jaar daarna</a>, over 30 jaar.</p>
+
+<h2>Reken het uit voor jouw panelen</h2>
+<p>Kies het jaar waarin je panelen geplaatst werden. Ken je het vermogen van je installatie in kWp, vul het dan ook in. Je ziet meteen een schatting, niets wordt verstuurd.</p>
+<form class="panel-age" novalidate>
+<div class="panel-age-fields">
+<label>Jaar van plaatsing
+<select name="jaar" required><option value="">Kies een jaar</option></select>
+</label>
+<label>Vermogen bij plaatsing <span>(optioneel, in kWp)</span>
+<input type="text" name="kwp" inputmode="decimal" placeholder="bv. 4,5">
+</label>
+</div>
+<div><button class="button" type="submit">Bereken</button></div>
+<div class="panel-age-result" aria-live="polite" hidden></div>
+</form>
+<p>We rekenen met de mediaan van 0,5% per jaar. Als bandbreedte tonen we 0,4% per jaar, wat JinkoSolar garandeert voor een recent paneel, tot 0,9% per jaar, het gemiddelde volgens NREL. Een exact cijfer voor jouw panelen kan niemand geven zonder meting: het merk, de kwaliteit, de ligging en het weer spelen allemaal mee.</p>
+
+<h2>Waarom een bandbreedte en geen exact cijfer?</h2>
+<ul>
+<li><strong>Panelen verschillen.</strong> Ook binnen één merk en één jaar gaan sommige panelen sneller achteruit dan andere. Daarom ligt het gemiddelde hoger dan de mediaan.</li>
+<li><strong>Het startpunt verschilt.</strong> Een paneel haalt bij levering niet altijd exact het vermogen op het label. Volgens PV Tech lagen de monokristallijne panelen die Fraunhofer ISE in 2024 in het labo mat en die afweken van hun label, <a href="https://www.pv-tech.org/fraunhofer-ise-monocrystalline-modules-underperformed-1-2-2024" rel="noopener">gemiddeld 1,2% onder hun nominale vermogen</a>.</li>
+<li><strong>De meetmethode verschilt.</strong> Volgens het internationale onderzoeksprogramma IEA PVPS hangt het berekende verlies van een installatie af van <a href="https://iea-pvps.org/wp-content/uploads/2021/04/IEA-PVPS-T13-22_2021-Assessment-of-Performance-Loss-Rate-of-PV-Power-Systems-executive-summary.pdf" rel="noopener">de rekenmethode, de kwaliteit van de meetgegevens en hoe sterk je ze filtert</a>.</li>
+</ul>
+
+<h2>Zo controleer je zelf of je panelen nog goed werken</h2>
+<ol>
+<li><strong>Vergelijk je jaarproductie met vorige jaren.</strong> Je groenestroomteller, je omvormer of de app van je installatie toont hoeveel kWh je panelen per jaar opwekten. Zo'n 5% minder over tien jaar is normaal. Een plotse daling van een jaar op het andere niet.</li>
+<li><strong>Houd rekening met het weer.</strong> Eén grijs jaar zegt weinig: de opbrengst kan van jaar tot jaar flink schommelen. Vergelijk liefst over meerdere jaren, of dezelfde maanden met elkaar.</li>
+<li><strong>Reken per kWp.</strong> Deel je jaarproductie door het vermogen van je installatie. Volgens Test-Aankoop rekent men in België met <a href="https://www.test-aankoop.be/woning-energie/hernieuwbare-energie/nieuws/zonnepanelen-blijven-rendabel" rel="noopener">ongeveer 900 kWh per kWp per jaar bij een gunstige oriëntatie</a>. Ligt je dak anders, dan is minder normaal. Wat je mag verwachten voor jouw dak, schat je met de gratis tool <a href="https://re.jrc.ec.europa.eu/pvg_tools/nl/" rel="noopener">PVGIS</a> van de Europese Commissie.</li>
+<li><strong>Kijk naar je omvormer.</strong> Foutmeldingen, een omvormer die vaak uitvalt of een productie die halverwege de dag wegvalt, wijzen eerder op een probleem met de omvormer of het net dan op versleten panelen. Lees ook waarom <a href="/artikels/omvormer-valt-uit-zonnige-dagen/">een omvormer uitvalt op zonnige dagen</a>.</li>
+</ol>
+
+<h2>Wanneer is vervangen wel zinvol?</h2>
+<ul>
+<li><strong>Bij een defect.</strong> Een gebarsten glasplaat, schade na storm of hagel, of een productiefout. Een beschadigd paneel kan ook de andere panelen op dezelfde string afremmen.</li>
+<li><strong>Bij je omvormer.</strong> Je omvormer gaat meestal minder lang mee dan je panelen. Moet hij vervangen worden, dan is dat vaak het moment om ook aan opslag te denken. Lees <a href="/artikels/omvormer-vervangen-wanneer/">omvormer vervangen: wanneer en wat mag?</a></li>
+<li><strong>Als je meer stroom nodig hebt</strong>, bijvoorbeeld voor een elektrische wagen of een warmtepomp. Nieuwe panelen halen op hetzelfde dak meer vermogen. Krijg je nog groenestroomcertificaten, dan mag je wel geen panelen bijleggen of vervangen zonder defect.</li>
+</ul>
+
+<h2>Groenestroomcertificaten: let op</h2>
+<p>Krijgt je installatie nog groenestroomcertificaten, dan mag je panelen enkel vervangen bij een echt defect, één op één door een gelijkaardig paneel. Fluvius zegt uitdrukkelijk dat <a href="https://fluvius.be/sites/fluvius/files/2024-11/toelichting-distributienetbeheerder-fluvius.pdf" rel="noopener">een gedaald rendement in je productiecijfers niet volstaat als bewijs</a>. Panelen die gewoon ouder worden, vervang je dus pas als je certificaten afgelopen zijn. Wat er intussen wel mag, zoals een thuisbatterij, lees je in <a href="/artikels/groenestroomcertificaten-thuisbatterij/">groenestroomcertificaten en een thuisbatterij</a>.</p>
+
+<h2>En je oude panelen?</h2>
+<p>Afgedankte zonnepanelen worden in België ingezameld door PV Cycle. Volgens Vlaanderen.be is <a href="https://www.vlaanderen.be/natuur-en-milieu/afval/recyclage-van-afgedankte-zonnepanelen" rel="noopener">inzameling kosteloos</a>, ook voor oudere installaties, zolang de panelen volledig zijn en niet vermengd met ander afval. Volgens <a href="https://www.pvcycle.be" rel="noopener">PV Cycle</a> breng je minder dan 40 panelen naar een inzamelpunt, en halen ze grotere hoeveelheden op.</p>
+
+<h2>Wat betekent dat voor een thuisbatterij?</h2>
+<p>Panelen die nog 90% leveren, wekken nog altijd veel stroom op, vaak meer dan je overdag zelf gebruikt. Dat overschot kan een thuisbatterij opvangen voor de avond. <a href="/batterij-iets-voor-mij/#analyse">Laad je verbruik op</a> en je ziet meteen hoeveel van je eigen zonne-energie je met een batterij zelf kan gebruiken.</p>
+
+<h3>Bronnen</h3>
+<ul>
+<li><a href="https://research-hub.nrel.gov/en/publications/photovoltaic-degradation-rates-an-analytical-review-2/" rel="noopener">NREL, Jordan en Kurtz, Photovoltaic Degradation Rates: An Analytical Review</a></li>
+<li><a href="https://www.osti.gov/biblio/1259256" rel="noopener">NREL, Jordan e.a., Compendium of Photovoltaic Degradation Rates (2016)</a></li>
+<li><a href="https://www.jinkosolar.com/2023/PDF/0323.pdf" rel="noopener">JinkoSolar, productwhitepaper Tiger Neo</a></li>
+<li><a href="https://www.pv-tech.org/fraunhofer-ise-monocrystalline-modules-underperformed-1-2-2024" rel="noopener">PV Tech, metingen van Fraunhofer ISE (12 maart 2025)</a></li>
+<li><a href="https://iea-pvps.org/wp-content/uploads/2021/04/IEA-PVPS-T13-22_2021-Assessment-of-Performance-Loss-Rate-of-PV-Power-Systems-executive-summary.pdf" rel="noopener">IEA PVPS, Assessment of Performance Loss Rate of PV Power Systems (2021)</a></li>
+<li><a href="https://www.test-aankoop.be/woning-energie/hernieuwbare-energie/nieuws/zonnepanelen-blijven-rendabel" rel="noopener">Test-Aankoop, rendement van zonnepanelen in België (30 juni 2025)</a></li>
+<li><a href="https://re.jrc.ec.europa.eu/pvg_tools/nl/" rel="noopener">Europese Commissie, PVGIS</a></li>
+<li><a href="https://fluvius.be/sites/fluvius/files/2024-11/toelichting-distributienetbeheerder-fluvius.pdf" rel="noopener">Fluvius, toelichting fotovoltaïsche PV-installatie, versie 2.0 (18 november 2024)</a></li>
+<li><a href="https://www.vlaanderen.be/natuur-en-milieu/afval/recyclage-van-afgedankte-zonnepanelen" rel="noopener">Vlaanderen.be, recyclage van afgedankte zonnepanelen</a></li>
+<li><a href="https://www.pvcycle.be" rel="noopener">PV Cycle Belgium</a></li>
+</ul>
+<script defer src="/assets/js/paneel-leeftijd.js"></script>

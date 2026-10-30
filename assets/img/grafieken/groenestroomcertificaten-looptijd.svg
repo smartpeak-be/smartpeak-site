@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Tot wanneer krijg je groenestroomcertificaten?</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Looptijd van de steun volgens de datum waarop je installatie in dienst kwam</text>
+<line x1="560.0" x2="560.0" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="560.0" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2022</text>
+<line x1="716.7" x2="716.7" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="716.7" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2024</text>
+<line x1="873.3" x2="873.3" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="873.3" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2026</text>
+<line x1="1030.0" x2="1030.0" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1030.0" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2028</text>
+<line x1="1186.7" x2="1186.7" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1186.7" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2030</text>
+<line x1="1343.3" x2="1343.3" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1343.3" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2032</text>
+<line x1="1500.0" x2="1500.0" y1="190" y2="760" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1500.0" y="795.0" font-size="23" fill="#4b5661" text-anchor="middle">2034</text>
+<line x1="938.3" x2="938.3" y1="180" y2="760" stroke="#c2412d" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="938.3" y="172.0" font-size="22" fill="#c2412d" font-weight="650" text-anchor="middle">nu</text>
+<text x="150.0" y="245.0" font-size="25" fill="#1f272e" font-weight="650">2006 tot juli 2012</text>
+<text x="150.0" y="277.0" font-size="21" fill="#0b7a42" font-weight="600">steun 20 jaar: loopt af 2026 tot 2032</text>
+<rect x="873.3" y="227" width="515.4" height="44" rx="10" fill="#17c15c"/>
+<text x="150.0" y="353.0" font-size="25" fill="#1f272e" font-weight="650">augustus tot december 2012</text>
+<text x="150.0" y="385.0" font-size="21" fill="#4b5661" font-weight="600">steun 10 jaar: al afgelopen</text>
+<rect x="605.4" y="335" width="32.9" height="44" rx="10" fill="#c9d5d1"/>
+<text x="150.0" y="461.0" font-size="25" fill="#1f272e" font-weight="650">2013 tot maart 2018</text>
+<text x="150.0" y="493.0" font-size="21" fill="#4b5661" font-weight="600">steun 15 jaar: tot 2033, enkel nog boven 10 kW</text>
+<rect x="1030.0" y="443" width="411.2" height="44" rx="10" fill="#b5dde3"/>
+<text x="150.0" y="569.0" font-size="25" fill="#1f272e" font-weight="650">april 2018 tot 2020</text>
+<text x="150.0" y="601.0" font-size="21" fill="#4b5661" font-weight="600">steun 10 jaar: tot 2030, enkel nog boven 10 kW</text>
+<rect x="1049.6" y="551" width="214.6" height="44" rx="10" fill="#b5dde3"/>
+<text x="150.0" y="677.0" font-size="25" fill="#1f272e" font-weight="650">januari tot 16 juli 2021</text>
+<text x="150.0" y="709.0" font-size="21" fill="#4b5661" font-weight="600">steun max. 12 jaar: tot 2033, enkel nog boven 10 kW</text>
+<rect x="1421.7" y="659" width="42.3" height="44" rx="10" fill="#b5dde3"/>
+<text x="150.0" y="836.0" font-size="21" fill="#4b5661">Installaties tot 10 kW (de meeste woningen) van na 2012 krijgen vandaag geen certificaten: de bandingfactor is sinds 1 augustus 2022 nul,</text>
+<text x="150.0" y="862.0" font-size="21" fill="#4b5661">en na 1 juli 2015 is er geen categorie meer. Installaties van na 16 juli 2021 krijgen geen certificaten.</text>
+<text x="150.0" y="888.0" font-size="21" fill="#4b5661">Bron: Vlaanderen.be, groenestroomcertificaten voor zonnepanelen en overzicht bandingfactor zonnepanelen.</text>
+</svg>

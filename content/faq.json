@@ -1,0 +1,44 @@
+[
+  {
+    "id": "groenestroomcertificaten-batterij",
+    "vraag": "Verlies ik mijn groenestroomcertificaten als ik een thuisbatterij plaats?",
+    "antwoord": "Niet als je het juist aanpakt. Een AC-gekoppelde batterij komt naast je bestaande installatie, zonder iets aan je omvormer of groenestroomteller te veranderen, en mag niet tussen omvormer en groenestroomteller hangen. Kies je een hybride omvormer met batterij, dan mag dat volgens Fluvius ook, met een bidirectionele groenestroomteller en een nieuwe keuring.",
+    "link": "/artikels/groenestroomcertificaten-thuisbatterij/",
+    "link_label": "Wat mag wel en niet?"
+  },
+  {
+    "id": "wachten-op-einde-certificaten",
+    "vraag": "Moet ik wachten tot mijn groenestroomcertificaten aflopen?",
+    "antwoord": "Nee. Zolang je certificaten lopen, mag je je panelen enkel vervangen bij een bewezen defect en mag je er geen bijleggen. Een thuisbatterij kan vandaag al, en die werkt verder als je na de certificaten je panelen vernieuwt. Let op: kleinere installaties van na 2012 krijgen vandaag geen certificaten meer.",
+    "link": "/artikels/groenestroomcertificaten-thuisbatterij/#tot-wanneer-krijg-je-certificaten",
+    "link_label": "Tot wanneer lopen ze?"
+  },
+  {
+    "id": "zonnepanelen-versleten",
+    "vraag": "Zijn mijn zonnepanelen van 2010 versleten?",
+    "antwoord": "Meestal niet. Zonnepanelen verliezen typisch zo'n 0,5% vermogen per jaar (de mediaan volgens NREL), dus panelen van 2010 leveren typisch nog ongeveer 92% van hun oorspronkelijke vermogen. Vervangen is vooral zinvol bij een defect.",
+    "link": "/artikels/zijn-mijn-zonnepanelen-versleten/",
+    "link_label": "Reken het uit voor jouw panelen"
+  },
+  {
+    "id": "omvormer-vervangen",
+    "vraag": "Hoe lang gaat een omvormer mee?",
+    "antwoord": "Een string-omvormer gaat volgens pv magazine meestal 10 tot 15 jaar mee, minder lang dan je panelen. Moet hij vervangen worden, dan kan een hybride omvormer met batterij een goede keuze zijn, ook met groenestroomcertificaten.",
+    "link": "/artikels/omvormer-vervangen-wanneer/",
+    "link_label": "Wanneer en wat mag?"
+  },
+  {
+    "id": "batterij-bij-bestaande-panelen",
+    "vraag": "Kan ik een thuisbatterij bij mijn bestaande zonnepanelen plaatsen?",
+    "antwoord": "Ja. Op een hybride omvormer, of als AC-gekoppelde batterij met een eigen omvormer naast je bestaande installatie. Welke weg past, hangt af van je omvormer, je aansluiting en je plannen.",
+    "link": "/artikels/thuisbatterij-bijplaatsen-bestaande-zonnepanelen/",
+    "link_label": "Bekijk drie woningen in cijfers"
+  },
+  {
+    "id": "hoe-groot",
+    "vraag": "Hoe groot moet mijn thuisbatterij zijn?",
+    "antwoord": "Dat hangt af van hoeveel zonnestroom je op het net zet en wanneer je verbruikt. Laad je verbruik van Mijn Fluvius op in onze verbruiksanalyse en je ziet meteen welke grootte zinvol is.",
+    "link": "/batterij-iets-voor-mij/#analyse",
+    "link_label": "Naar de verbruiksanalyse"
+  }
+]

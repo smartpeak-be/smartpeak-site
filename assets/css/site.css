@@ -566,3 +566,28 @@ html:not(.js) .quick-check-section { display: none; }
 body.has-cookie-banner .call-fab { display: none; }
 .link-button { padding: .5rem 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; min-height: 44px; }
 @media print { .cookie-banner { display: none; } }
+
+/* Veelgestelde vragen ({{faq}}) */
+.faq { display: grid; gap: .75rem; max-width: 48rem; }
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius-m); background: var(--surface); }
+.faq-item summary { cursor: pointer; padding: 1rem 1.25rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--leaf-deep); flex: none; }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item summary:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 2px; border-radius: var(--radius-m); }
+.faq-answer { padding: 0 1.25rem 1.1rem; color: var(--ink-soft); }
+.faq-answer p { margin: 0; }
+
+/* Rekentool resterend vermogen zonnepanelen (paneel-leeftijd.js) */
+.panel-age { display: grid; gap: 1rem; margin: 1.5rem 0 2rem; padding: clamp(1.25rem, 3vw, 1.75rem); border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--paper); }
+.panel-age-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: end; }
+.panel-age label { display: grid; gap: .35rem; font-weight: 600; }
+.panel-age label span { font-weight: 400; color: var(--ink-soft); }
+.panel-age select, .panel-age input { font: inherit; min-height: 3rem; padding: .6rem .8rem; border: 1.5px solid #c9d5d1; border-radius: 8px; background: #fff; color: var(--ink); width: 100%; }
+.panel-age select:focus-visible, .panel-age input:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 1px; }
+.panel-age-result { padding: 1rem 1.25rem; border-radius: var(--radius-m); border: 2px solid var(--leaf); background: var(--surface); }
+.panel-age-result p { margin: 0 0 .5rem; }
+.panel-age-result p:last-child { margin-bottom: 0; }
+.panel-age-figure { font-size: 2rem; font-weight: 700; color: var(--leaf-deep); line-height: 1.1; }
+.panel-age-note { font-size: .92rem; color: var(--ink-soft); }
+@media (max-width: 560px) { .panel-age-fields { grid-template-columns: 1fr; } }
