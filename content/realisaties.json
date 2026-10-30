@@ -9,6 +9,11 @@
       "17,5 kWh bruikbaar",
       "Eenfasig, 5 kVA"
     ],
+    "brands": [
+      "sigenergy"
+    ],
+    "setup": "sigenstor",
+    "featured": true,
     "link": "/oplossingen/sigenergy-sigenstor/",
     "link_label": "Meer over SigenStor"
   },
@@ -22,6 +27,11 @@
       "ca. 16 kWh",
       "7,2 kW"
     ],
+    "brands": [
+      "zendure"
+    ],
+    "setup": "zendure-solarflow-2400-ac-plus",
+    "featured": true,
     "wide": true,
     "link": "/oplossingen/zendure-solarflow/",
     "link_label": "Meer over SolarFlow AC+"
@@ -35,7 +45,12 @@
       "Zendure",
       "8 kWh",
       "4,92 kWp"
-    ]
+    ],
+    "brands": [
+      "zendure"
+    ],
+    "setup": "zendure-solarflow-4000-mix-pro",
+    "featured": true
   },
   {
     "title": "Zendure SolarFlow 2400 AC+ met AB3000L",
@@ -46,7 +61,12 @@
       "Zendure",
       "AC-gekoppeld",
       "CT-meting"
-    ]
+    ],
+    "brands": [
+      "zendure"
+    ],
+    "setup": "zendure-solarflow-2400-ac-plus",
+    "featured": true
   },
   {
     "title": "Twee Dyness PowerBricks van 16 kWh",
@@ -58,6 +78,12 @@
       "2 × 16 kWh",
       "LFP"
     ],
+    "brands": [
+      "dyness",
+      "solis"
+    ],
+    "setup": "klantcase-mattias-dyness-solis",
+    "featured": true,
     "link": "/realisaties/klantcase-mattias-dyness-solis/",
     "link_label": "Lees de klantcase"
   },
@@ -70,6 +96,11 @@
       "Configuratie",
       "Oplevering"
     ],
+    "brands": [
+      "solis"
+    ],
+    "setup": "klantcase-mattias-dyness-solis",
+    "featured": true,
     "link": "/realisaties/klantcase-mattias-dyness-solis/",
     "link_label": "Lees de klantcase"
   }

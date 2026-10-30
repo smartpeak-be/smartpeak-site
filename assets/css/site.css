@@ -238,6 +238,30 @@ p { margin: 0 0 1em; }
 @media (max-width: 900px) { .realisaties { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .realisaties { grid-template-columns: 1fr; } .realisatie-wide { grid-column: auto; } .realisatie-wide img { aspect-ratio: 16 / 9; } }
 
+/* "Uit onze realisaties" onder een productpagina: 1 kaart over de volle breedte, 2 naast elkaar, 3 in drie kolommen.
+   Op kleine schermen worden 2 of 3 kaarten een horizontale slider in plaats van een lange stapel. */
+.realisatie-strip > ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
+.realisatie-strip > ul > li { display: flex; min-width: 0; }
+.realisatie-strip .realisatie { width: 100%; }
+.realisatie-strip-2 > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.realisatie-strip-3 > ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.realisatie-strip-1 .realisatie { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.realisatie-strip-1 .realisatie img { height: 100%; }
+.realisatie-strip-1 figcaption { padding: clamp(1.25rem, 3vw, 2.25rem); }
+.realisatie-strip:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 4px; border-radius: var(--radius-m); }
+@media (max-width: 900px) {
+  .realisatie-strip-3 { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: .75rem; }
+  .realisatie-strip-3 > ul { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(80%, 22rem); }
+  .realisatie-strip-3 > ul > li { scroll-snap-align: start; }
+}
+@media (max-width: 700px) {
+  .realisatie-strip-2 { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: .75rem; }
+  .realisatie-strip-2 > ul { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 85%; }
+  .realisatie-strip-2 > ul > li { scroll-snap-align: start; }
+  .realisatie-strip-1 .realisatie { display: flex; }
+  .realisatie-strip-1 .realisatie img { height: auto; }
+}
+
 /* Post cards */
 .post-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
 .post-card a { display: grid; gap: .9rem; color: inherit; text-decoration: none; }

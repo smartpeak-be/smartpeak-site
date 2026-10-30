@@ -97,15 +97,13 @@ def post_cards(posts, eager_first=False):
     return '<ul class="post-cards">' + "\n".join(cards) + "</ul>"
 
 
-def realisatie_cards(items, eager_first=False):
-    cards = []
-    for i, item in enumerate(items):
-        facts = "".join(f"<li>{esc(fact)}</li>" for fact in item.get("facts", []))
-        image = img_tag(item["image"], item["alt"], sizes="(max-width: 700px) 100vw, 380px", eager=eager_first and i == 0)
-        link = (f'<a class="realisatie-link" href="{item["link"]}">{esc(item.get("link_label", "Lees meer"))}</a>'
-                if item.get("link") else "")
-        css = "realisatie realisatie-wide" if item.get("wide") else "realisatie"
-        cards.append(f'''<figure class="{css}">
+def realisatie_figure(item, eager=False, css="realisatie", sizes="(max-width: 700px) 100vw, 380px", skip_link=""):
+    """One installation card. skip_link drops the card's link when it points to the page it is shown on."""
+    facts = "".join(f"<li>{esc(fact)}</li>" for fact in item.get("facts", []))
+    image = img_tag(item["image"], item["alt"], sizes=sizes, eager=eager)
+    link = (f'<a class="realisatie-link" href="{item["link"]}">{esc(item.get("link_label", "Lees meer"))}</a>'
+            if item.get("link") and item["link"] != skip_link else "")
+    return f'''<figure class="{css}">
   {image}
   <figcaption>
     <strong>{esc(item["title"])}</strong>
@@ -113,8 +111,60 @@ def realisatie_cards(items, eager_first=False):
     {f'<ul class="facts">{facts}</ul>' if facts else ""}
     {link}
   </figcaption>
-</figure>''')
+</figure>'''
+
+
+def realisatie_cards(items, eager_first=False):
+    cards = [realisatie_figure(item, eager=eager_first and i == 0,
+                               css="realisatie realisatie-wide" if item.get("wide") else "realisatie")
+             for i, item in enumerate(items)]
     return '<div class="realisaties">' + "\n".join(cards) + "</div>"
+
+
+BRAND_STRIP_MAX = 3
+
+
+def brand_realisaties(items, brand):
+    """Up to three installations of one brand for the bottom of its product page.
+
+    Only items with "featured" not false; installations where this brand comes first go first,
+    then the order of realisaties.json (newest on top). One card per "setup", so the strip shows
+    different set-ups instead of the same one several times. No numbers in the text: it is a
+    selection, linking on to the full list."""
+    picked, seen = [], set()
+    candidates = [(i, item) for i, item in enumerate(items)
+                  if brand in item.get("brands", []) and item.get("featured", True)]
+    for _, item in sorted(candidates, key=lambda c: (c[1]["brands"][0] != brand, c[0])):
+        key = item.get("setup") or item["image"]
+        if key in seen:
+            continue
+        seen.add(key)
+        picked.append(item)
+        if len(picked) == BRAND_STRIP_MAX:
+            break
+    if not picked:
+        return ""
+    info = next((b for b in SITE.get("brands", []) if b["slug"] == brand), {})
+    name, page = info.get("name", brand.capitalize()), info.get("path", "")
+    sizes = {1: "(max-width: 700px) 100vw, 560px", 2: "(max-width: 700px) 85vw, 580px"}.get(len(picked), "(max-width: 900px) 85vw, 380px")
+    cards = "\n".join(f"<li>{realisatie_figure(item, sizes=sizes, skip_link=page)}</li>" for item in picked)
+    heading_id = f"realisaties-{brand}"
+    # More than one card becomes a horizontal slider on small screens: focusable so it scrolls with the keyboard.
+    scroll = f' tabindex="0" role="region" aria-label="Realisaties met {esc(name)}"' if len(picked) > 1 else ""
+    return f'''<section class="section section-paper brand-realisaties" aria-labelledby="{heading_id}">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="{heading_id}">Uit onze realisaties</h2>
+      <p>Een greep uit de installaties met {esc(name)} die we plaatsten.</p>
+    </div>
+    <div class="realisatie-strip realisatie-strip-{len(picked)}"{scroll}>
+      <ul>
+{cards}
+      </ul>
+    </div>
+    <p class="more-link"><a href="/realisaties/#installaties">Bekijk alle realisaties</a></p>
+  </div>
+</section>'''
 
 
 REVIEWS_QUERY = {"structuredQuery": {
@@ -247,6 +297,8 @@ def tokens(posts, realisaties, sections, reviews):
         "article_list": post_cards(posts, eager_first=True),
         "article_list_recent": post_cards(posts[:3]),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
+        **{f"realisaties_{brand}": brand_realisaties(realisaties, brand)
+           for brand in sorted({b for item in realisaties for b in item.get("brands", [])})},
         "reviews": reviews_block(reviews, 9),
         "reviews_short": reviews_block(reviews, 6),
         "cta": (ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"),
