@@ -104,7 +104,8 @@ def realisatie_cards(items, eager_first=False):
         image = img_tag(item["image"], item["alt"], sizes="(max-width: 700px) 100vw, 380px", eager=eager_first and i == 0)
         link = (f'<a class="realisatie-link" href="{item["link"]}">{esc(item.get("link_label", "Lees meer"))}</a>'
                 if item.get("link") else "")
-        cards.append(f'''<figure class="realisatie">
+        css = "realisatie realisatie-wide" if item.get("wide") else "realisatie"
+        cards.append(f'''<figure class="{css}">
   {image}
   <figcaption>
     <strong>{esc(item["title"])}</strong>
