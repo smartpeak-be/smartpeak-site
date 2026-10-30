@@ -23,5 +23,6 @@
 <rect x="1190.0" y="256.0" width="226.7" height="484.0" rx="8" fill="#17c15c"/>
 <text x="1303.3" y="238.0" font-size="30" fill="#1f272e" font-weight="650" text-anchor="middle">± 22 kWh</text>
 <text x="1303.3" y="790.0" font-size="28" fill="#1f272e" font-weight="600" text-anchor="middle">2026*</text>
-<text x="150.0" y="850.0" font-size="23" fill="#4b5661">* januari tot mei 2026, voorlopig. Gemiddelde van nieuw aangesloten thuisbatterijen, berekend uit open data van Fluvius.</text>
+<text x="150.0" y="828.0" font-size="22" fill="#4b5661">* januari tot mei 2026, voorlopig. Gemiddelden volgens Solar Magazine op basis van open data van Fluvius;</text>
+<text x="150.0" y="856.0" font-size="22" fill="#4b5661">2024 is een eigen schatting.</text>
 </svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Capaciteit en vermogen: twee verschillende maten</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">De vuistregel van 1 tot 1,5 kWh per kWp is een vertrekpunt, geen standaardgrootte</text>
+<defs><marker id="arrow-1f272e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f272e"/></marker></defs>
+<text x="150.0" y="190.0" font-size="30" fill="#1f272e" font-weight="650">Capaciteit (kWh)</text>
+<text x="150.0" y="232.0" font-size="25" fill="#4b5661">hoeveel energie ze kan opslaan</text>
+<rect x="170" y="280" width="150" height="190" rx="18" fill="#ffffff" stroke="#1f272e" stroke-width="4"/>
+<rect x="174" y="352" width="142" height="114" rx="14" fill="#17c15c"/>
+<text x="360.0" y="360.0" font-size="24" fill="#4b5661">Genoeg opslag voor een hele</text>
+<text x="360.0" y="392.0" font-size="24" fill="#4b5661">avond kan toch te weinig</text>
+<text x="360.0" y="424.0" font-size="24" fill="#4b5661">vermogen hebben.</text>
+<text x="840.0" y="190.0" font-size="30" fill="#1f272e" font-weight="650">Vermogen (kW)</text>
+<text x="840.0" y="232.0" font-size="25" fill="#4b5661">hoeveel stroom ze op hetzelfde moment</text>
+<text x="840.0" y="262.0" font-size="25" fill="#4b5661">kan leveren of opnemen</text>
+<text x="840.0" y="330.0" font-size="24" fill="#1f272e" font-weight="600">Voorbeeld: laadpaal en oven vragen samen 9 kW</text>
+<rect x="840" y="352" width="230.0" height="70" rx="12" fill="#1aa5b6"/>
+<text x="955.0" y="396.0" font-size="24" fill="#ffffff" font-weight="650" text-anchor="middle">batterij 3 kW</text>
+<rect x="1070.0" y="352" width="460.0" height="70" rx="12" fill="#eef1f0" stroke="#4b5661" stroke-width="3"/>
+<text x="1300.0" y="396.0" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">6 kW van het net</text>
+<text x="840.0" y="464.0" font-size="24" fill="#4b5661">Wat de batterij niet kan leveren, komt van het net.</text>
+<line x1="150" x2="1530" y1="525" y2="525" stroke="#e3ebe8" stroke-width="3"/>
+<text x="150.0" y="580.0" font-size="30" fill="#1f272e" font-weight="650">Vuistregel van Vlaanderen.be om de capaciteit af te stemmen op je zonnepanelen</text>
+<rect x="150" y="615" width="270" height="96" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="285.0" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">8 kWp</text>
+<text x="285.0" y="693.0" font-size="22" fill="#4b5661" text-anchor="middle">zonne-installatie</text>
+<text x="485.0" y="678.0" font-size="44" fill="#1f272e" font-weight="650" text-anchor="middle">×</text>
+<rect x="550" y="615" width="450" height="96" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="775.0" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">1 tot 1,5 kWh</text>
+<text x="775.0" y="693.0" font-size="22" fill="#4b5661" text-anchor="middle">batterijcapaciteit per kWp</text>
+<text x="1060.0" y="678.0" font-size="44" fill="#1f272e" font-weight="650" text-anchor="middle">=</text>
+<rect x="1120" y="615" width="410" height="96" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="1325.0" y="659.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">± 8 tot 12 kWh</text>
+<text x="1325.0" y="693.0" font-size="22" fill="#0b7a42" text-anchor="middle">een vertrekpunt</text>
+<text x="150.0" y="770.0" font-size="25" fill="#1f272e" font-weight="600">Geen eindantwoord: er bestaat geen standaardgrootte. Kijk ook naar je huidige en toekomstige</text>
+<text x="150.0" y="804.0" font-size="25" fill="#1f272e" font-weight="600">verbruik, naar wanneer je het gebruikt en naar wat je met de batterij wil doen.</text>
+<text x="150.0" y="850.0" font-size="22" fill="#4b5661">Bron: Vlaanderen.be, Thuisbatterij. Voorbeeld met fictieve waarden: batterij van 3 kW, vraag van 9 kW, installatie van 8 kWp.</text>
+</svg>

@@ -97,6 +97,36 @@ def post_cards(posts, eager_first=False):
     return '<ul class="post-cards">' + "\n".join(cards) + "</ul>"
 
 
+FAQ_FILE = ROOT / "content" / "faq.json"
+
+
+def load_faq():
+    return json.loads(FAQ_FILE.read_text(encoding="utf-8")) if FAQ_FILE.exists() else []
+
+
+def faq_block(items):
+    """Frequently asked questions as <details>, each with a short answer and a link to the full article.
+    Pages that use {{faq}} also get FAQPage structured data (see structured_data)."""
+    if not items:
+        return ""
+    rows = []
+    for item in items:
+        more = (f' <a href="{item["link"]}">{esc(item.get("link_label", "Lees meer"))}</a>'
+                if item.get("link") else "")
+        rows.append(f'''<details class="faq-item" id="faq-{esc(item["id"])}">
+  <summary>{esc(item["vraag"])}</summary>
+  <div class="faq-answer"><p>{item["antwoord"]}{more}</p></div>
+</details>''')
+    return '<div class="faq">' + "\n".join(rows) + "</div>"
+
+
+def faq_schema(items):
+    plain = lambda h: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", h))).strip()
+    return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": item["vraag"],
+         "acceptedAnswer": {"@type": "Answer", "text": plain(item["antwoord"])}} for item in items]}
+
+
 def realisatie_figure(item, eager=False, css="realisatie", sizes="(max-width: 700px) 100vw, 380px", skip_link=""):
     """One installation card. skip_link drops the card's link when it points to the page it is shown on."""
     facts = "".join(f"<li>{esc(fact)}</li>" for fact in item.get("facts", []))
@@ -297,6 +327,7 @@ def tokens(posts, realisaties, sections, reviews):
         "article_list": post_cards(posts, eager_first=True),
         "article_list_recent": post_cards(posts[:3]),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
+        "faq": faq_block(load_faq()),
         **{f"realisaties_{brand}": brand_realisaties(realisaties, brand)
            for brand in sorted({b for item in realisaties for b in item.get("brands", [])})},
         "reviews": reviews_block(reviews, 9),
@@ -385,6 +416,8 @@ def structured_data(meta, titles):
         if meta.get("image"):
             article_data["image"] = SITE_URL + meta["image"]
         data.append(article_data)
+    if meta.get("faq"):
+        data.append(faq_schema(load_faq()))
     trail = breadcrumbs(meta, titles)
     if trail:
         data.append({
@@ -585,6 +618,8 @@ def main():
     paths = []
 
     for meta, body in pages:
+        if "{{faq}}" in body:
+            meta["faq"] = True
         body = fill(body, values)
         if meta.get("schema_type") == "Article":  # guides: show the author named in the schema
             body = body.replace(cta, author_box(meta) + cta, 1) if cta in body else body + author_box(meta)

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Panelen gaan langer mee dan de omvormer</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Typische levensduur van de onderdelen van een zonne-installatie</text>
+<line x1="420.0" x2="420.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="420.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">0 jaar</text>
+<line x1="600.0" x2="600.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="600.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">5 jaar</text>
+<line x1="780.0" x2="780.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="780.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">10 jaar</text>
+<line x1="960.0" x2="960.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="960.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">15 jaar</text>
+<line x1="1140.0" x2="1140.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1140.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">20 jaar</text>
+<line x1="1320.0" x2="1320.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1320.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">25 jaar</text>
+<line x1="1500.0" x2="1500.0" y1="210" y2="640" stroke="#e3ebe8" stroke-width="2"/>
+<text x="1500.0" y="680.0" font-size="23" fill="#4b5661" text-anchor="middle">30 jaar</text>
+<text x="150.0" y="290.0" font-size="30" fill="#1f272e" font-weight="650">Zonnepanelen</text>
+<text x="150.0" y="326.0" font-size="21" fill="#4b5661"></text>
+<rect x="420.0" y="250" width="900.0" height="60" rx="12" fill="#17c15c"/>
+<rect x="1320.0" y="250" width="180.0" height="60" rx="12" fill="#17c15c" fill-opacity="0.35"/>
+<text x="440.0" y="356.0" font-size="23" fill="#1f272e" font-weight="600">gaan volgens pv magazine 25 tot 30 jaar of langer mee</text>
+<text x="150.0" y="490.0" font-size="30" fill="#1f272e" font-weight="650">Omvormer</text>
+<text x="150.0" y="526.0" font-size="21" fill="#4b5661"></text>
+<rect x="420.0" y="450" width="360.0" height="60" rx="12" fill="#1aa5b6"/>
+<rect x="780.0" y="450" width="180.0" height="60" rx="12" fill="#1aa5b6" fill-opacity="0.35"/>
+<text x="440.0" y="556.0" font-size="23" fill="#1f272e" font-weight="600">gaat volgens pv magazine meestal 10 tot 15 jaar mee</text>
+<text x="150.0" y="760.0" font-size="25" fill="#1f272e" font-weight="600">Tijdens het leven van je panelen vervang je de omvormer vaak minstens één keer:</text>
+<text x="150.0" y="796.0" font-size="25" fill="#1f272e" font-weight="600">een goed moment om aan een batterij te denken.</text>
+<text x="150.0" y="868.0" font-size="21" fill="#4b5661">Bron: pv magazine (6 augustus 2025), met cijfers van EnergySage voor string-omvormers.</text>
+</svg>

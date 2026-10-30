@@ -4,6 +4,7 @@ Run: python3 tools/article_charts.py && python3 tools/render_svg.py
 (render_svg.py turns each SVG into a WebP with the site font, for <img> and link previews.)
 All figures here are explanatory illustrations; the articles say so where values are fictitious.
 """
+import math
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "img" / "grafieken"
@@ -13,12 +14,12 @@ RED = "#c2412d"
 W, H = 1600, 900
 
 
-def svg(body, title, subtitle):
+def svg(body, title, subtitle, sub_size=27):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
             f'font-family="Instrument Sans, Segoe UI, sans-serif">\n'
             f'<rect width="100%" height="100%" fill="#ffffff"/>\n'
             f'<text x="150" y="82" font-size="40" font-weight="650" fill="{INK}">{title}</text>\n'
-            f'<text x="150" y="128" font-size="27" fill="{SOFT}">{subtitle}</text>\n{body}</svg>\n')
+            f'<text x="150" y="128" font-size="{sub_size}" fill="{SOFT}">{subtitle}</text>\n{body}</svg>\n')
 
 
 def text(x, y, s, size=25, color=SOFT, weight=None, anchor=None):
@@ -102,7 +103,7 @@ def ac_dc_charging():
     body += box(150, y1, 230, 120, "Zonnepanelen", "gelijkstroom")
     body += box(470, y1, 230, 120, "Omvormer", "naar wisselstroom")
     body += box(790, y1, 230, 120, "Verdeelkast", "huis en net")
-    body += box(1110, y1, 230, 120, "Laadpaal", "7 tot 22 kW")
+    body += box(1110, y1, 230, 120, "Laadpaal", "3,7 tot 11 kW")
     body += box(1370, y1 + 150, 160, 100, "Wagen", None)
     body += arrow(380, y1 + 60, 462, y1 + 60)
     body += arrow(700, y1 + 60, 782, y1 + 60)
@@ -146,7 +147,7 @@ def backup_options():
     body += house(610, 200, [True, False, False], "Noodstopcontact", "één stopcontact aan het toestel", "voor een paar toestellen")
     body += house(1070, 200, [True, True, False], "Back-upschakeling", "gekozen kringen blijven", "werken, los van het net")
     body += text(150, 850, "Vereenvoudigd: wat blijft werken tijdens een stroomonderbreking. Een volledige woning op back-up vraagt meer vermogen.", 23)
-    return svg(body, "Stroomonderbreking: drie situaties", "Een batterij mag nooit stroom naar het net sturen; wat werkt, hangt af van de installatie")
+    return svg(body, "Stroomonderbreking: drie situaties", "Bij een stroomonderbreking mag een batterij geen stroom naar het net sturen; wat werkt, hangt af van de installatie", sub_size=22)
 
 
 def grid_voltage_day():
@@ -185,7 +186,7 @@ def grid_voltage_day():
         body += text(mid, y_of(258.5), "omvormer schakelt af", 23, RED, 600, "middle")
     body += "".join(text(x_of(t), 790, f"{t}u", anchor="middle") for t in range(6, 23, 2))
     body += text(150, 850, "Voorbeeld met fictieve meetwaarden: netspanning op een zonnige dag in een straat met veel zonnepanelen.", 23)
-    return svg(body, "Te hoge netspanning op een zonnige dag", "Elke keer de spanning de grens raakt, schakelt de omvormer even af")
+    return svg(body, "Te hoge netspanning op een zonnige dag", "Komt het gemiddelde over 10 minuten boven 253 V, dan schakelt de omvormer even af")
 
 
 def battery_size_trend():
@@ -202,7 +203,8 @@ def battery_size_trend():
         body += f'<rect x="{bx:.1f}" y="{y_of(v):.1f}" width="{bw:.1f}" height="{ybot - y_of(v):.1f}" rx="8" fill="{color}"/>\n'
         body += text(bx + bw / 2, y_of(v) - 18, shown, 30, INK, 650, "middle")
         body += text(bx + bw / 2, 790, label, 28, INK, 600, "middle")
-    body += text(150, 850, "* januari tot mei 2026, voorlopig. Gemiddelde van nieuw aangesloten thuisbatterijen, berekend uit open data van Fluvius.", 23)
+    body += text(150, 828, "* januari tot mei 2026, voorlopig. Gemiddelden volgens Solar Magazine op basis van open data van Fluvius;", 22)
+    body += text(150, 856, "2024 is een eigen schatting.", 22)
     return svg(body, "Nieuwe thuisbatterijen worden groter", "Gemiddelde opslagcapaciteit van nieuw aangesloten thuisbatterijen in Vlaanderen")
 
 
@@ -455,7 +457,7 @@ def case_overview():
         body += text(cx, top + 510, period, 23, SOFT, None, "middle")
     body += text(150, 850, "Meetwaarden van drie woningen uit de monitoringapps, 2026. Bij woning 2 en 3 telt de rechtstreeks gebruikte zonnestroom", 22)
     body += text(150, 880, "niet mee. Daarom zijn de percentages niet onderling vergelijkbaar.", 22)
-    return svg(body, "Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst", "Wat de batterij deed tussen de plaatsing en half oktober 2026")
+    return svg(body, "Drie woningen, telkens ongeveer 10 kWh opslag bijgeplaatst", "Wat de batterij deed tussen de plaatsing en 18 oktober 2026")
 
 
 def contract_shares_creg():
@@ -483,6 +485,257 @@ def contract_shares_creg():
     return svg(body, "De meeste gezinnen zitten bij een duur product", "Aandeel van de energiecontracten van gezinnen per prijsgroep, België")
 
 
+def gsc_what_is_allowed():
+    """What you may change while the installation still receives groenestroomcertificaten (Fluvius rules)."""
+    ok_fill, ok_line = "#e9f8ef", "#bfe9cf"
+    cond_fill, cond_line = "#e7f5f7", "#b5dde3"
+    no_fill, no_line = "#fdecea", "#f3c7c0"
+    rows = [
+        ("Thuisbatterij AC-gekoppeld", "mag", "batterij met eigen omvormer, niet tussen omvormer en groenestroomteller", ok_fill, ok_line, LEAF_DEEP),
+        ("Hybride omvormer + batterij", "mag", "met bidirectionele groenestroomteller en nieuwe AREI-keuring", ok_fill, ok_line, LEAF_DEEP),
+        ("Omvormer vervangen, zonder batterij", "enkel bij defect", "nieuwe omvormer op de C10/26-lijst, max. 5 kVA (1-fase) of 10 kVA (3-fase)", cond_fill, cond_line, LAGOON_DEEP),
+        ("Defecte panelen vervangen", "onder voorwaarden", "één op één, gelijkaardig paneel, met bewijs van het defect", cond_fill, cond_line, LAGOON_DEEP),
+        ("Panelen bijleggen", "niet", "extra panelen enkel op een aparte omvormer, als nieuwe installatie", no_fill, no_line, RED),
+    ]
+    body = ""
+    y = 180
+    for label, verdict, note, fill, line, color in rows:
+        body += f'<rect x="150" y="{y}" width="1300" height="112" rx="18" fill="{fill}" stroke="{line}" stroke-width="3"/>\n'
+        body += text(185, y + 48, label, 29, INK, 650)
+        body += text(185, y + 88, note, 22, SOFT)
+        body += f'<rect x="1150" y="{y + 30}" width="270" height="52" rx="26" fill="#ffffff" stroke="{color}" stroke-width="3"/>\n'
+        body += text(1285, y + 65, verdict, 24, color, 650, "middle")
+        y += 128
+    body += text(150, 850, "Bron: Fluvius, aanpassingen aan je installatie zonnepanelen en toelichting PV-installatie (versie 2.0). De regels van Fluvius", 21)
+    body += text(150, 878, "zeggen niets specifieks over een AC-gekoppelde batterij. Elke wijziging meld je in Mijn Fluvius.", 21)
+    return svg(body, "Groenestroomcertificaten: wat mag je veranderen?", "Wat er mag aan een installatie die nog groenestroomcertificaten krijgt")
+
+
+def gsc_end_years():
+    """Until when certificates run, per period of commissioning (Vlaanderen.be)."""
+    groups = [
+        ("2006 tot juli 2012", "20 jaar", 2006, 2012.58, 20),
+        ("augustus tot december 2012", "10 jaar", 2012.58, 2013, 10),
+        ("2013 tot maart 2018", "15 jaar", 2013, 2018.25, 15),
+        ("april 2018 tot 2020", "10 jaar", 2018.25, 2020.99, 10),
+        ("januari tot 16 juli 2021", "max. 12 jaar", 2021, 2021.54, 12),
+    ]
+    x0, x1, start, end = 560, 1500, 2022, 2034
+    x_of = lambda yr: x0 + (x1 - x0) * (yr - start) / (end - start)
+    body = ""
+    for yr in range(start, end + 1, 2):
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="190" y2="760" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x, 795, str(yr), 23, SOFT, None, "middle")
+    now = x_of(2026.83)
+    body += f'<line x1="{now:.1f}" x2="{now:.1f}" y1="180" y2="760" stroke="{RED}" stroke-width="3" stroke-dasharray="10 8"/>\n'
+    body += text(now, 172, "nu", 22, RED, 650, "middle")
+    y = 215
+    for label, dur, a, b, years in groups:
+        ea, eb = a + years, b + years
+        xa, xb = max(x_of(ea), x0), x_of(eb)
+        ended = eb <= 2026.83
+        color = "#c9d5d1" if ended else ("#b5dde3" if a >= 2013 else LEAF)
+        body += text(150, y + 30, label, 25, INK, 650)
+        ended = (b + years) <= 2026.83
+        big_only = a >= 2013
+        span = f"{int(a + years)} tot {int(b + years)}" if int(a + years) != int(b + years) else f"{int(b + years)}"
+        status = "al afgelopen" if ended else (f"tot {int(b + years)}, enkel nog boven 10 kW" if big_only else f"loopt af {span}")
+        body += text(150, y + 62, f"steun {dur}: {status}", 21, SOFT if ended or big_only else LEAF_DEEP, 600)
+        if xb > x0:
+            body += f'<rect x="{xa:.1f}" y="{y + 12}" width="{max(xb - xa, 8):.1f}" height="44" rx="10" fill="{color}"/>\n'
+        y += 108
+    body += text(150, 836, "Installaties tot 10 kW (de meeste woningen) van na 2012 krijgen vandaag geen certificaten: de bandingfactor is sinds 1 augustus 2022 nul,", 21)
+    body += text(150, 862, "en na 1 juli 2015 is er geen categorie meer. Installaties van na 16 juli 2021 krijgen geen certificaten.", 21)
+    body += text(150, 888, "Bron: Vlaanderen.be, groenestroomcertificaten voor zonnepanelen en overzicht bandingfactor zonnepanelen.", 21)
+    return svg(body, "Tot wanneer krijg je groenestroomcertificaten?", "Looptijd van de steun volgens de datum waarop je installatie in dienst kwam")
+
+
+def panel_degradation():
+    """Remaining power of crystalline panels by age: NREL median 0,5 %/jaar, spread 0,4 to 0,9 %/jaar."""
+    x0, x1, ytop, ybot = 200, 1520, 190, 740
+    years = 30
+    x_of = lambda a: x0 + (x1 - x0) * a / years
+    y_of = lambda pct: ybot - (ybot - ytop) * (pct - 70) / 30
+    body = axes(x0, x1, y_of, [70, 75, 80, 85, 90, 95, 100], "%")
+    for a in range(0, years + 1, 5):
+        body += text(x_of(a), 785, f"{a} jaar", 23, SOFT, None, "middle")
+    hi = [(a, 100 * (1 - 0.004) ** a) for a in range(years + 1)]
+    lo = [(a, 100 * (1 - 0.009) ** a) for a in range(years + 1)]
+    band = " ".join(f"{x_of(a):.1f},{y_of(v):.1f}" for a, v in hi) + " " + " ".join(f"{x_of(a):.1f},{y_of(v):.1f}" for a, v in reversed(lo))
+    body += f'<polygon points="{band}" fill="{LEAF}" fill-opacity="0.18"/>\n'
+    mid = " ".join(f"{x_of(a):.1f},{y_of(100 * (1 - 0.005) ** a):.1f}" for a in range(years + 1))
+    body += f'<polyline points="{mid}" fill="none" stroke="{LEAF_DEEP}" stroke-width="5"/>\n'
+    a = 16
+    v = 100 * (1 - 0.005) ** a
+    body += f'<circle cx="{x_of(a):.1f}" cy="{y_of(v):.1f}" r="10" fill="{LEAF_DEEP}"/>\n'
+    body += text(x_of(a) + 20, y_of(v) - 22, "paneel uit 2010: ± 92%", 25, INK, 650)
+    body += text(x_of(22), y_of(100 * (1 - 0.009) ** 22) + 50, "sneller of trager dan de mediaan", 22, LEAF_DEEP, 600, "middle")
+    body += text(150, 850, "Lijn: mediaan van 0,5% verlies per jaar. Band: 0,4 tot 0,9% per jaar. Een individueel paneel kan daarbuiten vallen, bijvoorbeeld door een defect.", 21)
+    body += text(150, 878, "Bron: NREL, Jordan en Kurtz (mediaan 0,5%) en Jordan e.a. 2016 (gemiddelde 0,8 tot 0,9%); ondergrens 0,4%: garantie JinkoSolar Tiger Neo.", 21)
+    return svg(body, "Hoeveel vermogen heeft een zonnepaneel nog?", "Resterend vermogen van kristallijne zonnepanelen naargelang hun leeftijd")
+
+
+def panels_vs_inverter():
+    """Typical life of panels versus string inverters."""
+    x0, x1 = 420, 1500
+    x_of = lambda yr: x0 + (x1 - x0) * yr / 30
+    body = ""
+    for yr in range(0, 31, 5):
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="210" y2="640" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x, 680, f"{yr} jaar", 23, SOFT, None, "middle")
+    rows = [
+        ("Zonnepanelen", "gaan volgens pv magazine 25 tot 30 jaar of langer mee", 25, 30, LEAF, (0, 25)),
+        ("Omvormer", "gaat volgens pv magazine meestal 10 tot 15 jaar mee", 10, 15, LAGOON, (0, 10)),
+    ]
+    y = 250
+    for label, sub, a, b, color, solid in rows:
+        body += text(150, y + 40, label, 30, INK, 650)
+        body += text(150, y + 76, "", 21)
+        if solid:
+            body += f'<rect x="{x_of(solid[0]):.1f}" y="{y}" width="{x_of(solid[1]) - x_of(solid[0]):.1f}" height="60" rx="12" fill="{color}"/>\n'
+            body += f'<rect x="{x_of(a):.1f}" y="{y}" width="{x_of(b) - x_of(a):.1f}" height="60" rx="12" fill="{color}" fill-opacity="0.35"/>\n'
+        else:
+            body += f'<rect x="{x_of(a):.1f}" y="{y}" width="{x_of(b) - x_of(a):.1f}" height="60" rx="12" fill="{color}"/>\n'
+        body += text(x_of(0) + 20, y + 106, sub, 23, INK, 600)
+        y += 200
+    body += text(150, 760, "Tijdens het leven van je panelen vervang je de omvormer vaak minstens één keer:", 25, INK, 600)
+    body += text(150, 796, "een goed moment om aan een batterij te denken.", 25, INK, 600)
+    body += text(150, 868, "Bron: pv magazine (6 augustus 2025), met cijfers van EnergySage voor string-omvormers.", 21)
+    return svg(body, "Panelen gaan langer mee dan de omvormer", "Typische levensduur van de onderdelen van een zonne-installatie")
+
+
+def battery_capacity_power():
+    """Capacity (kWh) versus power (kW) and the Vlaanderen.be rule of thumb of 1 to 1,5 kWh per kWp."""
+    body = markers(INK)
+    body += text(150, 190, "Capaciteit (kWh)", 30, INK, 650)
+    body += text(150, 232, "hoeveel energie ze kan opslaan", 25)
+    body += f'<rect x="170" y="280" width="150" height="190" rx="18" fill="#ffffff" stroke="{INK}" stroke-width="4"/>\n'
+    body += f'<rect x="174" y="352" width="142" height="114" rx="14" fill="{LEAF}"/>\n'
+    body += text(360, 360, "Genoeg opslag voor een hele", 24)
+    body += text(360, 392, "avond kan toch te weinig", 24)
+    body += text(360, 424, "vermogen hebben.", 24)
+    body += text(840, 190, "Vermogen (kW)", 30, INK, 650)
+    body += text(840, 232, "hoeveel stroom ze op hetzelfde moment", 25)
+    body += text(840, 262, "kan leveren of opnemen", 25)
+    body += text(840, 330, "Voorbeeld: laadpaal en oven vragen samen 9 kW", 24, INK, 600)
+    unit = 690 / 9
+    body += f'<rect x="840" y="352" width="{3 * unit:.1f}" height="70" rx="12" fill="{LAGOON}"/>\n'
+    body += text(840 + 1.5 * unit, 396, "batterij 3 kW", 24, "#ffffff", 650, "middle")
+    body += f'<rect x="{840 + 3 * unit:.1f}" y="352" width="{6 * unit:.1f}" height="70" rx="12" fill="#eef1f0" stroke="{SOFT}" stroke-width="3"/>\n'
+    body += text(840 + 6 * unit, 396, "6 kW van het net", 24, INK, 650, "middle")
+    body += text(840, 464, "Wat de batterij niet kan leveren, komt van het net.", 24)
+    body += f'<line x1="150" x2="1530" y1="525" y2="525" stroke="{LINE}" stroke-width="3"/>\n'
+    body += text(150, 580, "Vuistregel van Vlaanderen.be om de capaciteit af te stemmen op je zonnepanelen", 30, INK, 650)
+    body += box(150, 615, 270, 96, "8 kWp", "zonne-installatie")
+    body += text(485, 678, "×", 44, INK, 650, "middle")
+    body += box(550, 615, 450, 96, "1 tot 1,5 kWh", "batterijcapaciteit per kWp")
+    body += text(1060, 678, "=", 44, INK, 650, "middle")
+    body += box(1120, 615, 410, 96, "± 8 tot 12 kWh", "een vertrekpunt", "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    body += text(150, 770, "Geen eindantwoord: er bestaat geen standaardgrootte. Kijk ook naar je huidige en toekomstige", 25, INK, 600)
+    body += text(150, 804, "verbruik, naar wanneer je het gebruikt en naar wat je met de batterij wil doen.", 25, INK, 600)
+    body += text(150, 850, "Bron: Vlaanderen.be, Thuisbatterij. Voorbeeld met fictieve waarden: batterij van 3 kW, vraag van 9 kW, installatie van 8 kWp.", 22)
+    return svg(body, "Capaciteit en vermogen: twee verschillende maten", "De vuistregel van 1 tot 1,5 kWh per kWp is een vertrekpunt, geen standaardgrootte")
+
+
+def self_use_vs_injection():
+    """Worked example from the article: 4.000 kWh a year, 30% used directly, 30 ct avoided versus 3 ct injection."""
+    x0, x1 = 150, 1530
+    body = text(150, 190, "Een jaar zonnestroom: 4.000 kWh", 30, INK, 650)
+    w_self = (x1 - x0) * 0.3
+    body += f'<rect x="{x0}" y="215" width="{w_self:.1f}" height="70" rx="12" fill="{LEAF}"/>\n'
+    body += f'<rect x="{x0 + w_self:.1f}" y="215" width="{(x1 - x0) - w_self:.1f}" height="70" rx="12" fill="#cfd8d5"/>\n'
+    body += text(x0 + w_self / 2, 260, "1.200 kWh", 28, "#ffffff", 650, "middle")
+    body += text(x0 + w_self + (x1 - x0 - w_self) / 2, 260, "2.800 kWh", 28, INK, 650, "middle")
+    body += text(x0 + w_self / 2, 322, "meteen zelf gebruikt (30%)", 24, LEAF_DEEP, 600, "middle")
+    body += text(x0 + w_self + (x1 - x0 - w_self) / 2, 322, "geïnjecteerd op het net", 24, SOFT, 600, "middle")
+    body += f'<line x1="150" x2="1530" y1="360" y2="360" stroke="{LINE}" stroke-width="3"/>\n'
+    body += text(150, 412, "Wat is één kWh in dit voorbeeld waard?", 30, INK, 650)
+    bx, per_ct = 640, 29
+    rows = [("Zelf gebruikt", "je haalt die kWh niet van het net", 30, LEAF, "30 cent bespaard"),
+            ("Geïnjecteerd", "vergoeding van je leverancier", 3, "#9fb2ad", "3 cent")]
+    y = 440
+    for label, sub, ct, color, shown in rows:
+        body += text(150, y + 30, label, 27, INK, 650)
+        body += text(150, y + 62, sub, 22)
+        body += f'<rect x="{bx}" y="{y}" width="{ct * per_ct}" height="70" rx="12" fill="{color}"/>\n'
+        if ct > 10:
+            body += text(bx + ct * per_ct / 2, y + 45, shown, 28, "#ffffff", 650, "middle")
+        else:
+            body += text(bx + ct * per_ct + 20, y + 45, shown, 28, INK, 650)
+        y += 100
+    xa, xb = bx + 3 * per_ct, bx + 30 * per_ct
+    body += f'<path d="M{xa} 632 V650 H{xb} V632" fill="none" stroke="{LEAF_DEEP}" stroke-width="4"/>\n'
+    body += text((xa + xb) / 2, 686, "27 cent meer per kWh die je zelf gebruikt", 27, LEAF_DEEP, 650, "middle")
+    body += box(150, 715, 1380, 80, "1.000 kWh extra zelf gebruiken is hier ongeveer € 270 per jaar waard", None, "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    body += text(150, 828, "Voorbeeld met fictieve waarden: 30 cent per kWh afname, 3 cent per kWh injectie. Capaciteitstarief, vaste kosten en opslagverliezen", 21)
+    body += text(150, 854, "zijn niet meegerekend. Een rekenvoorbeeld, geen belofte: je echte cijfers hangen af van je verbruik, je contract en de energieprijzen.", 21)
+    return svg(body, "Zelf gebruiken of injecteren: het verschil", "Een kWh die je niet van het net haalt, is meer waard dan een kWh die je injecteert")
+
+
+def inverter_split_day():
+    """One sunny day: 20 kWh, 6 kWh used directly, 14 kWh injected; plus the reasons an inverter injects less."""
+    body = markers(INK)
+    body += box(150, 215, 300, 120, "Zonnepanelen", "20 kWh die dag")
+    body += box(560, 215, 300, 120, "Omvormer", "gelijk- naar wisselstroom")
+    body += box(960, 170, 420, 100, "Huis", "6 kWh meteen zelf gebruikt", "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    body += box(960, 290, 420, 100, "Net", "14 kWh geïnjecteerd", "#eef1f0", LINE)
+    body += arrow(450, 275, 552, 275)
+    body += arrow(860, 262, 952, 222)
+    body += arrow(860, 290, 952, 340)
+    body += text(150, 450, "Wat is die 14 kWh waard?", 30, INK, 650)
+    body += box(150, 475, 660, 96, "14 kWh injecteren", "levert ongeveer € 0,42 op", "#eef1f0", LINE)
+    body += text(840, 534, "of", 26, SOFT, 600, "middle")
+    body += box(870, 475, 660, 96, "Diezelfde 14 kWh later zelf gebruiken", "vermijdt ongeveer € 4,20 aan afname", "#e9f8ef", "#bfe9cf", LEAF_DEEP)
+    body += text(150, 640, "Wanneer injecteert je omvormer minder of niets?", 30, INK, 650)
+    body += box(150, 665, 440, 105, "Te hoge netspanning", "hij schakelt automatisch af")
+    body += box(620, 665, 440, 105, "Injectiebegrenzing", "bijvoorbeeld na een netstudie")
+    body += box(1090, 665, 440, 105, "Sturing op prijs", "bij een negatieve prijs")
+    body += text(150, 826, "Voorbeeld met fictieve waarden: 30 cent per kWh afname en 3 cent per kWh injectie; opslagverliezen en capaciteitstarief", 21)
+    body += text(150, 852, "zijn niet meegerekend. De redenen om minder te injecteren, met hun bronnen, staan in het artikel.", 21)
+    return svg(body, "Wat doet je omvormer op een zonnige dag?", "Wat je niet meteen gebruikt, gaat naar het net, en dat is veel minder waard dan zelf gebruiken")
+
+
+def frequency_50hz():
+    """Grid frequency scale around 50 Hz with the thresholds named in the article, and the reserve sequence."""
+    body = markers(INK)
+    n, x_a, x_b, yc, amp = 4, 150, 520, 205, 38
+    pts = " ".join(f"{x_a + (x_b - x_a) * i / 200:.1f},{yc - amp * math.sin(2 * math.pi * n * i / 200):.1f}" for i in range(201))
+    body += f'<polyline points="{pts}" fill="none" stroke="{LEAF_DEEP}" stroke-width="5" stroke-linejoin="round"/>\n'
+    body += text(570, 198, "50 Hz = 50 volledige trillingen per seconde", 30, INK, 650)
+    body += text(570, 236, "De stroom wisselt dus 100 keer per seconde van richting.", 25)
+    x_of = lambda f: 170 + (f - 48.9) * 971.4
+    yb, hb = 400, 50
+    body += f'<rect x="170" y="{yb}" width="{x_of(49.0) - 170:.1f}" height="{hb}" fill="#f6d9d4"/>\n'
+    body += f'<rect x="{x_of(49.0):.1f}" y="{yb}" width="{x_of(49.8) - x_of(49.0):.1f}" height="{hb}" fill="#eef1f0"/>\n'
+    body += f'<rect x="{x_of(49.8):.1f}" y="{yb}" width="{x_of(50.2) - x_of(49.8):.1f}" height="{hb}" fill="#e3f4f6"/>\n'
+    body += f'<rect x="{x_of(49.95):.1f}" y="{yb}" width="{x_of(50.05) - x_of(49.95):.1f}" height="{hb}" fill="{LEAF}"/>\n'
+    body += f'<rect x="{x_of(50.2):.1f}" y="{yb}" width="{1530 - x_of(50.2):.1f}" height="{hb}" fill="#c4e6ec"/>\n'
+    body += text((x_of(49.0) + x_of(49.8)) / 2, yb + 33, "zakt ze verder: noodmaatregelen", 23, INK, 600, "middle")
+    for f, label, color in [(49.0, "49,0 Hz", RED), (49.8, "49,8 Hz", INK), (50.0, "50 Hz", LEAF_DEEP), (50.2, "50,2 Hz", INK)]:
+        body += text(x_of(f), 488, label, 23, color, 650, "middle")
+    body += text(170, 305, "Meer verbruik dan productie:", 25, INK, 650)
+    body += text(170, 337, "de frequentie daalt, bijvoorbeeld naar 49,95 Hz", 23)
+    body += text(1530, 305, "Meer productie dan verbruik:", 25, INK, 650, "end")
+    body += text(1530, 337, "de frequentie stijgt, bijvoorbeeld naar 50,05 Hz", 23, SOFT, None, "end")
+    body += text(x_of(50.0), 385, "Normaal: 50 Hz ± 0,05 Hz", 24, LEAF_DEEP, 650, "middle")
+    body += text(170, 545, "Vanaf 49,0 Hz schakelt België automatisch", 23, RED, 600)
+    body += text(170, 575, "verbruik af, in stappen.", 23, RED, 600)
+    body += text(x_of(50.0) - 140, 545, "Bij 49,8 of 50,2 Hz (0,2 Hz afwijking)", 23, LAGOON_DEEP, 600, "middle")
+    body += text(x_of(50.0) - 140, 575, "is de primaire reserve volledig ingezet.", 23, LAGOON_DEEP, 600, "middle")
+    body += text(1530, 625, "Boven 50,2 Hz verminderen omvormers van zonnepanelen", 23, LAGOON_DEEP, 600, "end")
+    body += text(1530, 655, "die sinds 2013 geplaatst zijn geleidelijk hun vermogen.", 23, LAGOON_DEEP, 600, "end")
+    body += text(150, 710, "Elia grijpt in met reserves, stap voor stap", 30, INK, 650)
+    body += box(150, 730, 430, 86, "FCR: enkele seconden", "automatisch, stabiliseert")
+    body += box(625, 730, 430, 86, "aFRR: binnen 7,5 minuten", "automatisch, terug naar 50 Hz")
+    body += box(1100, 730, 430, 86, "mFRR: binnen 15 minuten", "manueel, grote onevenwichten")
+    body += arrow(582, 773, 618, 773)
+    body += arrow(1057, 773, 1093, 773)
+    body += text(150, 856, "Bron: Elia, ENTSO-E, Synergrid (C10/11) en Energuide (Sibelga). Vereenvoudigd weergegeven.", 22)
+    return svg(body, "50 Hz: hoe ver mag de frequentie afwijken?", "Wat er gebeurt op het Europese net als productie en verbruik uit evenwicht raken")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -506,3 +759,11 @@ if __name__ == "__main__":
     write("thuisbatterij-bijplaatsen-woning-3", ac_case_months("Woning 3: verbruik dat de zon niet rechtstreeks dekte", CASE3_MONTHS, "11 mei"))
     write("thuisbatterij-bijplaatsen-overzicht", case_overview())
     write("energiecontracten-prijsgroep", contract_shares_creg())
+    write("groenestroomcertificaten-wat-mag", gsc_what_is_allowed())
+    write("groenestroomcertificaten-looptijd", gsc_end_years())
+    write("zonnepanelen-vermogen-leeftijd", panel_degradation())
+    write("panelen-omvormer-levensduur", panels_vs_inverter())
+    write("batterij-capaciteit-vermogen", battery_capacity_power())
+    write("zelfverbruik-of-injectie", self_use_vs_injection())
+    write("omvormer-zonnige-dag", inverter_split_day())
+    write("frequentie-50-hz", frequency_50hz())

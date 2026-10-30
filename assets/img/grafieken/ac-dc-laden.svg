@@ -15,7 +15,7 @@
 <text x="905.0" y="320.0" font-size="22" fill="#4b5661" text-anchor="middle">huis en net</text>
 <rect x="1110" y="230" width="230" height="120" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
 <text x="1225.0" y="286.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Laadpaal</text>
-<text x="1225.0" y="320.0" font-size="22" fill="#4b5661" text-anchor="middle">7 tot 22 kW</text>
+<text x="1225.0" y="320.0" font-size="22" fill="#4b5661" text-anchor="middle">3,7 tot 11 kW</text>
 <rect x="1370" y="380" width="160" height="100" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
 <text x="1450.0" y="439.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Wagen</text>
 <line x1="380" y1="290" x2="462" y2="290" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>

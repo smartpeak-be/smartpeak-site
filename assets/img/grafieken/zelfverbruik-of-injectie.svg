@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Zelf gebruiken of injecteren: het verschil</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Een kWh die je niet van het net haalt, is meer waard dan een kWh die je injecteert</text>
+<text x="150.0" y="190.0" font-size="30" fill="#1f272e" font-weight="650">Een jaar zonnestroom: 4.000 kWh</text>
+<rect x="150" y="215" width="414.0" height="70" rx="12" fill="#17c15c"/>
+<rect x="564.0" y="215" width="966.0" height="70" rx="12" fill="#cfd8d5"/>
+<text x="357.0" y="260.0" font-size="28" fill="#ffffff" font-weight="650" text-anchor="middle">1.200 kWh</text>
+<text x="1047.0" y="260.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">2.800 kWh</text>
+<text x="357.0" y="322.0" font-size="24" fill="#0b7a42" font-weight="600" text-anchor="middle">meteen zelf gebruikt (30%)</text>
+<text x="1047.0" y="322.0" font-size="24" fill="#4b5661" font-weight="600" text-anchor="middle">geïnjecteerd op het net</text>
+<line x1="150" x2="1530" y1="360" y2="360" stroke="#e3ebe8" stroke-width="3"/>
+<text x="150.0" y="412.0" font-size="30" fill="#1f272e" font-weight="650">Wat is één kWh in dit voorbeeld waard?</text>
+<text x="150.0" y="470.0" font-size="27" fill="#1f272e" font-weight="650">Zelf gebruikt</text>
+<text x="150.0" y="502.0" font-size="22" fill="#4b5661">je haalt die kWh niet van het net</text>
+<rect x="640" y="440" width="870" height="70" rx="12" fill="#17c15c"/>
+<text x="1075.0" y="485.0" font-size="28" fill="#ffffff" font-weight="650" text-anchor="middle">30 cent bespaard</text>
+<text x="150.0" y="570.0" font-size="27" fill="#1f272e" font-weight="650">Geïnjecteerd</text>
+<text x="150.0" y="602.0" font-size="22" fill="#4b5661">vergoeding van je leverancier</text>
+<rect x="640" y="540" width="87" height="70" rx="12" fill="#9fb2ad"/>
+<text x="747.0" y="585.0" font-size="28" fill="#1f272e" font-weight="650">3 cent</text>
+<path d="M727 632 V650 H1510 V632" fill="none" stroke="#0b7a42" stroke-width="4"/>
+<text x="1118.5" y="686.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">27 cent meer per kWh die je zelf gebruikt</text>
+<rect x="150" y="715" width="1380" height="80" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="840.0" y="764.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">1.000 kWh extra zelf gebruiken is hier ongeveer € 270 per jaar waard</text>
+<text x="150.0" y="828.0" font-size="21" fill="#4b5661">Voorbeeld met fictieve waarden: 30 cent per kWh afname, 3 cent per kWh injectie. Capaciteitstarief, vaste kosten en opslagverliezen</text>
+<text x="150.0" y="854.0" font-size="21" fill="#4b5661">zijn niet meegerekend. Een rekenvoorbeeld, geen belofte: je echte cijfers hangen af van je verbruik, je contract en de energieprijzen.</text>
+</svg>
