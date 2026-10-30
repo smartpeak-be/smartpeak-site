@@ -1,4 +1,4 @@
 response 200: https://smartpeak-be.github.io/battery-roi-tool/assets/js/widgets/lead-wizard.js
 response 200: https://firestore.googleapis.com/v1/projects/smartpeak-projects/databases/(default)/documents/config/products
 response 307: https://docs.google.com/spreadsheets/d/1BYNvK5nPm--nJWuim2rssC6W-ZcGHIfKLsifa4OSgTY/export?format=csv&gid=425908603
-RESULT: widget works up to the submit button (nothing was sent)
+RESULT: widget shows a result and works up to the contact button (nothing was sent)
