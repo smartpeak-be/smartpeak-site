@@ -1,5 +1,24 @@
 [
   {
+    "title": "Drie Dyness-batterijen bij een bestaande Solis-omvormer",
+    "text": "Een bestaande zonne-installatie kreeg er 15 kWh opslag bij: drie Dyness-batterijen van telkens 5 kWh, aangesloten op de Solis-omvormer die er al hing. Netjes boven elkaar aan de muur, met de kabels weggewerkt in kabelgoten naar de zekeringkast.",
+    "image": "/assets/img/site/installatie-dyness-uitbreiding-solis.webp",
+    "alt": "Drie witte Dyness-thuisbatterijen boven elkaar aan een bakstenen muur in een garage, naast de zekeringkast, met de bekabeling in witte kabelgoten",
+    "facts": [
+      "Dyness",
+      "3 × 5 kWh",
+      "Bestaande Solis-omvormer"
+    ],
+    "brands": [
+      "dyness",
+      "solis"
+    ],
+    "setup": "dyness-uitbreiding-solis",
+    "featured": true,
+    "link": "/artikels/thuisbatterij-bijplaatsen-bestaande-zonnepanelen/",
+    "link_label": "Batterij bijplaatsen bij zonnepanelen"
+  },
+  {
     "title": "Sigenergy SigenStor, eenfasig",
     "text": "Energy Controller 4.6 SP met twee batterijmodules BAT 10.0, samen ruim 17,5 kWh bruikbare opslag. De controller levert 4,6 kW en tot 5 kVA, het standaard toegelaten maximum op een eenfasige aansluiting.",
     "image": "/assets/img/site/installatie-sigenergy-sigenstor.webp",
