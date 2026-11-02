@@ -19,6 +19,24 @@
     "link_label": "Batterij bijplaatsen bij zonnepanelen"
   },
   {
+    "title": "Twee Zendure SolarFlow 2400 AC+ in de woonkamer",
+    "text": "Twee stacks, elk een SolarFlow 2400 AC+ met een extra batterij eronder, samen zo'n 10 kWh opslag. Compact genoeg om gewoon in de woonkamer te staan, met de kabels in een kabelgoot langs de muur.",
+    "image": "/assets/img/site/installatie-zendure-2400-ac-plus-woonkamer.webp",
+    "alt": "Twee grijze Zendure SolarFlow 2400 AC+-toestellen met elk een batterij eronder, op de tegelvloer van een woonkamer naast een kamerplant",
+    "facts": [
+      "Zendure",
+      "ca. 10 kWh",
+      "In de woonkamer"
+    ],
+    "brands": [
+      "zendure"
+    ],
+    "setup": "zendure-solarflow-2400-ac-plus",
+    "featured": false,
+    "link": "/oplossingen/zendure-solarflow/",
+    "link_label": "Meer over SolarFlow AC+"
+  },
+  {
     "title": "Sigenergy SigenStor, eenfasig",
     "text": "Energy Controller 4.6 SP met twee batterijmodules BAT 10.0, samen ruim 17,5 kWh bruikbare opslag. De controller levert 4,6 kW en tot 5 kVA, het standaard toegelaten maximum op een eenfasige aansluiting.",
     "image": "/assets/img/site/installatie-sigenergy-sigenstor.webp",
