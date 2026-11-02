@@ -475,6 +475,9 @@ p { margin: 0 0 1em; }
 .case-photo { margin: 1.75rem 0; }
 .prose .case-photo img { margin: 0; width: 100%; height: auto; }
 .case-photo figcaption { margin-top: .5rem; font-size: .92rem; color: var(--ink-soft); }
+.case-video { margin: 1.75rem auto; max-width: 340px; }
+.case-video video { display: block; width: 100%; height: auto; border-radius: var(--radius-m); background: var(--line); }
+.case-video figcaption { margin-top: .5rem; font-size: .92rem; color: var(--ink-soft); }
 .case-cta { margin: 2.5rem 0 2rem; padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-l); background: var(--night); color: #e6eeec; }
 .prose .case-cta h2 { margin-top: 0; color: #fff; }
 .case-cta p { color: #c3d0cd; }
