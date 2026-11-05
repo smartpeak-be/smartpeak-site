@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Hoe je batterij online staat, bepaalt hoe ver een indringer komt</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Drie manieren om een thuisbatterij met internet te verbinden</text>
+<defs><marker id="arrow-1f272e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f272e"/></marker><marker id="arrow-c2412d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c2412d"/></marker><marker id="arrow-0b7a42" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0b7a42"/></marker></defs>
+<text x="150.0" y="200.0" font-size="28" fill="#1f272e" font-weight="650">1. Op je thuisnetwerk</text>
+<text x="150.0" y="236.0" font-size="23" fill="#4b5661">zelfde netwerk als de rest</text>
+<rect x="235" y="262" width="240" height="64" rx="18" fill="#eef1f0" stroke="#e3ebe8" stroke-width="3"/>
+<text x="355.0" y="303.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Internet</text>
+<line x1="355.0" y1="326" x2="355.0" y2="362" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="235" y="368" width="240" height="64" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="355.0" y="409.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Router</text>
+<line x1="355.0" y1="432" x2="355.0" y2="470" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="150" y="478" width="410" height="250" rx="22" fill="#f3f7f5" stroke="#c2412d" stroke-width="3" stroke-dasharray="12 9"/>
+<rect x="170" y="500" width="175" height="80" rx="18" fill="#e3f4f6" stroke="#b9e2e8" stroke-width="3"/>
+<text x="257.5" y="549.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Batterij</text>
+<rect x="365" y="500" width="175" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="452.5" y="549.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Laptop</text>
+<rect x="170" y="610" width="175" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="257.5" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Camera</text>
+<rect x="365" y="610" width="175" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="452.5" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Gsm</text>
+<text x="355.0" y="770.0" font-size="23" fill="#c2412d" font-weight="600" text-anchor="middle">Wie binnenraakt op de batterij,</text>
+<text x="355.0" y="800.0" font-size="23" fill="#c2412d" font-weight="600" text-anchor="middle">kan verder proberen naar de rest.</text>
+<text x="595.0" y="200.0" font-size="28" fill="#1f272e" font-weight="650">2. Apart netwerk</text>
+<text x="595.0" y="236.0" font-size="23" fill="#4b5661">bijvoorbeeld een gastnetwerk</text>
+<rect x="680" y="262" width="240" height="64" rx="18" fill="#eef1f0" stroke="#e3ebe8" stroke-width="3"/>
+<text x="800.0" y="303.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Internet</text>
+<line x1="800.0" y1="326" x2="800.0" y2="362" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="680" y="368" width="240" height="64" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="800.0" y="409.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Router</text>
+<line x1="800.0" y1="432" x2="800.0" y2="470" stroke="#1f272e" stroke-width="5" marker-end="url(#arrow-1f272e)"/>
+<rect x="603" y="478" width="189" height="250" rx="22" fill="#e9f8ef" stroke="#17c15c" stroke-width="3"/>
+<rect x="615" y="500" width="165" height="80" rx="18" fill="#e3f4f6" stroke="#b9e2e8" stroke-width="3"/>
+<text x="697.5" y="549.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Batterij</text>
+<rect x="808" y="478" width="189" height="250" rx="22" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<rect x="820" y="500" width="165" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="902.5" y="549.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Laptop</text>
+<rect x="820" y="610" width="165" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="902.5" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Camera</text>
+<text x="697.0" y="650.0" font-size="22" fill="#0b7a42" font-weight="600" text-anchor="middle">alleen</text>
+<text x="697.0" y="678.0" font-size="22" fill="#0b7a42" font-weight="600" text-anchor="middle">de batterij</text>
+<text x="800.0" y="770.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="middle">Gescheiden door software</text>
+<text x="800.0" y="800.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="middle">in je router.</text>
+<text x="1040.0" y="200.0" font-size="28" fill="#1f272e" font-weight="650">3. Eigen 4G-verbinding</text>
+<text x="1040.0" y="236.0" font-size="23" fill="#4b5661">los van je thuisnetwerk</text>
+<rect x="1125" y="262" width="240" height="64" rx="18" fill="#eef1f0" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1245.0" y="303.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Internet</text>
+<line x1="1360" y1="326" x2="1360" y2="470" stroke="#0b7a42" stroke-width="5" stroke-dasharray="12 9" marker-end="url(#arrow-0b7a42)"/>
+<text x="1370.0" y="405.0" font-size="26" fill="#0b7a42" font-weight="650">4G</text>
+<line x1="1130" y1="326" x2="1130" y2="470" stroke="#4b5661" stroke-width="5" marker-end="url(#arrow-4b5661)"/>
+<text x="1140.0" y="405.0" font-size="22" fill="#4b5661">via je provider</text>
+<rect x="1253" y="478" width="189" height="250" rx="22" fill="#e9f8ef" stroke="#17c15c" stroke-width="3"/>
+<rect x="1265" y="500" width="165" height="80" rx="18" fill="#e3f4f6" stroke="#b9e2e8" stroke-width="3"/>
+<text x="1347.5" y="549.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Batterij</text>
+<rect x="1048" y="478" width="189" height="250" rx="22" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<rect x="1060" y="500" width="165" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1142.5" y="549.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Laptop</text>
+<rect x="1060" y="610" width="165" height="80" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1142.5" y="659.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Camera</text>
+<text x="1347.0" y="650.0" font-size="22" fill="#0b7a42" font-weight="600" text-anchor="middle">alleen</text>
+<text x="1347.0" y="678.0" font-size="22" fill="#0b7a42" font-weight="600" text-anchor="middle">de batterij</text>
+<text x="1245.0" y="770.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="middle">Fysiek gescheiden, maar met</text>
+<text x="1245.0" y="800.0" font-size="23" fill="#0b7a42" font-weight="600" text-anchor="middle">een toestel en een data-abonnement.</text>
+<text x="150.0" y="862.0" font-size="21" fill="#4b5661">Vereenvoudigd schema. Wachtwoord en updates blijven overal nodig. Tegen een gehackte cloud van de fabrikant helpt geen van de drie.</text>
+</svg>
