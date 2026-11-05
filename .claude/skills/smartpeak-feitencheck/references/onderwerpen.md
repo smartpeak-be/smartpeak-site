@@ -17,7 +17,7 @@ Deze pagina's zijn eerder gecontroleerd. Hergebruik hun bronnen in plaats van op
 | SigenStor: specificaties, C10/26-lijst, 5 kVA eenfasig | `pages/oplossingen/sigenergy-sigenstor.html` |
 | mySigen-app: werkmodi, piekbeperking, back-up-reserve | `pages/hulp/sigenstor-instellen-mysigen.html` |
 | Zendure-app: modi (HEMS 2.0), meters, P1 | `pages/hulp/zendure-modi-instellen.html` |
-| Cyberveiligheid van thuisbatterijen, CRA, radioapparatuurrichtlijn, netwerkscheiding | `content/artikels/thuisbatterij-hackers-cyberveiligheid.html` |
+| Cyberveiligheid van thuisbatterijen, CRA, radioapparatuurrichtlijn, netwerkscheiding, garantie bij offline (Sigenergy EU 27/05/2025, Tesla rev. 1.16) | `content/artikels/thuisbatterij-hackers-cyberveiligheid.html` |
 | P1-poort, verbruik downloaden uit Mijn Fluvius | `pages/hulp/p1-poort-activeren.html` |
 | AC-vermogen van een omvormer, kW en kVA | `pages/hulp/omvormer-vermogen-vinden.html` |
 
