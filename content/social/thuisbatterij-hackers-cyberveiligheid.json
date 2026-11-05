@@ -1,0 +1,56 @@
+{
+  "page": "/artikels/thuisbatterij-hackers-cyberveiligheid/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Cyberveiligheid",
+      "title": "Hoe veilig is je thuisbatterij tegen hackers?",
+      "sub": "Een nuchter antwoord, zonder paniek."
+    },
+    {
+      "type": "text",
+      "title": "Een van de vele verbonden toestellen",
+      "body": "Je gsm, je tv, je thermostaat en steeds vaker je koelkast of wasmachine hangen al aan het internet. Een thuisbatterij is er één van, met hetzelfde soort risico."
+    },
+    {
+      "type": "stat",
+      "title": "Gemiddeld aantal dagen tussen de oplossing voor een lek en het misbruik ervan",
+      "value": "−7",
+      "sub": "Het misbruik begint dus al vóór de oplossing. In 2018-2019 was dat nog 63 dagen. Cijfers voor software in het algemeen, niet enkel thuisbatterijen.",
+      "source": "Bron: Mandiant (Google), Time-to-Exploit 2023 en M-Trends 2026 (schatting voor 2025)."
+    },
+    {
+      "type": "list",
+      "title": "Waar zit het risico?",
+      "items": [
+        "Je account: een hergebruikt wachtwoord kan ook je batterij-app openen.",
+        "Je thuisnetwerk: van de batterij verder naar je andere toestellen.",
+        "De cloud van de fabrikant: daar heb je zelf weinig invloed op."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Gewoon offline houden?",
+      "body": "Bijna een utopie. Je mist updates en de app, en sommige fabrikanten koppelen hun garantie eraan. Bij Sigenergy zakt ze van 10 naar 5 jaar na in totaal meer dan een jaar offline.",
+      "source": "Bron: Sigenergy, garantievoorwaarden SigenStor Europa (mei 2025)."
+    },
+    {
+      "type": "list",
+      "title": "Wat je wel kan doen",
+      "items": [
+        "Een uniek wachtwoord, en tweestaps­verificatie als de app het kan.",
+        "Updates laten binnenkomen.",
+        "De batterij op een apart netwerk of een eigen 4G-verbinding."
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met de voor- en nadelen van elke maatregel en hoe reëel een aanval op het stroomnet is.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "Hoe veilig is een thuisbatterij eigenlijk tegen hackers? Die vraag krijgen we de laatste tijd vaker, zeker na het nieuws over de ontregelde koeling in supermarkten.\n\nHet korte antwoord: een thuisbatterij is een verbonden toestel zoals veel andere in je huis, met hetzelfde soort risico. Dat risico kan je sterk verkleinen, maar niemand kan het volledig uitsluiten.\n\nHet risico zit vooral op drie plaatsen: je eigen account (een wachtwoord dat je elders hergebruikt), je thuisnetwerk, en de cloud van de fabrikant. Op dat laatste heb je zelf weinig invloed.\n\nVolledig offline gaan is geen echte oplossing. Je mist updates en de app, en sommige fabrikanten koppelen hun garantie aan een internetverbinding. Volgens de garantievoorwaarden van Sigenergy zakt de garantie van 10 naar 5 jaar als de batterij in totaal meer dan een jaar offline is.\n\nWat wel helpt: een uniek wachtwoord, tweestapsverificatie als de app het aanbiedt, updates laten binnenkomen, en de batterij op een apart netwerk of een eigen 4G-verbinding zetten. Elke maatregel heeft een voordeel en een keerzijde. In het artikel zetten we ze op een rij.\n\nLees meer: https://smartpeak.be/artikels/thuisbatterij-hackers-cyberveiligheid/",
+  "instagram": "Hoe veilig is je thuisbatterij tegen hackers?\n\nEen thuisbatterij is een verbonden toestel zoals veel andere in je huis, met hetzelfde soort risico. Je kan het risico sterk verkleinen, maar niemand kan het volledig uitsluiten.\n\nOffline houden is geen echte oplossing: je mist updates en de app, en volgens de garantievoorwaarden van Sigenergy zakt de garantie van 10 naar 5 jaar na in totaal meer dan een jaar offline. Wat wel helpt: een uniek wachtwoord, tweestapsverificatie als de app het kan, updates, en de batterij op een apart netwerk of via 4G.\n\nMeer uitleg en alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #cyberveiligheid #zonnepanelen #slimwonen #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/thuisbatterij-hackers-cyberveiligheid/"
+}
