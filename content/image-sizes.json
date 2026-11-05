@@ -14,6 +14,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/batterij-capaciteit-vermogen-w640.webp"
  },
+ "/assets/img/grafieken/batterij-netwerk-opties.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/batterij-netwerk-opties-w640.webp"
+ },
  "/assets/img/grafieken/batterijgrootte-vlaanderen.webp": {
   "width": 1600,
   "height": 900,

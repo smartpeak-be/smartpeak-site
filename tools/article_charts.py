@@ -736,6 +736,55 @@ def frequency_50hz():
     return svg(body, "50 Hz: hoe ver mag de frequentie afwijken?", "Wat er gebeurt op het Europese net als productie en verbruik uit evenwicht raken")
 
 
+def battery_network_options():
+    """Three ways to connect a home battery to the internet, and what an intruder on the battery could reach."""
+    body = markers(INK, RED, LEAF_DEEP)
+    cols = [(150, "1. Op je thuisnetwerk", "zelfde netwerk als de rest"),
+            (595, "2. Apart netwerk", "bijvoorbeeld een gastnetwerk"),
+            (1040, "3. Eigen 4G-verbinding", "los van je thuisnetwerk")]
+    pw = 410
+    for i, (x, title, sub) in enumerate(cols):
+        cx = x + pw / 2
+        body += text(x, 200, title, 28, INK, 650)
+        body += text(x, 236, sub, 23)
+        body += box(x + 85, 262, pw - 170, 64, "Internet", None, "#eef1f0")
+        if i < 2:
+            body += arrow(cx, 326, cx, 362)
+            body += box(x + 85, 368, pw - 170, 64, "Router", None)
+            body += arrow(cx, 432, cx, 470)
+        else:
+            body += arrow(x + 320, 326, x + 320, 470, LEAF_DEEP, dashed=True)
+            body += text(x + 330, 405, "4G", 26, LEAF_DEEP, 650)
+            body += arrow(x + 90, 326, x + 90, 470, SOFT)
+            body += text(x + 100, 405, "via je provider", 22, SOFT)
+        # home network area
+        if i == 0:
+            body += f'<rect x="{x}" y="478" width="{pw}" height="250" rx="22" fill="#f3f7f5" stroke="{RED}" stroke-width="3" stroke-dasharray="12 9"/>\n'
+            body += box(x + 20, 500, 175, 80, "Batterij", None, "#e3f4f6", "#b9e2e8", LAGOON_DEEP)
+            body += box(x + 215, 500, 175, 80, "Laptop", None)
+            body += box(x + 20, 610, 175, 80, "Camera", None)
+            body += box(x + 215, 610, 175, 80, "Gsm", None)
+            body += text(cx, 770, "Wie binnenraakt op de batterij,", 23, RED, 600, "middle")
+            body += text(cx, 800, "kan verder proberen naar de rest.", 23, RED, 600, "middle")
+        else:
+            bx = x + 20 if i == 1 else x + 225
+            hx = x + 225 if i == 1 else x + 20
+            body += f'<rect x="{bx - 12}" y="478" width="189" height="250" rx="22" fill="#e9f8ef" stroke="{LEAF}" stroke-width="3"/>\n'
+            body += box(bx, 500, 165, 80, "Batterij", None, "#e3f4f6", "#b9e2e8", LAGOON_DEEP)
+            body += f'<rect x="{hx - 12}" y="478" width="189" height="250" rx="22" fill="#f3f7f5" stroke="{LINE}" stroke-width="3"/>\n'
+            body += box(hx, 500, 165, 80, "Laptop", None)
+            body += box(hx, 610, 165, 80, "Camera", None)
+            body += text(bx + 82, 650, "alleen", 22, LEAF_DEEP, 600, "middle")
+            body += text(bx + 82, 678, "de batterij", 22, LEAF_DEEP, 600, "middle")
+            line1, line2 = (("Gescheiden door software", "in je router.") if i == 1
+                            else ("Fysiek gescheiden, maar met", "een toestel en een data-abonnement."))
+            body += text(cx, 770, line1, 23, LEAF_DEEP, 600, "middle")
+            body += text(cx, 800, line2, 23, LEAF_DEEP, 600, "middle")
+    body += text(150, 862, "Vereenvoudigd schema. Wachtwoord en updates blijven overal nodig. Tegen een gehackte cloud van de fabrikant helpt geen van de drie.", 21)
+    return svg(body, "Hoe je batterij online staat, bepaalt hoe ver een indringer komt",
+               "Drie manieren om een thuisbatterij met internet te verbinden")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -767,3 +816,4 @@ if __name__ == "__main__":
     write("zelfverbruik-of-injectie", self_use_vs_injection())
     write("omvormer-zonnige-dag", inverter_split_day())
     write("frequentie-50-hz", frequency_50hz())
+    write("batterij-netwerk-opties", battery_network_options())
