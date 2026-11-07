@@ -188,6 +188,11 @@
   "height": 1600,
   "variant": "/assets/img/site/installatie-dyness-uitbreiding-solis-w640.webp"
  },
+ "/assets/img/site/installatie-sigenergy-sigenstor-gateway-driefasig.webp": {
+  "width": 1159,
+  "height": 869,
+  "variant": "/assets/img/site/installatie-sigenergy-sigenstor-gateway-driefasig-w640.webp"
+ },
  "/assets/img/site/installatie-sigenergy-sigenstor.webp": {
   "width": 1159,
   "height": 1400,
@@ -217,6 +222,11 @@
   "width": 1400,
   "height": 1146,
   "variant": "/assets/img/site/installatie-zendure-solarflow-w640.webp"
+ },
+ "/assets/img/site/klantcase-mattias-plaatsing-poster.webp": {
+  "width": 720,
+  "height": 1280,
+  "variant": "/assets/img/site/klantcase-mattias-plaatsing-poster-w640.webp"
  },
  "/assets/img/site/logo-mark.png": {
   "width": 192,
