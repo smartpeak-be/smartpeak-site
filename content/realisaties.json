@@ -1,5 +1,23 @@
 [
   {
+    "title": "Sigenergy SigenStor met Gateway, driefasig",
+    "text": "Energy Controller 10.0 TP (10 kW) met twee batterijmodules BAT 10.0, samen ruim 17,5 kWh bruikbare opslag, en een Sigen Gateway HomePro. Valt het net weg, dan koppelt de gateway de woning los en neemt de SigenStor de voeding over. Een noodgenerator kan later op de gateway aangesloten worden.",
+    "image": "/assets/img/site/installatie-sigenergy-sigenstor-gateway-driefasig.webp",
+    "alt": "Witte Sigenergy SigenStor-stack in een hoek van een berging: de Energy Controller bovenaan met daaronder twee batterijmodules, op verstelbare voetjes op een tegelvloer",
+    "facts": [
+      "Sigenergy",
+      "17,5 kWh bruikbaar",
+      "Driefasig, met back-up"
+    ],
+    "brands": [
+      "sigenergy"
+    ],
+    "setup": "sigenstor-gateway",
+    "featured": true,
+    "link": "/oplossingen/sigen-energy-gateway/",
+    "link_label": "Meer over de gateway"
+  },
+  {
     "title": "Drie Dyness-batterijen bij een bestaande Solis-omvormer",
     "text": "Een bestaande zonne-installatie kreeg er 15 kWh opslag bij: drie Dyness-batterijen van telkens 5 kWh, aangesloten op de Solis-omvormer die er al hing. Netjes boven elkaar aan de muur, met de kabels weggewerkt in kabelgoten naar de zekeringkast.",
     "image": "/assets/img/site/installatie-dyness-uitbreiding-solis.webp",
