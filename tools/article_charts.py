@@ -785,6 +785,47 @@ def battery_network_options():
                "Drie manieren om een thuisbatterij met internet te verbinden")
 
 
+def premie_timeline():
+    """The Flemish battery premium (above the line) next to what made a battery more interesting (below)."""
+    x0, x1, start, end = 200, 1400, 2019, 2027
+    x_of = lambda yr: x0 + (x1 - x0) * (yr - start) / (end - start)
+    axis_y = 480
+    body = f'<line x1="{x0 - 40}" x2="{x1 + 60}" y1="{axis_y}" y2="{axis_y}" stroke="{INK}" stroke-width="4"/>\n'
+    for yr in range(start, end + 1):
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{axis_y - 10}" y2="{axis_y + 10}" stroke="{INK}" stroke-width="3"/>\n'
+        body += text(x, axis_y + 44, str(yr), 23, SOFT, None, "middle")
+    above = [  # (date as year, label y, date text, line 1, line 2)
+        (2019.58, 250, "1 augustus 2019", "Premie start", "250 €/kWh, max. 3.200 €"),
+        (2023.25, 200, "31 maart 2023", "Laatste keuringsdatum", "voor de premie"),
+        (2024.92, 330, "1 december 2024", "Aanvraagloket dicht", "geen nieuwe aanvragen"),
+        (2026.5, 200, "1 juli 2026", "Premieloket definitief dicht", "geen dossiers meer"),
+    ]
+    below = [
+        (2021.0, 620, "1 januari 2021", "Geen terugdraaiende teller", "voor nieuwe zonnepanelen"),
+        (2023.0, 720, "1 januari 2023", "Capaciteitstarief", "je maandpiek telt mee"),
+        (2026.85, 620, "begin november 2026", "195.288 thuisbatterijen", "geregistreerd in Vlaanderen"),
+    ]
+    for yr, y, when, line1, line2 in above:
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{y + 70}" y2="{axis_y}" stroke="{SOFT}" stroke-width="3" stroke-dasharray="6 6"/>\n'
+        body += f'<circle cx="{x:.1f}" cy="{axis_y}" r="12" fill="#ffffff" stroke="{SOFT}" stroke-width="5"/>\n'
+        body += text(x, y - 30, when, 22, SOFT, 600, "middle")
+        body += text(x, y + 2, line1, 27, INK, 650, "middle")
+        body += text(x, y + 34, line2, 22, SOFT, None, "middle")
+    for yr, y, when, line1, line2 in below:
+        x = x_of(yr)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{axis_y + 60}" y2="{y - 52}" stroke="{LEAF_DEEP}" stroke-width="3"/>\n'
+        body += f'<circle cx="{x:.1f}" cy="{axis_y}" r="12" fill="{LEAF}"/>\n'
+        body += text(x, y - 20, when, 22, LEAF_DEEP, 600, "middle")
+        body += text(x, y + 12, line1, 27, INK, 650, "middle")
+        body += text(x, y + 44, line2, 22, SOFT, None, "middle")
+    body += text(150, 178, "Boven de lijn: de premie", 23, SOFT, 600)
+    body += text(150, 818, "Onder de lijn: wat een batterij om andere redenen interessanter maakte", 23, LEAF_DEEP, 600)
+    body += text(150, 862, "Bron: Vlaanderen.be, VRT NWS, Vlaamse Nutsregulator; aantal volgens Solar &amp; Storage Magazine, op basis van cijfers van Fluvius.", 21)
+    return svg(body, "De premie verdween, de batterij bleef", "Vlaamse premie voor een thuisbatterij en wat er intussen veranderde, 2019 tot 2026")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -817,3 +858,4 @@ if __name__ == "__main__":
     write("omvormer-zonnige-dag", inverter_split_day())
     write("frequentie-50-hz", frequency_50hz())
     write("batterij-netwerk-opties", battery_network_options())
+    write("premie-thuisbatterij-tijdlijn", premie_timeline())

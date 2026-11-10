@@ -35,6 +35,13 @@
     "link_label": "Bekijk drie woningen in cijfers"
   },
   {
+    "id": "premie",
+    "vraag": "Krijg ik nog een premie voor een thuisbatterij?",
+    "antwoord": "Van de Vlaamse overheid niet meer. Thuisbatterijen met een keuringsattest van na 31 maart 2023 komen niet in aanmerking, en het premieloket is definitief dicht. Ook Mijn VerbouwPremie en Mijn VerbouwLening dekken een thuisbatterij niet.",
+    "link": "/artikels/premie-thuisbatterij-2026/",
+    "link_label": "Wat bestaat er nog?"
+  },
+  {
     "id": "hoe-groot",
     "vraag": "Hoe groot moet mijn thuisbatterij zijn?",
     "antwoord": "Dat hangt af van hoeveel zonnestroom je op het net zet en wanneer je verbruikt. Laad je verbruik van Mijn Fluvius op in onze verbruiksanalyse en je ziet meteen welke grootte zinvol is.",
