@@ -13,6 +13,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -50,6 +51,37 @@ def read_entry(path):
     if not match:
         raise ValueError(f"{path} has no <!--meta {{...}} --> block")
     return json.loads(match.group(1)), text[match.end():]
+
+
+def git_dates():
+    """Last commit date per file, for <lastmod> in the sitemap and dateModified in the schema.
+    Needs the history (the workflow checks out with fetch-depth 0, without file contents).
+    In a shallow clone every file would get the same date, so then there are no dates at all."""
+    try:
+        if subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=ROOT,
+                          capture_output=True, text=True, check=True).stdout.strip() != "false":
+            return {}
+        log = subprocess.run(["git", "log", "--format=@%cs", "--name-only", "--no-renames", "--", "pages", "content"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    dates, current = {}, None
+    for line in log.splitlines():
+        if line.startswith("@"):
+            current = line[1:]
+        elif line and current:
+            dates.setdefault(line, current)  # newest commit comes first
+    return dates
+
+
+GIT_DATES = git_dates()
+
+
+def modified_of(meta):
+    """When the content last changed: the dates in the meta block and the last commit of the file.
+    Articles have no "source" on purpose: they show their date, and the schema must match it."""
+    return max(filter(None, [meta.get("modified"), meta.get("published"), meta.get("date"),
+                             GIT_DATES.get(meta.get("source", "")), meta.get("newest_listed")]), default=None)
 
 
 def dutch_date(iso):
@@ -377,7 +409,7 @@ def author_schema(meta):
     if not author:
         return {"@type": "Organization", "name": SITE["name"]}
     return {"@type": "Person", "name": author["name"], "jobTitle": author["role"],
-            "url": SITE_URL + author["url"], "worksFor": {"@type": "Organization", "name": SITE["name"]}}
+            "url": SITE_URL + author["url"], "worksFor": {"@id": ORG_ID}}
 
 
 def author_box(meta):
@@ -389,33 +421,40 @@ def author_box(meta):
             f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p></aside>')
 
 
-def structured_data(meta, titles):
-    organization = {
-        "@context": "https://schema.org", "@type": "LocalBusiness", "name": SITE["name"],
+ORG_ID = SITE_URL + "/#organisatie"
+
+
+def organization_schema():
+    """SmartPeak as a local business without a shop: an area served, no address or opening hours."""
+    return {
+        "@context": "https://schema.org", "@type": "LocalBusiness", "@id": ORG_ID, "name": SITE["name"],
+        "slogan": SITE["tagline"], "description": SITE["description"],
         "url": SITE_URL + "/", "email": SITE["email"], "telephone": SITE["phone_href"],
-        "logo": SITE_URL + "/assets/img/site/logo-mark.png", "areaServed": [{"@type": "AdministrativeArea", "name": "Oost-Vlaanderen"}, {"@type": "AdministrativeArea", "name": "Vlaanderen"}],
+        "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/logo/smartpeak-logo.png"},
+        "image": SITE_URL + "/assets/img/site/og-smartpeak.jpg",
+        "areaServed": [{"@type": "AdministrativeArea", "name": "Oost-Vlaanderen"},
+                       {"@type": "AdministrativeArea", "name": "Vlaanderen"}],
+        "knowsAbout": SITE["knows_about"],
         "sameAs": [s["url"] for s in SITE["social"]],
     }
-    data = [organization]
-    if meta.get("date"):
+
+
+def structured_data(meta, titles):
+    data = [organization_schema()]
+    image = SITE_URL + (meta.get("image") or share_image(meta)[0])
+    if meta["path"] == "/":
+        # The site name Google shows above the result comes from this WebSite entry.
+        data.append({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE_URL + "/#website",
+                     "name": SITE["name"], "alternateName": SITE["domain"].split("://")[1],
+                     "url": SITE_URL + "/", "inLanguage": "nl-BE", "publisher": {"@id": ORG_ID}})
+    if meta.get("date") or meta.get("schema_type") == "Article":
         data.append({
-            "@context": "https://schema.org", "@type": "BlogPosting", "headline": meta["title"],
-            "datePublished": meta["date"], "dateModified": meta.get("modified") or meta["date"],
-            "author": author_schema(meta),
-            "publisher": {"@type": "Organization", "name": SITE["name"]},
+            "@context": "https://schema.org", "@type": "BlogPosting" if meta.get("date") else "Article",
+            "headline": meta["title"], "description": meta.get("description"), "image": image,
+            "datePublished": meta.get("date") or meta.get("published"), "dateModified": modified_of(meta),
+            "inLanguage": "nl-BE", "author": author_schema(meta), "publisher": {"@id": ORG_ID},
             "mainEntityOfPage": SITE_URL + meta["path"],
         })
-    if meta.get("schema_type") == "Article":
-        article_data = {
-            "@context": "https://schema.org", "@type": "Article", "headline": meta["title"],
-            "description": meta.get("description"), "datePublished": meta.get("published"),
-            "author": author_schema(meta),
-            "publisher": {"@type": "Organization", "name": SITE["name"]},
-            "mainEntityOfPage": SITE_URL + meta["path"],
-        }
-        if meta.get("image"):
-            article_data["image"] = SITE_URL + meta["image"]
-        data.append(article_data)
     if meta.get("faq"):
         data.append(faq_schema(load_faq()))
     trail = breadcrumbs(meta, titles)
@@ -515,7 +554,7 @@ def render(meta, body, titles):
         "head_extra": preconnects(body) + analytics_head(),
         "cookie_settings": cookie_settings_button(),
         "og_type": "article" if meta.get("date") else "website",
-        "robots": "noindex, nofollow" if noindex else "index, follow",
+        "robots": "noindex, nofollow" if noindex else "index, follow, max-image-preview:large, max-snippet:-1",
         "structured_data": structured_data(meta, titles),
         "nav": nav_links(SITE["nav"], meta["path"]),
         "footer_nav": nav_links(SITE["nav"] + SITE["footer_nav"], meta["path"]),
@@ -569,7 +608,7 @@ def post_page(post, cta):
 def redirect_page(target):
     url = esc(BASE_PATH + target)
     return (f'<!doctype html><html lang="nl"><head><meta charset="utf-8">'
-            f'<title>Doorverwijzing | {SITE["name"]}</title><meta name="robots" content="noindex">'
+            f'<title>Doorverwijzing | {SITE["name"]}</title>'
             f'<link rel="canonical" href="{esc(SITE_URL + target)}">'
             f'<meta http-equiv="refresh" content="0; url={url}"></head>'
             f'<body><p>Deze pagina is verhuisd naar <a href="{url}">{url}</a>.</p></body></html>')
@@ -601,11 +640,15 @@ def main():
 
     posts = load_posts()
     realisaties = json.loads((ROOT / "content" / "realisaties.json").read_text(encoding="utf-8"))
-    pages = [read_entry(source) for source in sorted((ROOT / "pages").rglob("*.html"))]
+    pages = []
+    for source in sorted((ROOT / "pages").rglob("*.html")):
+        meta, body = read_entry(source)
+        meta["source"] = str(source.relative_to(ROOT))
+        pages.append((meta, body))
     long_pages = []
     for source in sorted((ROOT / "content" / "pages").glob("*.html")):
         meta, body = read_entry(source)
-        meta["path"] = f"/{source.stem}/"
+        meta.update(path=f"/{source.stem}/", source=str(source.relative_to(ROOT)))
         long_pages.append((meta, body))
 
     sections = {}
@@ -617,7 +660,10 @@ def main():
     cta = fill((ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"), values)
     paths = []
 
+    newest_post = max((p.get("modified") or p["date"] for p in posts), default=None)
     for meta, body in pages:
+        if "{{article_list" in body:  # overview pages change whenever an article does
+            meta["newest_listed"] = newest_post
         if "{{faq}}" in body:
             meta["faq"] = True
         body = fill(body, values)
@@ -654,7 +700,12 @@ def main():
               f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n") if IS_LIVE_DOMAIN \
         else "User-agent: *\nDisallow: /\n"
     (OUT / "robots.txt").write_text(robots, encoding="utf-8")
-    lastmod = {p["path"]: p.get("modified") or p["date"] for p in posts}
+    lastmod = {meta["path"]: modified_of(meta) for meta, _ in pages + long_pages}
+    lastmod.update({p["path"]: p.get("modified") or p["date"] for p in posts})
+    lastmod = {path: day for path, day in lastmod.items() if day}
+    if IS_LIVE_DOMAIN and SITE.get("indexnow_key"):
+        # IndexNow (Bing, Yandex, Seznam ...): the key file proves the site is ours. Not a secret.
+        (OUT / f'{SITE["indexnow_key"]}.txt').write_text(SITE["indexnow_key"], encoding="utf-8")
     urls = "".join(f"<url><loc>{esc(SITE_URL + p)}</loc>"
                    + (f"<lastmod>{lastmod[p]}</lastmod>" if p in lastmod else "") + "</url>" for p in paths)
     (OUT / "sitemap.xml").write_text(

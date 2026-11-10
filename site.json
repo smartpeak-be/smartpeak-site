@@ -1,6 +1,17 @@
 {
   "name": "SmartPeak",
   "tagline": "Slim omgaan met jouw energie",
+  "description": "SmartPeak ontwerpt, plaatst en configureert thuisbatterijen, monitoring en energiesturing voor gezinnen en zelfstandigen, vooral in Oost-Vlaanderen, als één geheel met wat er al is.",
+  "knows_about": [
+    "thuisbatterij",
+    "capaciteitstarief",
+    "zonnepanelen",
+    "hybride omvormer",
+    "energiesturing",
+    "dynamisch energiecontract",
+    "laadpaal",
+    "noodstroom en back-up"
+  ],
   "domain": "https://smartpeak.be",
   "email": "info@smartpeak.be",
   "phone": "+32 469 76 23 60",
@@ -11,6 +22,7 @@
   "analytics": {
     "ga4_id": "G-D4BGZ84EKE"
   },
+  "indexnow_key": "baafa063db09ecd6455003c76e735775",
   "entities": [
     {
       "name": "Blox-it BV",
