@@ -47,6 +47,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The history (without file contents) gives every page its <lastmod> in the sitemap.
+          fetch-depth: 0
+          filter: blob:none
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -58,9 +62,16 @@ jobs:
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: python3 tools/check_site.py
+      - name: Save the sitemap that is live now
+        if: contains(steps.pages.outputs.base_url, '//smartpeak.be')
+        run: curl -fsS https://smartpeak.be/sitemap.xml -o /tmp/old-sitemap.xml || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow (Bing) of changed pages
+        if: contains(steps.pages.outputs.base_url, '//smartpeak.be')
+        continue-on-error: true
+        run: python3 tools/indexnow.py /tmp/old-sitemap.xml

@@ -1,8 +1,9 @@
 """Check the built site in _site/ for broken internal links, images and anchors.
 
 Also enforces a few SEO basics per page: exactly one <h1>, a <title>, a meta
-description and a canonical link. Exits with status 1 when something is wrong.
+description, a canonical link and structured data (JSON-LD) that parses. Exits with status 1 when something is wrong.
 """
+import json
 import os
 import re
 import sys
@@ -52,10 +53,16 @@ def target_for(path):
 
 def main():
     pages = {f: PageScan() for f in SITE.rglob("*.html")}
-    for file, scan in pages.items():
-        scan.feed(file.read_text(encoding="utf-8"))
-
     problems = []
+    for file, scan in pages.items():
+        text = file.read_text(encoding="utf-8")
+        scan.feed(text)
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S):
+            try:
+                json.loads(block)
+            except ValueError as error:
+                problems.append(f"/{file.relative_to(SITE)}: structured data is no valid JSON ({error})")
+
     for file, scan in pages.items():
         name = "/" + str(file.relative_to(SITE))
         if not scan.redirect:
