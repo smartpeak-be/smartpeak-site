@@ -1,5 +1,23 @@
 [
   {
+    "title": "Sigenergy SigenStor 12 kW, driefasig",
+    "text": "Energy Controller 12.0 TP, een driefasige controller van 12 kW, met twee batterijmodules BAT 10.0: samen ruim 17,5 kWh bruikbare opslag. De volledige stack staat compact in een hoek van de berging, op verstelbare voetjes.",
+    "image": "/assets/img/site/installatie-sigenergy-sigenstor-driefasig-12kw.webp",
+    "alt": "Witte Sigenergy SigenStor-stack tegen een geschilderde betonblokmuur: de Energy Controller bovenaan met daaronder twee batterijmodules, op verstelbare voetjes op een donkere tegelvloer",
+    "facts": [
+      "Sigenergy",
+      "17,5 kWh bruikbaar",
+      "Driefasig, 12 kW"
+    ],
+    "brands": [
+      "sigenergy"
+    ],
+    "setup": "sigenstor-driefasig",
+    "featured": true,
+    "link": "/oplossingen/sigenergy-sigenstor/",
+    "link_label": "Meer over SigenStor"
+  },
+  {
     "title": "Sigenergy SigenStor met Gateway, driefasig",
     "text": "Energy Controller 10.0 TP (10 kW) met twee batterijmodules BAT 10.0, samen ruim 17,5 kWh bruikbare opslag, en een Sigen Gateway HomePro. Valt het net weg, dan koppelt de gateway de woning los en neemt de SigenStor de voeding over. Een noodgenerator kan later op de gateway aangesloten worden.",
     "image": "/assets/img/site/installatie-sigenergy-sigenstor-gateway-driefasig.webp",
