@@ -34,6 +34,31 @@
   "height": 900,
   "variant": "/assets/img/grafieken/dynamische-prijzen-dag-w640.webp"
  },
+ "/assets/img/grafieken/energiecontract-batterij-jaarkost.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-jaarkost-w640.webp"
+ },
+ "/assets/img/grafieken/energiecontract-batterij-prijsniveau.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-prijsniveau-w640.webp"
+ },
+ "/assets/img/grafieken/energiecontract-batterij-sturing.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-sturing-w640.webp"
+ },
+ "/assets/img/grafieken/energiecontract-batterij-voorbeelddag.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-voorbeelddag-w640.webp"
+ },
+ "/assets/img/grafieken/energiecontract-batterij-woning.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-woning-w640.webp"
+ },
  "/assets/img/grafieken/energiecontracten-prijsgroep.webp": {
   "width": 1600,
   "height": 900,

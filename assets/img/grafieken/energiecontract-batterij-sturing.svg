@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Dynamisch contract: wat de sturing van de batterij uitmaakt</text>
+<text x="150" y="128" font-size="25" fill="#4b5661">Bij vol dynamisch loont slim sturen veel meer dan bij de helft vast, helft dynamisch</text>
+<line x1="200" x2="1530" y1="740.0" y2="740.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="749.0" font-size="25" fill="#4b5661" text-anchor="end">0</text>
+<line x1="200" x2="1530" y1="617.5" y2="617.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="626.5" font-size="25" fill="#4b5661" text-anchor="end">400</text>
+<line x1="200" x2="1530" y1="495.0" y2="495.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="504.0" font-size="25" fill="#4b5661" text-anchor="end">800</text>
+<line x1="200" x2="1530" y1="372.5" y2="372.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="381.5" font-size="25" fill="#4b5661" text-anchor="end">1200</text>
+<line x1="200" x2="1530" y1="250.0" y2="250.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="259.0" font-size="25" fill="#4b5661" text-anchor="end">1600</text>
+<text x="178.0" y="220.0" font-size="22" fill="#4b5661" text-anchor="end">€ per jaar</text>
+<rect x="200" y="172" width="26" height="26" rx="4" fill="#cfd8d5"/>
+<text x="238.0" y="194.0" font-size="23" fill="#1f272e">Zonder batterij</text>
+<rect x="457.5" y="172" width="26" height="26" rx="4" fill="#1aa5b6"/>
+<text x="495.5" y="194.0" font-size="23" fill="#1f272e">Eigenverbruik</text>
+<rect x="690.0" y="172" width="26" height="26" rx="4" fill="#17c15c"/>
+<text x="728.0" y="194.0" font-size="23" fill="#1f272e">Slimme sturing</text>
+<rect x="935.0" y="172" width="26" height="26" rx="4" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="973.0" y="194.0" font-size="23" fill="#1f272e">Theoretisch maximum</text>
+<rect x="259.5" y="286.1" width="120" height="453.9" fill="#cfd8d5"/>
+<text x="319.5" y="272.1" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.482</text>
+<rect x="401.5" y="416.3" width="120" height="323.7" fill="#1aa5b6"/>
+<text x="461.5" y="402.3" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.057</text>
+<rect x="543.5" y="422.4" width="120" height="317.6" fill="#17c15c"/>
+<text x="603.5" y="408.4" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.037</text>
+<rect x="685.5" y="439.9" width="120" height="300.1" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="745.5" y="425.9" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 980</text>
+<text x="532.5" y="790.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Dynamisch</text>
+<rect x="924.5" y="321.4" width="120" height="418.6" fill="#cfd8d5"/>
+<text x="984.5" y="307.4" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.367</text>
+<rect x="1066.5" y="447.2" width="120" height="292.8" fill="#1aa5b6"/>
+<text x="1126.5" y="433.2" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 956</text>
+<rect x="1208.5" y="490.1" width="120" height="249.9" fill="#17c15c"/>
+<text x="1268.5" y="476.1" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 816</text>
+<rect x="1350.5" y="522.3" width="120" height="217.7" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="1410.5" y="508.3" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 711</text>
+<text x="1197.5" y="790.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Vol dynamisch</text>
+<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Berekening SmartPeak op kwartierwaarden van één woning (okt. 2025 – sep. 2026), Belpex-kwartierprijzen en tariefformules 2027.</text>
+<text x="150.0" y="878.0" font-size="20" fill="#4b5661">Theoretisch maximum: perfecte kennis van een heel jaar, voor geen enkele sturing haalbaar. Afgerond.</text>
+</svg>

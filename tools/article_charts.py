@@ -826,6 +826,195 @@ def premie_timeline():
     return svg(body, "De premie verdween, de batterij bleef", "Vlaamse premie voor een thuisbatterij en wat er intussen veranderde, 2019 tot 2026")
 
 
+# --- Use case energiecontract na een batterij (kwartierdata van één woning, okt 2025 - sep 2026) ---
+CONTRACT_NOTE = "Berekening SmartPeak op kwartierwaarden van één woning (okt. 2025 – sep. 2026), Belpex-kwartierprijzen en tariefformules 2027."
+CONTRACT_NOTE2 = "Energiedeel + variabele netkosten per kWh, incl. 6% btw, zonder capaciteitstarief. Afgerond."
+CONTRACT_COSTS = {  # contract: (zonder batterij, eigenverbruik, slimme sturing, theoretisch maximum), euro per jaar
+    "Vast": (1754, 1243, None, None),
+    "Vast-Variabel": (1477, 1053, None, None),
+    "Vast-Dynamisch": (1482, 1057, 1037, 980),
+    "Vol dynamisch": (1367, 956, 816, 711),
+}
+CONTRACT_COSTS_2027 = {
+    "Vast": (1754, 1243, None, None),
+    "Vast-Variabel": (1666, 1197, None, None),
+    "Vast-Dynamisch": (1604, 1182, 1167, 1110),
+    "Vol dynamisch": (1612, 1207, 1091, 984),
+}
+CASE_MONTHS_NET = [  # maand, afname, injectie (kWh, netto aan de meter, zonder batterij)
+    ("okt", 504, 79), ("nov", 562, 62), ("dec", 604, 37), ("jan", 615, 42), ("feb", 516, 69), ("mrt", 501, 248),
+    ("apr", 324, 339), ("mei", 342, 324), ("jun", 416, 236), ("jul", 355, 303), ("aug", 379, 296), ("sep", 364, 231)]
+DAY_PRICE = [111, 105, 99, 96, 104, 98, 98, 95, 102, 101, 98, 105, 112, 110, 108, 102, 89, 89, 89, 88, 86, 87, 89, 91,
+             89, 93, 91, 91, 111, 91, 68, 67, 214, 85, 51, 5, 65, 15, 0, 0, 0, -1, -5, -14, -15, -30, -51, -72,
+             -70, -90, -109, -131, -129, -183, -189, -201, -195, -192, -190, -182, -167, -153, -120, -93, -93, -67, -38, -16,
+             -12, -3, -1, 2, 0, 17, 57, 116, 56, 86, 91, 129, 80, 92, 108, 120, 125, 106, 97, 75, 116, 97, 101, 81,
+             111, 98, 89, 78]
+DAY_SOC_SELF = [0.1] + [0.0] * 42 + [0.1, 0.6, 1.1, 0.2] + [0.0] * 6 + [
+    0.5, 0.8, 1.3, 1.8, 2.3, 2.7, 3.2, 3.6, 4.1, 4.4, 4.8, 5.2, 5.4, 5.7, 5.9, 6.2, 6.4, 6.6, 6.3, 6.1, 6.0, 6.1, 6.2,
+    6.2, 6.2, 6.0, 5.8, 5.6, 5.4, 5.1, 4.7, 4.4, 4.0, 3.7, 3.4, 3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.0, 1.8]
+DAY_SOC_SMART = [4.9, 4.8, 4.7, 4.5, 4.4, 4.3, 4.2, 4.1, 4.0, 3.9, 3.8, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0, 2.9, 2.8,
+                 2.7, 2.6, 2.5, 2.3, 2.2, 2.1, 2.0, 1.8, 1.6, 1.4, 1.3, 1.1, 1.0, 0.8, 0.7, 0.6, 0.5, 0.3, 0.2, 0.0,
+                 0.0, 0.0, 0.0, 0.1, 0.6, 1.1, 0.2, 0.2, 0.0, 0.0, 0.0, 0.6, 0.0, 2.2, 4.1, 6.2, 8.3, 10.5, 12.6, 14.7,
+                 15.4, 15.9, 16.3, 16.6, 17.0, 17.3, 17.5, 17.5, 17.5, 17.5, 17.5, 17.2, 17.0, 16.9, 16.9, 16.9, 16.9,
+                 16.9, 16.7, 16.5, 16.3, 16.0, 15.7, 15.4, 15.0, 14.7, 14.4, 14.1, 13.9, 13.7, 13.5, 13.3, 13.1, 12.9,
+                 12.7, 12.5]
+
+
+def euro(v):
+    return f"€ {v:,}".replace(",", ".")
+
+
+def contract_bill_battery():
+    """Hero: per contract the yearly cost without battery, split into what is still paid with a battery
+    (own-consumption mode) and what the battery saved."""
+    x0, x1 = 400, 1450
+    hi = 1800
+    x_of = lambda v: x0 + (x1 - x0) * v / hi
+    body = ""
+    for lx, (color, label) in zip((150, 600), [(INK, "wat je nog betaalt met batterij"), ("#bfe9cf", "wat de batterij bespaart")]):
+        body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 24, INK)
+    for v in (0, 500, 1000, 1500):
+        x = x_of(v)
+        body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="235" y2="760" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x, 795, euro(v), 22, SOFT, None, "middle")
+    for i, (name, vals) in enumerate(CONTRACT_COSTS.items()):
+        without, with_bat = vals[0], vals[1]
+        y = 255 + i * 128
+        body += text(150, y + 52, name, 28, INK, 650)
+        body += f'<rect x="{x0}" y="{y}" width="{x_of(with_bat) - x0:.1f}" height="80" fill="{INK}"/>\n'
+        body += f'<rect x="{x_of(with_bat):.1f}" y="{y}" width="{x_of(without) - x_of(with_bat):.1f}" height="80" fill="#bfe9cf"/>\n'
+        body += text(x0 + 22, y + 52, euro(with_bat), 28, "#ffffff", 650)
+        body += text((x_of(with_bat) + x_of(without)) / 2, y + 52, "− " + euro(without - with_bat), 26, LEAF_DEEP, 650, "middle")
+        body += text(x_of(without) + 16, y + 52, euro(without), 24, SOFT)
+    body += text(150, 850, CONTRACT_NOTE, 20)
+    body += text(150, 878, "Batterij 17,5 kWh op eigenverbruik. " + CONTRACT_NOTE2, 20)
+    return svg(body, "Eén woning, vier contracten: de jaarkost met en zonder batterij",
+               "De batterij bespaart het meest bij het duurste contract, maar daar blijft de factuur ook het hoogst", 25)
+
+
+def contract_strategies():
+    """Dynamic contracts: yearly cost per way of steering the battery."""
+    x0, x1, ytop, ybot = 200, 1530, 250, 740
+    hi = 1600
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = axes(x0, x1, y_of, [0, 400, 800, 1200, 1600], "")
+    body += text(x0 - 22, ytop - 30, "€ per jaar", 22, SOFT, None, "end")
+    names = ["Zonder batterij", "Eigenverbruik", "Slimme sturing", "Theoretisch maximum"]
+    fills = ["#cfd8d5", LAGOON, LEAF, "#ffffff"]
+    strokes = [None, None, None, LEAF_DEEP]
+    lx = 200
+    for name, f, st in zip(names, fills, strokes):
+        extra = f' stroke="{st}" stroke-width="3" stroke-dasharray="8 6"' if st else ""
+        body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{f}"{extra}/>\n' + text(lx + 38, 194, name, 23, INK)
+        lx += 70 + len(name) * 12.5
+    groups = [("Vast-Dynamisch", CONTRACT_COSTS["Vast-Dynamisch"]), ("Vol dynamisch", CONTRACT_COSTS["Vol dynamisch"])]
+    gw = (x1 - x0) / 2
+    bw = 120
+    for g, (name, vals) in enumerate(groups):
+        cx = x0 + gw * g + gw / 2
+        start = cx - (4 * bw + 3 * 22) / 2
+        for k, v in enumerate(vals):
+            bx = start + k * (bw + 22)
+            extra = f' stroke="{strokes[k]}" stroke-width="3" stroke-dasharray="8 6"' if strokes[k] else ""
+            body += f'<rect x="{bx:.1f}" y="{y_of(v):.1f}" width="{bw}" height="{ybot - y_of(v):.1f}" fill="{fills[k]}"{extra}/>\n'
+            body += text(bx + bw / 2, y_of(v) - 14, euro(v), 24, INK, 650, "middle")
+        body += text(cx, 790, name, 28, INK, 650, "middle")
+    body += text(150, 850, CONTRACT_NOTE, 20)
+    body += text(150, 878, "Theoretisch maximum: perfecte kennis van een heel jaar, voor geen enkele sturing haalbaar. Afgerond.", 20)
+    return svg(body, "Dynamisch contract: wat de sturing van de batterij uitmaakt",
+               "Bij vol dynamisch loont slim sturen veel meer dan bij de helft vast, helft dynamisch", 25)
+
+
+def contract_price_levels():
+    """Best realistic option per contract at the test-year price level and at the higher 2027 level."""
+    x0, x1, ytop, ybot = 200, 1530, 250, 740
+    hi = 1400
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = axes(x0, x1, y_of, [0, 350, 700, 1050, 1400], "")
+    body += text(x0 - 22, ytop - 30, "€ per jaar", 22, SOFT, None, "end")
+    legend = [(LAGOON, "prijsniveau testjaar (Belpex gem. 101 €/MWh)"), (INK, "prijsniveau 2027 (± 170 €/MWh)")]
+    for lx, (color, label) in zip((200, 860), legend):
+        body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 23, INK)
+    picks = [("Vast", 1, "eigenverbruik"), ("Vast-Variabel", 1, "eigenverbruik"),
+             ("Vast-Dynamisch", 2, "slimme sturing"), ("Vol dynamisch", 2, "slimme sturing")]
+    slot = (x1 - x0) / 4
+    bw = 120
+    for i, (name, k, mode) in enumerate(picks):
+        cx = x0 + slot * i + slot / 2
+        for j, (vals, color) in enumerate(((CONTRACT_COSTS, LAGOON), (CONTRACT_COSTS_2027, INK))):
+            v = vals[name][k]
+            bx = cx - bw - 8 if j == 0 else cx + 8
+            body += f'<rect x="{bx:.1f}" y="{y_of(v):.1f}" width="{bw}" height="{ybot - y_of(v):.1f}" fill="{color}"/>\n'
+            body += text(bx + bw / 2, y_of(v) - 14, euro(v), 23, INK, 650, "middle")
+        body += text(cx, 785, name, 27, INK, 650, "middle")
+        body += text(cx, 815, mode, 21, SOFT, None, "middle")
+    body += text(150, 856, "Prijsniveau 2027: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.", 20)
+    body += text(150, 882, "Berekening SmartPeak, zelfde woning en batterij. " + CONTRACT_NOTE2, 20)
+    return svg(body, "Wat als de marktprijs stijgt?", "Op een hoger prijsniveau worden de verschillen tussen de contracten veel kleiner", 25)
+
+
+def contract_example_day():
+    """25 April 2026: quarter-hour price and the battery level with own-consumption versus smart steering."""
+    x0, x1 = 200, 1530
+    n = len(DAY_PRICE)
+    x_of = lambda q: x0 + (x1 - x0) * q / n
+    # price panel
+    pt, pb, plo, phi = 205, 455, -240, 240
+    py = lambda v: pb - (pb - pt) * (v - plo) / (phi - plo)
+    body = text(150, 186, "Marktprijs per kwartier (€/MWh)", 26, INK, 650)
+    for v in (-200, -100, 0, 100, 200):
+        y = py(v)
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE if v else SOFT}" stroke-width="{2 if v else 2.5}"/>\n'
+        body += text(x0 - 18, y + 8, f"{v}", 21, SOFT, None, "end")
+    neg = [q for q, p in enumerate(DAY_PRICE) if p < 0]
+    body += f'<rect x="{x_of(neg[0]):.1f}" y="{pt}" width="{x_of(neg[-1] + 1) - x_of(neg[0]):.1f}" height="{pb - pt}" fill="#fdecea" opacity="0.6"/>\n'
+    body += text((x_of(neg[0]) + x_of(neg[-1] + 1)) / 2, pt + 30, "negatieve prijs", 22, RED, 600, "middle")
+    pts = []
+    for q, p in enumerate(DAY_PRICE):
+        pts += [f"{x_of(q):.1f},{py(p):.1f}", f"{x_of(q + 1):.1f},{py(p):.1f}"]
+    body += f'<polyline points="{" ".join(pts)}" fill="none" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>\n'
+    # battery panel
+    bt, bb, cap = 540, 760, 17.5
+    by = lambda v: bb - (bb - bt) * v / cap
+    body += text(150, 515, "Inhoud van de batterij (kWh)", 26, INK, 650)
+    for v in (0, 5, 10, 15):
+        y = by(v)
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x0 - 18, y + 8, f"{v}", 21, SOFT, None, "end")
+    body += f'<line x1="{x0}" x2="{x1}" y1="{by(cap):.1f}" y2="{by(cap):.1f}" stroke="{LAGOON_DEEP}" stroke-width="2" stroke-dasharray="8 6"/>\n'
+    body += text(x1, by(cap) - 10, "vol: 17,5 kWh", 21, LAGOON_DEEP, 600, "end")
+    for series, color, label, lx in ((DAY_SOC_SELF, LAGOON, "eigenverbruik", 770), (DAY_SOC_SMART, LEAF_DEEP, "slimme sturing", 1020)):
+        pts = " ".join(f"{x_of(q + 1):.1f},{by(v):.1f}" for q, v in enumerate(series))
+        body += f'<polyline points="{x_of(0):.1f},{by(series[0]):.1f} {pts}" fill="none" stroke="{color}" stroke-width="5" stroke-linejoin="round"/>\n'
+        body += f'<rect x="{lx}" y="497" width="40" height="8" rx="4" fill="{color}"/>\n' + text(lx + 52, 509, label, 23, INK)
+    body += "".join(text(x_of(h * 4), 800, f"{h}u", 21, SOFT, None, "middle") for h in range(0, 25, 3))
+    body += text(150, 850, "Zaterdag 25 april 2026, kwartierwaarden van de woning uit de use case, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.", 20)
+    body += text(150, 878, "Slimme sturing laadt bij een negatieve prijs ook van het net en houdt energie over voor de avond en de volgende ochtend.", 20)
+    return svg(body, "Eén zonnige dag: eigenverbruik tegenover slimme sturing",
+               "Met eigenverbruik raakt de batterij maar voor een derde vol, slimme sturing vult ze helemaal", 25)
+
+
+def contract_case_months():
+    """Context: monthly grid consumption and injection of the case home, before the battery."""
+    x0, x1, ytop, ybot = 200, 1530, 250, 740
+    hi = 700
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = axes(x0, x1, y_of, [0, 175, 350, 525, 700], " kWh")
+    for lx, (color, label) in zip((200, 560), [(INK, "van het net (afname)"), ("#9be0b6", "naar het net (zonne-overschot)")]):
+        body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 24, INK)
+    slot = (x1 - x0) / len(CASE_MONTHS_NET)
+    bw = 40
+    for i, (m, afn, inj) in enumerate(CASE_MONTHS_NET):
+        cx = x0 + slot * i + slot / 2
+        body += f'<rect x="{cx - bw - 3:.1f}" y="{y_of(afn):.1f}" width="{bw}" height="{ybot - y_of(afn):.1f}" fill="{INK}"/>\n'
+        body += f'<rect x="{cx + 3:.1f}" y="{y_of(inj):.1f}" width="{bw}" height="{ybot - y_of(inj):.1f}" fill="#9be0b6"/>\n'
+        body += text(cx, 785, m, 24, INK, 600, "middle")
+    body += text(150, 850, "Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, vóór de batterij. Netto: wat de", 20)
+    body += text(150, 878, "panelen meteen in huis leveren, zit er niet in. Over het jaar: 5.482 kWh afname, 2.266 kWh injectie. Afgerond.", 20)
+    return svg(body, "De woning uit de use case: afname en injectie per maand",
+               "Van oktober tot februari is er nauwelijks zonne-overschot om op te slaan", 25)
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -859,3 +1048,8 @@ if __name__ == "__main__":
     write("frequentie-50-hz", frequency_50hz())
     write("batterij-netwerk-opties", battery_network_options())
     write("premie-thuisbatterij-tijdlijn", premie_timeline())
+    write("energiecontract-batterij-jaarkost", contract_bill_battery())
+    write("energiecontract-batterij-sturing", contract_strategies())
+    write("energiecontract-batterij-prijsniveau", contract_price_levels())
+    write("energiecontract-batterij-voorbeelddag", contract_example_day())
+    write("energiecontract-batterij-woning", contract_case_months())

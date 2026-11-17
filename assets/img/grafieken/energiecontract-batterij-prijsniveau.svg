@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Wat als de marktprijs stijgt?</text>
+<text x="150" y="128" font-size="25" fill="#4b5661">Op een hoger prijsniveau worden de verschillen tussen de contracten veel kleiner</text>
+<line x1="200" x2="1530" y1="740.0" y2="740.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="749.0" font-size="25" fill="#4b5661" text-anchor="end">0</text>
+<line x1="200" x2="1530" y1="617.5" y2="617.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="626.5" font-size="25" fill="#4b5661" text-anchor="end">350</text>
+<line x1="200" x2="1530" y1="495.0" y2="495.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="504.0" font-size="25" fill="#4b5661" text-anchor="end">700</text>
+<line x1="200" x2="1530" y1="372.5" y2="372.5" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="381.5" font-size="25" fill="#4b5661" text-anchor="end">1050</text>
+<line x1="200" x2="1530" y1="250.0" y2="250.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="178.0" y="259.0" font-size="25" fill="#4b5661" text-anchor="end">1400</text>
+<text x="178.0" y="220.0" font-size="22" fill="#4b5661" text-anchor="end">€ per jaar</text>
+<rect x="200" y="172" width="26" height="26" rx="4" fill="#1aa5b6"/>
+<text x="238.0" y="194.0" font-size="23" fill="#1f272e">prijsniveau testjaar (Belpex gem. 101 €/MWh)</text>
+<rect x="860" y="172" width="26" height="26" rx="4" fill="#1f272e"/>
+<text x="898.0" y="194.0" font-size="23" fill="#1f272e">prijsniveau 2027 (± 170 €/MWh)</text>
+<rect x="238.2" y="304.9" width="120" height="435.1" fill="#1aa5b6"/>
+<text x="298.2" y="290.9" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.243</text>
+<rect x="374.2" y="304.9" width="120" height="435.1" fill="#1f272e"/>
+<text x="434.2" y="290.9" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.243</text>
+<text x="366.2" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast</text>
+<text x="366.2" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">eigenverbruik</text>
+<rect x="570.8" y="371.4" width="120" height="368.6" fill="#1aa5b6"/>
+<text x="630.8" y="357.4" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.053</text>
+<rect x="706.8" y="321.1" width="120" height="418.9" fill="#1f272e"/>
+<text x="766.8" y="307.1" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.197</text>
+<text x="698.8" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Variabel</text>
+<text x="698.8" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">eigenverbruik</text>
+<rect x="903.2" y="377.1" width="120" height="362.9" fill="#1aa5b6"/>
+<text x="963.2" y="363.1" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.037</text>
+<rect x="1039.2" y="331.6" width="120" height="408.4" fill="#1f272e"/>
+<text x="1099.2" y="317.6" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.167</text>
+<text x="1031.2" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Dynamisch</text>
+<text x="1031.2" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">slimme sturing</text>
+<rect x="1235.8" y="454.4" width="120" height="285.6" fill="#1aa5b6"/>
+<text x="1295.8" y="440.4" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 816</text>
+<rect x="1371.8" y="358.1" width="120" height="381.9" fill="#1f272e"/>
+<text x="1431.8" y="344.1" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.091</text>
+<text x="1363.8" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vol dynamisch</text>
+<text x="1363.8" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">slimme sturing</text>
+<text x="150.0" y="856.0" font-size="20" fill="#4b5661">Prijsniveau 2027: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.</text>
+<text x="150.0" y="882.0" font-size="20" fill="#4b5661">Berekening SmartPeak, zelfde woning en batterij. Energiedeel + variabele netkosten per kWh, incl. 6% btw, zonder capaciteitstarief. Afgerond.</text>
+</svg>
