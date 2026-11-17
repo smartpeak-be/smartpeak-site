@@ -4,8 +4,8 @@
     {
       "type": "cover",
       "kicker": "Batterij bijplaatsen",
-      "title": "Heb je zonnepanelen? Dan kan er een batterij bij.",
-      "sub": "Drie woningen met ongeveer 10 kWh opslag erbij, in cijfers."
+      "title": "Zonnepanelen en een batterij erbij: wat doet die?",
+      "image": "/assets/img/grafieken/thuisbatterij-bijplaatsen-overzicht.webp"
     },
     {
       "type": "list",
@@ -16,10 +16,10 @@
       ]
     },
     {
-      "type": "stat",
-      "title": "Woning 1 (hybride omvormer): verbruik uit eigen zonnestroom",
-      "value": "79%",
-      "sub": "Rechtstreeks of via de batterij. 470 kWh kwam van het net.",
+      "type": "image",
+      "title": "Woning 1: in juli bijna alles uit eigen zonnestroom",
+      "image": "/assets/img/grafieken/thuisbatterij-bijplaatsen-per-maand.webp",
+      "body": "Richting herfst stijgt het aandeel van het net: een batterij kan enkel bewaren wat er over is.",
       "source": "Bron: meetwaarden uit de monitoringapp van de installatie, van de plaatsing tot 18 oktober 2026."
     },
     {
@@ -31,11 +31,6 @@
         "De app ziet de bestaande panelen niet: het verbruik is enkel wat de zon niet rechtstreeks dekte."
       ],
       "source": "Bron: meetwaarden uit de monitoringapps van de installaties, van de plaatsing tot 18 oktober 2026."
-    },
-    {
-      "type": "text",
-      "title": "Wat de drie woningen gemeen hebben",
-      "body": "In de zomer kwam er weinig stroom van het net, in juli bij woning 1 zo goed als niets. Richting herfst stijgt het aandeel van het net in alle drie de woningen. Een batterij die op zonnestroom laadt, kan enkel bewaren wat er over is."
     },
     {
       "type": "list",
@@ -50,7 +45,7 @@
     {
       "type": "cta",
       "title": "Lees het hele artikel",
-      "sub": "Met de grafieken per woning. Het plaatsbezoek is gratis en vrijblijvend.",
+      "sub": "Met de grafieken per woning en wat de cijfers wel en niet zeggen.",
       "url": "smartpeak.be/artikels"
     }
   ],

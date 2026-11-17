@@ -29,7 +29,8 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 ## 2. Beelden
 
 - Carrousel van 5 tot 8 slides, staand 4:5 (1080 × 1350). Carrousels worden bewaard en doorgestuurd, en dat weegt volgens Instagram zwaar ([Social Media Today, jan 2025](https://www.socialmediatoday.com/news/instagram-shares-algorithm-insights-2025/738034/)).
-- Slide 1 is de haak: een vraag of belofte in een paar woorden. De laatste slide verwijst naar de pagina op smartpeak.be.
+- Slide 1 is de haak: een vraag of belofte in een paar woorden, **met het beeld van de pagina als blikvanger**. Neem de afbeelding uit `image` in het meta-blok: een grafiek als `{"type": "cover", ..., "image": "/assets/img/grafieken/<x>.webp"}`, een eigen installatiefoto met `"photo": true` erbij (foto over de hele slide, titel onderaan). Een groene cover zonder beeld enkel als de pagina geen bruikbaar beeld heeft. Een groene achtergrond op elke post valt in een tijdlijn weg tussen al de rest.
+- Gebruik ook verder in de carrousel de grafieken uit de pagina (`{"type": "image", "title": ..., "image": ..., "body": ...}`) in plaats van dezelfde cijfers nog eens als tekst te zetten. De laatste slide verwijst naar de pagina op smartpeak.be.
 - Eén idee per slide, kort. Meldt het script "TE VEEL TEKST", kort dan in.
 - Cijfers alleen met hun bron onderaan de slide, zoals op de site.
 - Eigen installatiefoto's mogen enkel met toestemming van de klant. Geen stockfoto's en geen AI-beelden die echt lijken: sinds 2 augustus 2026 moet je die volgens de Europese AI-verordening (artikel 50) als AI melden. Onze infographics en slides zijn geen AI-beelden; zet `isAiGenerated` op `false`.
@@ -56,7 +57,7 @@ Kijk naar `content/social/energiecontract-vergelijken-besparen.json` als voorbee
 
 **Voor allemaal**
 - De tekst zegt zelf iets. Beschrijf nooit de post ("In de slides: …", "Bewaar de carrousel", "Swipe"): geef de kern in gewone zinnen, met de belangrijkste feiten uit de slides.
-- Dezelfde regels als op de site: geen prijzen van installaties, geen terugverdientijd, geen beloftes van besparing, Sigenergy nooit "onze voorkeur", elke bewering met bron.
+- Dezelfde regels als op de site: geen prijzen van installaties, geen terugverdientijd, geen beloftes van besparing, Sigenergy nooit "onze voorkeur", elke bewering met bron. Geen "gratis plaatsbezoek" of "we komen gratis langs": we komen langs wanneer een plaatsing concreet wordt, en dat beoordelen we zelf.
 - Een post zegt niets wat de pagina niet zegt.
 - Bron in de post enkel bij cijfers, bedragen en regels ("Volgens de Vlaamse Nutsregulator kost 1 kW …"). Algemene vakkennis schrijf je in eigen naam, zonder "volgens …" ("Bidirectioneel laden staat in België nog in een vroege fase."): de bron staat in het artikel. Anders lijkt het alsof SmartPeak het zelf niet weet.
 - Reviews enkel als ze echt zijn en de klant toestemming gaf voor sociale media. Toon niet enkel de beste reviews als je de indruk wekt dat het alle reviews zijn ([FOD Economie, 2023](https://news.economie.fgov.be/231090-online-reviews-voor-een-5-sterren-betrouwbaarheid/)).

@@ -3,9 +3,9 @@
   "slides": [
     {
       "type": "cover",
-      "kicker": "Bewaar dit",
+      "kicker": "SigenStor",
       "title": "Je SigenStor instellen in mySigen",
-      "sub": "Werkmodi, piekbeperking en back-up in één overzicht."
+      "image": "/assets/img/grafieken/sigen-piekbeperking.webp"
     },
     {
       "type": "list",

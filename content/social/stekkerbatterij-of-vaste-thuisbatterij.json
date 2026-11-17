@@ -3,9 +3,11 @@
   "slides": [
     {
       "type": "cover",
-      "kicker": "Stekkerbatterij",
+      "kicker": "Thuisbatterij",
       "title": "Stekkerbatterij of vaste thuisbatterij?",
-      "sub": "Sinds april 2025 mag een goedgekeurde stekkerbatterij ook in België."
+      "sub": "Wat mag in België, en wat is het verschil?",
+      "image": "/assets/img/site/installatie-zendure-solarflow.webp",
+      "photo": true
     },
     {
       "type": "text",
