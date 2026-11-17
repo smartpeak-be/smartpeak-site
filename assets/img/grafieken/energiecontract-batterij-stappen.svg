@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Van vast zonder batterij naar vol dynamisch met slimme sturing</text>
+<text x="150" y="128" font-size="25" fill="#4b5661">Waar het verschil vandaan komt: het contract, de batterij en de sturing</text>
+<rect x="150" y="172" width="26" height="26" rx="4" fill="#cfd8d5"/>
+<text x="188.0" y="194.0" font-size="24" fill="#1f272e">goedkoper contract (vol dynamisch)</text>
+<rect x="640" y="172" width="26" height="26" rx="4" fill="#bfe9cf"/>
+<text x="678.0" y="194.0" font-size="24" fill="#1f272e">batterij op eigenverbruik</text>
+<rect x="1010" y="172" width="26" height="26" rx="4" fill="#5fd08d"/>
+<text x="1048.0" y="194.0" font-size="24" fill="#1f272e">slimme sturing</text>
+<text x="150.0" y="278.0" font-size="28" fill="#1f272e" font-weight="650">Prijsniveau testjaar: van € 1.754 naar € 911</text>
+<rect x="150" y="300" width="622.5" height="80" fill="#1f272e"/>
+<text x="172.0" y="351.0" font-size="28" fill="#ffffff" font-weight="650">€ 911</text>
+<rect x="772.5" y="300" width="84.7" height="80" fill="#5fd08d"/>
+<rect x="857.2" y="300" width="226.9" height="80" fill="#bfe9cf"/>
+<text x="970.7" y="351.0" font-size="24" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 332</text>
+<rect x="1084.1" y="300" width="264.4" height="80" fill="#cfd8d5"/>
+<text x="1216.3" y="351.0" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">− € 387</text>
+<text x="1364.6" y="351.0" font-size="24" fill="#4b5661">€ 1.754</text>
+<text x="150.0" y="422.0" font-size="24" fill="#0b7a42" font-weight="600">contract − € 387   ·   batterij − € 332   ·   slimme sturing − € 124</text>
+<text x="150.0" y="533.0" font-size="28" fill="#1f272e" font-weight="650">Hoger prijsniveau: van € 1.754 naar € 1.170</text>
+<rect x="150" y="555" width="799.5" height="80" fill="#1f272e"/>
+<text x="172.0" y="606.0" font-size="28" fill="#ffffff" font-weight="650">€ 1.170</text>
+<rect x="949.5" y="555" width="78.6" height="80" fill="#5fd08d"/>
+<rect x="1028.1" y="555" width="223.4" height="80" fill="#bfe9cf"/>
+<text x="1139.8" y="606.0" font-size="24" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 327</text>
+<rect x="1251.5" y="555" width="97.0" height="80" fill="#cfd8d5"/>
+<text x="1364.6" y="606.0" font-size="24" fill="#4b5661">€ 1.754</text>
+<text x="150.0" y="677.0" font-size="24" fill="#0b7a42" font-weight="600">contract − € 142   ·   batterij − € 327   ·   slimme sturing − € 115</text>
+<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Berekening SmartPeak, één woning (okt. 2025 – sep. 2026). Hoger prijsniveau: alle kwartierprijzen 69 €/MWh hoger.</text>
+<text x="150.0" y="878.0" font-size="20" fill="#4b5661">De volledige balk is vast zonder batterij; zwart is wat overblijft. Batterij 7,6 kWh en 4 kW. Zonder capaciteitstarief.</text>
+</svg>

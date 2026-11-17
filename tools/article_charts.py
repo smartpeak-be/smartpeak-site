@@ -862,31 +862,75 @@ def euro(v):
 
 
 def contract_bill_battery():
-    """Hero: per contract the yearly cost without battery, split into what is still paid with a battery
-    (own-consumption mode) and what the battery saved."""
+    """Hero: per contract the yearly cost without battery, split into what is still paid with the best
+    control, what smart control adds (dynamic contracts only) and what own-consumption saves."""
     x0, x1 = 400, 1450
     hi = 1800
     x_of = lambda v: x0 + (x1 - x0) * v / hi
+    smart_fill = "#5fd08d"
     body = ""
-    for lx, (color, label) in zip((150, 600), [(INK, "wat je nog betaalt met batterij"), ("#bfe9cf", "wat de batterij bespaart")]):
+    legend = [(INK, "wat je nog betaalt"), ("#bfe9cf", "besparing met eigenverbruik"), (smart_fill, "extra door slimme sturing")]
+    for lx, (color, label) in zip((150, 470, 920), legend):
         body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 24, INK)
     for v in (0, 500, 1000, 1500):
         x = x_of(v)
         body += f'<line x1="{x:.1f}" x2="{x:.1f}" y1="235" y2="760" stroke="{LINE}" stroke-width="2"/>\n'
         body += text(x, 795, euro(v), 22, SOFT, None, "middle")
     for i, (name, vals) in enumerate(CONTRACT_COSTS.items()):
-        without, with_bat = vals[0], vals[1]
-        y = 255 + i * 128
-        body += text(150, y + 52, name, 28, INK, 650)
-        body += f'<rect x="{x0}" y="{y}" width="{x_of(with_bat) - x0:.1f}" height="80" fill="{INK}"/>\n'
-        body += f'<rect x="{x_of(with_bat):.1f}" y="{y}" width="{x_of(without) - x_of(with_bat):.1f}" height="80" fill="#bfe9cf"/>\n'
-        body += text(x0 + 22, y + 52, euro(with_bat), 28, "#ffffff", 650)
-        body += text((x_of(with_bat) + x_of(without)) / 2, y + 52, "− " + euro(without - with_bat), 26, LEAF_DEEP, 650, "middle")
-        body += text(x_of(without) + 16, y + 52, euro(without), 24, SOFT)
+        without, own, smart = vals[0], vals[1], vals[2]
+        pay = smart if smart else own
+        y = 250 + i * 128
+        body += text(150, y + 50, name, 28, INK, 650)
+        body += f'<rect x="{x0}" y="{y}" width="{x_of(pay) - x0:.1f}" height="76" fill="{INK}"/>\n'
+        if smart:
+            body += f'<rect x="{x_of(smart):.1f}" y="{y}" width="{x_of(own) - x_of(smart):.1f}" height="76" fill="{smart_fill}"/>\n'
+        body += f'<rect x="{x_of(own):.1f}" y="{y}" width="{x_of(without) - x_of(own):.1f}" height="76" fill="#bfe9cf"/>\n'
+        body += text(x0 + 22, y + 49, euro(pay), 28, "#ffffff", 650)
+        body += text((x_of(own) + x_of(without)) / 2, y + 49, "− " + euro(without - own), 25, LEAF_DEEP, 650, "middle")
+        body += text(x_of(without) + 16, y + 49, euro(without), 24, SOFT)
+        if smart:
+            body += text(x_of(smart), y + 104, f"− {euro(own - smart)} extra door slimme sturing", 21, LEAF_DEEP, 600)
     body += text(150, 850, CONTRACT_NOTE, 20)
-    body += text(150, 878, "Batterij 7,6 kWh en 4 kW op eigenverbruik. " + CONTRACT_NOTE2, 20)
+    body += text(150, 878, "Batterij 7,6 kWh en 4 kW; slimme sturing enkel bij dynamisch. Incl. 6% btw, zonder capaciteitstarief. Afgerond.", 20)
     return svg(body, "Eén woning, vier contracten: de jaarkost met en zonder batterij",
-               "Met eigenverbruik bespaart de batterij het meest bij het duurste contract, maar daar blijft de factuur het hoogst", 24)
+               "De balk toont de kost zonder batterij, en welk deel de batterij daarvan wegneemt", 24)
+
+
+CONTRACT_STEPS = [  # (label, kost zonder batterij met vast, contract, batterij eigenverbruik, slimme sturing)
+    ("Prijsniveau testjaar", 1754, 387, 332, 124),
+    ("Hoger prijsniveau", 1754, 142, 327, 115),
+]
+
+
+def contract_steps():
+    """Waterfall: from fixed without battery to fully dynamic with smart control, in three steps."""
+    x0, x1 = 150, 1380
+    hi = 1800
+    x_of = lambda v: x0 + (x1 - x0) * v / hi
+    parts = [("#5fd08d", LEAF_DEEP), ("#bfe9cf", LEAF_DEEP), ("#cfd8d5", INK)]  # sturing, batterij, contract
+    body = ""
+    legend = [("#cfd8d5", "goedkoper contract (vol dynamisch)"), ("#bfe9cf", "batterij op eigenverbruik"), ("#5fd08d", "slimme sturing")]
+    for lx, (color, label) in zip((150, 640, 1010), legend):
+        body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 24, INK)
+    for i, (label, start, contract, battery, smart) in enumerate(CONTRACT_STEPS):
+        y = 300 + i * 255
+        end = start - contract - battery - smart
+        body += text(x0, y - 22, f"{label}: van {euro(start)} naar {euro(end)}", 28, INK, 650)
+        body += f'<rect x="{x0}" y="{y}" width="{x_of(end) - x0:.1f}" height="80" fill="{INK}"/>\n'
+        body += text(x0 + 22, y + 51, euro(end), 28, "#ffffff", 650)
+        x = x_of(end)
+        for (fill, color), value in zip(parts, (smart, battery, contract)):
+            w = x_of(value) - x0
+            body += f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="80" fill="{fill}"/>\n'
+            if w > 110:
+                body += text(x + w / 2, y + 51, "− " + euro(value), 24, color, 650, "middle")
+            x += w
+        body += text(x + 16, y + 51, euro(start), 24, SOFT)
+        body += text(x0, y + 122, f"contract − {euro(contract)}   ·   batterij − {euro(battery)}   ·   slimme sturing − {euro(smart)}", 24, LEAF_DEEP, 600)
+    body += text(150, 850, "Berekening SmartPeak, één woning (okt. 2025 – sep. 2026). Hoger prijsniveau: alle kwartierprijzen 69 €/MWh hoger.", 20)
+    body += text(150, 878, "De volledige balk is vast zonder batterij; zwart is wat overblijft. Batterij 7,6 kWh en 4 kW. Zonder capaciteitstarief.", 20)
+    return svg(body, "Van vast zonder batterij naar vol dynamisch met slimme sturing",
+               "Waar het verschil vandaan komt: het contract, de batterij en de sturing", 25)
 
 
 def contract_strategies():
@@ -1049,3 +1093,4 @@ if __name__ == "__main__":
     write("energiecontract-batterij-prijsniveau", contract_price_levels())
     write("energiecontract-batterij-voorbeelddag", contract_example_day())
     write("energiecontract-batterij-woning", contract_case_months())
+    write("energiecontract-batterij-stappen", contract_steps())

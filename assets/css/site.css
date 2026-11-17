@@ -594,3 +594,17 @@ body.has-cookie-banner .call-fab { display: none; }
 .panel-age-figure { font-size: 2rem; font-weight: 700; color: var(--leaf-deep); line-height: 1.1; }
 .panel-age-note { font-size: .92rem; color: var(--ink-soft); }
 @media (max-width: 560px) { .panel-age-fields { grid-template-columns: 1fr; } }
+
+/* Begrippen: term with an explanation (<dfn data-begrip> in the source, see mark_begrippen in build.py) */
+.begrip { position: relative; display: inline; }
+.begrip-term { display: inline; padding: 0; margin: 0; border: 0; background: none; color: inherit; font: inherit; line-height: inherit; text-decoration: underline dotted var(--leaf-deep) 2px; text-underline-offset: .2em; cursor: help; }
+.begrip-term:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 2px; border-radius: 3px; }
+.begrip-uitleg { display: none; position: absolute; z-index: 30; left: 50%; bottom: calc(100% + .5rem); transform: translateX(-50%); width: min(20rem, 80vw); padding: .75rem .9rem; border-radius: var(--radius-s); background: var(--night); color: #fff; font-size: .92rem; font-weight: 400; line-height: 1.45; text-align: left; box-shadow: 0 8px 24px rgba(23, 33, 41, .25); }
+.begrip-uitleg::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: .6rem; }
+.begrip:hover .begrip-uitleg, .begrip:focus-within .begrip-uitleg, .begrip.is-open .begrip-uitleg { display: block; }
+.begrip.is-closed .begrip-uitleg { display: none; }
+@media (max-width: 640px) {
+  .begrip-uitleg { position: fixed; z-index: 45; left: 1rem; right: 1rem; bottom: calc(max(16px, env(safe-area-inset-bottom)) + 4.25rem); width: auto; transform: none; font-size: 1rem; padding: 1rem 1.1rem; }
+}
+.begrippen dt { font-weight: 700; margin-top: 1.4rem; scroll-margin-top: 6rem; }
+.begrippen dd { margin: .25rem 0 0; color: var(--ink-soft); }

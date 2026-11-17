@@ -1,0 +1,19 @@
+[
+  {"slug": "afname", "term": "Afname", "uitleg": "De stroom die je van het net haalt. Die betaal je aan je leverancier, samen met de netkosten en heffingen."},
+  {"slug": "belpex", "term": "Belpex", "uitleg": "De Belgische groothandelsprijs voor elektriciteit op de day-aheadmarkt, in euro per MWh. Dynamische en veel variabele contracten rekenen ermee."},
+  {"slug": "capaciteitstarief", "term": "Capaciteitstarief", "uitleg": "Het deel van je nettarieven dat afhangt van je hoogste kwartierpiek per maand. Je betaalt op het gemiddelde van je maandpieken over 12 maanden, met een minimum van 2,5 kW.", "link": "/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop/"},
+  {"slug": "certificaten", "term": "Certificaatkosten", "uitleg": "Kosten per kWh die je leverancier doorrekent omdat hij groenestroom- en warmtekrachtcertificaten moet inleveren. Ze staan op de tariefkaart."},
+  {"slug": "cyclus", "term": "Cyclus", "uitleg": "Eén keer de batterij volledig laden en ontladen. Twee keer half laden en ontladen telt samen ook als één cyclus."},
+  {"slug": "day-aheadmarkt", "term": "Day-aheadmarkt", "uitleg": "De groothandelsmarkt waarop vandaag de stroomprijzen voor elk kwartier van morgen worden vastgelegd. De prijzen verschijnen na de middag."},
+  {"slug": "eigenverbruik", "term": "Eigenverbruik", "uitleg": "Je eigen zonnestroom zelf gebruiken in plaats van ze op het net te zetten. Een batterij op eigenverbruik slaat enkel zonne-overschot op en geeft het af zodra je huis stroom vraagt."},
+  {"slug": "energiebeheersysteem", "term": "Energiebeheersysteem (EMS)", "uitleg": "Een systeem dat je batterij, laadpaal, warmtepomp en andere toestellen samen aanstuurt, zodat ze elkaar niet in de weg zitten.", "link": "/oplossingen/energiesturing/"},
+  {"slug": "injectie", "term": "Injectie", "uitleg": "De stroom die je op het net zet, bijvoorbeeld zonne-overschot dat je op dat moment niet zelf gebruikt. Je krijgt er een vergoeding voor van je leverancier."},
+  {"slug": "kw", "term": "kW (kilowatt)", "uitleg": "Vermogen: hoeveel stroom er op één moment loopt. Een batterij van 4 kW kan op elk moment hoogstens 4 kW leveren of opnemen."},
+  {"slug": "kwh", "term": "kWh (kilowattuur)", "uitleg": "Een hoeveelheid energie. 1 kWh is wat een toestel van 1 kW in één uur verbruikt. Je factuur en de capaciteit van een batterij staan in kWh."},
+  {"slug": "kwartierwaarden", "term": "Kwartierwaarden", "uitleg": "Hoeveel stroom je digitale meter per kwartier van het net haalt en erop terugzet. Je kan ze downloaden in Mijn Fluvius.", "link": "/hulp/p1-poort-activeren/"},
+  {"slug": "lineaire-optimalisatie", "term": "Lineaire optimalisatie", "uitleg": "Een wiskundige rekenmethode die uit alle mogelijke laad- en ontlaadschema's het goedkoopste kiest, binnen de grenzen van de batterij."},
+  {"slug": "meetregime-3", "term": "Meetregime 3", "uitleg": "De instelling waarbij Fluvius je kwartierwaarden doorgeeft aan je leverancier, met jouw toestemming. Dat is nodig voor een dynamisch contract. Je vraagt het aan via je leverancier."},
+  {"slug": "mppt", "term": "MPPT-ingang", "uitleg": "De ingang van een omvormer waarop je zonnepanelen aansluit. Ze zoekt voortdurend het punt waarop de panelen het meeste vermogen leveren."},
+  {"slug": "netkosten", "term": "Netkosten en heffingen", "uitleg": "Wat je per kWh afname betaalt voor het net en aan belastingen, zoals de bijzondere accijns. Ze zijn dezelfde bij elk contract, en op injectie betaal je ze niet."},
+  {"slug": "rendement", "term": "Rendement", "uitleg": "Welk deel van de opgeslagen energie je terugkrijgt. Bij 90% haal je uit 10 kWh die je in de batterij steekt er zo'n 9 terug."}
+]

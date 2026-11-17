@@ -347,6 +347,39 @@ def section_cards(entries):
     return '<ul class="link-cards">' + "\n".join(cards) + "</ul>"
 
 
+def load_begrippen():
+    return {b["slug"]: b for b in json.loads((ROOT / "content" / "begrippen.json").read_text(encoding="utf-8"))}
+
+
+BEGRIPPEN = load_begrippen()
+
+
+def begrippen_lijst():
+    """The /begrippen/ page: every term with its explanation, each with its own anchor."""
+    items = sorted(BEGRIPPEN.values(), key=lambda b: b["term"].lower())
+    out = []
+    for b in items:
+        more = f' <a href="{esc(b["link"])}">Lees meer</a>' if b.get("link") else ""
+        out.append(f'<dt id="{esc(b["slug"])}">{esc(b["term"])}</dt>\n<dd>{esc(b["uitleg"])}{more}</dd>')
+    return '<dl class="begrippen">\n' + "\n".join(out) + "\n</dl>"
+
+
+def mark_begrippen(body):
+    """Turn <dfn data-begrip="slug">text</dfn> into a term with an explanation that opens on hover,
+    focus or tap (see .begrip in site.css and site.js). The explanation comes from content/begrippen.json."""
+    count = {}
+
+    def replace(match):
+        slug, label = match.group(1), match.group(2)
+        if slug not in BEGRIPPEN:
+            raise KeyError(f"Unknown begrip {slug!r}: add it to content/begrippen.json")
+        count[slug] = count.get(slug, 0) + 1
+        tip = f"begrip-{slug}-{count[slug]}"
+        return (f'<span class="begrip"><button type="button" class="begrip-term" aria-describedby="{tip}">{label}</button>'
+                f'<span class="begrip-uitleg" role="tooltip" id="{tip}">{esc(BEGRIPPEN[slug]["uitleg"])}</span></span>')
+    return re.sub(r'<dfn data-begrip="([\w-]+)">(.*?)</dfn>', replace, body)
+
+
 def tokens(posts, realisaties, sections, reviews):
     section_tokens = {f"list_{name}": section_cards(entries) for name, entries in sections.items()}
     return section_tokens | {
@@ -365,6 +398,7 @@ def tokens(posts, realisaties, sections, reviews):
         "reviews": reviews_block(reviews, 9),
         "reviews_short": reviews_block(reviews, 6),
         "cta": (ROOT / "templates" / "post-cta.html").read_text(encoding="utf-8"),
+        "begrippen_lijst": begrippen_lijst(),
     }
 
 
@@ -542,7 +576,7 @@ def render(meta, body, titles):
     layout = (ROOT / "templates" / "layout.html").read_text(encoding="utf-8")
     title = page_title(meta)
     image, image_alt = share_image(meta)
-    body = enhance_images(scrollable_tables(body))
+    body = enhance_images(scrollable_tables(mark_begrippen(body)))
     noindex = not IS_LIVE_DOMAIN or meta["path"] == "/404/"
     page = fill(layout, {
         "title": esc(title),

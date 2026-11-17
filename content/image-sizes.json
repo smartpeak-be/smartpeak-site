@@ -44,6 +44,11 @@
   "height": 900,
   "variant": "/assets/img/grafieken/energiecontract-batterij-prijsniveau-w640.webp"
  },
+ "/assets/img/grafieken/energiecontract-batterij-stappen.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/energiecontract-batterij-stappen-w640.webp"
+ },
  "/assets/img/grafieken/energiecontract-batterij-sturing.webp": {
   "width": 1600,
   "height": 900,

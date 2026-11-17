@@ -146,3 +146,26 @@ document.addEventListener("DOMContentLoaded", () => {
     watch.observe(mount, { childList: true, subtree: true });
   });
 });
+
+// Begrippen: tap a dotted term to open its explanation, tap again or elsewhere to close; Escape closes.
+document.addEventListener("DOMContentLoaded", () => {
+  const terms = document.querySelectorAll(".begrip");
+  if (!terms.length) return;
+  const closeAll = (except) => terms.forEach((t) => {
+    if (t !== except) { t.classList.remove("is-open"); t.classList.add("is-closed"); }
+  });
+  terms.forEach((t) => {
+    const button = t.querySelector(".begrip-term");
+    t.addEventListener("mouseenter", () => t.classList.remove("is-closed"));
+    button.addEventListener("focus", () => t.classList.remove("is-closed"));
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const open = !t.classList.contains("is-open");
+      closeAll(t);
+      t.classList.toggle("is-open", open);
+      t.classList.toggle("is-closed", !open);
+    });
+  });
+  document.addEventListener("click", () => closeAll());
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeAll(); });
+});
