@@ -191,7 +191,7 @@ def grid_voltage_day():
 
 def battery_size_trend():
     """Average capacity of newly connected home batteries in Flanders (Fluvius open data, via Solar Magazine)."""
-    bars = [("2024", 9.1, "± 9 kWh"), ("2025", 11.5, "± 11,5 kWh"), ("2026*", 22.0, "± 22 kWh")]
+    bars = [("2024", 9.1, "± 9 kWh"), ("2025", 11.7, "± 11,7 kWh"), ("2026*", 21.0, "± 21 kWh")]
     x0, x1, ytop, ybot = 170, 1530, 190, 740
     y_of = lambda v: ybot - (ybot - ytop) * v / 25
     body = axes(x0, x1, y_of, [0, 5, 10, 15, 20, 25], " kWh")
@@ -203,7 +203,7 @@ def battery_size_trend():
         body += f'<rect x="{bx:.1f}" y="{y_of(v):.1f}" width="{bw:.1f}" height="{ybot - y_of(v):.1f}" rx="8" fill="{color}"/>\n'
         body += text(bx + bw / 2, y_of(v) - 18, shown, 30, INK, 650, "middle")
         body += text(bx + bw / 2, 790, label, 28, INK, 600, "middle")
-    body += text(150, 828, "* januari tot mei 2026, voorlopig. Gemiddelden volgens Solar Magazine op basis van open data van Fluvius;", 22)
+    body += text(150, 828, "* januari tot mei 2026, voorlopig. Gemiddelden op basis van cijfers van Fluvius via Solar Magazine (november 2026);", 22)
     body += text(150, 856, "2024 is een eigen schatting.", 22)
     return svg(body, "Nieuwe thuisbatterijen worden groter", "Gemiddelde opslagcapaciteit van nieuw aangesloten thuisbatterijen in Vlaanderen")
 

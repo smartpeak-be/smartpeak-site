@@ -4,6 +4,9 @@ Each set is described in content/social/<slug>.json (texts for the posts sit in 
 see .claude/skills/smartpeak-social/SKILL.md):
   {"page": "/artikels/<slug>/", "slides": [
      {"type": "cover", "kicker": "...", "title": "...", "sub": "..."},
+     {"type": "cover", "kicker": "...", "title": "...", "image": "/assets/img/grafieken/<x>.webp"},   (graph as eyecatcher)
+     {"type": "cover", "kicker": "...", "title": "...", "image": "/assets/img/site/<x>.webp", "photo": true},  (full-bleed photo)
+     {"type": "image", "title": "...", "image": "/assets/img/grafieken/<x>.webp", "body": "...", "source": "..."},
      {"type": "stat", "value": "51%", "title": "...", "sub": "...", "source": "..."},
      {"type": "list", "title": "...", "items": ["...", "..."], "source": "..."},
      {"type": "text", "title": "...", "body": "...", "source": "..."},
@@ -36,6 +39,10 @@ TIKTOK_CSS = f"""
 body, .slide {{ height: {TIKTOK_H}px; }}
 .slide {{ padding: 230px 170px 380px 88px; }}
 h1 {{ font-size: 96px; }}
+.chart {{ width: 100%; margin: 8px 0 0; }}
+.photo {{ padding: 0 0 380px; background: #0d2a24; }}
+.photo .main {{ padding: 230px 170px 48px 88px; }}
+.photo .foot {{ padding: 0 170px 0 88px; }}
 """
 
 CSS = f"""
@@ -70,6 +77,22 @@ li::before {{ content: counter(n); position: absolute; left: 0; top: 22px; width
 .foot img {{ width: 52px; height: 52px; }}
 .foot .count {{ margin-left: auto; font-weight: 400; color: #4b5661; }}
 .dark .foot .count {{ color: #e6f6ee; }}
+/* graphs from the site as eyecatcher: wider than the text column */
+.chart {{ width: calc(100% + 96px); margin: 8px -48px 0; border-radius: 18px; border: 3px solid #e3ebe8; display: block; }}
+h2.lead {{ font-size: 78px; line-height: 1.06; margin-bottom: 40px; }}
+.body.small {{ font-size: 40px; margin-top: 40px; color: #4b5661; }}
+/* full-bleed photo with the title on a shade at the bottom */
+.photo {{ color: #fff; padding: 0; }}
+.photo .main {{ justify-content: flex-end; padding: 0 88px 56px; position: relative; }}
+.photo .bg {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
+.photo .shade {{ position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,30,25,0) 35%, rgba(10,30,25,.82) 78%); }}
+.photo .over {{ position: relative; }}
+.photo .kicker {{ color: #bdf3d2; }}
+.photo h1 {{ font-size: 92px; text-shadow: 0 2px 18px rgba(0,0,0,.35); }}
+.photo .sub {{ color: #e6f6ee; font-size: 40px; margin-top: 28px; }}
+.photo .foot {{ position: relative; background: #0d2a24; color: #fff; border-top: 0; padding: 0 88px; }}
+.photo .foot .count {{ color: #e6f6ee; }}
+.photo .source {{ display: none; }}
 """
 
 
@@ -77,10 +100,29 @@ def e(s):
     return html.escape(s or "")
 
 
+def data_uri(path):
+    """A site image (path as used on the site, e.g. /assets/img/grafieken/x.webp) as a data URI."""
+    file = ROOT / path.lstrip("/")
+    mime = {".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml"}[file.suffix]
+    return f"data:{mime};base64," + base64.b64encode(file.read_bytes()).decode()
+
+
 def slide_html(s, n, total, extra_css=""):
     t = s["type"]
-    dark = t in ("cover", "cta")
-    if t == "cover":
+    dark = t in ("cover", "cta") and not s.get("image")
+    photo = t == "cover" and s.get("image") and s.get("photo")
+    if photo:
+        inner = (f'<img class="bg" src="{data_uri(s["image"])}" alt=""><div class="shade"></div>'
+                 f'<div class="over"><div class="kicker">{e(s.get("kicker"))}</div><h1>{e(s["title"])}</h1>'
+                 + (f'<p class="sub">{e(s["sub"])}</p>' if s.get("sub") else "") + '</div>')
+    elif t == "cover" and s.get("image"):
+        inner = (f'<div class="kicker">{e(s.get("kicker"))}</div><h2 class="lead">{e(s["title"])}</h2>'
+                 f'<img class="chart" src="{data_uri(s["image"])}" alt="">'
+                 + (f'<p class="body small">{e(s["sub"])}</p>' if s.get("sub") else ""))
+    elif t == "image":
+        inner = (f'<h2>{e(s["title"])}</h2><img class="chart" src="{data_uri(s["image"])}" alt="">'
+                 + (f'<p class="body small">{e(s["body"])}</p>' if s.get("body") else ""))
+    elif t == "cover":
         inner = f'<div class="kicker">{e(s.get("kicker"))}</div><h1>{e(s["title"])}</h1><p class="sub">{e(s.get("sub"))}</p>'
     elif t == "stat":
         inner = f'<h2>{e(s["title"])}</h2><div class="value">{e(s["value"])}</div><p class="body">{e(s.get("sub"))}</p>'
@@ -100,8 +142,9 @@ def slide_html(s, n, total, extra_css=""):
     source = f'<p class="source">{e(s["source"])}</p>' if s.get("source") else ""
     foot = (f'<div class="foot"><img src="{MARK}" alt="">SmartPeak'
             f'<span class="count">{n}/{total}</span></div>')
+    classes = "slide" + (" dark" if dark else "") + (" photo" if photo else "")
     return (f'<html><head><meta charset="utf-8"><style>{CSS}{extra_css}</style></head><body>'
-            f'<div class="slide{" dark" if dark else ""}"><div class="main">{inner}</div>{source}{foot}</div></body></html>')
+            f'<div class="{classes}"><div class="main">{inner}</div>{source}{foot}</div></body></html>')
 
 
 def render(slug, tiktok=False):

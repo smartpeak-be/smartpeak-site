@@ -1,7 +1,8 @@
 """Check the built site in _site/ for broken internal links, images and anchors.
 
 Also enforces a few SEO basics per page: exactly one <h1>, a <title>, a meta
-description, a canonical link and structured data (JSON-LD) that parses. Exits with status 1 when something is wrong.
+description, a canonical link and structured data (JSON-LD) that parses, and no begrip
+(term with explanation) inside a link, heading or table. Exits with status 1 when something is wrong.
 """
 import json
 import os
@@ -21,9 +22,19 @@ class PageScan(HTMLParser):
         self.links, self.ids, self.h1 = [], set(), 0
         self.has = {"title": False, "description": False, "canonical": False}
         self.redirect = False
+        self.open = {tag: 0 for tag in ("a", "h1", "h2", "h3", "h4", "table")}
+        self.misplaced_begrippen = 0
+
+    def handle_endtag(self, tag):
+        if self.open.get(tag):
+            self.open[tag] -= 1
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag in self.open:
+            self.open[tag] += 1
+        if tag == "button" and attrs.get("class") == "begrip-term" and any(self.open.values()):
+            self.misplaced_begrippen += 1
         if attrs.get("id"):
             self.ids.add(attrs["id"])
         if tag in ("a", "link") and attrs.get("href"):
@@ -69,6 +80,8 @@ def main():
             if scan.h1 != 1:
                 problems.append(f"{name}: {scan.h1} <h1> elements")
             problems += [f"{name}: missing {key}" for key, ok in scan.has.items() if not ok]
+        if scan.misplaced_begrippen:
+            problems.append(f"{name}: {scan.misplaced_begrippen} begrip(pen) inside a link, heading or table")
         for link in scan.links:
             parsed = urlparse(link)
             if parsed.scheme or link.startswith(("mailto:", "tel:", "//")):

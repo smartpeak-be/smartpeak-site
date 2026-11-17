@@ -26,8 +26,8 @@
   <h2>Voor je begint</h2>
   <ul>
     <li><strong>Werk de app en de firmware bij.</strong> De vijf modi kwamen met HEMS 2.0, het energiebeheer van Zendure. Daarvoor heb je <a href="https://flarum-eu.zendure.tech/d/28564" rel="noopener">app-versie 6.3 of hoger én de nieuwste firmware</a> nodig: volgens Zendure moet je beide samen bijwerken. Installeer alle firmware-updates die de app aanbiedt. Zie je nog oude namen zoals "Expert" of "Slimme meter", dan is je app of toestel nog niet bijgewerkt.</li>
-    <li><strong>Koppel een meter</strong> voor Zelfverbruik, ZENKI en TOU. Om je verbruik te volgen, moet de batterij weten hoeveel stroom je huis afneemt of injecteert. Op een Belgische digitale meter gaat dat via de P1-poort, die je eerst <a href="/hulp/p1-poort-activeren/">laat openzetten bij Fluvius</a>.</li>
-    <li><strong>Weet welk contract je hebt.</strong> Vast, met een dag- en nachttarief of dynamisch: dat bepaalt welke modus het meest zinvol is. Lees ook <a href="/artikels/vast-variabel-dynamisch-contract-thuisbatterij/">wat je contract met je batterij te maken heeft</a>.</li>
+    <li><strong>Koppel een meter</strong> voor Zelfverbruik, ZENKI en TOU. Om je verbruik te volgen, moet de batterij weten hoeveel stroom je huis afneemt of injecteert. Op een Belgische digitale meter gaat dat via de <dfn data-begrip="p1-poort">P1-poort</dfn>, die je eerst <a href="/hulp/p1-poort-activeren/">laat openzetten bij Fluvius</a>.</li>
+    <li><strong>Weet welk contract je hebt.</strong> Vast, met een <dfn data-begrip="dag-nachttarief">dag- en nachttarief</dfn> of dynamisch: dat bepaalt welke modus het meest zinvol is. Lees ook <a href="/artikels/vast-variabel-dynamisch-contract-thuisbatterij/">wat je contract met je batterij te maken heeft</a>.</li>
   </ul>
   <p>Deze gids geldt voor de toestellen die met HEMS 2.0 werken, zoals de <a href="/oplossingen/zendure-solarflow/">SolarFlow 2400 AC+ en 1600 AC+</a>, maar onder meer ook de 2400 AC, de 2400 Pro, de 800 en 800 Pro en de Hyper 2000.</p>
 
@@ -64,7 +64,7 @@
   <ul>
     <li><strong>Staat je leverancier erbij?</strong> Zendure zegt <a href="https://zendure.com/pages/hems" rel="noopener">samen te werken met meer dan 840 leveranciers in 32 Europese markten</a>. Kijk bij het koppelen van je tarief of jouw leverancier in de lijst staat.</li>
     <li><strong>Geef hem tijd.</strong> ZENKI houdt volgens <a href="https://flarum-eu.zendure.tech/d/27885" rel="noopener">Zendure</a> rekening met je verbruiksgewoonten, en moet die dus eerst leren kennen. Beoordeel hem daarom niet na een paar dagen.</li>
-    <li><strong>Hij kan uit het net laden.</strong> Is stroom 's nachts of op een zonnige middag goedkoop, dan kan ZENKI ook uit het net bijladen, net zoals de batterij in TOU volgens <a href="https://zendure.com/pages/zendure-tou" rel="noopener">Zendure</a> laadt aan het laagste tarief. Lees hieronder wat dat betekent voor het capaciteitstarief.</li>
+    <li><strong>Hij kan uit het net laden.</strong> Is stroom 's nachts of op een zonnige middag goedkoop, dan kan ZENKI ook uit het net bijladen, net zoals de batterij in TOU volgens <a href="https://zendure.com/pages/zendure-tou" rel="noopener">Zendure</a> laadt aan het laagste tarief. Lees hieronder wat dat betekent voor het <dfn data-begrip="capaciteitstarief">capaciteitstarief</dfn>.</li>
   </ul>
 
   <h2>TOU</h2>
@@ -83,11 +83,11 @@
   <p>In Aangepast doet de batterij enkel wat je in je schema zet: tijdvakken waarin ze laadt of ontlaadt, en met welk vermogen. Buiten die tijdvakken staat het vermogen <a href="https://flarum-eu.zendure.tech/d/28564" rel="noopener">volgens Zendure</a> standaard op 0 watt, en dan gaat de batterij in stand-by; kijk dat na in je schema. Je kan dat gebruiken voor een vaste routine, bijvoorbeeld 's avonds ontladen terwijl je kookt. Stuur je de batterij met Home Assistant, schakel dan de HEMS-sturing in de app uit. Twee systemen die tegelijk sturen, werken elkaar tegen.</p>
 
   <h2>Belgisch aandachtspunt: het capaciteitstarief</h2>
-  <p>In Vlaanderen betaal je een deel van je nettarieven op basis van je <a href="/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop/">hoogste kwartierpiek van elke maand</a>: het gemiddelde van je laatste twaalf maandpieken, met een minimum van 2,5 kW. Voor zover wij weten, heeft geen van de vijf modi een instelling die specifiek je maandpiek bewaakt. Toch heeft de modus die je kiest invloed op je piek:</p>
+  <p>In Vlaanderen betaal je een deel van je nettarieven op basis van je <a href="/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop/">hoogste kwartierpiek van elke maand</a>: het gemiddelde van je laatste twaalf <dfn data-begrip="maandpiek">maandpieken</dfn>, met een minimum van 2,5 <dfn data-begrip="kw">kW</dfn>. Voor zover wij weten, heeft geen van de vijf modi een instelling die specifiek je maandpiek bewaakt. Toch heeft de modus die je kiest invloed op je piek:</p>
   <ul>
     <li><strong>Zelfverbruik verhoogt je piek in principe niet.</strong> De batterij laadt er alleen met zonnestroom. Ze kan je piek wel wat verlagen als ze ontlaadt terwijl je veel verbruikt, maar maximaal met haar eigen vermogen. In de winter, wanneer je piek meestal valt, is ze wel vaak leeg. Dat is tot 2.400 W bij een SolarFlow 2400 AC+ <a href="/oplossingen/zendure-solarflow/">op een eigen kring</a>, en <a href="https://zendure.com/products/zendure-solarflow-2400-ac-plus" rel="noopener">800 W in de standaardinstelling</a> op een gewoon stopcontact.</li>
     <li><strong>Laden uit het net telt mee in je afname.</strong> In ZENKI en TOU kan de batterij ook uit het net laden wanneer stroom goedkoop is. Laadt ze met vol vermogen terwijl je kookt, je wagen laadt of je warmtepomp draait, dan kan je maandpiek daardoor stijgen.</li>
-    <li><strong>Kijk het na.</strong> Laat je de batterij uit het net laden, kijk dan na een paar weken in <a href="https://mijn.fluvius.be" rel="noopener">Mijn Fluvius</a> of je maandpiek gestegen is. In Aangepast kies je zelf het laadvermogen per tijdvak, en dus ook hoeveel extra afname het laden geeft.</li>
+    <li><strong>Kijk het na.</strong> Laat je de batterij uit het net laden, kijk dan na een paar weken in <a href="https://mijn.fluvius.be" rel="noopener">Mijn Fluvius</a> of je maandpiek gestegen is. In Aangepast kies je zelf het laadvermogen per tijdvak, en dus ook hoeveel extra <dfn data-begrip="afname">afname</dfn> het laden geeft.</li>
   </ul>
   <p>Wil je je piek sterk verlagen, bijvoorbeeld door een warmtepomp of laadpaal, dan is een eenfasige batterij met beperkt vermogen daar minder geschikt voor. Lees ook <a href="/artikels/piekverbruik-uitleg/">wat piekverbruik is</a>.</p>
 

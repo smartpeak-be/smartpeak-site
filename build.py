@@ -10,6 +10,7 @@ Sources:
 """
 import html
 import json
+import math
 import os
 import re
 import shutil
@@ -450,9 +451,13 @@ def author_box(meta):
     author = author_of(meta)
     if not author:
         return ""
+    published, modified = meta.get("published"), meta.get("modified")
+    updated = (f'<p>Gepubliceerd op <time datetime="{published}">{dutch_date(published)}</time>, '
+               f'bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>.</p>'
+               if published and modified and modified != published else "")
     return (f'<aside class="author-box wrap-narrow" aria-label="Over de auteur">'
             f'<p><strong>{esc(author["name"])}</strong>, {esc(author["role"][0].lower() + author["role"][1:])}</p>'
-            f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p></aside>')
+            f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p>{updated}</aside>')
 
 
 ORG_ID = SITE_URL + "/#organisatie"
@@ -628,6 +633,21 @@ def article(meta, body, kicker=""):
 </article>'''
 
 
+READ_WPM = 200  # words per minute for an informative Dutch text, on the slow side on purpose
+CLOCK = ('<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" '
+         'stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>')
+
+
+def read_time(body):
+    """Reading time of a page body: running text without the sources list, scripts and drawings,
+    at READ_WPM, rounded up to whole minutes."""
+    text = re.split(r'<h[23][^>]*>\s*Bronnen\s*</h[23]>', body)[0]
+    text = re.sub(r'<(script|style|svg)\b.*?</\1>', " ", text, flags=re.S)
+    words = len(re.findall(r"\w+", html.unescape(re.sub(r"<[^>]+>", " ", text))))
+    minutes = max(1, math.ceil(words / READ_WPM))
+    return f'<span class="read-time">{CLOCK}{minutes} min leestijd</span>'
+
+
 def post_page(post, cta):
     modified = post.get("modified")
     updated = (f', bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>'
@@ -635,7 +655,7 @@ def post_page(post, cta):
     kicker = (f'<p class="article-meta"><a href="/artikels/">Artikels</a> <span aria-hidden="true">/</span> '
               f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}'
               + (f' <span aria-hidden="true">/</span> door {esc(author_of(post)["name"])}' if author_of(post) else "")
-              + '</p>')
+              + f' <span aria-hidden="true">/</span> {read_time(post["body"])}</p>')
     return article(post, post["body"], kicker) + author_box(post) + cta
 
 
@@ -701,6 +721,10 @@ def main():
         if "{{faq}}" in body:
             meta["faq"] = True
         body = fill(body, values)
+        if meta.get("schema_type") == "Article" or meta.get("section") == "hulp":  # guides, customer cases
+            minutes = read_time(body.replace(cta, ""))
+            body = re.sub(r'(<p class="article-meta">.*?)</p>',
+                          lambda m: f'{m.group(1)} <span aria-hidden="true">/</span> {minutes}</p>', body, count=1, flags=re.S)
         if meta.get("schema_type") == "Article":  # guides: show the author named in the schema
             body = body.replace(cta, author_box(meta) + cta, 1) if cta in body else body + author_box(meta)
         document = render(meta, body, titles)

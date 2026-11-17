@@ -10,7 +10,7 @@ description: "Schrijf of herwerk een artikel (content/artikels/) of hulpgids (pa
 | Soort | Waar | Meta |
 |---|---|---|
 | Artikel (nieuws, uitleg, trends) | `content/artikels/<slug>.html` → `/artikels/<slug>/` | `title`, `description`, `date`, `image`, `image_alt`, optioneel `modified`, `legacy_path` |
-| Hulpgids (stappen, instellingen, "hoe doe ik") | `pages/hulp/<slug>.html` | `title`, `card_title`, `description`, `summary`, `section: "hulp"`, `order`, `path`, `slug`, `image`, `image_alt`, `schema_type: "Article"`, `published` |
+| Hulpgids (stappen, instellingen, "hoe doe ik") | `pages/hulp/<slug>.html` | `title`, `card_title`, `description`, `summary`, `section: "hulp"`, `order`, `path`, `slug`, `image`, `image_alt`, `schema_type: "Article"`, `published`, optioneel `modified` |
 
 Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/sigenstor-instellen-mysigen.html`, `content/artikels/omvormer-valt-uit-zonnige-dagen.html`.
 
@@ -43,7 +43,7 @@ Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/si
 - Een hulpgids eindigt met wat SmartPeak doet bij een installatie ("Plaatsen wij je ...?").
 - Afbeeldingen in de tekst: `<figure><a href="..." class="figure-zoom"><img src="..." alt="..." loading="lazy" decoding="async"></a></figure>`, zodat je op een gsm kan inzoomen.
 - Brede tabellen hoeven geen extra code: de build zet ze in een scrollvak.
-- Begrippen die niet iedereen kent (Belpex, kwartierwaarden, capaciteitstarief, MPPT ...): markeer ze de eerste keer met `<dfn data-begrip="slug">woord</dfn>`. Staat de slug nog niet in `content/begrippen.json`, voeg hem toe met een uitleg van één of twee zinnen, en laat die mee controleren door de feitencontrole. Niet in koppen of in tabellen.
+- Begrippen die niet iedereen kent (Belpex, kwartierwaarden, capaciteitstarief, MPPT ...): markeer ze de eerste keer met `<dfn data-begrip="slug">woord</dfn>`. Staat de slug nog niet in `content/begrippen.json`, voeg hem toe met een uitleg van één of twee zinnen, en laat die mee controleren door de feitencontrole. Niet in koppen, tabellen of linkteksten (`check_site.py` meldt het).
 
 ## 5. Koppel de pagina
 
