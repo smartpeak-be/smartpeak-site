@@ -886,7 +886,7 @@ def contract_bill_battery():
     body += text(150, 850, CONTRACT_NOTE, 20)
     body += text(150, 878, "Batterij 7,6 kWh en 4 kW op eigenverbruik. " + CONTRACT_NOTE2, 20)
     return svg(body, "Eén woning, vier contracten: de jaarkost met en zonder batterij",
-               "De batterij bespaart het meest bij het duurste contract, maar daar blijft de factuur ook het hoogst", 25)
+               "Met eigenverbruik bespaart de batterij het meest bij het duurste contract, maar daar blijft de factuur het hoogst", 24)
 
 
 def contract_strategies():
