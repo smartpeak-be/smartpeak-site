@@ -309,6 +309,8 @@ p { margin: 0 0 1em; }
 .article-head { padding-top: clamp(3rem, 7vw, 5rem); }
 .article-head h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); }
 .article-meta { color: var(--ink-soft); font-size: .95rem; margin-bottom: 1rem; }
+.read-time { white-space: nowrap; }
+.read-time svg { vertical-align: -.15em; margin-right: .3em; }
 .article-image { border-radius: var(--radius-l); margin-block: 1rem 2.5rem; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .prose { padding-bottom: var(--space); overflow-wrap: break-word; }
 .prose h2 { font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin-top: 2.2em; }

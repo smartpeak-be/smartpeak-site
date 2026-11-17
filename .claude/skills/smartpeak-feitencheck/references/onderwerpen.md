@@ -27,7 +27,7 @@ Deze pagina's zijn eerder gecontroleerd. Hergebruik hun bronnen in plaats van op
 Schrijf hier niets over zonder zijn akkoord:
 
 - **Btw op thuisbatterijen:** SmartPeak factureert 6% in woningen van minstens 10 jaar. Er is geen officiële tekst die dat voor batterijen zwart op wit regelt. Voor 6%: de Vlaamse minister meldde in 2021 dat de federale regering 6% bij renovatie mogelijk achtte (Vlaams Parlement, commissie 3 februari 2021), en het is marktpraktijk. Tegen: de FOD-FAQ van 20/7/2022 sluit batterijen uit van het tijdelijke 6%-tarief voor jonge woningen, en het wetsvoorstel DOC 56 1209/001 (november 2025) leest dat als algemeen standpunt (21%). Kevin bekijkt het met Jan en eventueel een ruling; tot dan niets over btw op de site (ook niet in `content/artikels/premie-thuisbatterij-2026.html`).
-- **Zendure Mix-reeks:** staat nog niet op de plug-and-play-lijst van Synergrid (nagekeken in de editie van 9 oktober 2026). Kijk de lijst na voor je erover schrijft.
+- **Zendure Mix-reeks:** staat op de algemene C10/26-lijst van Synergrid (vast aangesloten), niet op de plug-and-play-lijst: de 4000-modellen halen meer vermogen dan een stekkertoestel. Schrijf er dus niet over als stekkerbatterij.
 - **Klantcases:** tekst en foto's enkel met schriftelijke toestemming van de klant, woord voor woord zoals goedgekeurd.
 
 ## Jaarlijks bij te werken
@@ -35,3 +35,4 @@ Schrijf hier niets over zonder zijn akkoord:
 - **Nettarieven en capaciteitstarief:** de Vlaamse Nutsregulator keurt de tarieven voor het volgende jaar eind november goed. Werk dan de bedragen voor het nieuwe jaar bij in `wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop.html` en `piekverbruik-uitleg.html`.
 - **Kwaliteit van de dienstverlening:** het rapport over onderbrekingen verschijnt rond september (voor 2025: RAPP-2026-19).
 - **Vergoeding uitvallende omvormers:** Fluvius publiceert de bedragen per zonneseizoen midden november.
+- **Bebat:** een producent kan zijn terugnameplicht in principe ook zelf regelen, maar in de praktijk gebeurt het bijna altijd via Bebat. Schrijf "in de praktijk bij Bebat", niet dat registratie bij Bebat wettelijk verplicht is.
