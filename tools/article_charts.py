@@ -891,7 +891,7 @@ def contract_bill_battery():
         if smart:
             body += text(x_of(smart), y + 104, f"− {euro(own - smart)} extra door slimme sturing", 21, LEAF_DEEP, 600)
     body += text(150, 850, CONTRACT_NOTE, 20)
-    body += text(150, 878, "Batterij 7,6 kWh en 4 kW; slimme sturing enkel bij dynamisch. Incl. 6% btw, zonder capaciteitstarief. Afgerond.", 20)
+    body += text(150, 878, "Batterij 7,6 kWh en 4 kW; slimme sturing enkel bij dynamisch. Incl. 6% btw, zonder capaciteitstarief en vaste netkosten.", 20)
     return svg(body, "Eén woning, vier contracten: de jaarkost met en zonder batterij",
                "De balk toont de kost zonder batterij, en welk deel de batterij daarvan wegneemt", 24)
 
@@ -928,7 +928,7 @@ def contract_steps():
         body += text(x + 16, y + 51, euro(start), 24, SOFT)
         body += text(x0, y + 122, f"contract − {euro(contract)}   ·   batterij − {euro(battery)}   ·   slimme sturing − {euro(smart)}", 24, LEAF_DEEP, 600)
     body += text(150, 850, "Berekening SmartPeak, één woning (okt. 2025 – sep. 2026). Hoger prijsniveau: alle kwartierprijzen 69 €/MWh hoger.", 20)
-    body += text(150, 878, "De volledige balk is vast zonder batterij; zwart is wat overblijft. Batterij 7,6 kWh en 4 kW. Zonder capaciteitstarief.", 20)
+    body += text(150, 878, "De volledige balk is vast zonder batterij; zwart is wat overblijft. Batterij 7,6 kWh en 4 kW. Zonder capaciteitstarief en vaste netkosten.", 20)
     return svg(body, "Van vast zonder batterij naar vol dynamisch met slimme sturing",
                "Waar het verschil vandaan komt: het contract, de batterij en de sturing", 25)
 
