@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Eén zonnige dag: eigenverbruik tegenover slimme sturing</text>
-<text x="150" y="128" font-size="25" fill="#4b5661">Met eigenverbruik raakt de batterij maar voor een derde vol, slimme sturing vult ze helemaal</text>
+<text x="150" y="128" font-size="25" fill="#4b5661">Met eigenverbruik raakt de batterij maar voor ruim een derde vol, slimme sturing vult ze helemaal</text>
 <text x="150.0" y="186.0" font-size="26" fill="#1f272e" font-weight="650">Marktprijs per kwartier (€/MWh)</text>
 <line x1="200" x2="1530" y1="434.2" y2="434.2" stroke="#e3ebe8" stroke-width="2"/>
 <text x="182.0" y="442.2" font-size="21" fill="#4b5661" text-anchor="end">-200</text>
@@ -42,6 +42,6 @@
 <text x="1197.5" y="800.0" font-size="21" fill="#4b5661" text-anchor="middle">18u</text>
 <text x="1363.8" y="800.0" font-size="21" fill="#4b5661" text-anchor="middle">21u</text>
 <text x="1530.0" y="800.0" font-size="21" fill="#4b5661" text-anchor="middle">24u</text>
-<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Zaterdag 25 april 2026, kwartierwaarden van de woning uit de use case, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.</text>
+<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Zaterdag 25 april 2026, kwartierwaarden van onze voorbeeldwoning, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.</text>
 <text x="150.0" y="878.0" font-size="20" fill="#4b5661">Slimme sturing laadt bij een negatieve prijs ook van het net en houdt energie over voor de avond en de volgende ochtend.</text>
 </svg>

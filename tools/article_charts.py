@@ -920,7 +920,7 @@ def contract_strategies():
             body += text(bx + bw / 2, y_of(v) - 14, euro(v), 24, INK, 650, "middle")
         body += text(cx, 790, name, 28, INK, 650, "middle")
     body += text(150, 850, CONTRACT_NOTE, 20)
-    body += text(150, 878, "Theoretisch maximum: perfecte kennis van een heel jaar, voor geen enkele sturing haalbaar. Afgerond.", 20)
+    body += text(150, 878, "Theoretisch maximum: perfecte kennis van een heel jaar en terugverkopen aan het net, voor geen sturing haalbaar.", 20)
     return svg(body, "Dynamisch contract: wat de sturing van de batterij uitmaakt",
                "Bij vol dynamisch loont slim sturen veel meer dan bij de helft vast, helft dynamisch", 25)
 
@@ -932,7 +932,7 @@ def contract_price_levels():
     y_of = lambda v: ybot - (ybot - ytop) * v / hi
     body = axes(x0, x1, y_of, [0, 350, 700, 1050, 1400], "")
     body += text(x0 - 22, ytop - 30, "€ per jaar", 22, SOFT, None, "end")
-    legend = [(LAGOON, "prijsniveau testjaar (Belpex gem. 101 €/MWh)"), (INK, "prijsniveau 2027 (± 170 €/MWh)")]
+    legend = [(LAGOON, "prijsniveau testjaar (Belpex gem. 101 €/MWh)"), (INK, "hoger prijsniveau (± 170 €/MWh)")]
     for lx, (color, label) in zip((200, 860), legend):
         body += f'<rect x="{lx}" y="172" width="26" height="26" rx="4" fill="{color}"/>\n' + text(lx + 38, 194, label, 23, INK)
     picks = [("Vast", 1, "eigenverbruik"), ("Vast-Variabel", 1, "eigenverbruik"),
@@ -948,7 +948,7 @@ def contract_price_levels():
             body += text(bx + bw / 2, y_of(v) - 14, euro(v), 23, INK, 650, "middle")
         body += text(cx, 785, name, 27, INK, 650, "middle")
         body += text(cx, 815, mode, 21, SOFT, None, "middle")
-    body += text(150, 856, "Prijsniveau 2027: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.", 20)
+    body += text(150, 856, "Hoger prijsniveau: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.", 20)
     body += text(150, 882, "Berekening SmartPeak, zelfde woning en batterij. " + CONTRACT_NOTE2, 20)
     return svg(body, "Wat als de marktprijs stijgt?", "Op een hoger prijsniveau worden de verschillen tussen de contracten veel kleiner", 25)
 
@@ -988,10 +988,10 @@ def contract_example_day():
         body += f'<polyline points="{x_of(0):.1f},{by(series[0]):.1f} {pts}" fill="none" stroke="{color}" stroke-width="5" stroke-linejoin="round"/>\n'
         body += f'<rect x="{lx}" y="497" width="40" height="8" rx="4" fill="{color}"/>\n' + text(lx + 52, 509, label, 23, INK)
     body += "".join(text(x_of(h * 4), 800, f"{h}u", 21, SOFT, None, "middle") for h in range(0, 25, 3))
-    body += text(150, 850, "Zaterdag 25 april 2026, kwartierwaarden van de woning uit de use case, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.", 20)
+    body += text(150, 850, "Zaterdag 25 april 2026, kwartierwaarden van onze voorbeeldwoning, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.", 20)
     body += text(150, 878, "Slimme sturing laadt bij een negatieve prijs ook van het net en houdt energie over voor de avond en de volgende ochtend.", 20)
     return svg(body, "Eén zonnige dag: eigenverbruik tegenover slimme sturing",
-               "Met eigenverbruik raakt de batterij maar voor een derde vol, slimme sturing vult ze helemaal", 25)
+               "Met eigenverbruik raakt de batterij maar voor ruim een derde vol, slimme sturing vult ze helemaal", 25)
 
 
 def contract_case_months():
@@ -1011,7 +1011,7 @@ def contract_case_months():
         body += text(cx, 785, m, 24, INK, 600, "middle")
     body += text(150, 850, "Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, vóór de batterij. Netto: wat de", 20)
     body += text(150, 878, "panelen meteen in huis leveren, zit er niet in. Over het jaar: 5.482 kWh afname, 2.266 kWh injectie. Afgerond.", 20)
-    return svg(body, "De woning uit de use case: afname en injectie per maand",
+    return svg(body, "Onze voorbeeldwoning: afname en injectie per maand",
                "Van oktober tot februari is er nauwelijks zonne-overschot om op te slaan", 25)
 
 

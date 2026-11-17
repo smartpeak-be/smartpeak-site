@@ -16,7 +16,7 @@
 <rect x="200" y="172" width="26" height="26" rx="4" fill="#1aa5b6"/>
 <text x="238.0" y="194.0" font-size="23" fill="#1f272e">prijsniveau testjaar (Belpex gem. 101 €/MWh)</text>
 <rect x="860" y="172" width="26" height="26" rx="4" fill="#1f272e"/>
-<text x="898.0" y="194.0" font-size="23" fill="#1f272e">prijsniveau 2027 (± 170 €/MWh)</text>
+<text x="898.0" y="194.0" font-size="23" fill="#1f272e">hoger prijsniveau (± 170 €/MWh)</text>
 <rect x="238.2" y="304.9" width="120" height="435.1" fill="#1aa5b6"/>
 <text x="298.2" y="290.9" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.243</text>
 <rect x="374.2" y="304.9" width="120" height="435.1" fill="#1f272e"/>
@@ -41,6 +41,6 @@
 <text x="1431.8" y="344.1" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.091</text>
 <text x="1363.8" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vol dynamisch</text>
 <text x="1363.8" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">slimme sturing</text>
-<text x="150.0" y="856.0" font-size="20" fill="#4b5661">Prijsniveau 2027: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.</text>
+<text x="150.0" y="856.0" font-size="20" fill="#4b5661">Hoger prijsniveau: dezelfde kwartierprijzen, alles 69 €/MWh hoger, zodat het gemiddelde rond de 170 €/MWh ligt. Vast blijft gelijk.</text>
 <text x="150.0" y="882.0" font-size="20" fill="#4b5661">Berekening SmartPeak, zelfde woning en batterij. Energiedeel + variabele netkosten per kWh, incl. 6% btw, zonder capaciteitstarief. Afgerond.</text>
 </svg>
