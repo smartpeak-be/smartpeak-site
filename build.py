@@ -450,9 +450,13 @@ def author_box(meta):
     author = author_of(meta)
     if not author:
         return ""
+    published, modified = meta.get("published"), meta.get("modified")
+    updated = (f'<p>Gepubliceerd op <time datetime="{published}">{dutch_date(published)}</time>, '
+               f'bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>.</p>'
+               if published and modified and modified != published else "")
     return (f'<aside class="author-box wrap-narrow" aria-label="Over de auteur">'
             f'<p><strong>{esc(author["name"])}</strong>, {esc(author["role"][0].lower() + author["role"][1:])}</p>'
-            f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p></aside>')
+            f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p>{updated}</aside>')
 
 
 ORG_ID = SITE_URL + "/#organisatie"

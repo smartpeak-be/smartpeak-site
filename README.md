@@ -42,11 +42,11 @@ Elk inhoudsbestand begint met een meta-blok:
 -->
 ```
 
-`section` zet een pagina automatisch in het overzicht via `{{list_<section>}}` (bv. `{{list_oplossingen}}`, `{{list_hulp}}`). Artikels hebben `date` en optioneel `image` en `legacy_path` (oude WordPress-URL die doorverwijst).
+`section` zet een pagina automatisch in het overzicht via `{{list_<section>}}` (bv. `{{list_oplossingen}}`, `{{list_hulp}}`). Artikels hebben `date` en optioneel `image` en `legacy_path` (oude WordPress-URL die doorverwijst). Verandert er inhoudelijk iets, zet dan `modified`: bij een artikel verschijnt "bijgewerkt op" naast de datum, bij een hulpgids (met `published`) onderaan in het auteursvak.
 
 Beschikbare tokens in pagina's: `{{email}}`, `{{phone}}`, `{{phone_href}}`, `{{analysis_url}}`, `{{analysis_widget}}`, `{{cta}}`, `{{brand_logos}}`, `{{article_list}}`, `{{realisaties}}`, `{{realisaties_<merk>}}` (blok "Uit onze realisaties" onderaan een productpagina, bv. `{{realisaties_sigenergy}}`), `{{reviews}}`, `{{reviews_short}}`.
 
-**Begrippen.** Een moeilijk woord markeer je in de tekst als `<dfn data-begrip="belpex">Belpex</dfn>`, enkel de eerste keer op een pagina. De build zet er een stippellijn onder met een uitleg die verschijnt bij muis, toetsenbord of een tik (`mark_begrippen` in `build.py`, stijl `.begrip` in `site.css`, gedrag in `site.js`). De uitleg staat één keer in `content/begrippen.json`, en `/begrippen/` toont ze allemaal. Een onbekende slug laat de build falen.
+**Begrippen.** Een moeilijk woord markeer je in de tekst als `<dfn data-begrip="belpex">Belpex</dfn>`, enkel de eerste keer op een pagina. De build zet er een stippellijn onder met een uitleg die verschijnt bij muis, toetsenbord of een tik (`mark_begrippen` in `build.py`, stijl `.begrip` in `site.css`, gedrag in `site.js`). De uitleg staat één keer in `content/begrippen.json`, en `/begrippen/` toont ze allemaal. Een onbekende slug laat de build falen. Zet een begrip nooit in een link, kop of tabel: `check_site.py` meldt dat.
 
 Interne links schrijf je altijd als `/pad/`. De build zet er automatisch het juiste voorvoegsel voor, zodat de site ook werkt op `smartpeak-be.github.io/smartpeak-site/`.
 
