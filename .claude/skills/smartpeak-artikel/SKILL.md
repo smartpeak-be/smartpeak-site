@@ -43,6 +43,7 @@ Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/si
 - Een hulpgids eindigt met wat SmartPeak doet bij een installatie ("Plaatsen wij je ...?").
 - Afbeeldingen in de tekst: `<figure><a href="..." class="figure-zoom"><img src="..." alt="..." loading="lazy" decoding="async"></a></figure>`, zodat je op een gsm kan inzoomen.
 - Brede tabellen hoeven geen extra code: de build zet ze in een scrollvak.
+- Begrippen die niet iedereen kent (Belpex, kwartierwaarden, capaciteitstarief, MPPT ...): markeer ze de eerste keer met `<dfn data-begrip="slug">woord</dfn>`. Staat de slug nog niet in `content/begrippen.json`, voeg hem toe met een uitleg van één of twee zinnen, en laat die mee controleren door de feitencontrole. Niet in koppen of in tabellen.
 
 ## 5. Koppel de pagina
 
