@@ -16,42 +16,42 @@
 <text x="238.0" y="194.0" font-size="24" fill="#1f272e">van het net (afname)</text>
 <rect x="560" y="172" width="26" height="26" rx="4" fill="#9be0b6"/>
 <text x="598.0" y="194.0" font-size="24" fill="#1f272e">naar het net (zonne-overschot)</text>
-<rect x="212.4" y="387.2" width="40" height="352.8" fill="#1f272e"/>
-<rect x="258.4" y="684.7" width="40" height="55.3" fill="#9be0b6"/>
+<rect x="212.4" y="390.0" width="40" height="350.0" fill="#1f272e"/>
+<rect x="258.4" y="684.0" width="40" height="56.0" fill="#9be0b6"/>
 <text x="255.4" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">okt</text>
-<rect x="323.2" y="346.6" width="40" height="393.4" fill="#1f272e"/>
-<rect x="369.2" y="696.6" width="40" height="43.4" fill="#9be0b6"/>
+<rect x="323.2" y="348.0" width="40" height="392.0" fill="#1f272e"/>
+<rect x="369.2" y="698.0" width="40" height="42.0" fill="#9be0b6"/>
 <text x="366.2" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">nov</text>
-<rect x="434.1" y="317.2" width="40" height="422.8" fill="#1f272e"/>
-<rect x="480.1" y="714.1" width="40" height="25.9" fill="#9be0b6"/>
+<rect x="434.1" y="320.0" width="40" height="420.0" fill="#1f272e"/>
+<rect x="480.1" y="712.0" width="40" height="28.0" fill="#9be0b6"/>
 <text x="477.1" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">dec</text>
-<rect x="544.9" y="309.5" width="40" height="430.5" fill="#1f272e"/>
-<rect x="590.9" y="710.6" width="40" height="29.4" fill="#9be0b6"/>
+<rect x="544.9" y="313.0" width="40" height="427.0" fill="#1f272e"/>
+<rect x="590.9" y="712.0" width="40" height="28.0" fill="#9be0b6"/>
 <text x="587.9" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">jan</text>
-<rect x="655.7" y="378.8" width="40" height="361.2" fill="#1f272e"/>
-<rect x="701.7" y="691.7" width="40" height="48.3" fill="#9be0b6"/>
+<rect x="655.7" y="376.0" width="40" height="364.0" fill="#1f272e"/>
+<rect x="701.7" y="691.0" width="40" height="49.0" fill="#9be0b6"/>
 <text x="698.7" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">feb</text>
-<rect x="766.6" y="389.3" width="40" height="350.7" fill="#1f272e"/>
-<rect x="812.6" y="566.4" width="40" height="173.6" fill="#9be0b6"/>
+<rect x="766.6" y="390.0" width="40" height="350.0" fill="#1f272e"/>
+<rect x="812.6" y="565.0" width="40" height="175.0" fill="#9be0b6"/>
 <text x="809.6" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">mrt</text>
-<rect x="877.4" y="513.2" width="40" height="226.8" fill="#1f272e"/>
-<rect x="923.4" y="502.7" width="40" height="237.3" fill="#9be0b6"/>
+<rect x="877.4" y="516.0" width="40" height="224.0" fill="#1f272e"/>
+<rect x="923.4" y="502.0" width="40" height="238.0" fill="#9be0b6"/>
 <text x="920.4" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">apr</text>
-<rect x="988.2" y="500.6" width="40" height="239.4" fill="#1f272e"/>
-<rect x="1034.2" y="513.2" width="40" height="226.8" fill="#9be0b6"/>
+<rect x="988.2" y="502.0" width="40" height="238.0" fill="#1f272e"/>
+<rect x="1034.2" y="516.0" width="40" height="224.0" fill="#9be0b6"/>
 <text x="1031.2" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">mei</text>
-<rect x="1099.1" y="448.8" width="40" height="291.2" fill="#1f272e"/>
-<rect x="1145.1" y="574.8" width="40" height="165.2" fill="#9be0b6"/>
+<rect x="1099.1" y="446.0" width="40" height="294.0" fill="#1f272e"/>
+<rect x="1145.1" y="572.0" width="40" height="168.0" fill="#9be0b6"/>
 <text x="1142.1" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">jun</text>
-<rect x="1209.9" y="491.5" width="40" height="248.5" fill="#1f272e"/>
-<rect x="1255.9" y="527.9" width="40" height="212.1" fill="#9be0b6"/>
+<rect x="1209.9" y="488.0" width="40" height="252.0" fill="#1f272e"/>
+<rect x="1255.9" y="530.0" width="40" height="210.0" fill="#9be0b6"/>
 <text x="1252.9" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">jul</text>
-<rect x="1320.8" y="474.7" width="40" height="265.3" fill="#1f272e"/>
-<rect x="1366.8" y="532.8" width="40" height="207.2" fill="#9be0b6"/>
+<rect x="1320.8" y="474.0" width="40" height="266.0" fill="#1f272e"/>
+<rect x="1366.8" y="530.0" width="40" height="210.0" fill="#9be0b6"/>
 <text x="1363.8" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">aug</text>
-<rect x="1431.6" y="485.2" width="40" height="254.8" fill="#1f272e"/>
-<rect x="1477.6" y="578.3" width="40" height="161.7" fill="#9be0b6"/>
+<rect x="1431.6" y="488.0" width="40" height="252.0" fill="#1f272e"/>
+<rect x="1477.6" y="579.0" width="40" height="161.0" fill="#9be0b6"/>
 <text x="1474.6" y="785.0" font-size="24" fill="#1f272e" font-weight="600" text-anchor="middle">sep</text>
-<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, vóór de batterij. Netto: wat de</text>
-<text x="150.0" y="878.0" font-size="20" fill="#4b5661">panelen meteen in huis leveren, zit er niet in. Over het jaar: 5.482 kWh afname, 2.266 kWh injectie. Afgerond.</text>
+<text x="150.0" y="850.0" font-size="20" fill="#4b5661">Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, zonder batterij. Netto: wat de</text>
+<text x="150.0" y="878.0" font-size="20" fill="#4b5661">panelen meteen in huis leveren, zit er niet in. Over het jaar: zo'n 5.500 kWh afname en 2.250 kWh injectie. Afgerond.</text>
 </svg>

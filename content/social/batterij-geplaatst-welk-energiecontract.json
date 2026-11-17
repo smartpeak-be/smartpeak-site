@@ -10,14 +10,14 @@
     {
       "type": "stat",
       "title": "Zoveel daalde de jaarkost met de batterij",
-      "value": "€ 410+",
-      "sub": "Per jaar, bij elk van de vier contracten: 410 tot 510 euro, met een batterij die enkel zonne-overschot opslaat.",
+      "value": "€ 330+",
+      "sub": "Per jaar, bij elk van de vier contracten: 330 tot 420 euro, met een batterij van 7,6 kWh die enkel zonne-overschot opslaat.",
       "source": "Berekening SmartPeak, één woning, okt. 2025 – sep. 2026, energiedeel en netkosten per kWh."
     },
     {
       "type": "text",
       "title": "Grootste besparing, hoogste factuur",
-      "body": "Bij het vaste contract bespaarde de batterij het meest: 511 euro. Toch bleef dat contract het duurste. Bij een goedkoper contract is elke uitgespaarde kWh minder waard, maar je totale factuur is wel het laagst.",
+      "body": "Bij het vaste contract bespaarde de batterij het meest: 417 euro. Toch bleef dat contract het duurste. Bij een goedkoper contract is elke uitgespaarde kWh minder waard, maar je totale factuur is wel het laagst.",
       "source": "Berekening SmartPeak, zelfde woning en batterij."
     },
     {
@@ -32,8 +32,8 @@
     {
       "type": "stat",
       "title": "Wat slim sturen extra opleverde bij een vol dynamisch contract",
-      "value": "€ 140",
-      "sub": "Per jaar, tegenover eigenverbruik. Bij een half vast, half dynamisch contract was dat maar 20 euro.",
+      "value": "€ 125",
+      "sub": "Per jaar, tegenover eigenverbruik. Bij een half vast, half dynamisch contract was dat zo'n 45 euro.",
       "source": "Berekening SmartPeak, prijsniveau oktober 2025 tot september 2026."
     },
     {
@@ -48,7 +48,7 @@
       "url": "smartpeak.be/artikels"
     }
   ],
-  "facebook": "Je thuisbatterij is geplaatst. Welk energiecontract past er nu het best bij?\n\nWe rekenden het uit voor één echte woning met zonnepanelen: een jaar kwartierwaarden, vier contracten van dezelfde leverancier (vast, vast-variabel, vast-dynamisch en vol dynamisch) en een batterij van 17,5 kWh.\n\nMet de batterij daalde de jaarkost bij elk contract met 410 tot 510 euro. Bij het vaste contract bespaarde de batterij het meest, maar dat contract bleef wel het duurste. De laagste factuur kwam van een vol dynamisch contract met een batterij die slim op de prijzen stuurt.\n\nOp een hoger prijsniveau werden de verschillen veel kleiner. In het artikel lees je alle cijfers, hoe we rekenden en waar je op let als je zelf vergelijkt.\n\nLees meer: https://smartpeak.be/artikels/batterij-geplaatst-welk-energiecontract/",
-  "instagram": "Batterij geplaatst: welk energiecontract nu?\n\nWe rekenden het uit met een jaar echte kwartierwaarden van één woning met zonnepanelen. Met de batterij daalde de jaarkost bij elk contract met 410 tot 510 euro. Bij het vaste contract bespaarde de batterij het meest, maar daar bleef de factuur het hoogst.\n\nMet een vol dynamisch contract en een batterij die slim op de prijzen stuurt, was de factuur het laagst.\n\nAlle cijfers en de volledige berekening: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #energiecontract #dynamischcontract #zonnepanelen #OostVlaanderen",
+  "facebook": "Je thuisbatterij is geplaatst. Welk energiecontract past er nu het best bij?\n\nWe rekenden het uit voor één echte woning met zonnepanelen: een jaar kwartierwaarden, vier contracten van dezelfde leverancier (vast, vast-variabel, vast-dynamisch en vol dynamisch) en een thuisbatterij van 7,6 kWh.\n\nMet de batterij daalde de jaarkost bij elk contract met 330 tot 420 euro. Bij het vaste contract bespaarde de batterij het meest, maar dat contract bleef wel het duurste. De laagste factuur kwam van een vol dynamisch contract met een batterij die slim op de prijzen stuurt.\n\nOp een hoger prijsniveau werden de verschillen veel kleiner. In het artikel lees je alle cijfers, hoe we rekenden en waar je op let als je zelf vergelijkt.\n\nLees meer: https://smartpeak.be/artikels/batterij-geplaatst-welk-energiecontract/",
+  "instagram": "Batterij geplaatst: welk energiecontract nu?\n\nWe rekenden het uit met een jaar echte kwartierwaarden van één woning met zonnepanelen. Met de batterij daalde de jaarkost bij elk contract met 330 tot 420 euro. Bij het vaste contract bespaarde de batterij het meest, maar daar bleef de factuur het hoogst.\n\nMet een vol dynamisch contract en een batterij die slim op de prijzen stuurt, was de factuur het laagst.\n\nAlle cijfers en de volledige berekening: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #energiecontract #dynamischcontract #zonnepanelen #OostVlaanderen",
   "first_comment": "Lees meer: https://smartpeak.be/artikels/batterij-geplaatst-welk-energiecontract/"
 }

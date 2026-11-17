@@ -830,34 +830,31 @@ def premie_timeline():
 CONTRACT_NOTE = "Berekening SmartPeak op kwartierwaarden van één woning (okt. 2025 – sep. 2026), Belpex-kwartierprijzen en tariefformules 2027."
 CONTRACT_NOTE2 = "Energiedeel + variabele netkosten per kWh, incl. 6% btw, zonder capaciteitstarief. Afgerond."
 CONTRACT_COSTS = {  # contract: (zonder batterij, eigenverbruik, slimme sturing, theoretisch maximum), euro per jaar
-    "Vast": (1754, 1243, None, None),
-    "Vast-Variabel": (1477, 1053, None, None),
-    "Vast-Dynamisch": (1482, 1057, 1037, 980),
-    "Vol dynamisch": (1367, 956, 816, 711),
+    "Vast": (1754, 1337, None, None),
+    "Vast-Variabel": (1477, 1132, None, None),
+    "Vast-Dynamisch": (1482, 1137, 1091, 1083),
+    "Vol dynamisch": (1367, 1035, 911, 894),
 }
 CONTRACT_COSTS_2027 = {
-    "Vast": (1754, 1243, None, None),
-    "Vast-Variabel": (1666, 1197, None, None),
-    "Vast-Dynamisch": (1604, 1182, 1167, 1110),
-    "Vol dynamisch": (1612, 1207, 1091, 984),
+    "Vast": (1754, 1337, None, None),
+    "Vast-Variabel": (1666, 1284, None, None),
+    "Vast-Dynamisch": (1604, 1262, 1218, 1210),
+    "Vol dynamisch": (1612, 1285, 1170, 1155),
 }
-CASE_MONTHS_NET = [  # maand, afname, injectie (kWh, netto aan de meter, zonder batterij)
-    ("okt", 504, 79), ("nov", 562, 62), ("dec", 604, 37), ("jan", 615, 42), ("feb", 516, 69), ("mrt", 501, 248),
-    ("apr", 324, 339), ("mei", 342, 324), ("jun", 416, 236), ("jul", 355, 303), ("aug", 379, 296), ("sep", 364, 231)]
-DAY_PRICE = [111, 105, 99, 96, 104, 98, 98, 95, 102, 101, 98, 105, 112, 110, 108, 102, 89, 89, 89, 88, 86, 87, 89, 91,
-             89, 93, 91, 91, 111, 91, 68, 67, 214, 85, 51, 5, 65, 15, 0, 0, 0, -1, -5, -14, -15, -30, -51, -72,
-             -70, -90, -109, -131, -129, -183, -189, -201, -195, -192, -190, -182, -167, -153, -120, -93, -93, -67, -38, -16,
-             -12, -3, -1, 2, 0, 17, 57, 116, 56, 86, 91, 129, 80, 92, 108, 120, 125, 106, 97, 75, 116, 97, 101, 81,
-             111, 98, 89, 78]
-DAY_SOC_SELF = [0.1] + [0.0] * 42 + [0.1, 0.6, 1.1, 0.2] + [0.0] * 6 + [
-    0.5, 0.8, 1.3, 1.8, 2.3, 2.7, 3.2, 3.6, 4.1, 4.4, 4.8, 5.2, 5.4, 5.7, 5.9, 6.2, 6.4, 6.6, 6.3, 6.1, 6.0, 6.1, 6.2,
-    6.2, 6.2, 6.0, 5.8, 5.6, 5.4, 5.1, 4.7, 4.4, 4.0, 3.7, 3.4, 3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.0, 1.8]
-DAY_SOC_SMART = [4.9, 4.8, 4.7, 4.5, 4.4, 4.3, 4.2, 4.1, 4.0, 3.9, 3.8, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0, 2.9, 2.8,
-                 2.7, 2.6, 2.5, 2.3, 2.2, 2.1, 2.0, 1.8, 1.6, 1.4, 1.3, 1.1, 1.0, 0.8, 0.7, 0.6, 0.5, 0.3, 0.2, 0.0,
-                 0.0, 0.0, 0.0, 0.1, 0.6, 1.1, 0.2, 0.2, 0.0, 0.0, 0.0, 0.6, 0.0, 2.2, 4.1, 6.2, 8.3, 10.5, 12.6, 14.7,
-                 15.4, 15.9, 16.3, 16.6, 17.0, 17.3, 17.5, 17.5, 17.5, 17.5, 17.5, 17.2, 17.0, 16.9, 16.9, 16.9, 16.9,
-                 16.9, 16.7, 16.5, 16.3, 16.0, 15.7, 15.4, 15.0, 14.7, 14.4, 14.1, 13.9, 13.7, 13.5, 13.3, 13.1, 12.9,
-                 12.7, 12.5]
+CASE_MONTHS_NET = [  # maand, afname, injectie (kWh, netto aan de meter, zonder batterij, afgerond op 10)
+    ("okt", 500, 80), ("nov", 560, 60), ("dec", 600, 40), ("jan", 610, 40), ("feb", 520, 70), ("mrt", 500, 250),
+    ("apr", 320, 340), ("mei", 340, 320), ("jun", 420, 240), ("jul", 360, 300), ("aug", 380, 300), ("sep", 360, 230)]
+DAY_PRICE = [81, 80, 73, 70, 75, 75, 74, 72, 70, 70, 73, 74, 70, 75, 75, 72, 67, 68, 72, 73, 65, 69, 82, 79, 82, 88,
+             88, 104, 92, 100, 99, 105, 93, 120, 123, 106, 148, 137, 116, 95, 131, 105, 97, 87, 99, 95, 90, 82, 94, 84,
+             85, 86, 93, 83, 80, 78, 81, 93, 97, 106, 84, 93, 106, 123, 77, 97, 91, 124, 82, 109, 153, 209, 150, 182,
+             292, 312, 291, 268, 232, 174, 188, 143, 114, 104, 143, 115, 98, 83, 112, 100, 91, 83, 93, 87, 83, 74]
+DAY_SOC_SELF = [0.0] * 42 + [0.1, 0.1, 0.2, 0.3, 0.4, 0.2, 0.3, 0.3, 0.3, 0.4, 0.2, 0.0, 0.0, 0.0, 0.0, 0.1, 0.2,
+                             0.2, 0.3, 0.3, 0.3, 0.3, 0.3, 0.2, 0.1] + [0.0] * 29
+DAY_SOC_SMART = [2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.9, 3.8, 3.8, 3.8, 3.8, 3.8, 3.8, 3.8, 4.8, 5.7, 5.7, 5.7,
+                 6.7, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.4, 7.4, 7.1, 6.9, 6.7, 6.5, 6.4, 6.2, 6.1, 5.9, 5.8, 5.7, 5.7,
+                 5.7, 5.7, 5.7, 5.8, 5.9, 6.0, 6.1, 6.1, 6.2, 6.2, 6.3, 6.3, 6.1, 6.1, 6.1, 6.2, 6.2, 6.3, 6.4, 6.4,
+                 6.5, 6.5, 6.5, 6.5, 6.5, 6.4, 6.4, 6.0, 6.0, 5.2, 5.0, 4.8, 4.6, 4.4, 4.1, 3.8, 3.6, 3.3, 2.9, 2.5,
+                 2.1, 1.8, 1.5, 1.3, 1.0, 0.8, 0.6, 0.6, 0.3, 0.1, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0]
 
 
 def euro(v):
@@ -887,7 +884,7 @@ def contract_bill_battery():
         body += text((x_of(with_bat) + x_of(without)) / 2, y + 52, "− " + euro(without - with_bat), 26, LEAF_DEEP, 650, "middle")
         body += text(x_of(without) + 16, y + 52, euro(without), 24, SOFT)
     body += text(150, 850, CONTRACT_NOTE, 20)
-    body += text(150, 878, "Batterij 17,5 kWh op eigenverbruik. " + CONTRACT_NOTE2, 20)
+    body += text(150, 878, "Batterij 7,6 kWh en 4 kW op eigenverbruik. " + CONTRACT_NOTE2, 20)
     return svg(body, "Eén woning, vier contracten: de jaarkost met en zonder batterij",
                "De batterij bespaart het meest bij het duurste contract, maar daar blijft de factuur ook het hoogst", 25)
 
@@ -922,15 +919,15 @@ def contract_strategies():
     body += text(150, 850, CONTRACT_NOTE, 20)
     body += text(150, 878, "Theoretisch maximum: perfecte kennis van een heel jaar en terugverkopen aan het net, voor geen sturing haalbaar.", 20)
     return svg(body, "Dynamisch contract: wat de sturing van de batterij uitmaakt",
-               "Bij vol dynamisch loont slim sturen veel meer dan bij de helft vast, helft dynamisch", 25)
+               "Bij vol dynamisch loont slim sturen veel meer, en het haalt bijna het theoretische maximum", 25)
 
 
 def contract_price_levels():
     """Best realistic option per contract at the test-year price level and at the higher 2027 level."""
     x0, x1, ytop, ybot = 200, 1530, 250, 740
-    hi = 1400
+    hi = 1500
     y_of = lambda v: ybot - (ybot - ytop) * v / hi
-    body = axes(x0, x1, y_of, [0, 350, 700, 1050, 1400], "")
+    body = axes(x0, x1, y_of, [0, 500, 1000, 1500], "")
     body += text(x0 - 22, ytop - 30, "€ per jaar", 22, SOFT, None, "end")
     legend = [(LAGOON, "prijsniveau testjaar (Belpex gem. 101 €/MWh)"), (INK, "hoger prijsniveau (± 170 €/MWh)")]
     for lx, (color, label) in zip((200, 860), legend):
@@ -954,44 +951,43 @@ def contract_price_levels():
 
 
 def contract_example_day():
-    """25 April 2026: quarter-hour price and the battery level with own-consumption versus smart steering."""
+    """22 October 2025: quarter-hour price and the battery level with own-consumption versus smart steering."""
     x0, x1 = 200, 1530
     n = len(DAY_PRICE)
     x_of = lambda q: x0 + (x1 - x0) * q / n
-    # price panel
-    pt, pb, plo, phi = 205, 455, -240, 240
+    pt, pb, plo, phi = 205, 455, 0, 350
     py = lambda v: pb - (pb - pt) * (v - plo) / (phi - plo)
     body = text(150, 186, "Marktprijs per kwartier (€/MWh)", 26, INK, 650)
-    for v in (-200, -100, 0, 100, 200):
+    for v in (0, 100, 200, 300):
         y = py(v)
-        body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE if v else SOFT}" stroke-width="{2 if v else 2.5}"/>\n'
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE}" stroke-width="2"/>\n'
         body += text(x0 - 18, y + 8, f"{v}", 21, SOFT, None, "end")
-    neg = [q for q, p in enumerate(DAY_PRICE) if p < 0]
-    body += f'<rect x="{x_of(neg[0]):.1f}" y="{pt}" width="{x_of(neg[-1] + 1) - x_of(neg[0]):.1f}" height="{pb - pt}" fill="#fdecea" opacity="0.6"/>\n'
-    body += text((x_of(neg[0]) + x_of(neg[-1] + 1)) / 2, pt + 30, "negatieve prijs", 22, RED, 600, "middle")
+    body += f'<rect x="{x_of(0):.1f}" y="{pt}" width="{x_of(24) - x_of(0):.1f}" height="{pb - pt}" fill="#e9f8ef" opacity="0.8"/>\n'
+    body += text((x_of(0) + x_of(24)) / 2, pt + 30, "goedkoop: laden", 22, LEAF_DEEP, 600, "middle")
+    body += f'<rect x="{x_of(70):.1f}" y="{pt}" width="{x_of(80) - x_of(70):.1f}" height="{pb - pt}" fill="#fdecea" opacity="0.7"/>\n'
+    body += text((x_of(70) + x_of(80)) / 2, pb - 16, "duur", 22, RED, 600, "middle")
     pts = []
     for q, p in enumerate(DAY_PRICE):
         pts += [f"{x_of(q):.1f},{py(p):.1f}", f"{x_of(q + 1):.1f},{py(p):.1f}"]
     body += f'<polyline points="{" ".join(pts)}" fill="none" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>\n'
-    # battery panel
-    bt, bb, cap = 540, 760, 17.5
+    bt, bb, cap = 540, 760, 7.6
     by = lambda v: bb - (bb - bt) * v / cap
     body += text(150, 515, "Inhoud van de batterij (kWh)", 26, INK, 650)
-    for v in (0, 5, 10, 15):
+    for v in (0, 2, 4, 6):
         y = by(v)
         body += f'<line x1="{x0}" x2="{x1}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE}" stroke-width="2"/>\n'
         body += text(x0 - 18, y + 8, f"{v}", 21, SOFT, None, "end")
     body += f'<line x1="{x0}" x2="{x1}" y1="{by(cap):.1f}" y2="{by(cap):.1f}" stroke="{LAGOON_DEEP}" stroke-width="2" stroke-dasharray="8 6"/>\n'
-    body += text(x1, by(cap) - 10, "vol: 17,5 kWh", 21, LAGOON_DEEP, 600, "end")
+    body += text(x1, by(cap) - 10, "vol: 7,6 kWh", 21, LAGOON_DEEP, 600, "end")
     for series, color, label, lx in ((DAY_SOC_SELF, LAGOON, "eigenverbruik", 770), (DAY_SOC_SMART, LEAF_DEEP, "slimme sturing", 1020)):
         pts = " ".join(f"{x_of(q + 1):.1f},{by(v):.1f}" for q, v in enumerate(series))
         body += f'<polyline points="{x_of(0):.1f},{by(series[0]):.1f} {pts}" fill="none" stroke="{color}" stroke-width="5" stroke-linejoin="round"/>\n'
         body += f'<rect x="{lx}" y="497" width="40" height="8" rx="4" fill="{color}"/>\n' + text(lx + 52, 509, label, 23, INK)
     body += "".join(text(x_of(h * 4), 800, f"{h}u", 21, SOFT, None, "middle") for h in range(0, 25, 3))
-    body += text(150, 850, "Zaterdag 25 april 2026, kwartierwaarden van onze voorbeeldwoning, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.", 20)
-    body += text(150, 878, "Slimme sturing laadt bij een negatieve prijs ook van het net en houdt energie over voor de avond en de volgende ochtend.", 20)
-    return svg(body, "Eén zonnige dag: eigenverbruik tegenover slimme sturing",
-               "Met eigenverbruik raakt de batterij maar voor ruim een derde vol, slimme sturing vult ze helemaal", 25)
+    body += text(150, 850, "Woensdag 22 oktober 2025, kwartierwaarden van onze voorbeeldwoning, Belpex day-ahead (Energy-Charts). Contract vol dynamisch.", 20)
+    body += text(150, 878, "Batterij 7,6 kWh en 4 kW. Slimme sturing laadt 's nachts van het net en ontlaadt tijdens de dure avond.", 20)
+    return svg(body, "Een herfstdag: eigenverbruik tegenover slimme sturing",
+               "Met eigenverbruik blijft de batterij zo goed als leeg, slimme sturing vult ze 's nachts", 25)
 
 
 def contract_case_months():
@@ -1009,8 +1005,8 @@ def contract_case_months():
         body += f'<rect x="{cx - bw - 3:.1f}" y="{y_of(afn):.1f}" width="{bw}" height="{ybot - y_of(afn):.1f}" fill="{INK}"/>\n'
         body += f'<rect x="{cx + 3:.1f}" y="{y_of(inj):.1f}" width="{bw}" height="{ybot - y_of(inj):.1f}" fill="#9be0b6"/>\n'
         body += text(cx, 785, m, 24, INK, 600, "middle")
-    body += text(150, 850, "Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, vóór de batterij. Netto: wat de", 20)
-    body += text(150, 878, "panelen meteen in huis leveren, zit er niet in. Over het jaar: 5.482 kWh afname, 2.266 kWh injectie. Afgerond.", 20)
+    body += text(150, 850, "Kwartierwaarden aan de digitale meter van één woning met zonnepanelen, okt. 2025 tot sep. 2026, zonder batterij. Netto: wat de", 20)
+    body += text(150, 878, "panelen meteen in huis leveren, zit er niet in. Over het jaar: zo'n 5.500 kWh afname en 2.250 kWh injectie. Afgerond.", 20)
     return svg(body, "Onze voorbeeldwoning: afname en injectie per maand",
                "Van oktober tot februari is er nauwelijks zonne-overschot om op te slaan", 25)
 
