@@ -23,27 +23,27 @@
 <text x="1301.5" y="299.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 417</text>
 <text x="1439.2" y="299.0" font-size="24" fill="#4b5661">€ 1.754</text>
 <text x="150.0" y="428.0" font-size="28" fill="#1f272e" font-weight="650">Vast-Variabel</text>
-<rect x="400" y="378" width="660.3" height="76" fill="#1f272e"/>
-<rect x="1060.3" y="378" width="201.2" height="76" fill="#bfe9cf"/>
-<text x="422.0" y="427.0" font-size="28" fill="#ffffff" font-weight="650">€ 1.132</text>
-<text x="1161.0" y="427.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 345</text>
+<rect x="400" y="378" width="659.8" height="76" fill="#1f272e"/>
+<rect x="1059.8" y="378" width="201.8" height="76" fill="#bfe9cf"/>
+<text x="422.0" y="427.0" font-size="28" fill="#ffffff" font-weight="650">€ 1.131</text>
+<text x="1160.7" y="427.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 346</text>
 <text x="1277.6" y="427.0" font-size="24" fill="#4b5661">€ 1.477</text>
 <text x="150.0" y="556.0" font-size="28" fill="#1f272e" font-weight="650">Vast-Dynamisch</text>
-<rect x="400" y="506" width="636.4" height="76" fill="#1f272e"/>
-<rect x="1036.4" y="506" width="26.8" height="76" fill="#5fd08d"/>
-<rect x="1063.2" y="506" width="201.2" height="76" fill="#bfe9cf"/>
-<text x="422.0" y="555.0" font-size="28" fill="#ffffff" font-weight="650">€ 1.091</text>
-<text x="1163.9" y="555.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 345</text>
+<rect x="400" y="506" width="637.6" height="76" fill="#1f272e"/>
+<rect x="1037.6" y="506" width="25.1" height="76" fill="#5fd08d"/>
+<rect x="1062.7" y="506" width="201.8" height="76" fill="#bfe9cf"/>
+<text x="422.0" y="555.0" font-size="28" fill="#ffffff" font-weight="650">€ 1.093</text>
+<text x="1163.6" y="555.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 346</text>
 <text x="1280.5" y="555.0" font-size="24" fill="#4b5661">€ 1.482</text>
-<text x="1036.4" y="610.0" font-size="21" fill="#0b7a42" font-weight="600">− € 46 extra door slimme sturing</text>
+<text x="1037.6" y="610.0" font-size="21" fill="#0b7a42" font-weight="600">− € 43 extra door slimme sturing</text>
 <text x="150.0" y="684.0" font-size="28" fill="#1f272e" font-weight="650">Vol dynamisch</text>
 <rect x="400" y="634" width="531.4" height="76" fill="#1f272e"/>
-<rect x="931.4" y="634" width="72.3" height="76" fill="#5fd08d"/>
-<rect x="1003.8" y="634" width="193.7" height="76" fill="#bfe9cf"/>
+<rect x="931.4" y="634" width="71.8" height="76" fill="#5fd08d"/>
+<rect x="1003.2" y="634" width="194.2" height="76" fill="#bfe9cf"/>
 <text x="422.0" y="683.0" font-size="28" fill="#ffffff" font-weight="650">€ 911</text>
-<text x="1100.6" y="683.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 332</text>
+<text x="1100.3" y="683.0" font-size="25" fill="#0b7a42" font-weight="650" text-anchor="middle">− € 333</text>
 <text x="1213.4" y="683.0" font-size="24" fill="#4b5661">€ 1.367</text>
-<text x="931.4" y="738.0" font-size="21" fill="#0b7a42" font-weight="600">− € 124 extra door slimme sturing</text>
+<text x="931.4" y="738.0" font-size="21" fill="#0b7a42" font-weight="600">− € 123 extra door slimme sturing</text>
 <text x="150.0" y="850.0" font-size="20" fill="#4b5661">Berekening SmartPeak op kwartierwaarden van één woning (okt. 2025 – sep. 2026), Belpex-kwartierprijzen en tariefformules 2027.</text>
 <text x="150.0" y="878.0" font-size="20" fill="#4b5661">Batterij 7,6 kWh en 4 kW; slimme sturing enkel bij dynamisch. Incl. 6% btw, zonder capaciteitstarief en vaste netkosten.</text>
 </svg>

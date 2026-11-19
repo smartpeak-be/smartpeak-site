@@ -21,16 +21,16 @@
 <text x="434.2" y="289.2" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.337</text>
 <text x="366.2" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast</text>
 <text x="366.2" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">eigenverbruik</text>
-<rect x="570.8" y="370.2" width="120" height="369.8" fill="#1aa5b6"/>
-<text x="630.8" y="356.2" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.132</text>
-<rect x="706.8" y="320.6" width="120" height="419.4" fill="#1f272e"/>
-<text x="766.8" y="306.6" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.284</text>
+<rect x="570.8" y="370.5" width="120" height="369.5" fill="#1aa5b6"/>
+<text x="630.8" y="356.5" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.131</text>
+<rect x="706.8" y="320.9" width="120" height="419.1" fill="#1f272e"/>
+<text x="766.8" y="306.9" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.283</text>
 <text x="698.8" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Variabel</text>
 <text x="698.8" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">eigenverbruik</text>
-<rect x="903.2" y="383.6" width="120" height="356.4" fill="#1aa5b6"/>
-<text x="963.2" y="369.6" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.091</text>
-<rect x="1039.2" y="342.1" width="120" height="397.9" fill="#1f272e"/>
-<text x="1099.2" y="328.1" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.218</text>
+<rect x="903.2" y="383.0" width="120" height="357.0" fill="#1aa5b6"/>
+<text x="963.2" y="369.0" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.093</text>
+<rect x="1039.2" y="341.8" width="120" height="398.2" fill="#1f272e"/>
+<text x="1099.2" y="327.8" font-size="23" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.219</text>
 <text x="1031.2" y="785.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Dynamisch</text>
 <text x="1031.2" y="815.0" font-size="21" fill="#4b5661" text-anchor="middle">slimme sturing</text>
 <rect x="1235.8" y="442.4" width="120" height="297.6" fill="#1aa5b6"/>
