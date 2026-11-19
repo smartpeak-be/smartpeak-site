@@ -831,15 +831,15 @@ CONTRACT_NOTE = "Berekening SmartPeak op kwartierwaarden van één woning (okt. 
 CONTRACT_NOTE2 = "Energiedeel + variabele netkosten per kWh, incl. 6% btw, zonder capaciteitstarief. Afgerond."
 CONTRACT_COSTS = {  # contract: (zonder batterij, eigenverbruik, slimme sturing, theoretisch maximum), euro per jaar
     "Vast": (1754, 1337, None, None),
-    "Vast-Variabel": (1477, 1132, None, None),
-    "Vast-Dynamisch": (1482, 1137, 1091, 1083),
-    "Vol dynamisch": (1367, 1035, 911, 894),
+    "Vast-Variabel": (1477, 1131, None, None),
+    "Vast-Dynamisch": (1482, 1136, 1093, 1082),
+    "Vol dynamisch": (1367, 1034, 911, 894),
 }
 CONTRACT_COSTS_2027 = {
     "Vast": (1754, 1337, None, None),
-    "Vast-Variabel": (1666, 1284, None, None),
-    "Vast-Dynamisch": (1604, 1262, 1218, 1210),
-    "Vol dynamisch": (1612, 1285, 1170, 1155),
+    "Vast-Variabel": (1666, 1283, None, None),
+    "Vast-Dynamisch": (1604, 1261, 1219, 1209),
+    "Vol dynamisch": (1612, 1284, 1170, 1153),
 }
 CASE_MONTHS_NET = [  # maand, afname, injectie (kWh, netto aan de meter, zonder batterij, afgerond op 10)
     ("okt", 500, 80), ("nov", 560, 60), ("dec", 600, 40), ("jan", 610, 40), ("feb", 520, 70), ("mrt", 500, 250),
@@ -897,8 +897,8 @@ def contract_bill_battery():
 
 
 CONTRACT_STEPS = [  # (label, kost zonder batterij met vast, contract, batterij eigenverbruik, slimme sturing)
-    ("Prijsniveau testjaar", 1754, 387, 332, 124),
-    ("Hoger prijsniveau", 1754, 142, 327, 115),
+    ("Prijsniveau testjaar", 1754, 387, 333, 123),
+    ("Hoger prijsniveau", 1754, 142, 328, 114),
 ]
 
 

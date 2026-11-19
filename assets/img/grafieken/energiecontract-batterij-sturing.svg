@@ -23,17 +23,17 @@
 <text x="973.0" y="194.0" font-size="23" fill="#1f272e">Theoretisch maximum</text>
 <rect x="259.5" y="286.1" width="120" height="453.9" fill="#cfd8d5"/>
 <text x="319.5" y="272.1" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.482</text>
-<rect x="401.5" y="391.8" width="120" height="348.2" fill="#1aa5b6"/>
-<text x="461.5" y="377.8" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.137</text>
-<rect x="543.5" y="405.9" width="120" height="334.1" fill="#17c15c"/>
-<text x="603.5" y="391.9" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.091</text>
-<rect x="685.5" y="408.3" width="120" height="331.7" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
-<text x="745.5" y="394.3" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.083</text>
+<rect x="401.5" y="392.1" width="120" height="347.9" fill="#1aa5b6"/>
+<text x="461.5" y="378.1" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.136</text>
+<rect x="543.5" y="405.3" width="120" height="334.7" fill="#17c15c"/>
+<text x="603.5" y="391.3" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.093</text>
+<rect x="685.5" y="408.6" width="120" height="331.4" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="745.5" y="394.6" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.082</text>
 <text x="532.5" y="790.0" font-size="28" fill="#1f272e" font-weight="650" text-anchor="middle">Vast-Dynamisch</text>
 <rect x="924.5" y="321.4" width="120" height="418.6" fill="#cfd8d5"/>
 <text x="984.5" y="307.4" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.367</text>
-<rect x="1066.5" y="423.0" width="120" height="317.0" fill="#1aa5b6"/>
-<text x="1126.5" y="409.0" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.035</text>
+<rect x="1066.5" y="423.3" width="120" height="316.7" fill="#1aa5b6"/>
+<text x="1126.5" y="409.3" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 1.034</text>
 <rect x="1208.5" y="461.0" width="120" height="279.0" fill="#17c15c"/>
 <text x="1268.5" y="447.0" font-size="24" fill="#1f272e" font-weight="650" text-anchor="middle">€ 911</text>
 <rect x="1350.5" y="466.2" width="120" height="273.8" fill="#ffffff" stroke="#0b7a42" stroke-width="3" stroke-dasharray="8 6"/>
