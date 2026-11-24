@@ -6,7 +6,7 @@ Deze pagina's zijn eerder gecontroleerd. Hergebruik hun bronnen in plaats van op
 |---|---|
 | Capaciteitstarief, maandpiek, facturatiepiek, minimum 2,5 kW | `content/artikels/wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop.html`, `content/artikels/piekverbruik-uitleg.html` |
 | Stekkerbatterij, 800 W, plug-and-play-lijst van Synergrid, aanmelden bij Fluvius | `content/artikels/stekkerbatterij-of-vaste-thuisbatterij.html`, `pages/oplossingen/zendure-solarflow.html` |
-| Netspanning, C10/11 (253 V / 264,5 V), vergoeding van Fluvius bij uitval | `content/artikels/omvormer-valt-uit-zonnige-dagen.html` |
+| Netspanning, C10/11 (253 V / 264,5 V; huidige editie 2.4 van 15 oktober 2025), vergoeding van Fluvius bij uitval (2026: 5,20 euro per kVA) | `content/artikels/omvormer-valt-uit-zonnige-dagen.html` |
 | Back-up, noodstopcontact, eilandwerking volgens Synergrid, onderbrekingsduur 2025 (Vlaamse Nutsregulator, RAPP-2026-19) | `content/artikels/thuisbatterij-stroomonderbreking-back-up.html`, `pages/oplossingen/sigen-energy-gateway.html` |
 | Vast, variabel en dynamisch contract, negatieve prijzen | `content/artikels/vast-variabel-dynamisch-contract-thuisbatterij.html` |
 | AC-, DC- en bidirectioneel laden, ISO 15118-20 | `content/artikels/elektrische-wagen-thuisbatterij-laden.html`, `pages/oplossingen/sigen-laden.html` |
@@ -32,7 +32,9 @@ Schrijf hier niets over zonder zijn akkoord:
 
 ## Jaarlijks bij te werken
 
-- **Nettarieven en capaciteitstarief:** de Vlaamse Nutsregulator keurt de tarieven voor het volgende jaar eind november goed. Werk dan de bedragen voor het nieuwe jaar bij in `wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop.html` en `piekverbruik-uitleg.html`.
+- **Titels met een jaartal:** `premie-thuisbatterij-2026.html` en `wat-kost-een-thuisbatterij.html` dragen 2026 in titel en tekst. Werk ze begin januari bij naar het nieuwe jaar (de URL blijft).
+
+- **Nettarieven en capaciteitstarief:** de Vlaamse Nutsregulator keurt de tarieven voor het volgende jaar meestal half december goed (de tarieven 2026 op 16 december 2025). Op 24 november 2026 waren die voor 2027 nog niet bekend. Werk dan de bedragen voor het nieuwe jaar bij in `wat-is-het-capaciteitstarief-en-hoe-bespaar-je-erop.html` en `piekverbruik-uitleg.html`.
 - **Kwaliteit van de dienstverlening:** het rapport over onderbrekingen verschijnt rond september (voor 2025: RAPP-2026-19).
-- **Vergoeding uitvallende omvormers:** Fluvius publiceert de bedragen per zonneseizoen midden november.
+- **Vergoeding uitvallende omvormers:** Fluvius legt het bedrag sinds 2026 zelf vast en publiceert het per zonneseizoen midden november (2026: 5,20 euro per kVA, met certificaten tot 15,30 euro per kVA extra).
 - **Bebat:** een producent kan zijn terugnameplicht in principe ook zelf regelen, maar in de praktijk gebeurt het bijna altijd via Bebat. Schrijf "in de praktijk bij Bebat", niet dat registratie bij Bebat wettelijk verplicht is.

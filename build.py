@@ -79,10 +79,31 @@ GIT_DATES = git_dates()
 
 
 def modified_of(meta):
-    """When the content last changed: the dates in the meta block and the last commit of the file.
-    Articles have no "source" on purpose: they show their date, and the schema must match it."""
+    """When the content last changed. A "modified" in the meta block is the date shown on the page
+    ("laatst bijgewerkt"), so the schema and the sitemap follow it and ignore commits that only
+    touched markup. Without one, the last commit of the file counts. Articles have no "source"."""
+    git_date = None if meta.get("modified") else GIT_DATES.get(meta.get("source", ""))
     return max(filter(None, [meta.get("modified"), meta.get("published"), meta.get("date"),
-                             GIT_DATES.get(meta.get("source", "")), meta.get("newest_listed")]), default=None)
+                             git_date, meta.get("newest_listed")]), default=None)
+
+
+def check_dates(meta, where):
+    """Dates in the meta block: real days, a change never before the publication, nothing in the future."""
+    days = {key: date.fromisoformat(meta[key]) for key in ("date", "published", "modified") if meta.get(key)}
+    first = days.get("date") or days.get("published")
+    if "modified" in days and first and days["modified"] < first:
+        raise ValueError(f"{where}: modified {meta['modified']} lies before the publication date")
+    if any(day > date.today() for day in days.values()):
+        raise ValueError(f"{where}: a date in the meta block lies in the future")
+
+
+def updated_text(meta):
+    """'laatst bijgewerkt op ...' for a page whose content changed; empty when there is no
+    "modified" or it is the publication day. A check without changes does not get a new date."""
+    modified = meta.get("modified")
+    if not modified or modified in (meta.get("date"), meta.get("published")):
+        return ""
+    return f'laatst bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>'
 
 
 def dutch_date(iso):
@@ -451,10 +472,9 @@ def author_box(meta):
     author = author_of(meta)
     if not author:
         return ""
-    published, modified = meta.get("published"), meta.get("modified")
-    updated = (f'<p>Gepubliceerd op <time datetime="{published}">{dutch_date(published)}</time>, '
-               f'bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>.</p>'
-               if published and modified and modified != published else "")
+    published = meta.get("published")
+    updated = (f'<p>Gepubliceerd op <time datetime="{published}">{dutch_date(published)}</time>'
+               + (f', {updated_text(meta)}' if updated_text(meta) else "") + '.</p>' if published else "")
     return (f'<aside class="author-box wrap-narrow" aria-label="Over de auteur">'
             f'<p><strong>{esc(author["name"])}</strong>, {esc(author["role"][0].lower() + author["role"][1:])}</p>'
             f'<p>{esc(author["bio"])} <a href="{author["url"]}">Meer over SmartPeak</a></p>{updated}</aside>')
@@ -649,14 +669,25 @@ def read_time(body):
 
 
 def post_page(post, cta):
-    modified = post.get("modified")
-    updated = (f', bijgewerkt op <time datetime="{modified}">{dutch_date(modified)}</time>'
-               if modified and modified != post["date"] else "")
+    updated = f', {updated_text(post)}' if updated_text(post) else ""
     kicker = (f'<p class="article-meta"><a href="/artikels/">Artikels</a> <span aria-hidden="true">/</span> '
-              f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}'
+              + ("gepubliceerd op " if updated else "")
+              + f'<time datetime="{post["date"]}">{dutch_date(post["date"])}</time>{updated}'
               + (f' <span aria-hidden="true">/</span> door {esc(author_of(post)["name"])}' if author_of(post) else "")
               + f' <span aria-hidden="true">/</span> {read_time(post["body"])}</p>')
     return article(post, post["body"], kicker) + author_box(post) + cta
+
+
+def show_updated(body, meta):
+    """Put 'laatst bijgewerkt op ...' in the kicker above the title, or add a kicker when the page has none.
+    Pages without a separate publication date show the date even if it is their first version."""
+    text = updated_text(meta) or (f'laatst bijgewerkt op <time datetime="{meta["modified"]}">'
+                                  f'{dutch_date(meta["modified"])}</time>')
+    if '<p class="article-meta">' in body:
+        return re.sub(r'(<p class="article-meta">.*?)</p>',
+                      lambda m: f'{m.group(1)} <span aria-hidden="true">/</span> {text}</p>', body, count=1, flags=re.S)
+    return re.sub(r'(<h1[ >])', lambda m: f'<p class="article-meta">{text[0].upper() + text[1:]}</p>\n    {m.group(1)}',
+                  body, count=1)
 
 
 def redirect_page(target):
@@ -721,6 +752,9 @@ def main():
         if "{{faq}}" in body:
             meta["faq"] = True
         body = fill(body, values)
+        check_dates(meta, meta["source"])
+        if meta.get("modified"):  # informative pages: show when their content last changed
+            body = show_updated(body, meta)
         if meta.get("schema_type") == "Article" or meta.get("section") == "hulp":  # guides, customer cases
             minutes = read_time(body.replace(cta, ""))
             body = re.sub(r'(<p class="article-meta">.*?)</p>',
@@ -740,6 +774,7 @@ def main():
         paths.append(meta["path"])
 
     for post in posts:
+        check_dates(post, f'content/artikels/{post["slug"]}.html')
         write_page(post["path"], render(post, post_page(post, cta), titles))
         paths.append(post["path"])
 
