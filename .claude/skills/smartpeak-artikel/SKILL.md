@@ -17,6 +17,7 @@ Bekijk een bestaand voorbeeld van hetzelfde soort voor de opbouw: `pages/hulp/si
 - **title:** maximaal 60 tekens samen met " | SmartPeak". De build laat het achtervoegsel weg als het te lang wordt, maar kies liever een korte titel.
 - **description:** 120 tot 155 tekens, concreet, met de zoekterm.
 - **date / published:** de echte publicatiedatum. Een tekst mag niet verwijzen naar iets dat op die datum nog niet gebeurd was.
+- **modified:** de dag van de laatste inhoudelijke aanpassing (tekst, cijfer of bron). De pagina toont die als "laatst bijgewerkt op". Controleer je een pagina en verandert er niets, of pas je enkel opmaak aan, dan blijft de datum staan. Ook productpagina's en andere informatieve pagina's krijgen een `modified` als hun inhoud verandert.
 - **image:** de belangrijkste infographic (zie skill `smartpeak-infographic`). `slug` zorgt dat er een deelafbeelding gemaakt wordt.
 
 ## 2. Onderzoek eerst
