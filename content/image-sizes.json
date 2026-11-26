@@ -139,6 +139,16 @@
   "height": 900,
   "variant": "/assets/img/grafieken/sigen-piekbeperking-w640.webp"
  },
+ "/assets/img/grafieken/sigenstor-neo-eenfasig-5kva.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/sigenstor-neo-eenfasig-5kva-w640.webp"
+ },
+ "/assets/img/grafieken/sigenstor-neo-opbouw.webp": {
+  "width": 1600,
+  "height": 900,
+  "variant": "/assets/img/grafieken/sigenstor-neo-opbouw-w640.webp"
+ },
  "/assets/img/grafieken/thuisbatterij-bijplaatsen-overzicht.webp": {
   "width": 1600,
   "height": 900,

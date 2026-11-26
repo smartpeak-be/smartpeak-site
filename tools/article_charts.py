@@ -1130,6 +1130,71 @@ def grid_tariffs_household():
     return svg(body, "Nettarieven voor een gemiddeld gezin", "Wat een gemiddeld gezin per jaar betaalt aan distributienettarieven, inclusief btw")
 
 
+NEO_SP_SMAX = [("2.5", 2500), ("3.0", 3300), ("3.6", 3680), ("4.0", 4400), ("4.6", 5000),
+               ("5.0", 5500), ("6.0", 6600), ("8.0", 8800), ("10.0", 11000), ("12.0", 12000)]
+
+
+def neo_single_phase_5kva():
+    """Max apparent power of the homologated single-phase SigenStor Neo EC models against the 5 kVA limit."""
+    x0, x1, ytop, ybot = 270, 1530, 190, 700
+    hi = 13000
+    y_of = lambda v: ybot - (ybot - ytop) * v / hi
+    body = ""
+    for v in [0, 2500, 5000, 7500, 10000, 12500]:
+        body += f'<line x1="{x0}" x2="{x1}" y1="{y_of(v):.1f}" y2="{y_of(v):.1f}" stroke="{LINE}" stroke-width="2"/>\n'
+        body += text(x0 - 22, y_of(v) + 9, f"{v:,}".replace(",", ".") + " VA", anchor="end")
+    n = len(NEO_SP_SMAX)
+    slot = (x1 - x0) / n
+    bw = slot * 0.62
+    for i, (name, smax) in enumerate(NEO_SP_SMAX):
+        cx = x0 + slot * (i + 0.5)
+        fill = LEAF if smax <= 5000 else "#cfd8d5"
+        body += f'<rect x="{cx - bw / 2:.1f}" y="{y_of(smax):.1f}" width="{bw:.1f}" height="{ybot - y_of(smax):.1f}" rx="8" fill="{fill}"/>\n'
+        label = f"{smax:,}".replace(",", ".")
+        if abs(y_of(smax) - y_of(5000)) < 40 and smax < 5000:
+            body += text(cx, y_of(smax) + 34, label, 22, INK, 650, "middle")
+        else:
+            body += text(cx, y_of(smax) - 14, label, 22, INK, 600, "middle")
+        body += text(cx, ybot + 38, name.replace(".", ","), 25, INK, 650, "middle")
+    body += text((x0 + x1) / 2, ybot + 70, "SigenStor Neo EC … SP (nominaal vermogen in kW)", 22, SOFT, None, "middle")
+    y5 = y_of(5000)
+    body += f'<line x1="{x0}" x2="{x1}" y1="{y5:.1f}" y2="{y5:.1f}" stroke="{RED}" stroke-width="4" stroke-dasharray="14 10"/>\n'
+    body += text(x0 + 12, y5 - 60, "5.000 VA: standaardgrens op een", 24, RED, 650)
+    body += text(x0 + 12, y5 - 28, "eenfasige aansluiting", 24, RED, 650)
+    body += f'<rect x="150" y="806" width="26" height="26" rx="6" fill="{LEAF}"/>\n'
+    body += text(188, 828, "past binnen 5.000 VA", 23, INK)
+    body += f'<rect x="480" y="806" width="26" height="26" rx="6" fill="#cfd8d5"/>\n'
+    body += text(518, 828, "enkel bij sommige netbeheerders of op een driefasige aansluiting", 23, INK)
+    body += text(150, 878, "Bron: Synergrid, C10/26-lijst (versie 20 november 2026, GLV231-11) en C10/11 §4.1.7.", 21)
+    return svg(body, "Welke eenfasige SigenStor Neo past op een eenfasige aansluiting?",
+               "Maximaal schijnbaar vermogen per model, zoals goedgekeurd door Synergrid")
+
+
+def neo_vs_classic():
+    """Building blocks of the classic SigenStor with gateway versus the all-in-one SigenStor Neo."""
+    body = markers(INK)
+    body += text(150, 205, "Klassieke SigenStor", 30, INK, 650)
+    body += box(150, 235, 380, 110, "Energy Controller", "omvormer en energiebeheer")
+    body += box(150, 365, 380, 110, "Batterijmodules", "1 tot 6 per controller")
+    body += box(150, 525, 380, 110, "Sigen Energy Gateway", "back-up bij stroomuitval", "#e3f4f6", "#b5e0e6", LAGOON_DEEP)
+    body += text(340, 512, "+ apart toestel", 22, LAGOON_DEEP, 600, "middle")
+    body += text(150, 690, "Back-up voor de hele woning vraagt", 24)
+    body += text(150, 722, "een gateway naast de stack.", 24)
+    body += text(890, 205, "SigenStor Neo", 30, INK, 650)
+    body += f'<rect x="890" y="235" width="560" height="240" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>\n'
+    body += text(1170, 285, "Neo Energy Controller", 27, LEAF_DEEP, 650, "middle")
+    items = ["omvormer en energiebeheer", "back-upschakeling ingebouwd", "back-uppoort en smart port"]
+    for i, s in enumerate(items):
+        body += text(1170, 335 + i * 40, s, 23, INK, None, "middle")
+    body += box(890, 495, 560, 110, "Neo BAT-modules", "6,02 of 7,52 kWh, 1 tot 6 per controller")
+    body += text(890, 690, "Back-up zit in het toestel zelf. De Neo BAT-modules", 24)
+    body += text(890, 722, "werken enkel met een Neo-controller.", 24)
+    body += f'<line x1="760" x2="760" y1="190" y2="740" stroke="{LINE}" stroke-width="3"/>\n'
+    body += text(150, 868, "Bron: Sigenergy, productpagina en datasheets SigenStor Neo EC en Neo BAT 6.0/8.0. Vereenvoudigd schema.", 21)
+    return svg(body, "Klassieke SigenStor of SigenStor Neo: wat zit waar?",
+               "Vereenvoudigd: de onderdelen van een systeem met back-up voor de hele woning")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -1172,3 +1237,5 @@ if __name__ == "__main__":
     write("remautomaat-som-van-stromen", rem_breaker_sum())
     write("p1-poort-open-houden", p1_keep_open())
     write("nettarieven-gezin-2025-2027", grid_tariffs_household())
+    write("sigenstor-neo-eenfasig-5kva", neo_single_phase_5kva())
+    write("sigenstor-neo-opbouw", neo_vs_classic())

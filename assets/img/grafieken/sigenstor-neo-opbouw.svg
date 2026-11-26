@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Klassieke SigenStor of SigenStor Neo: wat zit waar?</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Vereenvoudigd: de onderdelen van een systeem met back-up voor de hele woning</text>
+<defs><marker id="arrow-1f272e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f272e"/></marker></defs>
+<text x="150.0" y="205.0" font-size="30" fill="#1f272e" font-weight="650">Klassieke SigenStor</text>
+<rect x="150" y="235" width="380" height="110" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="340.0" y="286.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Energy Controller</text>
+<text x="340.0" y="320.0" font-size="22" fill="#4b5661" text-anchor="middle">omvormer en energiebeheer</text>
+<rect x="150" y="365" width="380" height="110" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="340.0" y="416.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Batterijmodules</text>
+<text x="340.0" y="450.0" font-size="22" fill="#4b5661" text-anchor="middle">1 tot 6 per controller</text>
+<rect x="150" y="525" width="380" height="110" rx="18" fill="#e3f4f6" stroke="#b5e0e6" stroke-width="3"/>
+<text x="340.0" y="576.0" font-size="27" fill="#0a6a78" font-weight="650" text-anchor="middle">Sigen Energy Gateway</text>
+<text x="340.0" y="610.0" font-size="22" fill="#0a6a78" text-anchor="middle">back-up bij stroomuitval</text>
+<text x="340.0" y="512.0" font-size="22" fill="#0a6a78" font-weight="600" text-anchor="middle">+ apart toestel</text>
+<text x="150.0" y="690.0" font-size="24" fill="#4b5661">Back-up voor de hele woning vraagt</text>
+<text x="150.0" y="722.0" font-size="24" fill="#4b5661">een gateway naast de stack.</text>
+<text x="890.0" y="205.0" font-size="30" fill="#1f272e" font-weight="650">SigenStor Neo</text>
+<rect x="890" y="235" width="560" height="240" rx="18" fill="#e9f8ef" stroke="#bfe9cf" stroke-width="3"/>
+<text x="1170.0" y="285.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">Neo Energy Controller</text>
+<text x="1170.0" y="335.0" font-size="23" fill="#1f272e" text-anchor="middle">omvormer en energiebeheer</text>
+<text x="1170.0" y="375.0" font-size="23" fill="#1f272e" text-anchor="middle">back-upschakeling ingebouwd</text>
+<text x="1170.0" y="415.0" font-size="23" fill="#1f272e" text-anchor="middle">back-uppoort en smart port</text>
+<rect x="890" y="495" width="560" height="110" rx="18" fill="#f3f7f5" stroke="#e3ebe8" stroke-width="3"/>
+<text x="1170.0" y="546.0" font-size="27" fill="#1f272e" font-weight="650" text-anchor="middle">Neo BAT-modules</text>
+<text x="1170.0" y="580.0" font-size="22" fill="#4b5661" text-anchor="middle">6,02 of 7,52 kWh, 1 tot 6 per controller</text>
+<text x="890.0" y="690.0" font-size="24" fill="#4b5661">Back-up zit in het toestel zelf. De Neo BAT-modules</text>
+<text x="890.0" y="722.0" font-size="24" fill="#4b5661">werken enkel met een Neo-controller.</text>
+<line x1="760" x2="760" y1="190" y2="740" stroke="#e3ebe8" stroke-width="3"/>
+<text x="150.0" y="868.0" font-size="21" fill="#4b5661">Bron: Sigenergy, productpagina en datasheets SigenStor Neo EC en Neo BAT 6.0/8.0. Vereenvoudigd schema.</text>
+</svg>
