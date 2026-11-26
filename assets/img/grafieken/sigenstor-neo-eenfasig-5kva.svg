@@ -46,11 +46,12 @@
 <text x="1467.0" y="738.0" font-size="25" fill="#1f272e" font-weight="650" text-anchor="middle">12,0</text>
 <text x="900.0" y="770.0" font-size="22" fill="#4b5661" text-anchor="middle">SigenStor Neo EC … SP (nominaal vermogen in kW)</text>
 <line x1="270" x2="1530" y1="503.8" y2="503.8" stroke="#c2412d" stroke-width="4" stroke-dasharray="14 10"/>
-<text x="282.0" y="443.8" font-size="24" fill="#c2412d" font-weight="650">5.000 VA: standaardgrens op een</text>
-<text x="282.0" y="475.8" font-size="24" fill="#c2412d" font-weight="650">eenfasige aansluiting</text>
-<rect x="150" y="806" width="26" height="26" rx="6" fill="#17c15c"/>
-<text x="188.0" y="828.0" font-size="23" fill="#1f272e">past binnen 5.000 VA</text>
-<rect x="480" y="806" width="26" height="26" rx="6" fill="#cfd8d5"/>
-<text x="518.0" y="828.0" font-size="23" fill="#1f272e">enkel bij sommige netbeheerders of op een driefasige aansluiting</text>
-<text x="150.0" y="878.0" font-size="21" fill="#4b5661">Bron: Synergrid, C10/26-lijst (versie 20 november 2026, GLV231-11) en C10/11 §4.1.7.</text>
+<text x="282.0" y="443.8" font-size="24" fill="#c2412d" font-weight="650">5.000 VA: grens op een eenfasige</text>
+<text x="282.0" y="475.8" font-size="24" fill="#c2412d" font-weight="650">aansluiting bij Fluvius</text>
+<rect x="150" y="794" width="26" height="26" rx="6" fill="#17c15c"/>
+<text x="188.0" y="816.0" font-size="23" fill="#1f272e">past binnen 5.000 VA</text>
+<rect x="480" y="794" width="26" height="26" rx="6" fill="#cfd8d5"/>
+<text x="518.0" y="816.0" font-size="23" fill="#1f272e">past niet op een eenfasige aansluiting bij Fluvius</text>
+<text x="150.0" y="856.0" font-size="21" fill="#1f272e">Geldt zonder andere omvormer op de aansluiting: een bestaande zonnepaneelomvormer telt mee in die 5.000 VA.</text>
+<text x="150.0" y="884.0" font-size="21" fill="#4b5661">Bron: Synergrid, C10/26-lijst (versie 20 november 2026, GLV231-11) en C10/11; Fluvius.</text>
 </svg>
