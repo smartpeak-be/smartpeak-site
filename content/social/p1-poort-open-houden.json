@@ -1,0 +1,35 @@
+{
+  "page": "/hulp/p1-poort-activeren/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Wist je dat?",
+      "title": "Je P1-poort kan weer dichtgaan",
+      "image": "/assets/img/grafieken/p1-poort-open-houden.webp"
+    },
+    {
+      "type": "text",
+      "title": "Soms gaat de poort weer dicht",
+      "body": "Bij sommige klanten zagen we dat de P1-poort na een tijd weer dicht stond. Je batterij krijgt dan geen meetgegevens meer en stuurt niet meer zoals het hoort."
+    },
+    {
+      "type": "list",
+      "title": "Zo kijk je het na",
+      "items": [
+        "Zet een herinnering in je agenda, bijvoorbeeld één keer per jaar.",
+        "Kijk in Mijn Fluvius bij poortbeheer of je poort nog actief is.",
+        "Staat ze dicht? Vraag de activatie opnieuw aan.",
+        "Op je meter: een driehoekje boven P1 betekent dat de poort openstaat."
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Lees de hele gids",
+      "sub": "De P1-poort activeren, open houden en je verbruik downloaden.",
+      "url": "smartpeak.be/hulp"
+    }
+  ],
+  "facebook": "Werkt je thuisbatterij via de P1-poort van je digitale meter? Kijk dan af en toe na of die poort nog openstaat.\n\nBij sommige klanten zagen we dat de P1-poort na een tijd weer dicht stond. Je batterij weet dan plots niet meer hoeveel je afneemt of injecteert, en stuurt niet meer zoals het hoort.\n\nZet daarom één keer per jaar een herinnering in je agenda. Kijk dan in Mijn Fluvius bij poortbeheer of je poort nog actief is, en vraag de activatie opnieuw aan als ze dicht staat. Op je meter zie je het meteen: een driehoekje boven P1 betekent dat de poort openstaat.\n\nDeel je je meetgegevens via Mijn Fluvius met een bedrijf, zoals je leverancier of een app? Die toestemming verloopt volgens Fluvius elke drie jaar.\n\nLees meer: https://smartpeak.be/hulp/p1-poort-activeren/#open-houden",
+  "instagram": "Staat je P1-poort nog open?\n\nBij sommige klanten zagen we dat de P1-poort na een tijd weer dicht stond. Je thuisbatterij krijgt dan geen meetgegevens meer. Kijk één keer per jaar in Mijn Fluvius bij poortbeheer, en op je meter of het driehoekje boven P1 er nog staat.\n\nDe volledige gids: link in bio (smartpeak.be/hulp).\n\n#thuisbatterij #P1poort #digitalemeter #fluvius",
+  "first_comment": "Lees meer: https://smartpeak.be/hulp/p1-poort-activeren/#open-houden"
+}

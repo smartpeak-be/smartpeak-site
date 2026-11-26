@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Instrument Sans, Segoe UI, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="150" y="82" font-size="40" font-weight="650" fill="#1f272e">Hoeveel stroom kan er door je verdeelkast lopen?</text>
+<text x="150" y="128" font-size="27" fill="#4b5661">Voorbeeld: een aansluiting van 40 A, met zonnepanelen en een batterij van elk 20 A</text>
+<line x1="230" x2="1500" y1="760.0" y2="760.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="208.0" y="769.0" font-size="25" fill="#4b5661" text-anchor="end">0 A</text>
+<line x1="230" x2="1500" y1="640.0" y2="640.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="208.0" y="649.0" font-size="25" fill="#4b5661" text-anchor="end">20 A</text>
+<line x1="230" x2="1500" y1="520.0" y2="520.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="208.0" y="529.0" font-size="25" fill="#4b5661" text-anchor="end">40 A</text>
+<line x1="230" x2="1500" y1="400.0" y2="400.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="208.0" y="409.0" font-size="25" fill="#4b5661" text-anchor="end">60 A</text>
+<line x1="230" x2="1500" y1="280.0" y2="280.0" stroke="#e3ebe8" stroke-width="2"/>
+<text x="208.0" y="289.0" font-size="25" fill="#4b5661" text-anchor="end">80 A</text>
+<text x="300.0" y="200.0" font-size="30" fill="#1f272e" font-weight="650">Zonder remautomaat</text>
+<rect x="300" y="520.0" width="200" height="240.0" fill="#172129"/>
+<text x="525.0" y="649.0" font-size="24" fill="#1f272e" font-weight="600">Net (aansluiting): 40 A</text>
+<rect x="300" y="400.0" width="200" height="120.0" fill="#17c15c"/>
+<text x="525.0" y="469.0" font-size="24" fill="#1f272e" font-weight="600">Zonnepanelen: 20 A</text>
+<rect x="300" y="280.0" width="200" height="120.0" fill="#1aa5b6"/>
+<text x="525.0" y="349.0" font-size="24" fill="#1f272e" font-weight="600">Batterij: 20 A</text>
+<text x="400.0" y="264.0" font-size="27" fill="#c2412d" font-weight="650" text-anchor="middle">tot 80 A</text>
+<text x="1000.0" y="200.0" font-size="30" fill="#1f272e" font-weight="650">Met een remautomaat van 63 A</text>
+<rect x="1000" y="382.0" width="200" height="378.0" fill="#e9f8ef" stroke="#0b7a42" stroke-width="4"/>
+<text x="1100.0" y="366.0" font-size="27" fill="#0b7a42" font-weight="650" text-anchor="middle">hoogstens 63 A</text>
+<text x="1225.0" y="560.0" font-size="24" fill="#1f272e" font-weight="600">net, zonnepanelen en</text>
+<text x="1225.0" y="592.0" font-size="24" fill="#1f272e" font-weight="600">batterij samen</text>
+<text x="1225.0" y="650.0" font-size="22" fill="#4b5661">vraag je meer, dan</text>
+<text x="1225.0" y="680.0" font-size="22" fill="#4b5661">schakelt hij uit</text>
+<line x1="280" x2="760" y1="382.0" y2="382.0" stroke="#c2412d" stroke-width="4" stroke-dasharray="14 10"/>
+<line x1="980" x2="1500" y1="382.0" y2="382.0" stroke="#c2412d" stroke-width="4" stroke-dasharray="14 10"/>
+<text x="525.0" y="416.0" font-size="22" fill="#c2412d" font-weight="600">wat de kast aankan: 63 A</text>
+<text x="150.0" y="868.0" font-size="21" fill="#4b5661">Voorbeeld met fictieve waarden. Welke grens nodig is, hangt af van het zwakste onderdeel in je verdeelkast.</text>
+</svg>
