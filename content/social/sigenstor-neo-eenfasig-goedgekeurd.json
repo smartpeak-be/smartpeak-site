@@ -1,0 +1,52 @@
+{
+  "page": "/artikels/sigenstor-neo-eenfasig-goedgekeurd/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Nieuw in België",
+      "title": "SigenStor Neo eenfasig goedgekeurd",
+      "sub": "Welk model past op jouw aansluiting?",
+      "image": "/assets/img/grafieken/sigenstor-neo-eenfasig-5kva.webp"
+    },
+    {
+      "type": "text",
+      "title": "Op de lijst van Synergrid",
+      "body": "Sinds 7 oktober 2026 staan de eenfasige SigenStor Neo EC 2.5 tot 12.0 SP op de C10/26-lijst. Die mogen dus op het Belgische net.",
+      "source": "Bron: Synergrid, C10/26-lijst (versie 20 november 2026)."
+    },
+    {
+      "type": "image",
+      "title": "Back-up zit erin",
+      "image": "/assets/img/grafieken/sigenstor-neo-opbouw.webp",
+      "body": "Volgens Sigenergy zitten omvormer, energiebeheer en back-upschakeling in één toestel, zonder aparte gateway.",
+      "source": "Bron: Sigenergy."
+    },
+    {
+      "type": "list",
+      "title": "Wat je moet weten",
+      "items": [
+        "Op een eenfasige aansluiting: meestal maximaal 5.000 VA, dus de Neo 2.5 tot 4.6 SP.",
+        "Neo-batterijmodules werken enkel met een Neo-controller.",
+        "Een 'SE'-versie staat nog niet op de lijst."
+      ],
+      "source": "Bronnen: Synergrid (C10/26-lijst, C10/11) en Sigenergy."
+    },
+    {
+      "type": "text",
+      "title": "En driefasig?",
+      "body": "De driefasige Neo staat nog niet op de lijst. Voor een driefasige aansluiting blijft de klassieke SigenStor de keuze binnen Sigenergy.",
+      "source": "Bron: Synergrid, C10/26-lijst (versie 20 november 2026)."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Wat de Neo kan, wat er anders is dan de klassieke SigenStor en welk model bij jou past.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "De eenfasige SigenStor Neo mag in België op het net.\n\nSinds 7 oktober 2026 staan de SigenStor Neo EC 2.5 tot 12.0 SP op de C10/26-lijst van Synergrid. Bij de Neo zitten omvormer, energiebeheer, batterij en back-upschakeling in één systeem: volgens Sigenergy heb je voor back-up van je hele woning geen aparte gateway meer nodig.\n\nOp een eenfasige aansluiting is bij de meeste netbeheerders maximaal 5.000 VA toegelaten. In de praktijk kom je dan uit bij de Neo 2.5 tot 4.6 SP.\n\nDe driefasige Neo staat nog niet op de lijst. Heb je een driefasige aansluiting, dan blijft de klassieke SigenStor de keuze binnen Sigenergy.\n\nWe zetten op een rij wat de Neo kan, wat er anders is dan de klassieke SigenStor en waar je op let.\n\nLees meer: https://smartpeak.be/artikels/sigenstor-neo-eenfasig-goedgekeurd/",
+  "instagram": "De eenfasige SigenStor Neo is goedgekeurd voor het Belgische net.\n\nSinds 7 oktober 2026 staan de Neo EC 2.5 tot 12.0 SP op de C10/26-lijst van Synergrid. De back-upschakeling zit volgens Sigenergy in het toestel zelf. Op een eenfasige aansluiting kom je meestal uit bij de 2.5 tot 4.6 SP, omdat daar maximaal 5.000 VA toegelaten is. De driefasige Neo staat nog niet op de lijst.\n\nMeer uitleg en alle bronnen: link in bio (smartpeak.be/artikels).\n\n#thuisbatterij #sigenergy #synergrid #zonnepanelen #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/sigenstor-neo-eenfasig-goedgekeurd/",
+  "tiktok": "De eenfasige SigenStor Neo mag nu in België op het net.\n\nSinds oktober 2026 staat hij op de C10/26-lijst van Synergrid. Volgens Sigenergy zit back-up in het toestel zelf. Op een eenfasige aansluiting kom je meestal uit bij de 2.5 tot 4.6 SP. De driefasige versie staat nog niet op de lijst.\n\nMeer uitleg op smartpeak.be.\n\n#thuisbatterij #sigenergy #zonnepanelen #vlaanderen #energie",
+  "tiktok_title": "SigenStor Neo eenfasig goedgekeurd"
+}
