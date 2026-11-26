@@ -1,0 +1,42 @@
+{
+  "page": "/artikels/nettarieven-2027/",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Nettarieven 2027",
+      "title": "Elektriciteit duurder, aardgas goedkoper",
+      "image": "/assets/img/grafieken/nettarieven-gezin-2025-2027.webp"
+    },
+    {
+      "type": "stat",
+      "value": "+€35",
+      "title": "Nettarieven elektriciteit voor een gemiddeld gezin",
+      "sub": "Van €463 naar €498 per jaar (+7,6%). Aardgas: €9 minder, naar €267.",
+      "source": "Bron: Vlaamse Nutsregulator, incl. btw. Gezin: 3.500 kWh, maandpiek 4,26 kW, 17.000 kWh gas."
+    },
+    {
+      "type": "list",
+      "title": "Waarom duurder?",
+      "items": [
+        "Hogere transmissiekosten voor het hoogspanningsnet van Elia.",
+        "Een hogere inflatie.",
+        "Minder verwacht verbruik op het laagspanningsnet: de kosten worden over minder kWh verdeeld."
+      ],
+      "source": "Bron: Vlaamse Nutsregulator."
+    },
+    {
+      "type": "text",
+      "title": "Wat kan je zelf doen?",
+      "body": "Je nettarieven hangen af van hoeveel kWh je van het net haalt en hoe hoog je maandpiek is. Meer eigen zonnestroom verbruiken verlaagt het eerste, je pieken beperken het tweede."
+    },
+    {
+      "type": "cta",
+      "title": "Lees het hele artikel",
+      "sub": "Met het verschil tussen netgebieden, de cijfers voor kmo's en wat het betekent met zonnepanelen of een batterij.",
+      "url": "smartpeak.be/artikels"
+    }
+  ],
+  "facebook": "De nettarieven voor elektriciteit stijgen in 2027: een gemiddeld gezin betaalt €35 meer.\n\nDe Vlaamse Nutsregulator keurde de nieuwe distributienettarieven goed. Een gemiddeld gezin betaalt in 2027 €498 aan nettarieven voor elektriciteit, 7,6% meer dan in 2026. Voor aardgas daalt het bedrag met €9, naar €267. Dat is inclusief btw, voor een gezin met 3.500 kWh elektriciteit, een gemiddelde maandpiek van 4,26 kW en 17.000 kWh aardgas.\n\nDe stijging komt vooral door hogere transmissiekosten en een hogere inflatie. Daarnaast verwacht de regulator minder verbruik op het laagspanningsnet, zodat de kosten over minder kWh verdeeld worden.\n\nJe nettarieven hangen af van hoeveel kWh je van het net haalt en hoe hoog je maandpiek is. Meer eigen zonnestroom verbruiken verlaagt het eerste, je pieken beperken het tweede.\n\nLees meer: https://smartpeak.be/artikels/nettarieven-2027/",
+  "instagram": "Nettarieven 2027: elektriciteit duurder, aardgas goedkoper.\n\nVolgens de Vlaamse Nutsregulator betaalt een gemiddeld gezin in 2027 €498 aan nettarieven voor elektriciteit, €35 meer dan in 2026. Voor aardgas wordt dat €267, €9 minder. Vooral hogere transmissiekosten en de inflatie duwen de nettarieven voor elektriciteit omhoog.\n\nWat het betekent met zonnepanelen of een thuisbatterij: link in bio (smartpeak.be/artikels).\n\n#nettarieven #capaciteitstarief #thuisbatterij #fluvius #OostVlaanderen",
+  "first_comment": "Lees meer: https://smartpeak.be/artikels/nettarieven-2027/"
+}

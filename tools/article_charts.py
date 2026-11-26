@@ -1109,6 +1109,27 @@ def p1_keep_open():
     return svg(body, "Staat je P1-poort nog open?", "Kijk één keer per jaar na of je batterij nog meetgegevens krijgt")
 
 
+def grid_tariffs_household():
+    """Distribution grid tariffs for an average Flemish household, incl. VAT (Vlaamse Nutsregulator)."""
+    data = {"Elektriciteit": [(2025, 483), (2026, 463), (2027, 498)],
+            "Aardgas": [(2025, 260), (2026, 276), (2027, 267)]}
+    y_of = lambda v: 740 - v * 0.95
+    body = axes(230, 1500, y_of, [0, 100, 200, 300, 400, 500], " €")
+    x = 330
+    for group, rows in data.items():
+        for yr, val in rows:
+            color = (LAGOON if yr == 2027 else "#9fd6de") if group == "Elektriciteit" else (LEAF if yr == 2027 else "#a8e6c1")
+            top = y_of(val)
+            body += f'<rect x="{x}" y="{top:.1f}" width="150" height="{740 - top:.1f}" rx="8" fill="{color}"/>\n'
+            body += text(x + 75, top - 14, f"€ {val}", 26, INK, 650, "middle")
+            body += text(x + 75, 778, str(yr), 24, SOFT, None, "middle")
+            x += 175
+        body += text(x - 175 * 2 + 75, 820, group, 28, INK, 650, "middle")
+        x += 120
+    body += text(150, 868, "Gezin: 3.500 kWh, maandpiek 4,26 kW, 17.000 kWh gas. Bron: Vlaamse Nutsregulator (persberichten 2025 en 2026, vraag nr. 9).", 21)
+    return svg(body, "Nettarieven voor een gemiddeld gezin", "Wat een gemiddeld gezin per jaar betaalt aan distributienettarieven, inclusief btw")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -1150,3 +1171,4 @@ if __name__ == "__main__":
     write("energiecontract-batterij-stappen", contract_steps())
     write("remautomaat-som-van-stromen", rem_breaker_sum())
     write("p1-poort-open-houden", p1_keep_open())
+    write("nettarieven-gezin-2025-2027", grid_tariffs_household())
