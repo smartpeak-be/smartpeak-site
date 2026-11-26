@@ -272,7 +272,23 @@ p { margin: 0 0 1em; }
 .post-card a:hover strong { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--leaf); }
 .post-card-text > span { color: var(--ink-soft); font-size: .97rem; }
 @media (max-width: 900px) { .post-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .post-cards { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .post-cards { grid-template-columns: 1fr; gap: 1.25rem; }
+  /* On a phone each article is a box with its title above the image, so it is clear which image belongs to which title. */
+  .post-card a { grid-template-areas: "time" "title" "img" "desc"; gap: .55rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); }
+  .post-card-text { display: contents; }
+  .post-card time { grid-area: time; }
+  .post-card strong { grid-area: title; }
+  .post-card img { grid-area: img; margin: .2rem 0; }
+  .post-card-text > span { grid-area: desc; }
+}
+.post-strip:focus-visible { outline: 3px solid var(--lagoon-deep); outline-offset: 4px; border-radius: var(--radius-m); }
+@media (max-width: 900px) {
+  .post-strip { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: .75rem; }
+  .post-strip .post-cards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(82%, 22rem); }
+  .post-strip .post-card { scroll-snap-align: start; display: flex; }
+  .post-strip .post-card a { width: 100%; align-content: start; }
+}
 
 /* Link cards (oplossingen, hulp) */
 .link-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 1rem; }

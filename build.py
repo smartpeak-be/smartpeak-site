@@ -115,7 +115,8 @@ def img_tag(src, alt="", sizes="(max-width: 760px) 100vw, 720px", eager=False, c
     return f'<img {" ".join(attrs)}>'
 
 
-def post_cards(posts, eager_first=False):
+def post_cards(posts, eager_first=False, strip_label=""):
+    """Article cards. With strip_label the list becomes a row that scrolls sideways on small screens."""
     cards = []
     for i, post in enumerate(posts):
         image = (img_tag(post["image"], sizes="(max-width: 700px) 100vw, 380px", eager=eager_first and i == 0)
@@ -127,6 +128,9 @@ def post_cards(posts, eager_first=False):
     <span>{esc(post["description"])}</span>
   </span></a>
 </li>''')
+    if strip_label:
+        return (f'<div class="post-strip" tabindex="0" role="region" aria-label="{esc(strip_label)}">'
+                '<ul class="post-cards">' + "\n".join(cards) + "</ul></div>")
     return '<ul class="post-cards">' + "\n".join(cards) + "</ul>"
 
 
@@ -392,6 +396,7 @@ def tokens(posts, realisaties, sections, reviews):
         "phone_href": esc(SITE["phone_href"]),
         "article_list": post_cards(posts, eager_first=True),
         "article_list_recent": post_cards(posts[:3]),
+        "article_list_home": post_cards(posts[:3], strip_label="Nieuwste artikels"),
         "realisaties": realisatie_cards(realisaties, eager_first=True),
         "faq": faq_block(load_faq()),
         **{f"realisaties_{brand}": brand_realisaties(realisaties, brand)
