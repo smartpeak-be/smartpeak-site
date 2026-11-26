@@ -1052,6 +1052,63 @@ def contract_case_months():
                "Van oktober tot februari is er nauwelijks zonne-overschot om op te slaan", 25)
 
 
+def rem_breaker_sum():
+    """Why a limiting breaker (remautomaat) is needed: grid, PV and battery current can add up in the board."""
+    y_of = lambda a: 760 - a * 6
+    body = axes(230, 1500, y_of, [0, 20, 40, 60, 80], " A")
+    limit = y_of(63)
+    # Left: without limiter
+    body += text(300, 200, "Zonder remautomaat", 30, INK, 650)
+    segs = [("Net (aansluiting)", 40, NIGHT), ("Zonnepanelen", 20, LEAF), ("Batterij", 20, LAGOON)]
+    base = 0
+    for label, amps, color in segs:
+        top, bottom = y_of(base + amps), y_of(base)
+        body += f'<rect x="300" y="{top:.1f}" width="200" height="{bottom - top:.1f}" fill="{color}"/>\n'
+        body += text(525, (top + bottom) / 2 + 9, f"{label}: {amps} A", 24, INK, 600)
+        base += amps
+    body += text(400, y_of(80) - 16, "tot 80 A", 27, RED, 650, "middle")
+    # Right: with limiter
+    body += text(1000, 200, "Met een remautomaat van 63 A", 30, INK, 650)
+    body += f'<rect x="1000" y="{limit:.1f}" width="200" height="{760 - limit:.1f}" fill="#e9f8ef" stroke="{LEAF_DEEP}" stroke-width="4"/>\n'
+    body += text(1100, limit - 16, "hoogstens 63 A", 27, LEAF_DEEP, 650, "middle")
+    body += text(1225, 560, "net, zonnepanelen en", 24, INK, 600)
+    body += text(1225, 592, "batterij samen", 24, INK, 600)
+    body += text(1225, 650, "vraag je meer, dan", 22)
+    body += text(1225, 680, "schakelt hij uit", 22)
+    # Limit line across both panels
+    for x1, x2 in ((280, 760), (980, 1500)):
+        body += f'<line x1="{x1}" x2="{x2}" y1="{limit:.1f}" y2="{limit:.1f}" stroke="{RED}" stroke-width="4" stroke-dasharray="14 10"/>\n'
+    body += text(525, limit + 34, "wat de kast aankan: 63 A", 22, RED, 600)
+    body += text(150, 868, "Voorbeeld met fictieve waarden. Welke grens nodig is, hangt af van het zwakste onderdeel in je verdeelkast.", 21)
+    return svg(body, "Hoeveel stroom kan er door je verdeelkast lopen?",
+               "Voorbeeld: een aansluiting van 40 A, met zonnepanelen en een batterij van elk 20 A")
+
+
+def p1_keep_open():
+    """Keeping the P1 port open: activate via Mijn Fluvius, check yearly, request again if it closed."""
+    body = markers(INK, RED)
+    y = 250
+    body += box(150, y, 360, 150, "Poort openzetten", "aanvraag in Mijn Fluvius", "#e9f8ef", "#bfe9cf")
+    body += box(620, y, 360, 150, "Elk jaar nakijken", "poortbeheer en meter", "#e6f4f6", "#b5dfe6")
+    body += box(1090, y, 360, 150, "Dicht?", "opnieuw aanvragen", "#fdecea", "#f3c7c0", RED)
+    body += arrow(510, y + 75, 612, y + 75)
+    body += arrow(980, y + 75, 1082, y + 75, RED)
+    # Meter display sketch
+    mx, my = 420, 500
+    body += f'<rect x="{mx}" y="{my}" width="760" height="230" rx="22" fill="{NIGHT}"/>\n'
+    body += f'<rect x="{mx + 40}" y="{my + 40}" width="680" height="150" rx="10" fill="#cfe8dc"/>\n'
+    labels = ["L1", "L2", "L3", "P-", "P+", "P1", "MID"]
+    for i, lab in enumerate(labels):
+        x = mx + 100 + i * 95
+        color = LEAF_DEEP if lab == "P1" else SOFT
+        body += text(x, my + 160, lab, 30, color, 650 if lab == "P1" else None, "middle")
+    px = mx + 100 + 5 * 95
+    body += f'<path d="M{px - 16},{my + 110} L{px + 16},{my + 110} L{px},{my + 82} z" fill="{LEAF_DEEP}"/>\n'
+    body += text(800, my + 290, "Een driehoekje boven P1 (of GP) op je meter: de poort staat open.", 25, INK, 600, "middle")
+    body += text(150, 868, "Vereenvoudigd. Bron: Fluvius (gebruikerspoorten activeren) en eigen ervaring bij klanten.", 21)
+    return svg(body, "Staat je P1-poort nog open?", "Kijk één keer per jaar na of je batterij nog meetgegevens krijgt")
+
+
 def write(name, content):
     (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
     print("wrote", name)
@@ -1091,3 +1148,5 @@ if __name__ == "__main__":
     write("energiecontract-batterij-voorbeelddag", contract_example_day())
     write("energiecontract-batterij-woning", contract_case_months())
     write("energiecontract-batterij-stappen", contract_steps())
+    write("remautomaat-som-van-stromen", rem_breaker_sum())
+    write("p1-poort-open-houden", p1_keep_open())
