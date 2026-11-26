@@ -1159,13 +1159,13 @@ def neo_single_phase_5kva():
     body += text((x0 + x1) / 2, ybot + 70, "SigenStor Neo EC … SP (nominaal vermogen in kW)", 22, SOFT, None, "middle")
     y5 = y_of(5000)
     body += f'<line x1="{x0}" x2="{x1}" y1="{y5:.1f}" y2="{y5:.1f}" stroke="{RED}" stroke-width="4" stroke-dasharray="14 10"/>\n'
-    body += text(x0 + 12, y5 - 60, "5.000 VA: standaardgrens op een", 24, RED, 650)
-    body += text(x0 + 12, y5 - 28, "eenfasige aansluiting", 24, RED, 650)
+    body += text(x0 + 12, y5 - 60, "5.000 VA: grens op een eenfasige", 24, RED, 650)
+    body += text(x0 + 12, y5 - 28, "aansluiting bij Fluvius", 24, RED, 650)
     body += f'<rect x="150" y="806" width="26" height="26" rx="6" fill="{LEAF}"/>\n'
     body += text(188, 828, "past binnen 5.000 VA", 23, INK)
     body += f'<rect x="480" y="806" width="26" height="26" rx="6" fill="#cfd8d5"/>\n'
-    body += text(518, 828, "enkel bij sommige netbeheerders of op een driefasige aansluiting", 23, INK)
-    body += text(150, 878, "Bron: Synergrid, C10/26-lijst (versie 20 november 2026, GLV231-11) en C10/11 §4.1.7.", 21)
+    body += text(518, 828, "past niet op een eenfasige aansluiting bij Fluvius", 23, INK)
+    body += text(150, 878, "Bron: Synergrid, C10/26-lijst (versie 20 november 2026, GLV231-11); Fluvius; C10/11 §4.1.7.", 21)
     return svg(body, "Welke eenfasige SigenStor Neo past op een eenfasige aansluiting?",
                "Maximaal schijnbaar vermogen per model, zoals goedgekeurd door Synergrid")
 
